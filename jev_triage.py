@@ -48,7 +48,13 @@ def config():
     )["plans"]
     plans.update({"recent." + k: stage[k] for k in prior.LOCKED_ROUTE})
     ids, states = prior.past(
-        ignore=(STUDY, "parameter_router", "parameter_router_extra")
+        ignore=(
+            STUDY,
+            "parameter_router",
+            "parameter_router_extra",
+            "material_facts",
+            "material_fact_replies",
+        )
     )
     pool, question, labels = ds.jev(270)
     families = {

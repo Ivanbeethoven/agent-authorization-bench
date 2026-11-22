@@ -77,7 +77,16 @@ def question(text, options):
     return {"type": "choice", "instructions": text, "criteria": options}
 
 
-def call(provider, url, key, state, questions):
+def call(
+    provider,
+    url,
+    key,
+    state,
+    questions,
+    *,
+    system_prompt=DEEPSEEK_FORMAT,
+    max_tokens=160,
+):
     deep = provider == "deepseek"
     body = {"model": MODEL[provider], "state": state, "questions": questions}
     if deep:
@@ -86,9 +95,9 @@ def call(provider, url, key, state, questions):
             "thinking": {"type": "disabled"},
             "temperature": 0,
             "response_format": {"type": "json_object"},
-            "max_tokens": 160,
+            "max_tokens": max_tokens,
             "messages": [
-                {"role": "system", "content": DEEPSEEK_FORMAT},
+                {"role": "system", "content": system_prompt},
                 {
                     "role": "user",
                     "content": json.dumps(
@@ -120,7 +129,12 @@ def call(provider, url, key, state, questions):
                     q: a.get("probabilities") for q, a in res["answers"].items()
                 }
             if set(questions) != set(answers) or not all(
-                isinstance(answers[q], str) and answers[q] in spec["criteria"]
+                isinstance(answers[q], str)
+                and (
+                    0 < len(answers[q].strip()) <= spec["max_length"]
+                    if deep and spec.get("type") == "short_text"
+                    else answers[q] in spec["criteria"]
+                )
                 for q, spec in questions.items()
             ):
                 raise ValueError("invalid_choice")
@@ -169,7 +183,15 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("parameter_router", "parameter_router_extra"):
+    if study in ("material_facts", "material_fact_replies"):
+        import material_facts as design
+
+        if provider != "deepseek":
+            raise ValueError("This experiment uses only DeepSeek.")
+        plans, protocol = (
+            design.replay_config() if study == design.REPLAY else design.config()
+        )
+    elif study in ("parameter_router", "parameter_router_extra"):
         import parameter_router as design
 
         plans, protocol = (
@@ -300,12 +322,17 @@ def run(study, provider, workers):
             }
             atomic(ledger, budget)
 
-        def measure(name, item, stage, questions, state=None):
+        def measure(name, item, stage, questions, state=None, **options):
             k = (name, item["id"], stage)
             if k in cache and "answers" in cache[k]:
                 return cache[k]["answers"]
             result = call(
-                provider, url, key, item["state"] if state is None else state, questions
+                provider,
+                url,
+                key,
+                item["state"] if state is None else state,
+                questions,
+                **options,
             )
             row = {"dataset": name, "id": item["id"], "stage": stage, **result}
             with WRITE:
@@ -316,6 +343,43 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "material_fact_replies":
+                branches = (
+                    ("yes", "no")
+                    if positions[name, item["id"]] % 2 == 0
+                    else ("no", "yes")
+                )
+                for answer in branches:
+                    state = {
+                        "original_record": item["state"],
+                        "verification": {
+                            "instructions": protocol["instruction"],
+                            "question": item["clarification"],
+                            "verified_answer": answer,
+                        },
+                    }
+                    measure(
+                        name,
+                        item,
+                        answer,
+                        design.questions(plans[name], "rule"),
+                        state,
+                        system_prompt=protocol["system"],
+                    )
+                return
+            if study == "material_facts":
+                pos = positions[name, item["id"]]
+                for stage in design.order(pos):
+                    arm = protocol["arms"][stage]
+                    measure(
+                        name,
+                        item,
+                        stage,
+                        design.questions(plans[name], stage),
+                        system_prompt=arm["system"],
+                        max_tokens=arm["max_tokens"],
+                    )
+                return
             if study in ("parameter_router", "parameter_router_extra"):
                 plan = plans[name]
                 if provider == "deepseek":
@@ -485,6 +549,8 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "material_facts",
+            "material_fact_replies",
             "parameter_router",
             "parameter_router_extra",
             "jev_triage",

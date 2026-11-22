@@ -272,6 +272,8 @@ def config():
             "jev_triage",
             "parameter_router",
             "parameter_router_extra",
+            "material_facts",
+            "material_fact_replies",
         ):
             continue
         for plan in json.loads(file.read_text("utf8"))["plans"].values():

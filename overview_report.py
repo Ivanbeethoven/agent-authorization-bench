@@ -55,6 +55,8 @@ PHASES = {
     "jev_triage": "Jev 选择审查模型",
     "parameter_router": "初判后的逐项核对",
     "parameter_router_extra": "逐项核对补充情境",
+    "material_facts": "缺失事实与暂缓规则",
+    "material_fact_replies": "澄清问题的回答复判",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -71,6 +73,7 @@ STAGE_GROUPS = {
     "保留策略独立复测": ("retained_validation",),
     "Jev 选择审查模型": ("jev_triage",),
     "初判后的逐项核对": ("parameter_router", "parameter_router_extra"),
+    "缺失事实与暂缓规则": ("material_facts", "material_fact_replies"),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -95,6 +98,7 @@ def inputs():
         "retained_validation/provider_usage.csv",
         "jev_triage/provider_usage.csv",
         "parameter_router/provider_usage.csv",
+        "material_facts/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -288,6 +292,8 @@ def cost_chart(stages):
 
 
 def efficiency_groups(history, boards, selection):
+    from material_fact_html import NAMES as fact_names
+
     groups = {}
 
     def point(name, correct, size, fee, partial=""):
@@ -299,6 +305,16 @@ def efficiency_groups(history, boards, selection):
             "partial": str(partial),
         }
 
+    fact_scores = read("material_facts/scores.csv")
+    for cohort in dict.fromkeys(r["benchmark"] for r in fact_scores):
+        rows = [r for r in fact_scores if r["benchmark"] == cohort]
+        groups["facts_" + cohort] = {
+            "label": f"DeepSeek 暂缓规则 · {cohort} · {rows[0]['n']} 条",
+            "points": [
+                point(fact_names[r["arm"]], r["correct"], r["n"], r["cny"])
+                for r in rows
+            ],
+        }
     for key, rows in boards.items():
         groups[key] = {
             "label": COHORTS[key] + f" · {rows[0]['cases']} 条",
@@ -347,6 +363,9 @@ def efficiency_groups(history, boards, selection):
 def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
+        "原提示": "#525f72",
+        "暂缓规则": "#b15b2b",
+        "澄清问题与两种答案": "#137463",
         "DeepSeek": "#305b9a",
         METHODS["deepseek_direct"]: "#305b9a",
         "Jev": "#147a6d",

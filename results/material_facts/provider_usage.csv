@@ -1,0 +1,3 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+material_facts,deepseek,deepseek-flash,150,450,450,348612,8302,0.711,1.157,31.57,runner interval,0.21322864,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+material_fact_replies,deepseek,deepseek-flash,62,124,125,104582,725,0.653,1.143,15.93,runner interval,0.04990504,0.00,immediate wallet change; posting may lag; amount attributed by token usage

@@ -93,6 +93,22 @@ $benchmarks = @('jev','authgate','delegation','authbench','authorization','yolof
 & $py ./scripts/compare.py
 ```
 
+## 用 DeepSeek 复测暂缓规则
+
+上一轮主表的三个评测各取原有 50 条。每条分别使用原提示、增加暂缓规则的系统提示，以及要求提出澄清问题并写出两种答案后果的系统提示。补充实验对实际提出的问题分别提供假定已核实的肯定和否定回答，独立复判。输入不包含参考答案，所有工具动作仅供分类。
+
+在已准备本项目数据与 DeepSeek 凭据的工作区执行以下命令。调用记录按样本和阶段保存，中断后可续跑。
+
+```powershell
+./scripts/study.ps1 -Provider deepseek -Study material_facts -Workers 12
+./scripts/study.ps1 -Provider deepseek -Study material_fact_replies -Workers 12
+$studyPython = uv python find
+& $studyPython -X utf8 material_fact_results.py
+& $studyPython -X utf8 shared_report.py --from-tables
+```
+
+系统提示和选题规则见 [material_facts.py](material_facts.py)。[复测报告](results/shared_review/四种权限审查方案详解.html#material-facts)含逐题决定和回答复判结果。[分项成绩](results/material_facts/scores.csv)与[服务商用量](results/material_facts/provider_usage.csv)可单独下载。
+
 ## 数据来源
 
 - 授权与委托。[Jev Boundary v1.2.0](https://doi.org/10.5281/zenodo.22952538) · [AuthGateBench](https://github.com/Digital-Trust-Lab/AuthGateBench) · [DelegationBench](https://github.com/PieLord757/delegation-check)

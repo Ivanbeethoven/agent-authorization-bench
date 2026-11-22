@@ -458,7 +458,7 @@ def review_errors(decisions):
     return {"cases": notes["cases"], "sensitivity": sensitivity}
 
 
-def render_method_guide(scores):
+def render_method_guide(scores, fact_section):
     from parameter_router_cases import auth_cases
 
     pair = "parameter-router-scope-12"
@@ -496,9 +496,9 @@ def render_method_guide(scores):
         "<", "\\u003c"
     )
     (DEST / "四种权限审查方案详解.html").write_text(
-        template.replace("__METHOD_GUIDE__", data).replace(
-            "__REVIEW_DIAGRAM__", diagram
-        ),
+        template.replace("__MATERIAL_FACTS__", fact_section)
+        .replace("__METHOD_GUIDE__", data)
+        .replace("__REVIEW_DIAGRAM__", diagram),
         encoding="utf8",
     )
 
@@ -554,14 +554,20 @@ def render():
     payload["parameterRouter"] = json.loads(
         (RESULTS / "parameter_router/report.json").read_text("utf8")
     )
-    render_method_guide(payload["parameterRouter"]["scores"])
+    from material_fact_html import render as render_facts
+
+    fact_section = render_facts()
+    render_method_guide(payload["parameterRouter"]["scores"], fact_section)
     template = (ROOT / "scripts/shared_report.html").read_text("utf8")
     assert template.count("__COMPARISON__") == 1
     encoded = json.dumps(
         payload, default=str, ensure_ascii=False, separators=(",", ":")
     ).replace("<", "\\u003c")
     (DEST / TITLE).write_text(
-        template.replace("__COMPARISON__", encoded), encoding="utf8"
+        template.replace("__MATERIAL_FACTS__", fact_section).replace(
+            "__COMPARISON__", encoded
+        ),
+        encoding="utf8",
     )
     print(DEST / TITLE)
 
