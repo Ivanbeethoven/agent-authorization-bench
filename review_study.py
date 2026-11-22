@@ -169,7 +169,12 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("review", "risk", "coverage"):
+    if study == "conditions":
+        import authorization_conditions as design
+
+        plans = design.populations()
+        protocol = design.description()
+    elif study in ("review", "risk", "coverage"):
         if study in ("risk", "coverage"):
             import risk_tree as design
         else:
@@ -221,11 +226,13 @@ def run(study, provider, workers):
             }
             atomic(ledger, budget)
 
-        def measure(name, item, stage, questions):
+        def measure(name, item, stage, questions, state=None):
             k = (name, item["id"], stage)
             if k in cache and "answers" in cache[k]:
                 return cache[k]["answers"]
-            result = call(provider, url, key, item["state"], questions)
+            result = call(
+                provider, url, key, item["state"] if state is None else state, questions
+            )
             row = {"dataset": name, "id": item["id"], "stage": stage, **result}
             with WRITE:
                 pilot.append_json(log, row)
@@ -235,6 +242,19 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "conditions":
+
+                def invoke(stage, questions, state):
+                    return measure(name, item, stage, questions, state)
+
+                design.run_case(
+                    invoke,
+                    item["state"],
+                    plans[name],
+                    item,
+                    positions[name, item["id"]],
+                )
+                return
             if study == "coverage":
                 measure(name, item, "root", protocol["root"])
                 route = measure(name, item, "shadow_router", protocol["router"])["risk"]
@@ -268,9 +288,8 @@ def run(study, provider, workers):
             (name, item) for name, plan in plans.items() for item in plan["samples"]
         ]
         # A full first case catches credential or schema errors before concurrent dispatch.
-        leaf_order = {
-            (name, item["id"]): i % 2 == 0 for i, (name, item) in enumerate(cases)
-        }
+        positions = {(name, item["id"]): i for i, (name, item) in enumerate(cases)}
+        leaf_order = {key: pos % 2 == 0 for key, pos in positions.items()}
         evaluate(*cases[0])
         failed = []
         with ThreadPoolExecutor(max_workers=workers) as executor:
@@ -292,7 +311,9 @@ def run(study, provider, workers):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("study", choices=["pilot", "review", "risk", "coverage"])
+    p.add_argument(
+        "study", choices=["pilot", "review", "risk", "coverage", "conditions"]
+    )
     p.add_argument("--provider", choices=MODEL, required=True)
     p.add_argument("--workers", type=int, choices=range(1, 17), default=8)
     args = p.parse_args()

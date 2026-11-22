@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('deepseek','jev','aliyun')][string]$Provider,
-    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage')][string]$Study,
+    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions')][string]$Study,
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'
