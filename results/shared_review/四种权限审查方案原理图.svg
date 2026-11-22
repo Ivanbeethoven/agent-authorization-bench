@@ -44,8 +44,8 @@
 <path d="M769 345 H814" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round"/>
 <path d="M814 345 V311 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
 <path d="M814 345 V379 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
-<text x="844" y="304" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">进入名额</text>
-<text x="844" y="372" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">其余请求</text>
+<text x="844" y="304" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">转交 10 条</text>
+<text x="844" y="372" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">不转交 40 条</text>
 </g>
 <g id="node-two-gpt"><rect x="982" y="288" width="185" height="47" rx="6" fill="#ecf2f8" stroke="#99b0c6" stroke-width="1.4"/>
 <text x="1074.5" y="317.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">GPT 独立裁决</text>
@@ -83,8 +83,8 @@
 <path d="M855 625 H878" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round"/>
 <path d="M878 625 V586 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
 <path d="M878 625 V655 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
-<text x="897" y="579" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">进入名额</text>
-<text x="897" y="648" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">其余请求</text>
+<text x="889" y="579" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">转交 10 条</text>
+<text x="889" y="648" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">不转交 40 条</text>
 </g>
 <g id="node-three-gpt"><rect x="982" y="562" width="185" height="47" rx="6" fill="#ecf2f8" stroke="#99b0c6" stroke-width="1.4"/>
 <text x="1074.5" y="591.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">GPT 独立裁决</text>
@@ -116,8 +116,8 @@
 <path d="M867 794 H885" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round"/>
 <path d="M885 794 V749 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
 <path d="M885 794 V836 H977" fill="none" stroke="#47666a" stroke-width="2" stroke-linejoin="round" marker-end="url(#flow-head)"/>
-<text x="899" y="742" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">进入名额</text>
-<text x="899" y="829" font-size="15" font-weight="400" fill="#18363a" text-anchor="start">其余请求</text>
+<text x="892" y="742" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">转交 10 条</text>
+<text x="892" y="829" font-size="14" font-weight="400" fill="#18363a" text-anchor="start">不转交 40 条</text>
 </g>
 <g id="node-four-gpt"><rect x="982" y="725" width="185" height="47" rx="6" fill="#ecf2f8" stroke="#99b0c6" stroke-width="1.4"/>
 <text x="1074.5" y="754.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">GPT 独立裁决</text>

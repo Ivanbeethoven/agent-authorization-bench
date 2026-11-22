@@ -22,7 +22,7 @@ details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{marg
 <section id="parameter-routing"><h2>先由 DeepSeek 初判，再由 Jev 核对授权</h2>
 <p>主表使用三项各 50 条新请求。Jev Boundary 的 50 条来自公开历史审查库，情境和动作的组合均未在本项目出现过。三种转交方法各用 10 次 GPT‑6.2 Sol 审查，纯 DeepSeek 独立作答。下图按同一条 0% 至 100% 的刻度并排比较准确率。</p>
 <div id="parameter-legend" class="budget-legend" aria-label="准确率图例"></div><div id="parameter-plots" class="budget-plots"></div>
-<p id="parameter-finding"></p><p>按历史收益选择 GPT 的旧版也答对 139 条，误放行 0 条，正确放行 57 条。新版在 AuthGateBench 少答对 1 条，两版在 DelegationBench 都答对 50 条。Jev Boundary 的两处纠正都把暂缓改成了参考答案要求的拒绝，同时有一条原本正确的允许被改成暂缓。正确数和合法放行数反映了不同的变化。</p>
+<p id="parameter-finding"></p><p>按历史收益选择 GPT 的旧版也答对 139 条，误放行 0 条，正确放行 57 条。新版在 AuthGateBench 少答对 1 条，两版在 DelegationBench 都答对 50 条。Jev Boundary 两道公开手册题从暂缓改为拒绝，命中历史参考，一道内部共享题从允许改为暂缓。三道题均有条款边界或信息不足的问题。<a data-report="methods" data-section="error-audit" href="四种权限审查方案详解.html#error-audit">查看 17 道错例的逐题审查</a></p>
 <div class="filters"><label>查看明细 <select id="parameter-scope"><option value="main">三项与合计</option><option value="AuthGateBench">AuthGateBench</option><option value="DelegationBench">DelegationBench</option><option value="Jev Boundary">Jev Boundary 与来源明细</option><option value="initial_all">含正式测试题的对照</option></select></label></div>
 <div class="scroll" id="parameter-table"></div>
 <p class="note">误放行为错误允许数／应阻止数。合法放行为正确允许数／应允许数。纠正和改错均相对同一次 DeepSeek 初判。三项样本量相同，总准确率也等于三项等权平均准确率。P50、P95 分别为单条请求所需各阶段耗时之和的中位数和第 95 百分位数，未计入离线按配额排序的等待时间。</p>

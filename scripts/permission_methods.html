@@ -9,12 +9,13 @@
 @media print{header{background:white;color:var(--ink);padding:0}header p{color:var(--ink)}nav,.toggles,.sources,select,footer{display:none}.wrap{width:100%}.grid{display:block}.method{margin:8px 0}.tablebox{overflow:visible}.numbers{white-space:normal}section{padding:10px 0}}
 .flow-view{width:100%;overflow-x:auto;background:white;border:1px solid var(--rule);border-radius:5px;margin-top:14px}.flow-view svg{width:100%;height:auto;display:block}.flow-view.zoom svg{min-width:1320px}.flow-tools{display:flex;gap:8px;flex-wrap:wrap}.flow-caption{color:var(--muted);font-size:14px;margin-top:8px}
 @media print{.flow-tools{display:none}.flow-view.zoom svg{min-width:0}.flow-view{overflow:visible;break-inside:avoid}}
+.audit-filters{display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;margin:15px 0 5px}.audit-list details{border-top:1px solid var(--rule);padding:8px 0}.audit-list summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}.audit-list .meta{color:var(--muted);font-size:13px;margin:5px 0}.audit-list dl{margin:7px 0}.audit-list dt{font-weight:650}.audit-list dd{margin:0 0 7px}.audit-list table{width:auto}.audit-list td{white-space:normal}.sensitivity{margin-top:18px}
 </style></head>
-<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#flow">方法原理图</a><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a></nav>
+<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#flow">方法原理图</a><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a><a href="#error-audit">逐题审查错例</a></nav>
 <h1>四种 Agent 权限审查方案</h1><p>给定用户原话、当前状态和即将执行的动作，谁来决定是否放行？四种方案的差异，在于 Jev 何时介入、怎样选择值得复核的请求，以及谁给出最终决定。</p></div></header>
 <main class="wrap">
 <section id="flow"><div class="sectionhead"><h2>四种方案的决策流程</h2><div class="flow-tools"><button id="flow-zoom" type="button" aria-pressed="false" aria-controls="flow-view">放大查看</button><button id="flow-save" type="button">下载矢量图</button></div></div>
-<figure><div class="flow-view" id="flow-view" tabindex="0" aria-label="四种方案的流程对照，放大后可左右滚动">__REVIEW_DIAGRAM__</div><figcaption class="flow-caption">第二、三种先选择审查模型。第四种先取得 DeepSeek 的初判，只有进入复核名额时才由 GPT 替换初判。</figcaption></figure></section>
+<figure><div class="flow-view" id="flow-view" tabindex="0" aria-label="四种方案的流程对照，放大后可左右滚动">__REVIEW_DIAGRAM__</div><figcaption class="flow-caption">每项 50 条请求中，按预算选出的 10 条交给 GPT 独立裁决。Jev Boundary 的两批分别选 6 条和 4 条。另 40 条在方法二、三中交给 DeepSeek，在方法四中直接沿用已有的 DeepSeek 初判。两条分支都可能放行或阻止动作。</figcaption></figure></section>
 <section id="methods"><h2>从一次直接判断，到有预算的复核</h2>
 <p>实验只评估动作执行前的权限判断。原始记录中的政策和用户授权决定了权限边界，工具返回的信息可以说明库存、对象或状态。GPT‑6.2 Sol 收到转交时独立阅读原始记录，给出该任务允许的决定。需要用户另行授权的请求，在复核后仍可要求授权。</p>
 <div class="grid">
@@ -35,7 +36,7 @@
 <ol class="path" aria-label="处理顺序"><li>DeepSeek 初判</li><li>Jev 核对</li><li>Jev 判断是否值得复核</li></ol>
 <p>第一次 Jev 调用读取原始材料及 DeepSeek 的初判，对照四项内容。</p>
 <ul><li><strong>操作与对象</strong>，例如起草、提交是否属于同一步。</li><li><strong>接收方与范围</strong>，例如指定小组和公开分享的差别。</li><li><strong>数量与后果</strong>，例如金额、剩余库存、期限或不可撤销的承诺。</li><li><strong>授权与政策</strong>，例如批准是否已生效，例外条件是否满足。</li></ul>
-<p>每项标为已覆盖、冲突、未知或无关。Jev 从给出的原文片段中选一条作为主要依据，也可以不选。第二次 Jev 调用结合原文和四项结果估计 GPT 纠正初判的机会。进入名额的请求采用 GPT 的独立决定，其余沿用初判。</p>
+<p>每项标为已覆盖、冲突、未知或无关。Jev 从给出的原文片段中选一条作为主要依据，也可以不选。第二次 Jev 调用结合原文和四项结果估计 GPT 纠正初判的机会。被选中转交的 10 条采用 GPT 的独立决定，另 40 条沿用初判。</p>
 <p><strong>这两次复读值得吗？</strong> 四项检查依靠模型解释文字，数量、范围等约束尚未交给独立的程序验证。它与第三种方法同为 139/150，单条耗时中位数却从 2.59 秒增至 4.43 秒，还多放行了 1 条不该放行的请求。因此本轮把它作为检验额外复核价值的对照。下方库存例子展示了两次复核仍会遗漏的算术条件。</p></article>
 </div></section>
 <section id="separation"><h2>历史纠错收益如何与本轮测试分开？</h2>
@@ -57,7 +58,20 @@
 <label>评测范围<select id="scope"><option value="all">三项合计</option><option>AuthGateBench</option><option>DelegationBench</option><option>Jev Boundary</option></select></label></div>
 <div class="tablebox" tabindex="0" aria-label="成本与判断质量"><table class="numbers"><thead><tr><th>方案</th><th>准确率</th><th>误放行</th><th>合法放行</th><th>纠正／改错</th><th>单条 P50</th><th>本批可计费用</th><th>GPT 调用</th></tr></thead><tbody id="results-rows"></tbody></table></div>
 <p class="note" id="scope-note"></p><p class="note">误放行分母为应阻止、暂缓或拒绝的请求数，合法放行分母为应允许数。纠正和改错均相对纯 DeepSeek。单条 P50 为处理阶段耗时之和的中位数，费用包含所需的 Jev 和 DeepSeek 调用。GPT 金额未披露，调用次数单列。</p>
-<p class="case-lesson"><strong>这批数据更支持按历史纠错收益转交。</strong> 它与逐项核对都答对 139/150 条，但前者误放行 0 条、正确放行 57 条，后者分别为 1 条和 56 条。逐项核对在 Jev Boundary 多答对 1 条，其中两条暂缓被正确改为拒绝，也有一条合法请求从允许变成了暂缓。</p></section>
+<p class="case-lesson"><strong>这批数据更支持按历史纠错收益转交。</strong> 它与逐项核对都答对 139/150 条，但前者误放行 0 条、正确放行 57 条，后者分别为 1 条和 56 条。按历史参考计分，逐项核对在 Jev Boundary 多答对 1 条。两道公开手册题从暂缓改为拒绝，命中历史参考，一道内部共享题从允许改为暂缓。三道题的条款边界或授权信息都值得复核。</p></section>
+<section id="error-audit"><h2>错在模型，还是题目难以裁定？</h2>
+<p>四种方案一共评过 168 条不同请求。主表 150 条中有 16 道题至少一种方法答错，另 18 条正式测试对照中有 1 道。以下逐一比对这 17 道题的可见输入、适用政策、发布的参考答案和四种输出。9 道题四种方法均未命中参考答案。多种方法可能共用同一个初判或复核结果。</p>
+<p class="case-lesson"><strong>按本次文本复核，5 道题的答案可以从给定规则推出，1 道的历史参考与明确条款直接冲突，8 道缺少决定性事实，3 道存在条款适用边界。</strong> 9 道四种方法共同答错的题中，1 道与条款直接冲突，7 道缺事实，1 道存在条款适用边界。这些分类是针对错例的事后判断。它们区分了不同的不确定来源，不能用来估计整个题库的错标率。</p>
+<div class="audit-filters">
+<label>评测 <select id="audit-bench"><option value="">全部</option><option>AuthGateBench</option><option>DelegationBench</option><option>Jev Boundary</option></select></label>
+<label>复核结论 <select id="audit-kind"><option value="">全部</option><option value="conflict">参考与明文条款冲突</option><option value="missing">缺少决定性事实</option><option value="boundary">条款适用边界</option><option value="clear">按题面规则可判</option></select></label>
+<label><input type="checkbox" id="audit-common">只看四种方法均答错的题</label>
+</div><p id="audit-count" class="note" role="status"></p><div class="audit-list" id="audit-list"></div>
+<h3 class="sensitivity">参考答案的疑点会不会改变比较？</h3>
+<p>主表仍按发布的参考答案评分。另作两种比较。第一种按作者事先公布的争议清单，从主表去掉命中的全部 3 道题，包括四种方法原本都答对的 t075，以及 t013、t108。第二种保留 150 道题，仅假设新增抄送人的 t108 按 H4 记为暂缓。</p>
+<div class="tablebox" tabindex="0" aria-label="参考答案敏感性分析"><table><thead><tr><th>方法</th><th>原参考答案</th><th>去掉作者标记题</th><th>仅假设 t108 为暂缓</th></tr></thead><tbody id="audit-sensitivity"></tbody></table></div>
+<p class="note">表中为答对条数／该列样本数。两种比较中，按历史纠错收益转交和逐项核对的总正确数仍然相同。逐项核对在 Jev Boundary 的两次纠正来自 t067、t070，两道题都涉及把同类内部手册公开发表。其余有疑点的题保留原参考，待独立复标。</p>
+<p class="note">历史子集的作者把最终人类决定作为评分参照，并保留两位原评审各自的决定。原评分衡量模型与这个决定的一致性。正式测试使用另一份授权政策，显式政策扩展使用作者发布的逻辑条件。<a href="https://doi.org/10.5281/zenodo.22952538">Jev 数据发布</a> · <a href="https://github.com/PieLord757/delegation-check/tree/main/explicit_rules">显式政策与测试题</a></p></section>
 </main><footer class="wrap"><div class="sources"><a data-report="shared" href="三项权限评测与共同错误.html#parameter-routing">查看完整评测、分组与用量</a></div></footer>
 <script type="application/json" id="method-data">__METHOD_GUIDE__</script>
 <script>
@@ -71,6 +85,32 @@ const notes={
 };
 const truth={allow:"允许",block:"阻止"};
 const byId=id=>document.getElementById(id);
+const categories={conflict:"参考与明文条款冲突",missing:"缺少决定性事实",boundary:"条款适用边界",clear:"按题面规则可判"};
+const labels={allow:"允许",block:"阻止",deny:"拒绝",hold:"暂缓",ACT:"执行",ASK_AUTHORIZATION:"征求授权",REQUEST_INFORMATION:"询问事实",REFUSE:"拒绝"};
+function textNode(tag,value,cls){
+  const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e;
+}
+function renderAudit(){
+  const bench=byId("audit-bench").value,kind=byId("audit-kind").value,common=byId("audit-common").checked;
+  const selected=data.audit.cases.filter(c=>(!bench||c.benchmark===bench)&&(!kind||c.category===kind)&&(!common||c.common));
+  byId("audit-count").textContent="显示 "+selected.length+" / "+data.audit.cases.length+" 道错例。展开题目可查看判断理由、四种输出及需要补充的信息。";
+  const sourceNames={scope:"自编授权题",rules:"作者显式政策扩展",archive:"公开历史审查",extra:"补充历史审查",test:"正式测试对照"};
+  byId("audit-list").replaceChildren(...selected.map(c=>{
+    const detail=document.createElement("details"),list=document.createElement("dl");
+    detail.append(textNode("summary",c.title+" · "+categories[c.category]));
+    detail.append(textNode("p",c.benchmark+" · "+sourceNames[c.source]+" · "+c.id+" · 参考答案为"+labels[c.reference]+(c.common?" · 四种方法均与参考不同":""),"meta"));
+    for(const [title,value] of [["题面事实",c.facts],["复核判断",c.judgment],["适用依据",c.rule],["处理建议",c.review]]){
+      list.append(textNode("dt",title),textNode("dd",value));
+    }
+    detail.append(list);
+    if(c.historical)detail.append(textNode("p","原评审 A 选"+labels[c.historical[0]]+"，原评审 B 选"+labels[c.historical[1]]+"。历史最终决定为"+labels[c.historical[2]]+"。"+(c.disputed?"作者另将此题列入争议清单。":""),"meta"));
+    const t=document.createElement("table"),head=t.createTHead().insertRow();
+    for(const label of ["方法","最终输出","给出决定的模型"])head.append(textNode("th",label));
+    const body=t.createTBody();
+    for(const [method,p] of Object.entries(c.predictions))body.append(row([names[method],labels[p.decision],p.routed?"GPT 独立复核":"DeepSeek"]));
+    detail.append(t);return detail;
+  }));
+}
 function row(values){
   const tr=document.createElement("tr");
   values.forEach((value,i)=>{const cell=document.createElement(i?"td":"th");if(!i)cell.scope="row";cell.textContent=value;tr.append(cell)});
@@ -98,6 +138,8 @@ function showScores(){
 }
 document.querySelectorAll("[data-example]").forEach(b=>b.addEventListener("click",()=>showExample(Number(b.dataset.example))));
 byId("scope").addEventListener("change",showScores);
+for(const id of ["audit-bench","audit-kind","audit-common"])byId(id).addEventListener("change",renderAudit);
+byId("audit-sensitivity").replaceChildren(...Object.entries(data.audit.sensitivity).map(([method,v])=>row([names[method],v.official.join("/"),v.omit_disputed.join("/"),v.review_t108.join("/")])));
 byId("flow-zoom").addEventListener("click",()=>{
   const enlarged=byId("flow-view").classList.toggle("zoom");
   byId("flow-zoom").setAttribute("aria-pressed",String(enlarged));
@@ -110,5 +152,5 @@ byId("flow-save").addEventListener("click",()=>{
   a.href=url;a.download="四种权限审查方案原理图.svg";a.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
-showExample(0);showScores();
+showExample(0);showScores();renderAudit();
 </script></body></html>

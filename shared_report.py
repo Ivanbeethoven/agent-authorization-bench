@@ -400,13 +400,72 @@ def publish_tables():
     save("provider_usage.csv", usage)
 
 
+def review_errors(decisions):
+    notes = json.loads((RESULTS / "parameter_router/case_audit.json").read_text("utf8"))
+    by_case = defaultdict(dict)
+    for row in decisions:
+        records = by_case[row["id"]]
+        if row["method"] in records:
+            raise ValueError("Duplicate method within an audited case")
+        records[row["method"]] = row
+    methods = ("deepseek", "prior_raw", "prior_calibrated", "parameters")
+    if any(set(records) != set(methods) for records in by_case.values()):
+        raise ValueError("Missing permission method")
+    bad = {
+        idx
+        for idx, records in by_case.items()
+        if any(r["correct"] == "0" for r in records.values())
+    }
+    if bad != {note["id"] for note in notes["cases"]} or len(bad) != len(
+        notes["cases"]
+    ):
+        raise ValueError("Case audit must cover every observed error exactly once")
+    flagged = set(notes["author_disputed_ids"])
+    for note in notes["cases"]:
+        records = by_case[note["id"]]
+        first = records["deepseek"]
+        if "historical" in note and note["historical"][2] != first["reference"]:
+            raise ValueError("Historical reference differs from scored reference")
+        note.update(
+            benchmark=first["benchmark"],
+            source=first["source"],
+            reference=first["reference"],
+            disputed=note["id"] in flagged,
+            common=all(r["correct"] == "0" for r in records.values()),
+            predictions={
+                m: {
+                    "decision": records[m]["decision"],
+                    "routed": records[m]["routed"] == "1",
+                }
+                for m in methods
+            },
+        )
+    sensitivity = {}
+    for m in methods:
+        main = [r for r in decisions if r["method"] == m and r["source"] != "test"]
+        retained = [r for r in main if r["id"] not in flagged]
+        sensitivity[m] = {
+            "official": [sum(int(r["correct"]) for r in main), len(main)],
+            "omit_disputed": [sum(int(r["correct"]) for r in retained), len(retained)],
+            "review_t108": [
+                sum(
+                    r["decision"] == ("hold" if r["id"] == "t108" else r["reference"])
+                    for r in main
+                ),
+                len(main),
+            ],
+        }
+    return {"cases": notes["cases"], "sensitivity": sensitivity}
+
+
 def render_method_guide(scores):
     from parameter_router_cases import auth_cases
 
     pair = "parameter-router-scope-12"
     cases = {row["id"]: row for row in auth_cases() if row["group"] == pair}
     traces = defaultdict(dict)
-    for row in read("parameter_router/decisions.csv"):
+    decisions = read("parameter_router/decisions.csv")
+    for row in decisions:
         if row["id"] in cases:
             traces[row["id"]][row["method"]] = {
                 "decision": row["decision"],
@@ -423,6 +482,7 @@ def render_method_guide(scores):
     if len(cases) != 2 or any(set(traces[k]) != methods for k in cases):
         raise ValueError("Incomplete paired example for the method guide")
     payload = {
+        "audit": review_errors(decisions),
         "samples": [{**r, "methods": traces[r["id"]]} for r in cases.values()],
         "scores": [
             r
