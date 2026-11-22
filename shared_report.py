@@ -448,6 +448,9 @@ def render():
     payload["triage"] = json.loads(
         (RESULTS / "jev_triage/report.json").read_text("utf8")
     )
+    payload["parameterRouter"] = json.loads(
+        (RESULTS / "parameter_router/report.json").read_text("utf8")
+    )
     template = (ROOT / "scripts/shared_report.html").read_text("utf8")
     assert template.count("__COMPARISON__") == 1
     encoded = json.dumps(

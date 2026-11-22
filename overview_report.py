@@ -53,6 +53,8 @@ PHASES = {
     "commitment_review": "对外承诺配对验证",
     "retained_validation": "保留策略独立复测",
     "jev_triage": "Jev 选择审查模型",
+    "parameter_router": "初判后的逐项核对",
+    "parameter_router_extra": "逐项核对补充情境",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -68,6 +70,7 @@ STAGE_GROUPS = {
     "共同错误与承诺复审": ("shared_review", "commitment_review"),
     "保留策略独立复测": ("retained_validation",),
     "Jev 选择审查模型": ("jev_triage",),
+    "初判后的逐项核对": ("parameter_router", "parameter_router_extra"),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -91,6 +94,7 @@ def inputs():
         "shared_review/provider_usage.csv",
         "retained_validation/provider_usage.csv",
         "jev_triage/provider_usage.csv",
+        "parameter_router/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -539,7 +543,7 @@ def build(audit_dir=None):
     cli = read("reply_review/codex_calls.csv")
     added_cli = [
         json.loads((RESULTS / folder / "report.json").read_text("utf8"))["cli"]
-        for folder in ("retained_validation", "jev_triage")
+        for folder in ("retained_validation", "jev_triage", "parameter_router")
     ]
     new_cli = {
         key: sum(row[key] for row in added_cli)
@@ -572,7 +576,8 @@ def build(audit_dir=None):
         "six": read("authorization_conditions/public_six_pairs.csv"),
         "mask": mask_stats,
         "cli": {
-            "calls": len(cli) + new_cli["calls"],
+            "calls": len(cli)
+            + sum(row.get("attempts", row["calls"]) for row in added_cli),
             "cases": sum(int(r["cases"]) for r in cli) + new_cli["calls"],
             "input": sum(int(r["input_tokens"]) for r in cli) + new_cli["input_tokens"],
             "out": sum(int(r["output_tokens"]) for r in cli) + new_cli["output_tokens"],

@@ -27,6 +27,9 @@
 .\scripts\study.ps1 -Provider deepseek -Study parameter_router -Workers 16
 .\scripts\study.ps1 -Provider jev -Study parameter_router -Workers 16
 uv run codex_judgments.py --parameter-router --workers 8
+.\scripts\study.ps1 -Provider deepseek -Study parameter_router_extra -Workers 12
+.\scripts\study.ps1 -Provider jev -Study parameter_router_extra -Workers 12
+uv run codex_judgments.py --parameter-router-extra --workers 6
 uv run parameter_router_results.py
 uv run shared_report.py --from-tables
 uv run --with matplotlib overview_report.py

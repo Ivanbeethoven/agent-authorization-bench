@@ -100,7 +100,11 @@ def delegation_cases():
 
 @lru_cache(maxsize=1)
 def config():
-    ids, states = prior.past(ignore=(STUDY, EXTRA))
+    manifest_path = DEST / "sample_ids.json"
+    manifest = (
+        json.loads(manifest_path.read_text("utf8")) if manifest_path.exists() else None
+    )
+    ids, states = (set(), set()) if manifest else prior.past(ignore=(STUDY, EXTRA))
 
     def unused(rows):
         return [
@@ -132,7 +136,10 @@ def config():
         ]
     )
     scope = unused(auth_cases())
-    rules = rotation(unused(delegation_cases()), 50, lambda r: r["group"], rng)
+    rules_pool = unused(delegation_cases())
+    rules = (
+        rules_pool if manifest else rotation(rules_pool, 50, lambda r: r["group"], rng)
+    )
     _, aq, ac = ds.authgate(2)
     _, dq, dc = ds.delegation(2)
     plans = {}
@@ -140,11 +147,15 @@ def config():
         ("scope", scope, aq, ac, 50),
         ("rules", rules, dq, dc, 50),
         ("test", test, bq, bc, 18),
-        ("archive", rng.sample(archive, 32), bq, bc, 32),
+        ("archive", archive if manifest else rng.sample(archive, 32), bq, bc, 32),
     ]:
+        if manifest:
+            index = {r["id"]: r for r in rows}
+            rows = [index[idx] for idx in manifest[name]]
+        else:
+            rng.shuffle(rows)
         if len(rows) != n:
             raise ValueError(("Unexpected fresh sample count", name, len(rows)))
-        rng.shuffle(rows)
         plans[name] = {"instructions": question, "choices": choices, "samples": rows}
     all_rows = [r for p in plans.values() for r in p["samples"]]
     if (
@@ -169,7 +180,11 @@ def extra_config():
     base_plans, protocol = config()
     folder = ds.RAW / "jev/historical/data"
     policy = (folder / "policy.md").read_text("utf-8-sig")
-    ids, used = prior.past(ignore=(EXTRA,))
+    manifest_path = DEST / "sample_ids.json"
+    manifest = (
+        json.loads(manifest_path.read_text("utf8")) if manifest_path.exists() else None
+    )
+    ids, used = (set(), set()) if manifest else prior.past(ignore=(EXTRA,))
     pairs = set()
     for text in used:
         s = json.loads(text)
@@ -178,7 +193,7 @@ def extra_config():
     pool = []
     for r in ds.records(folder / "fixtures.jsonl"):
         key = prior.signature([r["state"], r["proposed_action"]])
-        if r["id"] in ids or key in pairs:
+        if not manifest and (r["id"] in ids or key in pairs):
             continue
         pairs.add(key)
         pool.append(
@@ -193,7 +208,13 @@ def extra_config():
                 "recorded audit",
             )
         )
-    rows = Random(SEED + 1).sample(pool, 18)
+    if manifest:
+        index = {r["id"]: r for r in pool}
+        rows = [index[idx] for idx in manifest["extra"]]
+    else:
+        rows = Random(SEED + 1).sample(pool, 18)
+    if len(rows) != 18 or len({r["id"] for r in rows}) != 18:
+        raise ValueError("Unexpected supplemental cohort")
     return {"extra": {**base_plans["archive"], "samples": rows}}, {
         **protocol,
         "seed": SEED + 1,

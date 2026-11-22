@@ -1,0 +1,10 @@
+[
+  {
+    "study": "parameter_router",
+    "batch": "parameter_router.test.0",
+    "successful_start_utc": "2026-11-22T14:21:20.645764+00:00",
+    "prior_attempts": 1,
+    "elapsed_seconds": 240,
+    "usage_available": false
+  }
+]

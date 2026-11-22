@@ -12,6 +12,8 @@ Jev 转交实验让 Jev 选择 DeepSeek 或 GPT 审查每一条权限请求，�
 
 ## 错误案例与权限判断方法
 
+初判后的逐项核对实验在三项任务各取 50 条新请求，给三种转交方法相同的 GPT 审查次数。网页并列展示三项准确率，列出误放行、合法放行、纠正、改错、路径耗时与费用。正式测试与历史审查两种 Jev 数据也可分开查看。[网页结果](results/shared_review/三项权限评测与共同错误.html#parameter-routing) · [取样与转交规则](PARAMETER_ROUTER.md) · [评分表](results/parameter_router/scores.csv) · [逐条评分](results/parameter_router/decisions.csv)
+
 实验比较纯 DeepSeek、Jev 与 DeepSeek 的逐参数复审、最小干预提问、跨家族专家示例及本地 Codex 的 GPT‑6.2 Sol。报告可按数据集和批次查看准确率、误放行、耗时及费用，并逐条比较分歧。研究记录区分未使用的新请求、未使用的策略家族和历史回归。
 
 [权限判断错误分析与方法比较](results/reply_review/权限判断错误分析与方法比较.html) · [实验设定](REPLY_EXPERIMENT.md)

@@ -15,9 +15,18 @@ main{padding-bottom:55px}section{margin-top:35px;scroll-margin-top:12px}h2{font-
 .filters{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:12px 0 2px}.filters label{font-size:14px;display:inline-flex;align-items:center;gap:6px}.filters input{max-width:240px}.takeaways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.takeaway,.box{padding:15px 17px}.takeaway strong{display:block;font-size:22px;color:var(--teal)}.takeaway p{font-size:14px}.box{margin:10px 0}.box h3{font-size:17px}.box p{max-width:110ch}
 details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{margin-right:8px}summary small{display:inline-block}details[open] summary{margin-bottom:8px}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.case-grid div{border-left:3px solid var(--line);padding-left:9px}.case-grid small{display:block}.case-id{overflow-wrap:anywhere;font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;margin-right:8px}.decisions{display:flex;flex-wrap:wrap;gap:6px 15px;border-top:1px solid var(--line);padding-top:7px;font-size:13px}.answer{font-weight:600}.kicker{font-size:13px;color:#49675c}.compact{margin:0;padding-left:20px}.compact li{margin:4px 0}.browse-count{margin:8px 0;color:var(--muted);font-size:14px}.empty{padding:14px;background:white;border-radius:5px}
 @media(max-width:900px){.mobile{display:block}.takeaways{grid-template-columns:1fr}.takeaway{padding:9px 13px}.takeaway strong{font-size:19px}.head{align-items:flex-start}}@media(max-width:580px){.case-grid{grid-template-columns:1fr}.filters{gap:6px}.deck{gap:8px;min-width:930px}.deck-scroll{scroll-snap-type:x proximity}.panel{scroll-snap-align:start}header{padding:17px 0 21px}section{margin-top:26px}}@media print{@page{size:landscape;margin:10mm}header{color:var(--ink);background:white}header p,.note{color:var(--ink)}nav,.tabs,.filters,.mobile{display:none}.deck{min-width:0}.scroll,.deck-scroll{overflow:visible}section{break-inside:auto}.panel,.takeaway,details{break-inside:avoid}}
+.budget-plots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.budget-plots figure{margin:7px 0;background:white;border:1px solid var(--line);border-radius:8px;padding:14px}.budget-plots figcaption{font-weight:650;font-size:17px}.budget-plots .bar-row{display:grid;grid-template-columns:1fr 58px;align-items:center;gap:7px;margin:8px 0}.budget-plots .bar{background:#edf1ee;height:10px;border-radius:3px;overflow:hidden}.budget-plots .bar i{display:block;height:100%}.budget-plots output{font-variant-numeric:tabular-nums;text-align:right;font-size:13px}.budget-legend{display:flex;gap:16px;flex-wrap:wrap}.budget-legend span{display:inline-flex;align-items:center;gap:5px;font-size:13px}.budget-legend i{width:12px;height:8px;border-radius:2px}#parameter-table td:first-child{font-weight:600}#parameter-table tbody+tbody{border-top:2px solid #afc2b8}@media(max-width:780px){.budget-plots{grid-template-columns:1fr}.budget-plots figure{margin:0}}
 </style></head>
-<body><header><div><nav aria-label="本页章节"><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#independent">最佳方案与复测</a><a href="#triage">Jev 选择审查模型</a><a href="#review">历史方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p id="winner-line"></p></div></header>
+<body><header><div><nav aria-label="本页章节"><a href="#parameter-routing">同预算转交</a><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#independent">最佳方案与复测</a><a href="#triage">Jev 选择审查模型</a><a href="#review">历史方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p id="winner-line"></p></div></header>
 <main>
+<section id="parameter-routing"><h2>先由 DeepSeek 初判，再由 Jev 核对授权</h2>
+<p>主表使用三项各 50 条新请求。Jev Boundary 的 50 条来自公开历史审查库，情境和动作的组合均未在本项目出现过。三种转交方法各用 10 次 GPT‑6.2 Sol 审查，纯 DeepSeek 独立作答。下图按同一条 0% 至 100% 的刻度并排比较准确率。</p>
+<div id="parameter-legend" class="budget-legend" aria-label="准确率图例"></div><div id="parameter-plots" class="budget-plots"></div>
+<p id="parameter-finding"></p><p>按历史收益选择 GPT 的旧版也答对 139 条，误放行 0 条，正确放行 57 条。新版在 AuthGateBench 少答对 1 条，两版在 DelegationBench 都答对 50 条。Jev Boundary 的两处纠正都把暂缓改成了参考答案要求的拒绝，同时有一条原本正确的允许被改成暂缓。正确数和合法放行数反映了不同的变化。</p>
+<div class="filters"><label>查看明细 <select id="parameter-scope"><option value="main">三项与合计</option><option value="AuthGateBench">AuthGateBench</option><option value="DelegationBench">DelegationBench</option><option value="Jev Boundary">Jev Boundary 与来源明细</option><option value="initial_all">含正式测试题的对照</option></select></label></div>
+<div class="scroll" id="parameter-table"></div>
+<p class="note">误放行为错误允许数／应阻止数。合法放行为正确允许数／应允许数。纠正和改错均相对同一次 DeepSeek 初判。三项样本量相同，总准确率也等于三项等权平均准确率。P50、P95 分别为单条请求所需各阶段耗时之和的中位数和第 95 百分位数，未计入离线按配额排序的等待时间。</p>
+<details><summary>样本来源、预算分配与实际费用</summary><p>AuthGateBench 的 700 条公开题均已用过，本次采用自编的 25 对授权范围题，每对只改变用户原话。DelegationBench 取自作者发布的显式政策扩展，抽取 50 条测试题。这个子集的正确答案只有执行和征求授权，模型仍从四个委托选项中作答。</p><p>Jev Boundary 主表以当时记录的人类决定计分，第一次抽取 32 条，补充抽取 18 条，各方法分别转交 6 条和 4 条。另保留含 18 条正式测试题的对照。这些题的政策组合是新的，情境和动作曾出现过，参考答案来自作者的政策标签。两种 150 条汇总共用 132 条请求。补充抽样规则在查看本次得分前固定。</p><p>旧版按 Jev 的转交概率或已冻结的历史分组收益排序。新版让 Jev 先核对动作与对象、接收方与可见范围、数量与后果、授权与政策，再引用原文并判断高级模型能否纠正初判。三种方法均按批选取分数最高的请求。GPT 单独读取原始请求，看不到先前的判断。</p><p id="parameter-usage"></p><p>数据与计价来源见 <a href="https://github.com/PieLord757/delegation-check/tree/main/explicit_rules">DelegationBench 显式政策</a>、<a href="https://doi.org/10.5281/zenodo.22952538">Jev Boundary 数据</a> 和 <a href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing/">DeepSeek 官方价格</a>。</p></details></section>
 <section id="charts"><div class="head"><div><h2>成本与准确率</h2><p class="sub">每张图对应一项评测。同一行共用横纵坐标，越靠左费用越低，越靠上准确率越高。</p></div><div class="tabs" id="switches" role="group" aria-label="比较批次"></div></div>
 <p id="scope-line" class="note"></p>
 <div class="filters"><label><input id="show-all" type="checkbox">显示全部已测策略</label><span id="selection-count" class="note" role="status"></span></div>
@@ -177,7 +186,7 @@ function validationTables(){
  const mains=["new_pairs","new_delegation","new_boundary"];
  const result=(k,m)=>V.scores.find(r=>r.set===k&&r.method===m);
  const selected=V.combined.find(r=>r.method===V.winner);
- $("winner-line").textContent="本批首选为"+title(V.winner)+"，三项共答对 "+selected.correct+"/150 条，误放行 "+selected.false_allows+" 条。";
+ $("winner-line").textContent="最新实验比较三种转交规则。此前的保留策略复测选出"+title(V.winner)+"，该轮共答对 "+selected.correct+"/150 条，误放行 "+selected.false_allows+" 条。";
  const h=V.posthoc;
  $("posthoc-choice").textContent="用本批结果逐项选法，三项合计正确 "+h.correct+"/150，误放行 "+h.false_allows+" 条，合法放行 "+h.released+" 条，费用 "+fee(h)+"，P50 为 "+h.p50_s+" 秒。这是同批选出并计分的探索性组合，适合列入下一次独立复测。";
  $("task-winners").innerHTML=mains.map((k,i)=>{const r=result(k,V.best[k]),base=result(k,"deepseek_direct");return '<article class="takeaway"><small>'+esc(bench[i])+' · '+esc(r.source)+'</small><strong>'+esc(title(r.method))+'</strong><p>正确 '+r.correct+'/50，纯 DeepSeek '+base.correct+'/50。误放行 '+r.false_allows+'/'+r.negative+'，纯 DeepSeek '+base.false_allows+'/'+base.negative+'。本批 '+esc(fee(r))+'，P50 '+r.p50_s+' 秒。</p></article>'}).join("");
@@ -219,5 +228,39 @@ function triageTable(reset){
  $("gate-cost").textContent="新增实验调用 "+data.usage.find(u=>u.provider==="jev").calls+" 次 Jev、"+data.usage.find(u=>u.provider==="deepseek").calls+" 次 DeepSeek，共折算 "+money(data.usage.reduce((a,r)=>a+Number(r.estimated_cny),0))+"。另外实测 "+data.cli.calls+" 次本地 GPT；人民币金额未披露。历史模型判断按记录复用。";
 }
 $("gate-phase").addEventListener("input",()=>triageTable(true));$("gate-bench").addEventListener("input",()=>triageTable(false));
-tabs();buildDeck();changes();caseList();validationTables();triageTable(true);
+const reviewerMethods={
+ deepseek:["纯 DeepSeek","#285da4"],
+ prior_raw:["旧版 · 转交概率","#98702b"],
+ prior_calibrated:["旧版 · 历史收益","#825d86"],
+ parameters:["新版 · 初判后逐项核对","#176b59"]
+};
+function parameterTable(){
+ const scores=D.parameterRouter.scores, chosen=$("parameter-scope").value;
+ const groups=chosen==="main"?["all",...bench]:chosen==="Jev Boundary"?[chosen,"archive","extra","initial_jev","test"]:chosen==="initial_all"?["initial_all","AuthGateBench","DelegationBench","initial_jev"]:[chosen];
+ const labels={all:"三项等权合计",initial_all:"三项合计（含正式题）",initial_jev:"Jev（含正式题）",test:"正式测试 · 18 条",archive:"首次抽取 · 32 条",extra:"补充抽取 · 18 条"};
+ const cols=["评测","方法","准确率","误放行","合法放行","纠正","改错","GPT 次数","P50 秒","P95 秒","本批人民币费用"];
+ const body=groups.map(g=>"<tbody>"+scores.filter(r=>r.scope===g).map(r=>{
+   const fields=[labels[g]||g,reviewerMethods[r.method][0],pct(r.correct,r.n)+" ("+r.correct+"/"+r.n+")",r.false_allow+"/"+r.negative,r.legal_allow+"/"+r.positive,r.fixed,r.lost,r.routed+(r.retry?"（另重试 "+r.retry+" 次）":""),r.p50_s.toFixed(2),r.p95_s.toFixed(2),money(r.api_cny)+(r.routed?" + GPT 未披露":"")];
+   return "<tr>"+fields.map(x=>"<td>"+esc(x)+"</td>").join("")+"</tr>";
+ }).join("")+"</tbody>").join("");
+ $("parameter-table").innerHTML="<table><thead><tr>"+cols.map(c=>"<th>"+c+"</th>").join("")+"</tr></thead>"+body+"</table>";
+}
+function parameterPlots(){
+ const report=D.parameterRouter;
+ $("parameter-legend").innerHTML=Object.values(reviewerMethods).map(([label,color])=>'<span><i style="background:'+color+'"></i>'+esc(label)+'</span>').join("");
+ $("parameter-plots").innerHTML=bench.map(name=>{
+   const rows=report.scores.filter(r=>r.scope===name);
+   return "<figure><figcaption>"+name+"</figcaption>"+rows.map(r=>{
+     const [label,color]=reviewerMethods[r.method],pc=pct(r.correct,r.n);
+     return '<div class="bar-row" aria-label="'+esc(label+" "+pc)+'" title="'+esc(label+" "+r.correct+"/"+r.n)+'"><div class="bar"><i style="background:'+color+';width:'+pc+'"></i></div><output>'+pc+'</output></div>';
+   }).join("")+"</figure>";
+ }).join("");
+ const overall=report.scores.filter(r=>r.scope==="all");
+ const direct=overall.find(r=>r.method==="deepseek"), newer=overall.find(r=>r.method==="parameters");
+ $("parameter-finding").textContent="三项合计，新版答对 "+newer.correct+"/"+newer.n+" 条，纯 DeepSeek 答对 "+direct.correct+"/"+direct.n+" 条。新版纠正 "+newer.fixed+" 条、改错 "+newer.lost+" 条，误放行 "+newer.false_allow+" 条，合法放行 "+newer.legal_allow+" 条。";
+ const bill=["deepseek","jev"].map(p=>report.usage.filter(r=>r.provider===p).reduce((n,r)=>n+r.calls,0)+" 次 "+(p==="jev"?"Jev":"DeepSeek")).join("、");
+ $("parameter-usage").textContent="实验实际发起 "+bill+"，可计费用合计 "+money(report.usage.reduce((v,r)=>v+Number(r.estimated_cny),0))+"。三种策略所选请求取并集后，完成 "+report.cli.calls+" 次单题 GPT 审查，共发起 "+report.cli.attempts+" 次。含正式测试题的对照中有一次在 240 秒后超时，已计入对应方法的耗时。严格独立的主表没有 GPT 重试。GPT 人民币费用未披露。每个方法的表格按它单独运行时需要的阶段计费，重复使用的模型判断在实验总开销中只计一次。";
+}
+$("parameter-scope").addEventListener("input",parameterTable);
+tabs();buildDeck();changes();caseList();validationTables();triageTable(true);parameterPlots();parameterTable();
 </script></body></html>
