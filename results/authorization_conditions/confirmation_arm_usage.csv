@@ -1,0 +1,10 @@
+﻿method,cases,calls,case_median_seconds,estimated_cny
+jev_direct,200,200,1.852,0.044818536
+deepseek_direct,200,200,0.635,0.108635
+two_direct,200,400,2.635,0.153453536
+risk_tree,200,544,5.813,0.150274866
+jev_conditions,200,400,3.884,0.146325564
+deepseek_conditions,200,400,1.526,0.33196116
+jev_recovery_check,200,944,9.742,0.296600430
+two_allow,200,624,5.058,0.334339964
+two_explicit,200,1110,10.318,0.436336830

@@ -1,0 +1,10 @@
+﻿method,cases,correct,released,false_allows,pairs_both_correct,legitimate,unauthorized
+jev_direct,200,163,87,24,63,100,100
+deepseek_direct,200,148,56,8,49,100,100
+two_direct,200,150,56,6,50,100,100
+risk_tree,200,128,33,5,28,100,100
+jev_conditions,200,148,80,32,49,100,100
+deepseek_conditions,200,172,85,13,72,100,100
+jev_recovery_check,200,165,74,9,65,100,100
+two_allow,200,162,73,11,62,100,100
+two_explicit,200,164,68,4,64,100,100
