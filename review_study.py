@@ -169,10 +169,12 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study == "parameter_router":
+    if study in ("parameter_router", "parameter_router_extra"):
         import parameter_router as design
 
-        plans, protocol = design.config()
+        plans, protocol = (
+            design.extra_config() if study == design.EXTRA else design.config()
+        )
         if provider == "jev":
             from study_report import inputs
 
@@ -314,7 +316,7 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
-            if study == "parameter_router":
+            if study in ("parameter_router", "parameter_router_extra"):
                 plan = plans[name]
                 if provider == "deepseek":
                     measure(
@@ -484,6 +486,7 @@ if __name__ == "__main__":
         "study",
         choices=[
             "parameter_router",
+            "parameter_router_extra",
             "jev_triage",
             "retained_validation",
             "shared_review",

@@ -178,12 +178,21 @@ def classify(batch, exe):
         }
 
 
-def run(workers, first_only, retained=False, triage=False):
+def run(
+    workers,
+    first_only,
+    retained=False,
+    triage=False,
+    parameter_router=False,
+    extra=False,
+):
     exe = shutil.which("codex.exe")
     if not exe:
         raise RuntimeError("Local codex.exe not found")
     folder = (
-        ROOT / "jev_triage"
+        ROOT / ("parameter_router_extra" if extra else "parameter_router")
+        if parameter_router or extra
+        else ROOT / "jev_triage"
         if triage
         else ROOT / "retained_validation"
         if retained
@@ -193,18 +202,34 @@ def run(workers, first_only, retained=False, triage=False):
     log = folder / "calls.jsonl"
     with pilot.exclusive(folder / "run.lock"):
         seen = {r["batch"] for r in ds.records(log)} if log.exists() else set()
-        if retained or triage:
-            if triage:
+        if retained or triage or parameter_router or extra:
+            if parameter_router or extra:
+                from parameter_router import selected_inputs
+
+                alias = "parameter_router_extra" if extra else "parameter_router"
+                plans = selected_inputs(alias)
+                manifest = {
+                    k: [r["id"] for r in p["samples"]] for k, p in plans.items()
+                }
+                frozen = folder / "selection.json"
+                if frozen.exists() and json.loads(frozen.read_text("utf8")) != manifest:
+                    raise ValueError("Different senior reviewer selection")
+                if not frozen.exists():
+                    from review_study import atomic
+
+                    atomic(frozen, manifest)
+            elif triage:
                 from jev_triage import FRESH, config
 
                 all_plans, _ = config()
                 plans = {FRESH: all_plans[FRESH]}
+                alias = "triage"
             else:
                 from retained_validation import config
 
                 plans, _ = config()
+                alias = "retained"
 
-            alias = "triage" if triage else "retained"
             candidates = (
                 (
                     f"{alias}.{name}.{i}",
@@ -245,5 +270,14 @@ if __name__ == "__main__":
     scope = parser.add_mutually_exclusive_group()
     scope.add_argument("--retained", action="store_true")
     scope.add_argument("--triage", action="store_true")
+    scope.add_argument("--parameter-router", action="store_true")
+    scope.add_argument("--parameter-router-extra", action="store_true")
     args = parser.parse_args()
-    run(args.workers, args.first_only, args.retained, args.triage)
+    run(
+        args.workers,
+        args.first_only,
+        args.retained,
+        args.triage,
+        args.parameter_router,
+        args.parameter_router_extra,
+    )

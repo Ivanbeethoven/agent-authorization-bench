@@ -65,7 +65,7 @@ def signature(state):
     return json.dumps(state, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
 
 
-def past(ignore=(STUDY, "jev_triage", "parameter_router")):
+def past(ignore=(STUDY, "jev_triage", "parameter_router", "parameter_router_extra")):
     ids, states = set(), set()
     for file in sorted(BASE.glob("*/*/plan.json")):
         if file.parents[1].name in ignore:

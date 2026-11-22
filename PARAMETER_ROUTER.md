@@ -10,11 +10,24 @@
 
 所有输入逐条检查编号与完整可见状态，排除项目此前所有实验。AuthGateBench 的结果衡量这些自编题上的表现。DelegationBench 的参考答案仅涵盖执行和征求授权。Jev 的两种来源单列结果。
 
+在查看本轮模型得分前，再按情境原文和候选动作检查一次。18 条正式测试题采用不同的政策，但情境与动作的组合已在早期实验出现。32 条历史记录的组合均为首次使用。为评估首次出现的情境，从同一公开历史库另抽 18 条，冻结种子 926114，按情境与动作排除全部旧题以及同批重复。三项一并比较时，Jev 的严格独立组使用 32 加 18 条历史记录，保留原先 32 条的 6 次转交，新增 18 条使用 4 次。另行展示原先含正式测试题的结果。两个 150 条汇总共用 132 条记录。
+
 1. 纯 DeepSeek 读取完整请求，一次作出决定。
 2. 上一版的 Jev 先选择审查者。两种旧排序分别采用其转交概率，及上一轮 236 条校准题上已拟合的分组收益，再以转交概率打破同分。比较时按配额取排序最靠前的请求，替代原先各自的阈值。旧版只调用它选中的审查模型。
 3. 新版先保留同一次 DeepSeek 初判。Jev 读取完整记录与初判，分别核对操作与对象、接收方与可见范围、后果与数量、授权与政策条件。每项输出已覆盖、冲突、未知或无关，并从有字段来源的原文片段中选一条作为主要依据，也可选择无合适片段。第二次 Jev 调用读取原始记录、四项结果和所选原文，判断 GPT 是否可能纠正初判。按这次的转交概率在同一配额内选题。未转交时沿用 DeepSeek，转交时采用 GPT 的独立决定。GPT 看不到前面的判断，也无法补发授权。
-4. 每种转交方法在每个 benchmark 恰好使用 10 次 GPT。三种方法共同选中的题只实测一次 GPT，按各方法实际选择计入单独运行的费用和耗时。单条时间为所需各阶段实测耗时之和，按批排序等待时间单列为方法限制。该比较适用于离线固定预算。
+4. 每种转交方法在每个 benchmark 恰好使用 10 次 GPT。多种方法选中的同一道题只实测一次 GPT，按各方法实际选择计入单独运行的费用和耗时。单条时间为所需各阶段实测耗时之和，未计入按批排序的等待时间。该比较适用于离线固定预算。
 
 主要结果为三项等权的原生标签准确率、误放行和合法放行，并报告相对纯 DeepSeek 的纠正与改错条数。路径费用按返回用量计价，GPT 单列调用次数。计时报告单条中位数和第 95 百分位数。推荐替换通用方法须同时检查每项的准确率、误放行和合法放行。
 
 [DelegationBench 显式政策原题](https://github.com/PieLord757/delegation-check/tree/main/explicit_rules) · [Jev Boundary 数据](https://doi.org/10.5281/zenodo.22952538)
+
+已有项目公开数据和本地凭据时，可按以下顺序重做实验。脚本按样本及阶段记录已完成的判断。
+
+```powershell
+.\scripts\study.ps1 -Provider deepseek -Study parameter_router -Workers 16
+.\scripts\study.ps1 -Provider jev -Study parameter_router -Workers 16
+uv run codex_judgments.py --parameter-router --workers 8
+uv run parameter_router_results.py
+uv run shared_report.py --from-tables
+uv run --with matplotlib overview_report.py
+```

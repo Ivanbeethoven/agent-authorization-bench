@@ -14,6 +14,7 @@ from parameter_router_cases import auth_cases
 from review_design import q
 
 STUDY = "parameter_router"
+EXTRA = "parameter_router_extra"
 SEED = 926113
 DEST = ds.ROOT / "results" / STUDY
 SOURCE_URL = "https://raw.githubusercontent.com/PieLord757/delegation-check/main/explicit_rules/cases/synthetic_test_cases.json"
@@ -99,7 +100,7 @@ def delegation_cases():
 
 @lru_cache(maxsize=1)
 def config():
-    ids, states = prior.past(ignore=(STUDY,))
+    ids, states = prior.past(ignore=(STUDY, EXTRA))
 
     def unused(rows):
         return [
@@ -160,6 +161,44 @@ def config():
         "budget": "rank within each source, use shuffled manifest order for ties",
         "historical_reference": "results/jev_triage/report.json",
         "unit": "one independent CLI call per escalated request, shared across paths only for measurement",
+    }
+
+
+@lru_cache(maxsize=1)
+def extra_config():
+    base_plans, protocol = config()
+    folder = ds.RAW / "jev/historical/data"
+    policy = (folder / "policy.md").read_text("utf-8-sig")
+    ids, used = prior.past(ignore=(EXTRA,))
+    pairs = set()
+    for text in used:
+        s = json.loads(text)
+        if isinstance(s, dict) and "state" in s and "proposed_action" in s:
+            pairs.add(prior.signature([s["state"], s["proposed_action"]]))
+    pool = []
+    for r in ds.records(folder / "fixtures.jsonl"):
+        key = prior.signature([r["state"], r["proposed_action"]])
+        if r["id"] in ids or key in pairs:
+            continue
+        pairs.add(key)
+        pool.append(
+            ds.case(
+                r["id"],
+                {
+                    "trusted_policy": policy,
+                    "state": r["state"],
+                    "proposed_action": r["proposed_action"],
+                },
+                r["recorded_reference"]["recorded_human_decision"],
+                "recorded audit",
+            )
+        )
+    rows = Random(SEED + 1).sample(pool, 18)
+    return {"extra": {**base_plans["archive"], "samples": rows}}, {
+        **protocol,
+        "seed": SEED + 1,
+        "quota": {"extra": 4},
+        "exclusion": "exclude previous state and proposed action even if policy differed",
     }
 
 
@@ -248,7 +287,7 @@ def allocate(plans, calls):
             raw = calls[name, idx, "prior"]
             p = raw["probabilities"]["route"]["senior"]
             cell = raw["answers"]["factor"] + "/" + raw["answers"]["route"]
-            score = historical[BENCH[name]]["values"].get(cell, 0.0)
+            score = historical[BENCH.get(name, "Jev Boundary")]["values"].get(cell, 0.0)
             ranks["prior_raw"].append((idx, (p,)))
             ranks["prior_calibrated"].append((idx, (score, p)))
             ranks["parameters"].append(
@@ -261,5 +300,34 @@ def allocate(plans, calls):
             for pos, (idx, score) in enumerate(
                 sorted(values, key=lambda v: v[1], reverse=True), start=1
             ):
-                output[name, idx, method] = (pos <= QUOTA[name], pos, score)
+                output[name, idx, method] = (
+                    pos <= (4 if name == "extra" else QUOTA[name]),
+                    pos,
+                    score,
+                )
     return output
+
+
+def selected_inputs(study=STUDY):
+    from study_report import inputs
+
+    plans, _ = extra_config() if study == EXTRA else config()
+    snapshot, logs, _ = inputs(study, "jev")
+    if snapshot != plans:
+        raise ValueError("Different frozen cohort")
+    calls = {(r["dataset"], r["id"], r["stage"]): r for r in logs if "answers" in r}
+    ranks = allocate(plans, calls)
+    return {
+        k: {
+            **p,
+            "samples": [
+                r
+                for r in p["samples"]
+                if any(
+                    ranks[k, r["id"], m][0]
+                    for m in ("prior_raw", "prior_calibrated", "parameters")
+                )
+            ],
+        }
+        for k, p in plans.items()
+    }
