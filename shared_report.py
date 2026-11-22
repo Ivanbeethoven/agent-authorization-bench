@@ -400,6 +400,45 @@ def publish_tables():
     save("provider_usage.csv", usage)
 
 
+def render_method_guide(scores):
+    from parameter_router_cases import auth_cases
+
+    pair = "parameter-router-scope-12"
+    cases = {row["id"]: row for row in auth_cases() if row["group"] == pair}
+    traces = defaultdict(dict)
+    for row in read("parameter_router/decisions.csv"):
+        if row["id"] in cases:
+            traces[row["id"]][row["method"]] = {
+                "decision": row["decision"],
+                "rank": int(row["rank"]) if row["rank"] else None,
+                "routed": row["routed"] == "1",
+                "scores": json.loads(row["ranking_score"] or "[]"),
+                "checks": [
+                    row[k] for k in ("operation", "audience", "effect", "authority")
+                ],
+                "passage": row["passage_id"],
+                "cited_field": row["cited_field"],
+            }
+    methods = {"deepseek", "prior_raw", "prior_calibrated", "parameters"}
+    if len(cases) != 2 or any(set(traces[k]) != methods for k in cases):
+        raise ValueError("Incomplete paired example for the method guide")
+    payload = {
+        "samples": [{**r, "methods": traces[r["id"]]} for r in cases.values()],
+        "scores": [
+            r
+            for r in scores
+            if r["scope"] in ("all", "AuthGateBench", "DelegationBench", "Jev Boundary")
+        ],
+    }
+    template = (ROOT / "scripts/permission_methods.html").read_text("utf8")
+    data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace(
+        "<", "\\u003c"
+    )
+    (DEST / "四种权限审查方案详解.html").write_text(
+        template.replace("__METHOD_GUIDE__", data), encoding="utf8"
+    )
+
+
 def render():
     scores = read("shared_review/scores.csv")
     selection = select_strategies(scores)
@@ -451,6 +490,7 @@ def render():
     payload["parameterRouter"] = json.loads(
         (RESULTS / "parameter_router/report.json").read_text("utf8")
     )
+    render_method_guide(payload["parameterRouter"]["scores"])
     template = (ROOT / "scripts/shared_report.html").read_text("utf8")
     assert template.count("__COMPARISON__") == 1
     encoded = json.dumps(

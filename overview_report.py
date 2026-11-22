@@ -533,6 +533,7 @@ def build(audit_dir=None):
             "parameters": "parameter_review/逐参数授权实验报告.html",
             "errors": "reply_review/权限判断错误分析与方法比较.html",
             "shared": "shared_review/三项权限评测与共同错误.html",
+            "methods": "shared_review/四种权限审查方案详解.html",
         }.items()
     }
     early = read("model_study/review_scores.csv")
