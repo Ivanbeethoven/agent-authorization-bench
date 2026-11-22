@@ -51,6 +51,7 @@ PHASES = {
     "reply_precedent": "跨家族示例",
     "shared_review": "先读授权的复审",
     "commitment_review": "对外承诺配对验证",
+    "retained_validation": "保留策略独立复测",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -64,6 +65,7 @@ STAGE_GROUPS = {
     ),
     "最小干预与专家示例": ("reply_validation", "reply_precedent"),
     "共同错误与承诺复审": ("shared_review", "commitment_review"),
+    "保留策略独立复测": ("retained_validation",),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -85,6 +87,7 @@ def inputs():
         "authorization_conditions/confirmation_usage.csv",
         "reply_review/provider_usage.csv",
         "shared_review/provider_usage.csv",
+        "retained_validation/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -531,6 +534,9 @@ def build(audit_dir=None):
     }
     early = [{**r, **risk[r["provider"], r["dataset"]]} for r in early]
     cli = read("reply_review/codex_calls.csv")
+    new_cli = json.loads(
+        (RESULTS / "retained_validation/report.json").read_text("utf8")
+    )["cli"]
     mask = read("authorization_conditions/mask_restore.csv")
     mask_stats = defaultdict(lambda: [0, 0, 0])
     for r in mask:
@@ -558,10 +564,10 @@ def build(audit_dir=None):
         "six": read("authorization_conditions/public_six_pairs.csv"),
         "mask": mask_stats,
         "cli": {
-            "calls": len(cli),
-            "cases": sum(int(r["cases"]) for r in cli),
-            "input": sum(int(r["input_tokens"]) for r in cli),
-            "out": sum(int(r["output_tokens"]) for r in cli),
+            "calls": len(cli) + new_cli["calls"],
+            "cases": sum(int(r["cases"]) for r in cli) + new_cli["calls"],
+            "input": sum(int(r["input_tokens"]) for r in cli) + new_cli["input_tokens"],
+            "out": sum(int(r["output_tokens"]) for r in cli) + new_cli["output_tokens"],
         },
         "sources": sources,
     }

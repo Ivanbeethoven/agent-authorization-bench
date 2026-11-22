@@ -442,6 +442,9 @@ def render():
         for field in ("samples", "calls"):
             row[field] = int(row[field])
     payload = {"scores": scores, "cases": cases, "methods": DISPLAY, "usage": usage}
+    payload["validation"] = json.loads(
+        (RESULTS / "retained_validation/report.json").read_text("utf8")
+    )
     template = (ROOT / "scripts/shared_report.html").read_text("utf8")
     assert template.count("__COMPARISON__") == 1
     encoded = json.dumps(

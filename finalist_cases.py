@@ -2,7 +2,6 @@
 
 import datasets_local as ds
 
-
 # An observed object and the proposed effect stay fixed within each pair.
 AUTH = [
     (
