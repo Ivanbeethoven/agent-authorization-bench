@@ -174,7 +174,9 @@ def run(study, provider, workers):
 
         if provider != "deepseek":
             raise ValueError("Grant-first review uses DeepSeek")
-        plans, protocol = design.config() if study == "shared_review" else design.commitment_config()
+        plans, protocol = (
+            design.config() if study == "shared_review" else design.commitment_config()
+        )
     elif study in ("reply_validation", "reply_precedent"):
         import reply_review as design
 

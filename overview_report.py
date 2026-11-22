@@ -57,6 +57,8 @@ PHASES = {
     "parameter_final": "最终公开配对",
     "reply_validation": "最小干预及对照",
     "reply_precedent": "跨家族示例",
+    "shared_review": "先读授权的复审",
+    "commitment_review": "对外承诺配对验证",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -69,6 +71,7 @@ STAGE_GROUPS = {
         "parameter_final",
     ),
     "最小干预与专家示例": ("reply_validation", "reply_precedent"),
+    "共同错误与承诺复审": ("shared_review", "commitment_review"),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -89,6 +92,7 @@ def inputs():
         "authorization_conditions/usage.csv",
         "authorization_conditions/confirmation_usage.csv",
         "reply_review/provider_usage.csv",
+        "shared_review/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -504,6 +508,7 @@ def build(audit_dir=None):
         for k, p in {
             "parameters": "parameter_review/逐参数授权实验报告.html",
             "errors": "reply_review/权限判断错误分析与方法比较.html",
+            "shared": "shared_review/三项权限评测与共同错误.html",
         }.items()
     }
     early = read("model_study/review_scores.csv")

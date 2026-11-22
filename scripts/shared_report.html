@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三项权限评测并排比较</title>
+<style>
+:root{color-scheme:light;--ink:#172e38;--muted:#476169;--teal:#126657;--line:#d2dfd8;--bg:#f4f6f2;--paper:white}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.65 "Source Sans 3","Microsoft YaHei UI","Microsoft YaHei",sans-serif}
+main,header>div{max-width:1560px;margin:auto;padding-inline:clamp(14px,3vw,52px)}
+header{background:#173f3d;color:white;padding:26px 0 29px}header h1{font-size:clamp(27px,3.3vw,48px);letter-spacing:-.035em;line-height:1.15;margin:10px 0 12px}header p{margin:0;color:#d6e8df}
+nav{display:flex;flex-wrap:wrap;gap:22px}nav a{font-size:13px;color:#d6e8df;text-decoration:underline;text-underline-offset:4px}
+main{padding-bottom:55px}section{margin-top:35px;scroll-margin-top:12px}h2{font-size:clamp(22px,2vw,30px);margin:0 0 7px;line-height:1.3}h3{margin:0;font-size:20px;line-height:1.4}p{margin:6px 0}a{color:var(--teal)}button,input,select{font:inherit}button{cursor:pointer}
+.sub,.note,small{color:var(--muted)}.sub{margin:3px 0 12px}.note{font-size:13px}.head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button,.filters select,.filters input{border:1px solid #afc2b8;border-radius:5px;padding:6px 10px;background:white;color:var(--ink)}.tabs button[aria-pressed=true]{background:#215c50;border-color:#215c50;color:white}
+.deck-scroll,.scroll{overflow-x:auto}.deck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;min-width:870px;padding:3px 1px 5px}.panel,details,.box,.takeaway{background:var(--paper);border:1px solid var(--line);border-radius:9px}.panel{overflow:hidden;display:flex;flex-direction:column}.panel>div:first-child{padding:15px 16px 0}.meta{font-size:13px;color:var(--muted);margin:2px 0 0}.panel figure{margin:2px 4px 0}.panel svg{display:block;width:100%;height:auto}.panel output{display:block;border-top:1px solid var(--line);margin-top:auto;padding:8px 13px;background:#f2f7f3;min-height:46px;font-size:13px;line-height:1.5}.g-legend,.point{cursor:pointer}.g-legend:focus,.point:focus{outline:2px solid #172e38;outline-offset:1px}.mobile{display:none}.scroll{margin-top:10px}table{width:100%;border-collapse:collapse;background:white;font-variant-numeric:tabular-nums}th,td{padding:7px 10px;text-align:left;border-bottom:1px solid #e1e8e3;vertical-align:top}th{font-size:13px;background:#e9efea;color:#294740;white-space:nowrap}td{font-size:14px}.num{text-align:right;white-space:nowrap}.method{white-space:nowrap}.grouprow th{background:#dce7df;color:#183d33;font-size:15px;text-align:left}.focus-row{background:#f0f7f2}
+.filters{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:12px 0 2px}.filters label{font-size:14px;display:inline-flex;align-items:center;gap:6px}.filters input{max-width:240px}.takeaways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.takeaway,.box{padding:15px 17px}.takeaway strong{display:block;font-size:22px;color:var(--teal)}.takeaway p{font-size:14px}.box{margin:10px 0}.box h3{font-size:17px}.box p{max-width:110ch}
+details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{margin-right:8px}summary small{display:inline-block}details[open] summary{margin-bottom:8px}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.case-grid div{border-left:3px solid var(--line);padding-left:9px}.case-grid small{display:block}.case-id{overflow-wrap:anywhere;font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;margin-right:8px}.decisions{display:flex;flex-wrap:wrap;gap:6px 15px;border-top:1px solid var(--line);padding-top:7px;font-size:13px}.answer{font-weight:600}.kicker{font-size:13px;color:#49675c}.compact{margin:0;padding-left:20px}.compact li{margin:4px 0}.browse-count{margin:8px 0;color:var(--muted);font-size:14px}.empty{padding:14px;background:white;border-radius:5px}
+@media(max-width:900px){.mobile{display:block}.takeaways{grid-template-columns:1fr}.takeaway{padding:9px 13px}.takeaway strong{font-size:19px}.head{align-items:flex-start}}@media(max-width:580px){.case-grid{grid-template-columns:1fr}.filters{gap:6px}.deck{gap:8px;min-width:930px}.deck-scroll{scroll-snap-type:x proximity}.panel{scroll-snap-align:start}header{padding:17px 0 21px}section{margin-top:26px}}@media print{@page{size:landscape;margin:10mm}header{color:var(--ink);background:white}header p,.note{color:var(--ink)}nav,.tabs,.filters,.mobile{display:none}.deck{min-width:0}.scroll,.deck-scroll{overflow:visible}section{break-inside:auto}.panel,.takeaway,details{break-inside:avoid}}
+</style></head>
+<body><header><div><nav aria-label="本页章节"><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#review">方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p>对同一条权限请求，各种方法能否给出参考决定，每判断 100 条需要花多少钱？</p></div></header>
+<main>
+<section id="charts"><div class="head"><div><h2>成本与准确率</h2><p class="sub">每张图对应一项评测。同一行共用横纵坐标，越靠左费用越低，越靠上准确率越高。</p></div><div class="tabs" id="switches" role="group" aria-label="比较批次"></div></div>
+<p id="scope-line" class="note"></p><p class="note mobile">左右滑动可继续查看相邻图表。</p><div class="deck-scroll" tabindex="0" aria-label="三项评测的并列图表"><div class="deck" id="deck"></div></div>
+<p class="note">图例中的颜色和形状在三张图中保持一致。点选图例或散点可查看对应数值；坐标重合时可用图例分辨。GPT 的逐次人民币费用未披露，其准确率和实测用时列在下表。</p></section>
+<section id="scores"><h2>逐项评分与费用</h2><p class="sub">表格随上方批次切换。合法放行为正确允许数／应允许数，误放行为错误允许数／应暂停或拒绝数。准确率按各数据集的原生类别计算。</p>
+<div id="scores-table" class="scroll" tabindex="0" aria-label="方法指标"></div><p class="note">费用按实验时的 API 用量折算。每种方法只计入其判断路径所需的调用；同一调用可供多种方法复用。P50、P95 是每条请求路径耗时的中位数和第 95 百分位，历史 GPT 批处理按整批时长计。表中“—”表示没有完整记录。</p></section>
+<section id="review"><h2>怎样改进共同错误</h2><div class="takeaways"><article class="takeaway"><strong>33 / 443</strong><p>纯 DeepSeek、旧联合方法和 GPT‑6.2 Sol 共同答错 33 条，其中 29 条给出了相同的错误答案。</p></article><article class="takeaway"><strong>19 → 16 次误放行</strong><p>在 80 条历史委托请求上，仅复核对外承诺纠正 3 条，原来正确的 53 条全部保留。3 条中有 1 条是三方法共同错误。</p></article><article class="takeaway"><strong>24 / 24</strong><p>在随后固定的 12 对付款与协议题上，直接判断与仅复核承诺均答对 24 条。这个新批次未显示额外收益。</p></article></div>
+<div class="box"><h3>先独立读授权，再看候选动作</h3><p>第一次读取用户原话及可用的策略或上下文，隐藏结构化候选动作与轨迹，选出已授权的操作和主要限制。第二次读取完整记录，判断动作是否在授权范围内、会产生什么后果，并给出原生决定。要把原有暂停改成放行，须同时满足授权覆盖或常规委托、影响普通、复审允许。自然语言上下文有时也会描述候选动作。</p><p>这一方法在 33 条共同错误中有 2 条命中参考答案。一条是 1,000 美元不可退款的采购，应先征求授权；另一条是用户只让整理桌面，参考却允许归档桌面外的文件。第二条值得重审参考标签。只采用普遍复审时，历史保留批次的误放行还会增加。</p></div>
+<div class="box"><h3>把修改限制在模型将要作出实质承诺时</h3><p>四分类委托任务先由 DeepSeek 直接判断。仅当它准备执行、复审明确识别到实质承诺、且复审选择“征求授权”时，才修改原决定。这一规则可以撤回误放行，同时保留已有暂停。AuthGateBench 与 Jev Boundary 沿用直接判断，因此这两个面板中的两点重合，费用也相同。</p>
+<p>在 30 条历史保留委托请求上，直接判断、仅复核对外承诺、先前的最小干预法分别答对 21、22、23 条。仅复核对外承诺识别出 1,000 美元采购，仍漏掉同一对中的 10 美元不可退款采购。进一步检验时，应让标注者分别判断“用户是否选择了这个对象”“是否授权实际扣款”“是否有不可撤销的后果”，再用新的真实委托请求检验。</p></div>
+<h3>每一批纠正了多少，又改错了多少</h3><div class="scroll" id="changes"></div>
+<p class="note">先读授权的联合方案与旧逐参数联合方法逐条配对，其余方案与同批直接判断配对；“原已恢复”指旧风险树拦截、逐参数联合方法正确恢复的合法动作。首次复审方案先在 236 条历史开发请求上设计，207 条历史保留请求已有早期实验记录。仅复核承诺的方法在看过首次复测后提出，其历史结果属于探索性分析。</p>
+<div class="box"><h3>新增调用与用时</h3><p id="usage"></p><p class="note">样本只进行静态判断。实验时 DeepSeek 接口的请求模型名为 deepseek-flash。每批结束时读取的钱包余额与开始时相同，金额采用返回的缓存命中、未命中及输出 token 用量折算。</p></div></section>
+<section id="cases"><h2>逐条检查共同错误</h2><p class="sub">在 300 条 AuthGateBench 请求中有 11 条、80 条 DelegationBench 请求中有 22 条、63 条 Jev Boundary 请求中有 0 条。下列归因是根据原始记录作的人工解释，参考标签保留原值。</p>
+<p class="note">固定三方法包括纯 DeepSeek、Jev + DeepSeek 逐参数复审、GPT‑6.2 Sol。在 207 条历史保留请求上，三者共同错误为 13 条，再要求上一轮比较表中每种适用方法都错误后剩 9 条，包括 3 条 AuthGateBench 和 6 条 DelegationBench。先前比较表包含派生方法，多个错误判断可能共用一次调用。</p>
+<div class="filters"><label>评测 <select id="case-bench"><option value="">全部</option><option>AuthGateBench</option><option>DelegationBench</option><option>Jev Boundary</option></select></label><label>检查范围 <select id="case-mode"><option value="all">固定三方法均错误</option><option value="same">三者给出同一错误答案</option><option value="strict">历史保留批次的所有旧方法均错误</option><option value="fixed">先读授权后命中参考</option><option value="narrow">仅复核对外承诺后命中参考</option><option value="disputed">参考标签待复核</option></select></label><label>搜索 <input id="case-search" placeholder="样本编号或关键词" type="search"></label></div>
+<div id="case-count" class="browse-count" role="status"></div><div id="case-list"></div></section></main>
+<script id="payload" type="application/json">__COMPARISON__</script>
+<script>
+"use strict";
+const D=JSON.parse(document.getElementById("payload").textContent);
+const $=id=>document.getElementById(id);
+const groups=[
+ {name:"历史保留批次",keys:["regression.final_pairs","fresh.new_delegation","fresh.new_boundary"],labels:["公开回归样本 · 75 对","公开委托请求 · 15 个家族","公开策略判断 · 3 个家族"],note:"207 条公开请求。AuthGateBench 检查 75 对原话变化；DelegationBench 区分四种下一步；Jev Boundary 区分允许、暂缓与拒绝。"},
+ {name:"历史开发批次",keys:["previous.new_pairs","previous.new_delegation","previous.new_boundary"],labels:["公开开发样本 · 75 对","公开开发样本 · 17 个家族","公开开发样本 · 4 个家族"],note:"236 条公开请求，用于定位问题及设计首次复审。"},
+ {name:"新增验证批次",keys:["control.new_pairs","control.new_delegation","unseen.new_boundary"],labels:["自建二分类对照 · 12 对","自建四分类对照 · 12 对","新增公开测试记录 · 3 个策略家族"],note:"两组各 24 条自建配对分别改变用户授权的对象、阶段或边界；54 条 Jev Boundary 来自此前未用的公开记录。不同来源各自评分。"},
+ {name:"三模型初评",keys:["pilot.authgate","pilot.delegation","pilot.jev"],labels:["原生授权判断 · 50 条","原生委托判断 · 50 条","原生策略判断 · 50 条"],note:"首次评测中，三个模型各自独立判断同一批样本，每个数据集 50 条。百炼 Decision 在本次试验期间按零元计价。"}];
+const bench=["AuthGateBench","DelegationBench","Jev Boundary"];
+const native=["授权二分类","委托四分类","策略三分类"];
+const styles={aliyun_direct:["#a05029",4],deepseek_direct:["#285da4",0],jev_direct:["#3e7959",1],joint_adaptive:["#7455a1",2],inverse:["#087f81",3],grant_direct:["#b15528",4],grant_joint:["#8c3e53",5],commitment:["#1b5a39",6],subtype:["#6d592e",7],corroborated_veto:["#825b43",1],symmetric:["#a04e85",3],precedent:["#52677e",4]};
+const short={aliyun_direct:"百炼 Decision",deepseek_direct:"DeepSeek 直接判断",jev_direct:"Jev 直接判断",joint_adaptive:"Jev + DeepSeek 复审",inverse:"DeepSeek 最小干预",grant_direct:"先读授权 · DeepSeek",grant_joint:"先读授权 · 联合方法",commitment:"仅复核对外承诺",subtype:"保留暂停原因",corroborated_veto:"双模型同意后撤回",symmetric:"一致时双向修改",precedent:"跨家族专家示例"};
+const dec={ACT:"执行",ASK_AUTHORIZATION:"征求授权",REQUEST_INFORMATION:"询问事实",REFUSE:"拒绝",allow:"允许",block:"阻止",deny:"拒绝",hold:"暂缓"};
+const scopes={covered:"授权覆盖",routine:"常规委托",expanded:"超出授权",unknown:"缺少事实"};
+const impacts={ordinary:"普通操作",commitment:"实质承诺",protected:"受保护的操作或数据",missing:"缺少执行条件"};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct=(a,n)=>(100*a/n).toFixed(1)+"%";
+const money=x=>"¥"+Number(x).toFixed(4);
+const rate=r=>100*Number(r.cost_cny)/r.cases;
+const methods=Object.keys(D.methods);
+const order=(a,b)=>methods.indexOf(a.method)-methods.indexOf(b.method);
+const getRows=k=>D.scores.filter(r=>r.batch===k).sort(order);
+const scored=(r)=>r.cost_cny!=="";
+let tab=0,active="";
+function symbol(i,x,y,col,size=4.6){
+ const s=size, pts=p=>p.map(([a,b])=>(x+a*s)+","+(y+b*s)).join(" ");
+ const shapes=[null,[[-1,-1],[1,-1],[1,1],[-1,1]],[[0,-1.35],[1.25,0],[0,1.35],[-1.25,0]],[[0,-1.3],[1.25,1],[-1.25,1]],[[-1.2,-.9],[1.2,-.9],[0,1.35]],[[-1,-.65],[0,-1.3],[1,-.65],[1,.65],[0,1.3],[-1,.65]],[[-.4,-1.2],[.4,-1.2],[.4,-.4],[1.2,-.4],[1.2,.4],[.4,.4],[.4,1.2],[-.4,1.2],[-.4,.4],[-1.2,.4],[-1.2,-.4],[-.4,-.4]],[[-1.1,-.4],[-.4,-1.1],[0,-.65],[.4,-1.1],[1.1,-.4],[.65,0],[1.1,.4],[.4,1.1],[0,.65],[-.4,1.1],[-1.1,.4],[-.65,0]]];
+ return i===0?'<circle cx="'+x+'" cy="'+y+'" r="'+s+'" fill="'+col+'"/>':'<polygon points="'+pts(shapes[i])+'" fill="'+col+'"/>';
+}
+const f=(v)=>Number(v).toFixed(3).replace(/0+$/,"").replace(/\.$/,"");
+function drawPlot(rows, maxX, globalCount, idx){
+ const priced=rows.filter(scored),width=390,top=33,left=45,right=375,bottom=205,legendY=279;
+ const height=legendY+Math.ceil(globalCount/2)*23+6;
+ let svg='<svg viewBox="0 0 '+width+' '+height+'" role="group" aria-label="'+bench[idx]+' 成本与准确率散点图"><title>'+bench[idx]+' 每百条费用与原生准确率</title>';
+ svg+='<g font-family="Microsoft YaHei, sans-serif" fill="#48636a" font-size="12"><text x="8" y="17">准确率（%）</text>';
+ for(let i=0;i<=5;i++){const yy=bottom-i*(bottom-top)/5;svg+='<path d="M'+left+' '+yy+'H'+right+'" stroke="#dce5df"/><text x="'+(left-8)+'" y="'+(yy+4)+'" text-anchor="end">'+(i*20)+'</text>'}
+ for(let i=0;i<=4;i++){const x=left+i*(right-left)/4;svg+='<path d="M'+x+' '+top+'V'+bottom+'" stroke="#e8eee9" stroke-dasharray="3 4"/><text x="'+x+'" y="'+(bottom+18)+'" text-anchor="middle">'+f(i*maxX/4)+'</text>'}
+ svg+='<path d="M'+left+' '+top+'V'+bottom+'H'+right+'" fill="none" stroke="#849b91"/><text x="208" y="246" text-anchor="middle">每 100 条的 API 费用（元）</text></g>';
+ const sorted=[...priced].sort((a,b)=>Number(a.method===active)-Number(b.method===active));
+ for(const r of sorted){
+   const [color,shape]=styles[r.method],x=left+Math.min(rate(r)/maxX,1)*(right-left),y=bottom-r.accuracy*(bottom-top);
+   const desc=D.methods[r.method]+"，"+pct(r.correct,r.cases)+"，每百条 "+money(rate(r));
+   svg+='<g class="point" role="button" tabindex="0" data-m="'+r.method+'" aria-label="'+esc(desc)+'"><title>'+esc(desc)+'</title><circle cx="'+x+'" cy="'+y+'" r="9" fill="transparent"/>';
+   if(active===r.method)svg+='<circle cx="'+x+'" cy="'+y+'" r="8" fill="white" stroke="'+color+'" stroke-width="1.8"/>';
+   svg+=symbol(shape,x,y,color,5.1)+'</g>';
+ }
+ svg+='<path d="M9 258H381" stroke="#dde7e1"/><g aria-label="方法图例">';
+ priced.forEach((r,i)=>{const x=12+(i%2)*188,y=legendY+Math.floor(i/2)*23;const [color,k]=styles[r.method];svg+='<g data-m="'+r.method+'" tabindex="0" role="button" class="g-legend" aria-label="'+esc(D.methods[r.method])+'"><title>'+esc(D.methods[r.method])+'</title><rect x="'+(x-5)+'" y="'+(y-13)+'" width="185" height="20" rx="3" fill="'+(r.method===active?'#e1eee3':'transparent')+'"/>'+symbol(k,x+4,y-3,color)+'<text x="'+(x+16)+'" y="'+(y+1)+'" font-family="Microsoft YaHei, sans-serif" font-size="12.7" fill="#263e43">'+esc(short[r.method])+'</text></g>'});
+ return svg+'</g></svg>';
+}
+function nice(max){
+ const step=Math.pow(10,Math.floor(Math.log10(max/4))),unit=max/4/step;
+ return 4*step*([1,2,2.5,5,10].find(x=>x>=unit)||10);
+}
+function buildDeck(){
+ const group=groups[tab],parts=group.keys.map(getRows),maxX=nice(Math.max(...parts.flat().filter(scored).map(rate))),count=Math.max(...parts.map(p=>p.filter(scored).length));
+ $("scope-line").textContent=group.note;
+ $("deck").innerHTML=parts.map((rows,i)=>{const selected=rows.find(r=>r.method===active&&scored(r));
+ const info=selected?esc(D.methods[active])+" · "+selected.correct+"/"+selected.cases+"（"+pct(selected.correct,selected.cases)+"） · 每百条 "+money(rate(selected)):active?"本批次未评测所选方法。":"点选一个方法，比较它在三项评测中的表现。";
+ return '<article class="panel"><div><h3>'+bench[i]+'</h3><p class="meta">'+native[i]+' · '+rows[0].cases+' 条<br>'+group.labels[i]+'</p></div><figure>'+drawPlot(rows,maxX,count,i)+'</figure><output>'+info+'</output></article>'}).join("");
+ $("scores-table").innerHTML='<table><thead><tr><th>方法</th><th>正确数</th><th>准确率</th><th>合法放行</th><th>误放行</th><th>每百条费用</th><th>本批费用</th><th>调用数</th><th>P50（秒）</th><th>P95（秒）</th></tr></thead><tbody>'+parts.map((rows,i)=>'<tr class="grouprow"><th colspan="10">'+bench[i]+' · '+rows[0].cases+' 条</th></tr>'+rows.map(r=>'<tr class="'+(r.method===active?'focus-row':'')+'"><td class="method">'+esc(D.methods[r.method])+'</td>'+[r.correct+'/'+r.cases,pct(r.correct,r.cases),r.released+'/'+r.positive,r.false_allows+'/'+r.negative,scored(r)?money(rate(r)):'—',scored(r)?money(r.cost_cny):'—',r.calls||'—',r.p50_s||'—',r.p95_s||'—'].map(v=>'<td class="num">'+v+'</td>').join("")+'</tr>').join("")).join("")+'</tbody></table>';
+}
+function select(e){const g=e.target.closest("[data-m]");if(!g)return;const idx=[...document.querySelectorAll(".panel")].indexOf(g.closest(".panel"));active=g.dataset.m;buildDeck();if(e.type==="keydown")document.querySelectorAll(".panel")[idx].querySelector('.g-legend[data-m="'+active+'"]')?.focus()}
+$("deck").addEventListener("click",select);$("deck").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(e)}});
+function tabs(){const el=$("switches");el.innerHTML="";groups.forEach((g,i)=>{const b=document.createElement("button");b.textContent=g.name;b.setAttribute("aria-pressed",String(i===tab));b.onclick=()=>{tab=i;active="";tabs();buildDeck();el.children[i].focus()};el.appendChild(b)})}
+function changes(){
+ const all=[...groups.slice(0,3).flatMap(g=>g.keys.map((k,j)=>[k,g.name+" · "+bench[j]])),["control.commitment","新增 12 对付款与协议题"]];
+ $("changes").innerHTML='<table><thead><tr><th>批次</th><th>方法</th><th>正确数</th><th>纠正／改错</th><th>消除／新增误放行</th><th>保留原已恢复</th><th>本批费用</th><th>P50（秒）</th></tr></thead><tbody>'+all.map(([k,label])=>{const rows=getRows(k);const ms=k==="control.commitment"?["deepseek_direct","grant_direct","commitment"]:rows.some(r=>r.method==="grant_joint")?["grant_direct","grant_joint","commitment"]:["grant_direct","commitment"];return ms.map((m,i)=>{const r=rows.find(x=>x.method===m);return '<tr>'+(i===0?'<td rowspan="'+ms.length+'">'+label+'</td>':'')+'<td class="method">'+esc(D.methods[m])+'</td>'+[r.correct+'/'+r.cases,r.corrected+' / '+r.lost,r.removed_false+' / '+r.new_false,r.recovered_total?r.recovered_kept+' / '+r.recovered_total:'—',money(r.cost_cny),r.p50_s].map(v=>'<td class="num">'+v+'</td>').join("")+'</tr>'}).join("")}).join("")+'</tbody></table>';
+ const [a,b]=D.usage;$("usage").textContent="首次复测 "+a.samples+" 条，"+a.calls+" 次调用，并发耗时 "+a.wall_seconds+" 秒，折算 "+money(a.estimated_cny)+"。新增付款与协议对照 "+b.samples+" 条，"+b.calls+" 次调用，耗时 "+b.wall_seconds+" 秒，折算 "+money(b.estimated_cny)+"。两批合计 "+(a.calls+b.calls)+" 次调用、"+money(Number(a.estimated_cny)+Number(b.estimated_cny))+"。";
+}
+function caseList(){
+ const b=$("case-bench").value,mode=$("case-mode").value,q=$("case-search").value.toLowerCase().trim();
+ const selected=D.cases.filter(r=>(!b||r.benchmark===b)&&({all:true,same:r.same,strict:r.historic_all_wrong===true,fixed:r.grant_direct===r.reference,narrow:r.commitment===r.reference,disputed:r.tag==="参考待复核"})[mode]&&[r.id,r.tag,r.request,r.action,r.analysis].join(" ").toLowerCase().includes(q));
+ $("case-count").textContent="显示 "+selected.length+" 条／共 "+D.cases.length+" 条。展开可见用户要求、候选动作及各方法的决定。";
+ $("case-list").innerHTML=selected.length?selected.map(r=>'<details><summary><strong>'+esc(r.tag)+'</strong>'+esc(r.request)+' <small>'+esc(r.benchmark)+' · '+esc(r.kind)+'</small></summary><p class="kicker"><span class="case-id">'+esc(r.id)+'</span>'+(r.batch.startsWith("previous")?"历史开发":"历史保留")+'</p><div class="case-grid"><div><small>用户要求（摘要）</small>'+esc(r.request)+'</div><div><small>候选动作（摘要）</small>'+esc(r.action)+'</div></div>'+(r.user_quote?'<p lang="en" class="note"><b>用户原话</b> '+esc(r.user_quote)+'<br><b>候选动作原文</b> '+esc(r.action_quote)+'</p>':'')+'<p>'+esc(r.analysis)+'</p><p class="decisions"><span>参考决定 <b>'+esc(dec[r.reference])+'</b></span>'+["deepseek_direct","joint_adaptive","codex_sol","grant_direct","grant_joint","commitment"].map(m=>'<span>'+esc(D.methods[m])+' <span class="answer">'+esc(dec[r[m]])+'</span></span>').join("")+'</p><p class="note">第二次读取对本条的判断为“'+esc(scopes[r.scope])+'”与“'+esc(impacts[r.impact])+'”。</p></details>').join(""):'<p class="empty">此筛选范围内有 0 条共同错误。</p>';
+}
+for(const id of ["case-bench","case-mode","case-search"])$(id).addEventListener("input",caseList);
+tabs();buildDeck();changes();caseList();
+</script></body></html>

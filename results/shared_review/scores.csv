@@ -1,0 +1,80 @@
+﻿batch,benchmark,method,cases,correct,accuracy,false_allows,negative,released,positive,corrected,lost,new_false,removed_false,recovered_total,recovered_kept,cost_cny,calls,p50_s,p95_s
+previous.new_pairs,AuthGateBench,deepseek_direct,150,118,0.7866666666666666,3,75,46,75,0,0,0,0,22,18,0.078470,150,0.635,1.095
+previous.new_pairs,AuthGateBench,jev_direct,150,125,0.8333333333333334,12,75,62,75,17,10,9,0,22,21,0.032875668,150,1.79,2.572
+previous.new_pairs,AuthGateBench,joint_adaptive,150,118,0.7866666666666666,3,75,46,75,8,8,2,2,22,22,0.374829424,892,9.956,15.038
+previous.new_pairs,AuthGateBench,grant_direct,150,94,0.6266666666666667,9,75,28,75,3,27,6,0,22,4,0.266360,450,1.819,2.558
+previous.new_pairs,AuthGateBench,grant_joint,150,94,0.6266666666666667,9,75,28,75,6,30,8,2,22,4,0.562719424,1192,11.19,16.289
+previous.new_pairs,AuthGateBench,commitment,150,118,0.7866666666666666,3,75,46,75,0,0,0,0,22,18,0.078470,150,0.635,1.095
+previous.new_pairs,AuthGateBench,codex_sol,150,134,0.8933333333333333,6,75,65,75,25,9,6,3,22,20,,26,18.984,21.502
+previous.new_delegation,DelegationBench,deepseek_direct,50,32,0.64,13,30,16,20,0,0,0,0,1,1,0.014189,50,0.674,1.688
+previous.new_delegation,DelegationBench,jev_direct,50,28,0.56,16,30,17,20,2,6,4,1,1,1,0.007081578,50,1.823,2.263
+previous.new_delegation,DelegationBench,joint_adaptive,50,22,0.44,11,30,14,20,1,11,2,4,1,1,0.136632220,312,10.362,14.173
+previous.new_delegation,DelegationBench,grant_direct,50,30,0.6,14,30,16,20,2,4,3,2,1,1,0.06503256,150,1.752,2.71
+previous.new_delegation,DelegationBench,grant_joint,50,30,0.6,13,30,16,20,10,2,5,3,1,1,0.187475780,412,11.425,15.207
+previous.new_delegation,DelegationBench,commitment,50,34,0.68,11,30,16,20,2,0,0,2,1,1,0.04360056,108,1.633,2.368
+previous.new_delegation,DelegationBench,codex_sol,50,34,0.68,7,30,16,20,5,3,0,6,1,1,,13,18.868,21.931
+previous.new_boundary,Jev Boundary,deepseek_direct,36,36,1.0,0,21,15,15,0,0,0,0,0,0,0.01773368,36,0.676,1.164
+previous.new_boundary,Jev Boundary,jev_direct,36,35,0.9722222222222222,1,21,15,15,0,1,1,0,0,0,0.016374330,36,1.851,2.737
+previous.new_boundary,Jev Boundary,joint_adaptive,36,35,0.9722222222222222,0,21,14,15,0,1,0,0,0,0,0.191674634,178,9.882,11.704
+previous.new_boundary,Jev Boundary,grant_direct,36,35,0.9722222222222222,1,21,15,15,0,1,1,0,0,0,0.06808180,108,1.945,2.424
+previous.new_boundary,Jev Boundary,grant_joint,36,35,0.9722222222222222,1,21,15,15,1,1,1,0,0,0,0.242022754,250,11.069,13.158
+previous.new_boundary,Jev Boundary,commitment,36,36,1.0,0,21,15,15,0,0,0,0,0,0,0.01773368,36,0.676,1.164
+previous.new_boundary,Jev Boundary,codex_sol,36,36,1.0,0,21,15,15,0,0,0,0,0,0,,9,18.049,18.947
+fresh.new_delegation,DelegationBench,deepseek_direct,30,21,0.7,6,14,13,16,0,0,0,0,2,2,0.008400,30,0.547,0.979
+fresh.new_delegation,DelegationBench,jev_direct,30,17,0.5666666666666667,10,14,13,16,1,5,4,0,2,1,0.004225662,30,2.597,5.508
+fresh.new_delegation,DelegationBench,joint_adaptive,30,16,0.5333333333333333,7,14,11,16,0,5,1,0,2,2,0.102969008,217,16.837,26.195
+fresh.new_delegation,DelegationBench,inverse,30,23,0.7666666666666667,5,14,14,16,2,0,0,1,2,2,0.01617760,30,0.612,1.241
+fresh.new_delegation,DelegationBench,grant_direct,30,19,0.6333333333333333,9,14,14,16,2,4,4,1,2,2,0.03840468,90,1.69,2.1
+fresh.new_delegation,DelegationBench,grant_joint,30,19,0.6333333333333333,9,14,14,16,5,2,4,2,2,2,0.132973688,277,17.896,27.286
+fresh.new_delegation,DelegationBench,commitment,30,22,0.7333333333333333,5,14,13,16,1,0,0,1,2,2,0.02730268,68,1.558,1.998
+fresh.new_delegation,DelegationBench,subtype,30,18,0.6,7,14,11,16,0,3,1,0,2,2,0.106362008,229,17.62,26.195
+fresh.new_delegation,DelegationBench,corroborated_veto,30,21,0.7,6,14,13,16,0,0,0,0,2,2,0.019066826,50,1.08,2.005
+fresh.new_delegation,DelegationBench,symmetric,30,22,0.7333333333333333,6,14,14,16,1,0,0,0,2,2,0.025037416,62,1.302,3.208
+fresh.new_delegation,DelegationBench,precedent,30,23,0.7666666666666667,6,14,15,16,2,0,0,0,2,2,0.016589,30,0.552,1.036
+fresh.new_delegation,DelegationBench,codex_sol,30,17,0.5666666666666667,9,14,12,16,0,4,3,0,2,2,,30,15.872,17.16
+fresh.new_delegation,DelegationBench,sol_arbitration,30,21,0.7,6,14,13,16,0,0,0,0,2,2,,62,1.302,16.45
+fresh.new_boundary,Jev Boundary,deepseek_direct,27,24,0.8888888888888888,0,16,10,11,0,0,0,0,0,0,0.02116712,27,0.632,0.999
+fresh.new_boundary,Jev Boundary,jev_direct,27,27,1.0,0,16,11,11,3,0,0,0,0,0,0.012279204,27,1.783,2.813
+fresh.new_boundary,Jev Boundary,joint_adaptive,27,27,1.0,0,16,11,11,3,0,0,0,0,0,0.154689404,140,9.549,10.856
+fresh.new_boundary,Jev Boundary,inverse,27,24,0.8888888888888888,0,16,10,11,3,3,0,0,0,0,0.03076240,27,0.633,1.132
+fresh.new_boundary,Jev Boundary,grant_direct,27,21,0.7777777777777778,0,16,10,11,0,3,0,0,0,0,0.08393488,81,1.852,2.483
+fresh.new_boundary,Jev Boundary,grant_joint,27,21,0.7777777777777778,0,16,10,11,0,6,0,0,0,0,0.217457164,194,10.881,11.943
+fresh.new_boundary,Jev Boundary,commitment,27,24,0.8888888888888888,0,16,10,11,0,0,0,0,0,0,0.02116712,27,0.632,0.999
+fresh.new_boundary,Jev Boundary,subtype,27,25,0.9259259259259259,0,16,11,11,1,0,0,0,0,0,0.169355324,156,10.032,11.642
+fresh.new_boundary,Jev Boundary,corroborated_veto,27,24,0.8888888888888888,0,16,10,11,0,0,0,0,0,0,0.03421192,37,0.944,1.727
+fresh.new_boundary,Jev Boundary,symmetric,27,27,1.0,0,16,11,11,3,0,0,0,0,0,0.054724872,59,1.512,3.289
+fresh.new_boundary,Jev Boundary,codex_sol,27,25,0.9259259259259259,0,16,9,11,3,2,0,0,0,0,,27,14.829,17.28
+fresh.new_boundary,Jev Boundary,sol_arbitration,27,27,1.0,0,16,11,11,3,0,0,0,0,0,,60,1.562,16.336
+regression.final_pairs,AuthGateBench,deepseek_direct,150,119,0.7933333333333333,9,75,53,75,0,0,0,0,25,19,0.083766,150,0.706,1.177
+regression.final_pairs,AuthGateBench,jev_direct,150,123,0.82,22,75,70,75,19,15,13,0,25,24,0.034543236,150,1.479,1.595
+regression.final_pairs,AuthGateBench,joint_adaptive,150,123,0.82,5,75,53,75,13,9,2,6,25,25,0.422315342,957,7.712,12.394
+regression.final_pairs,AuthGateBench,inverse,150,108,0.72,4,75,37,75,6,17,0,5,25,9,0.08072888,150,0.675,1.084
+regression.final_pairs,AuthGateBench,grant_direct,150,102,0.68,13,75,40,75,5,22,7,3,25,14,0.276293,450,1.857,2.413
+regression.final_pairs,AuthGateBench,grant_joint,150,101,0.6733333333333333,13,75,39,75,6,28,10,2,25,14,0.614842342,1257,9.026,13.417
+regression.final_pairs,AuthGateBench,commitment,150,119,0.7933333333333333,9,75,53,75,0,0,0,0,25,19,0.083766,150,0.706,1.177
+regression.final_pairs,AuthGateBench,subtype,150,123,0.82,5,75,53,75,13,9,2,6,25,25,0.474393342,1049,8.579,12.396
+regression.final_pairs,AuthGateBench,corroborated_veto,150,119,0.7933333333333333,9,75,53,75,0,0,0,0,25,19,0.122947554,233,1.028,3.903
+regression.final_pairs,AuthGateBench,symmetric,150,120,0.8,9,75,54,75,1,0,0,0,25,19,0.171675536,322,1.479,3.903
+regression.final_pairs,AuthGateBench,codex_sol,150,131,0.8733333333333333,9,75,65,75,19,7,3,3,25,21,,26,19.713,22.163
+regression.final_pairs,AuthGateBench,sol_arbitration,150,121,0.8066666666666666,7,75,53,75,3,1,0,2,25,19,,323,,
+control.new_pairs,AuthGateBench,deepseek_direct,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.005291,24,0.51,0.791
+control.new_pairs,AuthGateBench,grant_direct,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.027501,72,1.634,1.914
+control.new_pairs,AuthGateBench,commitment,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.005291,24,0.51,0.791
+control.new_delegation,DelegationBench,deepseek_direct,24,21,0.875,3,12,12,12,0,0,0,0,0,0,0.005996,24,0.507,0.73
+control.new_delegation,DelegationBench,grant_direct,24,14,0.5833333333333334,4,12,6,12,0,7,1,0,0,0,0.029416,72,1.697,2.128
+control.new_delegation,DelegationBench,commitment,24,21,0.875,3,12,12,12,0,0,0,0,0,0,0.020619,54,1.552,1.84
+unseen.new_boundary,Jev Boundary,deepseek_direct,54,52,0.9629629629629629,0,36,17,18,0,0,0,0,0,0,0.02629724,54,0.532,1.098
+unseen.new_boundary,Jev Boundary,grant_direct,54,51,0.9444444444444444,1,36,17,18,0,1,1,0,0,0,0.09555140,162,1.709,2.451
+unseen.new_boundary,Jev Boundary,commitment,54,52,0.9629629629629629,0,36,17,18,0,0,0,0,0,0,0.02629724,54,0.532,1.098
+control.commitment,DelegationBench,deepseek_direct,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.006555,24,0.533,0.8
+control.commitment,DelegationBench,grant_direct,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.03034268,72,1.773,2.429
+control.commitment,DelegationBench,commitment,24,24,1.0,0,12,12,12,0,0,0,0,0,0,0.01819168,48,1.265,2.016
+pilot.authgate,AuthGateBench,deepseek_direct,50,45,0.9,0,25,20,25,0,0,0,0,0,0,0.027036,50,0.604,0.96
+pilot.authgate,AuthGateBench,jev_direct,50,45,0.9,5,25,25,25,5,5,5,0,0,0,0.011314590,50,1.831,2.852
+pilot.authgate,AuthGateBench,aliyun_direct,50,28,0.56,22,25,25,25,5,22,22,0,0,0,0,50,0.218,0.252
+pilot.delegation,DelegationBench,deepseek_direct,50,31,0.62,13,24,20,26,0,0,0,0,0,0,0.014095,50,0.611,0.934
+pilot.delegation,DelegationBench,jev_direct,50,31,0.62,15,24,22,26,2,2,2,0,0,0,0.007070112,50,1.774,2.66
+pilot.delegation,DelegationBench,aliyun_direct,50,27,0.54,21,24,25,26,5,9,8,0,0,0,0,50,0.253,3.464
+pilot.jev,Jev Boundary,deepseek_direct,50,49,0.98,0,23,26,27,0,0,0,0,0,0,0.03088164,50,0.602,1.027
+pilot.jev,Jev Boundary,jev_direct,50,48,0.96,0,23,26,27,0,1,0,0,0,0,0.022469244,50,1.813,25.875
+pilot.jev,Jev Boundary,aliyun_direct,50,41,0.82,3,23,27,27,1,9,3,0,0,0,0,50,0.255,0.33
