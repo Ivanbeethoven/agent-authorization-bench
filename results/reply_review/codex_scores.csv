@@ -1,0 +1,10 @@
+﻿split,set,method,cases,correct,positive,released,negative,false_allows,pairs_correct,accuracy,corrected_vs_direct,lost_vs_direct,calls,p50_s,p95_s,max_batch_size,cost_cny,input_tokens,cached_input_tokens,output_tokens,api_cost_cny,consulted
+fresh,new_boundary,codex_sol,27,25,11,9,16,0,,0.925926,3,2,27,14.829,17.28,1,,560640,109568,1412,,
+fresh,new_boundary,sol_arbitration,27,27,11,11,16,0,,1.0,3,0,60,1.562,16.336,,,,,,0.05192952,6
+fresh,new_delegation,codex_sol,30,17,16,12,14,9,,0.566667,0,4,30,15.872,17.16,1,,590697,68480,1437,,
+fresh,new_delegation,sol_arbitration,30,21,16,13,14,6,,0.7,0,0,62,1.302,16.45,,,,,,0.02457760,2
+previous,new_boundary,codex_sol,36,36,15,15,21,0,,1.0,0,0,9,18.049,18.947,4,,219789,0,1581,,
+previous,new_delegation,codex_sol,50,34,20,16,30,7,,0.68,5,3,13,18.868,21.931,6,,261652,41088,2192,,
+previous,new_pairs,codex_sol,150,134,75,65,75,6,59,0.893333,25,9,26,18.984,21.502,6,,564485,125312,7489,,
+regression,final_pairs,codex_sol,150,131,75,65,75,9,56,0.873333,19,7,26,19.713,22.163,6,,569475,209024,7101,,
+regression,final_pairs,sol_arbitration,150,121,75,53,75,7,46,0.806667,3,1,323,,,,,,,,0.16449488,23

@@ -23,3 +23,20 @@
 另作一次无需新增调用的探索性组合。仅当 DeepSeek 的直接判断与最小干预判断给出不同的原生标签时，采用独立的 GPT 判断。两者一致时直接返回共同答案。在读取两模型分歧样本的 GPT 结果前固定此规则。记录转交 GPT 的条数，并将 API 涉及的费用与 Codex 未披露的费用分别列出。
 
 研究成本包括为所有方法采集的数据。方法成本按真实记录选出该方法决策所需的请求，以人民币列出。直接判断后可先询问 DeepSeek 的最小干预，只在得到一致的非执行理由时才需要 Jev 复核。耗时按各阶段实际请求时间顺序相加，报告中位数与第 95 百分位数。
+
+## 复现
+
+工作目录中需有此前各批次的采样计划与模型输出。本地原始数据目录由既有下载与评测脚本生成。下列 PowerShell 命令依次采集新的结构化回答、计算费用并生成离线 HTML。用相同计划恢复中断的调用时，脚本读取已保存的有效回答。
+
+```powershell
+.\scripts\study.ps1 -Provider jev -Study reply_validation -Workers 10
+.\scripts\study.ps1 -Provider deepseek -Study reply_validation -Workers 10
+.\scripts\study.ps1 -Provider deepseek -Study reply_precedent -Workers 8
+$python = uv python find
+& $python codex_judgments.py --workers 6
+& $python reply_results.py
+& $python codex_scores.py
+& $python reply_report.py
+```
+
+`results/reply_review` 保存原生标签、逐条预测、实验分组、各方法调用成本、Codex 的批次耗时与用量，以及最终 HTML。已有报告可以直接离线阅读。
