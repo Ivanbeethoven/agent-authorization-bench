@@ -1,9 +1,10 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('deepseek','jev','aliyun')][string]$Provider,
-    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review','commitment_review','retained_validation','jev_triage','parameter_router','parameter_router_extra','material_facts','material_fact_replies')][string]$Study,
+    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review','commitment_review','retained_validation','jev_triage','parameter_router','parameter_router_extra','material_facts','material_fact_replies','full_permission','full_permission_review','numeric_permission','numeric_permission_review')][string]$Study,
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'
+if ($Study -in @('full_permission','full_permission_review','numeric_permission','numeric_permission_review') -and ($Provider -eq 'aliyun' -or ($Study -like '*_review' -and $Provider -ne 'deepseek'))) { throw 'Unsupported full-study provider.' }
 if ($Study -eq 'material_fact_replies' -and $Provider -ne 'deepseek') { throw 'The reply experiment uses only DeepSeek.' }
 if ($Study -eq 'material_facts' -and $Provider -notin @('deepseek','jev')) { throw 'The primary experiment supports DeepSeek and the Jev comparator.' }
 if ($Provider -eq 'aliyun') {

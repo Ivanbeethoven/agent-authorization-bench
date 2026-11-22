@@ -1,0 +1,6 @@
+﻿scope,cutoff,tied,selected_from_tie,min_false,max_false,expected_false
+authgate,0.84,10,1,15,16,15.3
+delegation,0.58,2,1,42,43,42.5
+boundary,0.77,2,1,1,1,1.0
+explicit,0.69,1,1,0,0,0.0
+historical,0.61,1,1,2,2,2.0

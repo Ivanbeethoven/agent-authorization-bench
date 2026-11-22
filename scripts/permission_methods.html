@@ -11,7 +11,7 @@
 @media print{.flow-tools{display:none}.flow-view.zoom svg{min-width:0}.flow-view{overflow:visible;break-inside:avoid}}
 .audit-filters{display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;margin:15px 0 5px}.audit-list details{border-top:1px solid var(--rule);padding:8px 0}.audit-list summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}.audit-list .meta{color:var(--muted);font-size:13px;margin:5px 0}.audit-list dl{margin:7px 0}.audit-list dt{font-weight:650}.audit-list dd{margin:0 0 7px}.audit-list table{width:auto}.audit-list td{white-space:normal}.sensitivity{margin-top:18px}
 </style></head>
-<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#material-facts">DeepSeek 暂缓规则复测</a><a href="#flow">方法原理图</a><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a><a href="#error-audit">逐题审查错例</a></nav>
+<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#full-permission">完整测试与危险查全率</a><a href="#material-facts">DeepSeek 暂缓规则复测</a><a href="#flow">方法原理图</a><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a><a href="#error-audit">逐题审查错例</a></nav>
 <h1>四种 Agent 权限审查方案</h1><p>给定用户原话、当前状态和即将执行的动作，谁来决定是否放行？四种方案的差异，在于 Jev 何时介入、怎样选择值得复核的请求，以及谁给出最终决定。</p></div></header>
 <main class="wrap">
 __MATERIAL_FACTS__

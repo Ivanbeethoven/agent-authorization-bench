@@ -84,6 +84,9 @@ def boundary():
             "corpus/policies/strict.md",
             "corpus/policies/delegated.md",
             "corpus/README.md",
+            "historical/data/fixtures.jsonl",
+            "historical/data/policy.md",
+            "historical/data/disputed_ids.json",
             "LICENSES.md",
         ):
             dst = RAW / "jev" / rel

@@ -554,9 +554,10 @@ def render():
     payload["parameterRouter"] = json.loads(
         (RESULTS / "parameter_router/report.json").read_text("utf8")
     )
+    from full_permission_html import render as render_full
     from material_fact_html import render as render_facts
 
-    fact_section = render_facts()
+    fact_section = render_full() + render_facts()
     render_method_guide(payload["parameterRouter"]["scores"], fact_section)
     template = (ROOT / "scripts/shared_report.html").read_text("utf8")
     assert template.count("__COMPARISON__") == 1

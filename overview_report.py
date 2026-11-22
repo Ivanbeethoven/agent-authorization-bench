@@ -57,6 +57,10 @@ PHASES = {
     "parameter_router_extra": "逐项核对补充情境",
     "material_facts": "缺失事实与暂缓规则",
     "material_fact_replies": "澄清问题的回答复判",
+    "full_permission": "三项完整数据直接判断",
+    "full_permission_review": "完整评测的放行复核",
+    "numeric_permission": "数值边界直接判断",
+    "numeric_permission_review": "数值边界放行复核",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -74,6 +78,8 @@ STAGE_GROUPS = {
     "Jev 选择审查模型": ("jev_triage",),
     "初判后的逐项核对": ("parameter_router", "parameter_router_extra"),
     "缺失事实与暂缓规则": ("material_facts", "material_fact_replies"),
+    "三个完整测试集与补充集": ("full_permission", "full_permission_review"),
+    "数值边界专项": ("numeric_permission", "numeric_permission_review"),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -99,6 +105,8 @@ def inputs():
         "jev_triage/provider_usage.csv",
         "parameter_router/provider_usage.csv",
         "material_facts/provider_usage.csv",
+        "full_permission/provider_usage.csv",
+        "full_permission/numeric_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -305,6 +313,20 @@ def efficiency_groups(history, boards, selection):
             "partial": str(partial),
         }
 
+    from full_permission import NAMES, PRIMARY
+    from full_permission_results import METHOD
+
+    full = read("full_permission/scores.csv")
+    for cohort in ("primary", *PRIMARY):
+        rows = [r for r in full if r["scope"] == cohort]
+        # Use binary accuracy here so the plotted cost and denominator cover the same requests.
+        groups["public_" + cohort] = {
+            "label": f"完整测试 · {NAMES.get(cohort, '三项合计')} · 执行与否 · {rows[0]['n']} 条",
+            "points": [
+                point(METHOD[r["method"]], r["binary_correct"], r["n"], r["cny"])
+                for r in rows
+            ],
+        }
     fact_scores = read("material_facts/scores.csv")
     fact_scores.extend(read("material_facts/jev_scores.csv"))
     for cohort in dict.fromkeys(r["benchmark"] for r in fact_scores):
@@ -365,6 +387,8 @@ def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
         "纯 Jev": "#594787",
+        "Jev＋DeepSeek": "#137463",
+        "纯 DeepSeek": "#305b9a",
         "原提示": "#525f72",
         "暂缓规则": "#b15b2b",
         "澄清问题与两种答案": "#137463",

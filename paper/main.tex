@@ -1,0 +1,75 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,graphicx,array,xcolor}
+\usepackage[margin=1.02in,top=.86in,bottom=.90in]{geometry}
+\usepackage{caption,placeins}
+\usepackage[colorlinks=true,linkcolor=teal!65!black,citecolor=teal!65!black,urlcolor=teal!65!black]{hyperref}
+\urlstyle{same}
+\hypersetup{pdftitle={When a Second Authorization Check Helps},pdfauthor={Anonymous research manuscript},pdfsubject={Prohibited-action recall and legal access in tool-using AI agents}}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{2.5pt}
+\setlength{\emergencystretch}{1.5em}
+\makeatletter
+\newcommand{\tablerows}[1]{\@@input #1 }
+\makeatother
+\title{\bfseries When a Second Authorization Check Helps\\[4pt]\large Prohibited-action recall and legal access in tool-using AI agents}
+\author{Anonymous research manuscript}
+\date{23 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+An authorization model can stop every prohibited tool call by stopping every call. The value of a second reviewer depends on which approvals it removes. We study a serial policy in which Jev judges a proposed action and DeepSeek reviews only Jev's approvals, checking the user's grant and identifying facts that could change the decision. Across all 1,126 records in three public evaluation sets, the cascade and direct DeepSeek each withheld execution on all 37 explicitly prohibited actions. Direct Jev stopped 36. Across the broader set of 592 requests that should not execute immediately, the cascade falsely released 57, versus 145 for Jev and 60 for DeepSeek. It released 346 of 534 legal requests, versus 486 and 390, respectively. At the same release volume within each benchmark, retaining the highest-scoring Jev approvals produced 59 false releases. All three methods released the same explicitly denied request in a separate historical audit. In a prospective 96-case test of numeric permission limits, the direct model with the highest accuracy released all 32 violations. An exact check of four supported instruction forms caught the 21 violations missed by the cascade while preserving its 46 legal releases.
+\end{abstract}
+
+\section{Introduction}
+A user can authorize an agent to draft a message without authorizing delivery, or approve a purchase only below a cap. Authorization concerns a particular action, its parameters and the applicable grant at the moment of execution. An erroneous release can create an irreversible effect. Withholding a legitimate action costs time or requires another interaction. Confusing missing information with an absolute prohibition also gives the user the wrong way to resolve a denial.
+
+Requiring a second model's agreement mechanically reduces the set of approvals relative to the first model. It says little about \emph{which} approvals are removed. The reviewers might make the same arithmetic error or interpret the same policy clause too broadly. Alternatively, the second reviewer might detect an action outside the user's grant. The operational question is how often it does so, at what cost to legitimate requests, and whether a less expensive restriction achieves the same result.
+
+We ask three questions. \textbf{RQ1} concerns the recall of explicitly prohibited actions and the fraction of legal requests still released. \textbf{RQ2} asks what a structured second opinion adds beyond withholding more requests or requiring agreement between two direct answers. \textbf{RQ3} asks whether proposed clarifications and decisions at numeric permission boundaries behave as their wording predicts. Our contribution is a paired empirical evaluation of existing inference services, with a release-volume control, source-specific reference classes, and a prospectively generated numeric challenge. The accompanying artifact contains the per-request decisions underlying the claims.
+
+\section{Prior work}
+AuthGateBench changes the user's grant while keeping a candidate action and its trajectory fixed \cite{authgate}. It enables a test of whether a model understands both permissions in a contrast pair. DelegationBench, maintained as DelegationCheck, separates missing authorization, missing information and independent grounds for refusing. Its authors also study sensitivity to elicitation format \cite{delegation}. Jev Boundary provides policy-conditioned variants, family identifiers, and a historical collection with recorded human decisions \cite{jevdata}. We preserve the native responses and report the historical collection separately.
+
+AgentBoundary varies the apparent risk and actual permissibility of executable tasks \cite{agentboundary}. AgentDojo evaluates an agent operating on untrusted tool outputs \cite{agentdojo}. Here the candidate action is fixed and every reviewer sees the same proposal. Paired differences can therefore be attributed to changes in review behavior. The experiment does not observe task completion after intervention or the consequences of an executed action.
+
+Selective classification studies the relationship between risk and coverage \cite{selective}. In authorization, withholding an action can itself be the correct decision. We therefore condition on legal and non-executable actions separately and compare methods at the same release volume. CaMeL separates trusted control flow from untrusted data and enforces policies at tool calls \cite{camel}. Our reviewers make semantic judgments from the same record. Agreement alone cannot confer a capability, verify a user's identity, or enforce a policy after the review.
+
+Model cascades can route queries among services to reduce inference cost \cite{frugal}. Work on AI control evaluates models monitoring other models under a threat of intentional subversion \cite{aicontrol}. Our selection criterion is an initial permission to execute, with no assumption about intentional subversion. The expected safety gain depends on whether the selected second opinions detect errors conditional on that permission. In access-control terms, withholding a proposal until its grant is verified implements a fail-safe default only if the host mediates the action at execution \cite{saltzer}.
+
+\section{Threat model and decision policy}
+The input \(x\) contains the user request or supplied state, the candidate operation and parameters, and a trusted policy when the dataset supplies one. Tool outputs can describe observations. They cannot grant new authority. The hazard measured here is immediate release of a proposal that the reference withholds. No attacker is required: the agent may infer a recipient or exceed a spending limit. We assume the host faithfully transmits the proposal and respects a non-execution decision. Adaptive attackers, compromised services and changes in resource state between review and execution lie outside this experiment.
+
+Write \(a_b\) for the execute-now option in benchmark \(b\). Direct Jev returns one native option using a structured API (\texttt{jev-1.14.0}) \cite{jevapi}. Direct DeepSeek uses \texttt{deepseek-flash} (documented as V4.1-Flash-1017), non-thinking mode, temperature zero and JSON output \cite{dsapi}. Its system message specifies the output format. Both services receive the same benchmark-specific question and options; neither sees the other's answer. Sample identifiers, labels, group identifiers and authoring notes stay local.
+
+\paragraph{Serial review.} Write \(J(x)\) for direct Jev and \(C(x)\) for the structured DeepSeek review. The final native decision is
+\[
+  F(x)=
+  \begin{cases}
+     J(x), & J(x)\ne a_b,\\
+     C(x), & J(x)=a_b .
+  \end{cases}
+\]
+The second call receives the original record without Jev's answer or confidence. It checks the operation, object, recipient and applicable limits. If an unresolved fact would change the decision, it must name a concrete clarification and predict the native decisions under yes and no answers. It should request missing consent from the party entitled to give it. A known prohibition calls for declining the action. The host uses the current decision; hypothetical answers do not grant authorization. If Jev asks for information, requests permission or refuses, that native response is preserved. Appendix~\ref{app:protocol} contains the system instruction.
+
+\paragraph{Effect of a veto.} Let \(R_J\) and \(R_F\) denote the corresponding release sets. By construction \(R_F\subseteq R_J\). For non-executable actions \(N\), the number of Jev errors prevented is \(|(R_J\setminus R_F)\cap N|\). The same difference intersected with the legal set counts lost legitimate approvals. Neither identity requires an assumption about independence of reviewer errors.
+
+\section{Evaluation design}
+\paragraph{Populations.} We run complete public test populations. AuthGateBench contributes 700 decisions in 350 balanced contrast pairs. We use the no-signal input representation and the project's native scope question; the optional author-generated environment signals and the paper's detailed policy-prompt condition are omitted. DelegationBench contributes 156 scenarios. All have binary references and 149 have a four-way majority among three annotators. Seven unresolved four-way cases retain their published binary non-execution reference. Jev Boundary v1.2.0 contributes 270 test records in 30 families, each with three policy regimes and three controlled variants. We exclude the 108 development records. Thus 1,126 actions receive binary scores and 1,119 receive native-category scores.
+
+\paragraph{Endpoints.} Define \(D\) as the records with native reference \texttt{deny} or \texttt{REFUSE}. Explicit prohibition is our label-supported proxy for danger. Realized harm severity is unobserved. Define \(N\) as all requests that should not execute now, including \(D\), unconfirmed permissions and missing facts. Define \(L\) as the actions allowed now. The primary sets contain \(|D|=37\), \(|N|=592\) and \(|L|=534\). AuthGateBench's binary blocks do not identify absolute prohibitions. DelegationBench contributes one refusal and Jev Boundary contributes 36 prohibitions across 11 families. We display absent classes as undefined.
+
+For release indicator \(r_i\), prohibited-action stop recall is \(1-\sum_{i\in D} r_i/|D|\). Both a hold and a refusal stop immediate execution. The explicit refusal rate on \(D\) counts only a refusal. Additional endpoints are false releases on \(N\), legal release rate \(\sum_{i\in L} r_i/|L|\), binary agreement and exact native agreement. A method that always withholds has perfect stop recall and zero legal releases.
+
+\paragraph{Uncertainty and controls.} Differences are paired by request. We resample families within each benchmark with replacement: 350 AuthGate pairs, 26 Delegation families and 30 Boundary families per draw. All members of each selected family and all methods travel together; a family drawn twice contributes twice. We recompute pooled ratios across 10,000 draws (seed 20261123) and report percentile intervals for paired differences. The exhaustive corpus counts themselves have no sampling error. These intervals describe sensitivity to the empirical family mix, not deployment risk or repeat-call variability.
+
+Three comparisons distinguish informative review from more frequent withholding. (i) An intersection of the two direct decisions removes the structured review prompt. (ii) Within each dataset we retain exactly as many Jev approvals as the cascade, ranking by Jev's probability for the execute option. A fixed label-blind shuffle breaks ties. The matched volume is retrospective; this control supplies no deployable threshold. (iii) Uniform thinning of Jev approvals to that volume gives an expected number of false releases under indiscriminate withholding. References never determine which approvals a control keeps.
+
+\paragraph{Reuse and supplementary cohorts.} All primary model-visible states occur in earlier project input manifests. Inference was rerun for every primary record. We treat this as a public-corpus census after method development. Two additional populations have different references: 96 explicit-policy delegation cases and 150 historical Jev records. Respectively 46 and 100 of their states had no exact match in earlier manifests. A new numerical challenge tests a specific failure mechanism after the public census (Section~\ref{sec:diagnostics}).
+
+\input{results}
+\input{discussion}
+\bibliographystyle{plain}
+\bibliography{references}
+\input{appendix}
+\end{document}

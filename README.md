@@ -1,5 +1,25 @@
 # Agent 权限与隐私决策评测
 
+[英文论文 PDF](paper/authorization-review.pdf) · [可离线编译的源码包](results/authorization-review-source.zip) · [LaTeX 构建说明](paper/README.md) · [三个完整测试集的 HTML 结果](results/shared_review/三项权限评测与共同错误.html#full-permission)
+
+正式评测包括 AuthGateBench 全部 700 条、DelegationBench 全部 156 条和 Jev Boundary 正式测试集 270 条。联合方法先由 Jev 判断，仅把放行请求交给 DeepSeek 独立复核。公开补充集和新生成的 96 条数值边界题单列。[逐题决定](results/full_permission/decisions.csv) · [逐方法结果](results/full_permission/scores.csv) · [数值边界结果](results/full_permission/numeric_decisions.csv)
+
+在已配置 Jev 和 DeepSeek 凭据的工作区，可按下列顺序重跑。生成图表和区间需要 NumPy 与 Matplotlib。
+
+```powershell
+$py = uv python find
+& $py scripts/download.py authgate delegation jev
+foreach ($studyName in 'full_permission','numeric_permission') {
+    ./scripts/study.ps1 -Provider jev -Study $studyName -Workers 16
+    ./scripts/study.ps1 -Provider deepseek -Study $studyName -Workers 16
+    ./scripts/study.ps1 -Provider deepseek -Study ($studyName + '_review') -Workers 16
+}
+& $py full_permission_results.py
+uv run --with numpy full_permission_analysis.py
+uv run --with numpy --with matplotlib paper_assets.py
+./paper/build.ps1
+```
+
 本仓库用公开任务记录评测结构化决策 API。每次请求只发送模型可见的业务状态、问题和候选类别。标签、分组和样本编号留在本地评分。工具调用以文本表示，测试程序不执行样本中的命令、发送邮件或操作网站。
 
 [打开单文件研究总报告](results/Agent权限管理研究总报告.html)。首页用成本与准确率散点图比较同一批请求上的方法，可切换三个主要批次、11 项初评及初评合计。报告还包含准确率热图、合法放行与误放行对照、错误样本、复审过程及各阶段费用。运行 `uv run --with matplotlib overview_report.py` 可使用仓库中的评分表和各份明细报告重新生成。

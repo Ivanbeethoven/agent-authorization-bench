@@ -54,6 +54,8 @@ def config():
             "parameter_router_extra",
             "material_facts",
             "material_fact_replies",
+            "full_permission",
+            "full_permission_review",
         )
     )
     pool, question, labels = ds.jev(270)

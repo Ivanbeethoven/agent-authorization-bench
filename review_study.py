@@ -183,7 +183,16 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("material_facts", "material_fact_replies"):
+    if study in (
+        "full_permission",
+        "full_permission_review",
+        "numeric_permission",
+        "numeric_permission_review",
+    ):
+        import full_permission as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study in ("material_facts", "material_fact_replies"):
         import material_facts as design
 
         if provider != "deepseek" and (study != design.STUDY or provider != "jev"):
@@ -352,6 +361,24 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study in (
+                "full_permission",
+                "full_permission_review",
+                "numeric_permission",
+                "numeric_permission_review",
+            ):
+                options = (
+                    {
+                        "system_prompt": protocol["system"],
+                        "max_tokens": protocol["max_tokens"],
+                    }
+                    if protocol["mode"] == "review"
+                    else {}
+                )
+                measure(
+                    name, item, protocol["mode"], protocol["questions"][name], **options
+                )
+                return
             if study == "material_fact_replies":
                 branches = (
                     ("yes", "no")
@@ -561,6 +588,10 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "full_permission",
+            "full_permission_review",
+            "numeric_permission",
+            "numeric_permission_review",
             "material_facts",
             "material_fact_replies",
             "parameter_router",
