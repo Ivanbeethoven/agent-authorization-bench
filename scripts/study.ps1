@@ -1,11 +1,11 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('deepseek','jev','aliyun')][string]$Provider,
-    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent')][string]$Study,
+    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review')][string]$Study,
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'
 if ($Provider -eq 'aliyun') {
-    if ($Study -in @('confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent')) { throw 'This experiment uses Jev and DeepSeek.' }
+    if ($Study -in @('confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review')) { throw 'This experiment uses Jev and DeepSeek.' }
     & (Join-Path $PSScriptRoot 'bailian.ps1') -Study $Study -Workers $Workers
     return
 }

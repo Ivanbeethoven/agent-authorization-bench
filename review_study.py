@@ -169,7 +169,13 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("reply_validation", "reply_precedent"):
+    if study == "shared_review":
+        import shared_review as design
+
+        if provider != "deepseek":
+            raise ValueError("Grant-first review uses DeepSeek")
+        plans, protocol = design.config()
+    elif study in ("reply_validation", "reply_precedent"):
         import reply_review as design
 
         if provider not in ("jev", "deepseek") or (
@@ -271,6 +277,13 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "shared_review":
+
+                def invoke(stage, questions, state):
+                    return measure(name, item, stage, questions, state)
+
+                design.run_case(invoke, name, item, plans[name])
+                return
             if study in ("reply_validation", "reply_precedent"):
 
                 def invoke(stage, questions, state):
@@ -382,6 +395,7 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "shared_review",
             "reply_validation",
             "reply_precedent",
             "pilot",
