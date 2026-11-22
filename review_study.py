@@ -169,7 +169,17 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("shared_review", "commitment_review"):
+    if study == "retained_validation":
+        import retained_validation as design
+
+        plans, protocol = design.config()
+        if provider == "aliyun":
+            plans = {
+                name: plan
+                for name, plan in plans.items()
+                if "aliyun_direct" in protocol["eligible"][name]
+            }
+    elif study in ("shared_review", "commitment_review"):
         import shared_review as design
 
         if provider != "deepseek":
@@ -279,6 +289,20 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "retained_validation":
+
+                def invoke(stage, questions, state):
+                    return measure(name, item, stage, questions, state)
+
+                design.run_case(
+                    invoke,
+                    name,
+                    item,
+                    plans[name],
+                    provider,
+                    positions[name, item["id"]],
+                )
+                return
             if study in ("shared_review", "commitment_review"):
 
                 def invoke(stage, questions, state):
@@ -397,6 +421,7 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "retained_validation",
             "shared_review",
             "commitment_review",
             "reply_validation",

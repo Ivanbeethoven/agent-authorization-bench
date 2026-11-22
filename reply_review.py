@@ -168,6 +168,10 @@ def precedent_data():
     old = [r for r in ds.delegation(700)[0] if r["id"] not in excluded]
     if len(old) != 119:
         raise ValueError("Unexpected reference library")
+    return {"new_delegation": target}, match_examples(target["samples"], old, family)
+
+
+def match_examples(targets, old, family):
 
     def words(state):
         return set(re.findall("[a-z0-9]+", json.dumps(state, sort_keys=True).lower()))
@@ -176,7 +180,7 @@ def precedent_data():
     df = Counter(w for s in token_sets.values() for w in s)
     weights = {w: 1 + math.log((1 + len(old)) / (1 + n)) for w, n in df.items()}
     matches = {}
-    for item in target["samples"]:
+    for item in targets:
         query = words(item["state"])
 
         def score(r, query=query):
@@ -192,7 +196,7 @@ def precedent_data():
             next(r for r in eligible if (r["gold"] == "ACT") == side)
             for side in (True, False)
         ]
-    return {"new_delegation": target}, matches
+    return matches
 
 
 def precedent_config():

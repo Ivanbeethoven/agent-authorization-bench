@@ -4,7 +4,7 @@ param(
     [int]$Limit = 50,
     [int]$Workers = 5,
     [switch]$Check,
-    [ValidateSet('pilot','review','risk','coverage','conditions')][string]$Study
+    [ValidateSet('pilot','review','risk','coverage','conditions','retained_validation')][string]$Study
 )
 $ErrorActionPreference = 'Stop'
 if ($Region -notin @('cn-beijing','ap-southeast-1')) { throw 'Unsupported inference region.' }

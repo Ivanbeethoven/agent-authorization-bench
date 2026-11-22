@@ -178,15 +178,34 @@ def classify(batch, exe):
         }
 
 
-def run(workers, first_only):
+def run(workers, first_only, retained=False):
     exe = shutil.which("codex.exe")
     if not exe:
         raise RuntimeError("Local codex.exe not found")
-    ROOT.mkdir(parents=True, exist_ok=True)
-    log = ROOT / "calls.jsonl"
-    with pilot.exclusive(ROOT / "run.lock"):
+    folder = ROOT / "retained_validation" if retained else ROOT
+    folder.mkdir(parents=True, exist_ok=True)
+    log = folder / "calls.jsonl"
+    with pilot.exclusive(folder / "run.lock"):
         seen = {r["batch"] for r in ds.records(log)} if log.exists() else set()
-        todo = [b for b in batches() if b[0] not in seen]
+        if retained:
+            from retained_validation import config
+
+            plans, _ = config()
+            candidates = (
+                (
+                    f"retained.{name}.{i}",
+                    "retained",
+                    name,
+                    plan["instructions"],
+                    plan["choices"],
+                    [row],
+                )
+                for name, plan in plans.items()
+                for i, row in enumerate(plan["samples"])
+            )
+        else:
+            candidates = batches()
+        todo = [b for b in candidates if b[0] not in seen]
         if first_only:
             todo = todo[:1]
 
@@ -209,5 +228,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, choices=range(1, 9), default=5)
     parser.add_argument("--first-only", action="store_true")
+    parser.add_argument("--retained", action="store_true")
     args = parser.parse_args()
-    run(args.workers, args.first_only)
+    run(args.workers, args.first_only, args.retained)
