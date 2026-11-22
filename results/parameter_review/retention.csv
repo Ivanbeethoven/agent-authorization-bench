@@ -1,0 +1,37 @@
+﻿set,benchmark,method,prior_correct_allows,retained_correct_allows,prior_recoveries,retained_recoveries,prior_false_allows,removed_false_allows,added_false_allows
+final_pairs,AuthGateBench,jev_new,61,61,33,33,18,0,0
+final_pairs,AuthGateBench,joint_new,53,53,25,25,7,0,0
+final_pairs,AuthGateBench,jev_all,61,42,33,23,18,17,0
+final_pairs,AuthGateBench,joint_all,53,41,25,18,7,6,0
+final_pairs,AuthGateBench,jev_adaptive,61,60,33,33,18,4,0
+final_pairs,AuthGateBench,joint_adaptive,53,53,25,25,7,2,0
+new_pairs,AuthGateBench,jev_new,58,58,32,32,10,0,0
+new_pairs,AuthGateBench,joint_new,46,46,22,22,5,0,0
+new_pairs,AuthGateBench,jev_all,58,45,32,25,10,10,0
+new_pairs,AuthGateBench,joint_all,46,43,22,21,5,5,0
+new_pairs,AuthGateBench,jev_adaptive,58,58,32,32,10,3,0
+new_pairs,AuthGateBench,joint_adaptive,46,46,22,22,5,2,0
+new_boundary,Jev Boundary,jev_new,15,15,0,0,0,0,0
+new_boundary,Jev Boundary,joint_new,14,14,0,0,0,0,0
+new_boundary,Jev Boundary,jev_all,15,15,0,0,0,0,0
+new_boundary,Jev Boundary,joint_all,14,14,0,0,0,0,0
+new_boundary,Jev Boundary,jev_adaptive,15,15,0,0,0,0,0
+new_boundary,Jev Boundary,joint_adaptive,14,14,0,0,0,0,0
+new_delegation,DelegationBench,jev_new,14,14,1,1,16,0,0
+new_delegation,DelegationBench,joint_new,14,14,1,1,11,0,0
+new_delegation,DelegationBench,jev_all,14,11,1,1,16,5,0
+new_delegation,DelegationBench,joint_all,14,14,1,1,11,1,0
+new_delegation,DelegationBench,jev_adaptive,14,11,1,1,16,3,0
+new_delegation,DelegationBench,joint_adaptive,14,14,1,1,11,0,0
+version_pairs,版本参数合成对照,jev_new,23,23,23,23,1,1,0
+version_pairs,版本参数合成对照,joint_new,23,23,23,23,0,0,0
+version_pairs,版本参数合成对照,jev_all,23,21,23,21,1,1,0
+version_pairs,版本参数合成对照,joint_all,23,23,23,23,0,0,0
+version_pairs,版本参数合成对照,jev_adaptive,23,23,23,23,1,1,0
+version_pairs,版本参数合成对照,joint_adaptive,23,23,23,23,0,0,0
+old_pairs,AuthGateBench,jev_new,74,74,41,41,9,1,0
+old_pairs,AuthGateBench,joint_new,68,68,35,35,4,1,0
+old_pairs,AuthGateBench,jev_all,74,51,41,28,9,8,0
+old_pairs,AuthGateBench,joint_all,68,57,35,27,4,3,0
+old_pairs,AuthGateBench,jev_adaptive,74,74,41,41,9,3,0
+old_pairs,AuthGateBench,joint_adaptive,68,68,35,35,4,2,0

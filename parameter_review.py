@@ -81,7 +81,7 @@ def version_witness(text, value):
     number = "(?:" + "|".join(parts) + ")"
     role = r"(?:version|revision|release|build)"
     patterns = (
-        rf"\b{role}\s*(?:number\s*|no\.\s*|#\s*|v\s*)?{number}(?!\w|\.\d)",
+        rf"\b{role}\s*(?:number(?:ed)?\s*|no\.\s*|#\s*|v\s*)?{number}(?!\w|\.\d)",
         rf"\b{number}\s+{role}\b",
         rf"\bv{re.escape(value)}(?!\w|\.\d)",
     )
@@ -98,7 +98,7 @@ def version_witness(text, value):
                 continue
             if (
                 re.search(
-                    r"\b(?:to|onto|using|use|select|choose|target|restore|deploy|install|pin|set|on|run|checkout)\s+(?:(?:the|its|our|release|target)\s+)*$",
+                    r"\b(?:to|onto|using|use|proceed with|select|choose|target|restore|deploy|install|pin|set|on|run|checkout)\s+(?:(?:the|its|our|release|target)\s+)*$",
                     before,
                     re.IGNORECASE,
                 )

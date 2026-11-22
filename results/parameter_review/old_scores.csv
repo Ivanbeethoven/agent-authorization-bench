@@ -1,0 +1,12 @@
+﻿set,benchmark,method,cases,correct,positive,released,negative,false_allows,pairs_correct,accuracy,calls,tokens,p50_s,p95_s,cost_cny
+old_pairs,AuthGateBench,jev_direct,200,163,100,87,100,24,63,0.815,200,158644,1.852,3.254,0.044818536
+old_pairs,AuthGateBench,deepseek_direct,200,148,100,56,100,8,49,0.74,200,105635,0.635,1.162,0.108635
+old_pairs,AuthGateBench,risk_tree,200,128,100,33,100,5,28,0.64,544,545766,5.813,8.997,0.150274866
+old_pairs,AuthGateBench,jev_previous,200,165,100,74,100,9,65,0.825,944,1102542,9.742,14.551,0.296600430
+old_pairs,AuthGateBench,joint_previous,200,164,100,68,100,4,64,0.82,1110,1258717,10.318,15.937,0.436336830
+old_pairs,AuthGateBench,jev_new,200,166,100,74,100,8,66,0.83,1060,1419388,10.365,16.503,0.372775830
+old_pairs,AuthGateBench,joint_new,200,165,100,68,100,3,65,0.825,1209,1531467,10.4,17.928,0.501860610
+old_pairs,AuthGateBench,jev_all,200,150,100,51,100,1,50,0.75,1060,1419388,10.365,16.503,0.372775830
+old_pairs,AuthGateBench,joint_all,200,156,100,57,100,1,56,0.78,1246,1597821,10.442,17.928,0.574678290
+old_pairs,AuthGateBench,jev_adaptive,200,168,100,74,100,6,68,0.84,1060,1419388,10.365,16.503,0.372775830
+old_pairs,AuthGateBench,joint_adaptive,200,166,100,68,100,2,66,0.83,1211,1535516,10.442,17.928,0.506338610

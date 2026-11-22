@@ -150,6 +150,10 @@ def assemble(study):
                 "category": item["category"],
                 "reference": item["gold"],
                 "allow_label": ext.translate(name, "allow"),
+                "display_phrase": state["user_request"]
+                if name == "version_pairs"
+                or (old and item["group"] == "E3_agent_inferred_parameters_000")
+                else "",
                 **b,
             }
             for x, y in zip(j, d, strict=True):
