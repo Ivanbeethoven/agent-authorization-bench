@@ -1,0 +1,13 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+pilot,jev,jev-1.14.0,550,550,550,381780,19051,1.836,7.147,686.7,inference interval,0.112243320,0.112243320,551-call usage ledger includes separate 343-input connectivity check; batch only here
+pilot,aliyun,decision-model-preview,550,550,580,204390,,0.243,3.42,24.98,inference interval,0,,official limited-time free inference price
+pilot,deepseek,deepseek-flash,550,550,550,272159,2875,0.595,0.984,36.71,runner interval,0.24653366,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+review,jev,jev-1.14.0,105,284,284,324521,14310,1.846,7.67,339.9,runner interval,0.095409174,0.095913384,provider key usage delta; 285 calls
+review,aliyun,decision-model-preview,105,236,246,181429,,0.234,0.28,10.26,runner interval,0,,official limited-time free inference price
+review,deepseek,deepseek-flash,105,274,274,244033,1923,0.609,1.011,21.1,runner interval,0.12339988,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+risk,jev,jev-1.14.0,105,297,297,330501,20410,1.788,2.432,78.78,runner interval,0.097167294,0.097167294,provider key usage delta; 297 calls
+risk,aliyun,decision-model-preview,105,129,129,103523,,0.235,0.265,4.0,runner interval,0,,official limited-time free inference price
+risk,deepseek,deepseek-flash,105,240,240,219310,2320,0.729,1.165,21.41,runner interval,0.09737976,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+coverage,jev,jev-1.14.0,18,54,54,91767,3498,1.928,8.549,37.7,runner interval,0.026979498,0.026979498,provider key usage delta; 54 calls
+coverage,aliyun,decision-model-preview,18,54,54,70314,,0.237,0.277,2.96,runner interval,0,,official limited-time free inference price
+coverage,deepseek,deepseek-flash,18,54,54,80652,476,0.65,1.208,9.57,runner interval,0.02874224,0.00,immediate wallet change; posting may lag; amount attributed by token usage

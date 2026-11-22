@@ -1,0 +1,16 @@
+﻿provider,risk,routed,generic_correct,specialized_correct
+jev,privacy,8,6,5
+jev,injection,0,0,0
+jev,scope,49,34,33
+jev,facts,7,7,7
+jev,mixed_other,0,0,0
+aliyun,privacy,0,0,0
+aliyun,injection,0,0,0
+aliyun,scope,0,0,0
+aliyun,facts,1,1,1
+aliyun,mixed_other,7,6,7
+deepseek,privacy,5,4,4
+deepseek,injection,0,0,0
+deepseek,scope,30,24,21
+deepseek,facts,10,6,7
+deepseek,mixed_other,0,0,0

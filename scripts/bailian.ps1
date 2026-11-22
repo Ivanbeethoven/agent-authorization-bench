@@ -3,7 +3,8 @@ param(
     [string]$Region = 'cn-beijing',
     [int]$Limit = 50,
     [int]$Workers = 5,
-    [switch]$Check
+    [switch]$Check,
+    [ValidateSet('pilot','review','risk','coverage')][string]$Study
 )
 $ErrorActionPreference = 'Stop'
 if ($Region -notin @('cn-beijing','ap-southeast-1')) { throw 'Unsupported inference region.' }
@@ -41,7 +42,11 @@ try {
         if ($response.StatusCode -ne 200) { throw 'Model Studio connectivity check failed.' }
     } else {
         $python = if (Get-Command uv -ErrorAction SilentlyContinue) { uv python find } else { (Get-Command python).Source }
-        & $python (Join-Path $PSScriptRoot '../pilot.py') run @Datasets --provider aliyun --limit $Limit --workers $Workers
+        if ($Study) {
+            & $python (Join-Path $PSScriptRoot '../review_study.py') $Study --provider aliyun --workers $Workers
+        } else {
+            & $python (Join-Path $PSScriptRoot '../pilot.py') run @Datasets --provider aliyun --limit $Limit --workers $Workers
+        }
         if ($LASTEXITCODE -ne 0) { throw 'Pilot process failed.' }
     }
 } finally {

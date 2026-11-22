@@ -1,0 +1,10 @@
+﻿dataset,provider,samples,A,B,C,D,routed,D_fixed_B,D_broke_B,A_false_allow,B_false_allow,C_false_allow,D_false_allow,legitimate_triggered,recovered,introduced_false_allow
+jev,jev,36,34,33,33,33,17,0,0,2,3,3,3,0,0,0
+authgate,jev,50,43,42,42,42,17,0,0,6,7,7,7,0,0,0
+delegation,jev,19,11,10,10,9,3,0,1,7,7,7,7,0,0,0
+jev,aliyun,36,24,27,27,26,11,0,1,8,9,9,9,0,0,0
+authgate,aliyun,50,29,26,26,26,1,0,0,21,24,24,24,0,0,0
+delegation,aliyun,19,9,8,7,8,1,0,0,10,11,12,11,0,0,0
+jev,deepseek,36,33,29,27,28,13,0,1,2,1,2,2,0,0,1
+authgate,deepseek,50,42,44,43,44,12,0,0,2,1,2,1,0,0,0
+delegation,deepseek,19,14,12,12,9,7,0,3,3,6,6,7,1,0,1
