@@ -169,7 +169,13 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("conditions", "confirmation"):
+    if study in ("parameter_calibration", "parameter_test"):
+        import parameter_review as design
+
+        if provider == "aliyun":
+            raise ValueError("The parameter experiment specifies Jev and DeepSeek")
+        plans, protocol = design.config(study)
+    elif study in ("conditions", "confirmation"):
         if study == "confirmation":
             import authorization_confirmation as design
 
@@ -250,11 +256,26 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
-            if study in ("conditions", "confirmation"):
+            if study in (
+                "conditions",
+                "confirmation",
+                "parameter_calibration",
+                "parameter_test",
+            ):
 
                 def invoke(stage, questions, state):
                     return measure(name, item, stage, questions, state)
 
+                if study.startswith("parameter_"):
+                    design.run_case(
+                        invoke,
+                        item["state"],
+                        plans[name],
+                        provider,
+                        positions[name, item["id"]],
+                        study,
+                    )
+                    return
                 if study == "confirmation":
                     design.run_case(
                         invoke,
@@ -330,7 +351,16 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument(
         "study",
-        choices=["pilot", "review", "risk", "coverage", "conditions", "confirmation"],
+        choices=[
+            "pilot",
+            "review",
+            "risk",
+            "coverage",
+            "conditions",
+            "confirmation",
+            "parameter_calibration",
+            "parameter_test",
+        ],
     )
     p.add_argument("--provider", choices=MODEL, required=True)
     p.add_argument("--workers", type=int, choices=range(1, 17), default=8)
