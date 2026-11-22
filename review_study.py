@@ -169,7 +169,15 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study == "retained_validation":
+    if study == "jev_triage":
+        import jev_triage as design
+
+        plans, protocol = design.config()
+        if provider == "deepseek":
+            plans = {design.FRESH: plans[design.FRESH]}
+        elif provider != "jev":
+            raise ValueError("Triage uses Jev and DeepSeek")
+    elif study == "retained_validation":
         import retained_validation as design
 
         plans, protocol = design.config()
@@ -289,6 +297,27 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "jev_triage":
+                plan = plans[name]
+                if provider == "jev":
+                    measure(
+                        name,
+                        item,
+                        "triage",
+                        design.QUESTIONS,
+                        {
+                            "decision_task": plan["instructions"],
+                            "record": item["state"],
+                        },
+                    )
+                else:
+                    measure(
+                        name,
+                        item,
+                        "direct",
+                        {"decision": question(plan["instructions"], plan["choices"])},
+                    )
+                return
             if study == "retained_validation":
 
                 def invoke(stage, questions, state):
@@ -421,6 +450,7 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "jev_triage",
             "retained_validation",
             "shared_review",
             "commitment_review",

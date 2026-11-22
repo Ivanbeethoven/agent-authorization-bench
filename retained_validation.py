@@ -65,10 +65,10 @@ def signature(state):
     return json.dumps(state, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
 
 
-def past():
+def past(ignore=(STUDY, "jev_triage")):
     ids, states = set(), set()
     for file in sorted(BASE.glob("*/*/plan.json")):
-        if file.parents[1].name == STUDY:
+        if file.parents[1].name in ignore:
             continue
         for plan in json.loads(file.read_text("utf8"))["plans"].values():
             for row in plan["samples"]:

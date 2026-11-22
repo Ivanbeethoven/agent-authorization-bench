@@ -178,23 +178,37 @@ def classify(batch, exe):
         }
 
 
-def run(workers, first_only, retained=False):
+def run(workers, first_only, retained=False, triage=False):
     exe = shutil.which("codex.exe")
     if not exe:
         raise RuntimeError("Local codex.exe not found")
-    folder = ROOT / "retained_validation" if retained else ROOT
+    folder = (
+        ROOT / "jev_triage"
+        if triage
+        else ROOT / "retained_validation"
+        if retained
+        else ROOT
+    )
     folder.mkdir(parents=True, exist_ok=True)
     log = folder / "calls.jsonl"
     with pilot.exclusive(folder / "run.lock"):
         seen = {r["batch"] for r in ds.records(log)} if log.exists() else set()
-        if retained:
-            from retained_validation import config
+        if retained or triage:
+            if triage:
+                from jev_triage import FRESH, config
 
-            plans, _ = config()
+                all_plans, _ = config()
+                plans = {FRESH: all_plans[FRESH]}
+            else:
+                from retained_validation import config
+
+                plans, _ = config()
+
+            alias = "triage" if triage else "retained"
             candidates = (
                 (
-                    f"retained.{name}.{i}",
-                    "retained",
+                    f"{alias}.{name}.{i}",
+                    alias,
                     name,
                     plan["instructions"],
                     plan["choices"],
@@ -228,6 +242,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, choices=range(1, 9), default=5)
     parser.add_argument("--first-only", action="store_true")
-    parser.add_argument("--retained", action="store_true")
+    scope = parser.add_mutually_exclusive_group()
+    scope.add_argument("--retained", action="store_true")
+    scope.add_argument("--triage", action="store_true")
     args = parser.parse_args()
-    run(args.workers, args.first_only, args.retained)
+    run(args.workers, args.first_only, args.retained, args.triage)
