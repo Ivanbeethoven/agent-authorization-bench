@@ -169,12 +169,12 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study == "reply_validation":
+    if study in ("reply_validation", "reply_precedent"):
         import reply_review as design
 
-        if provider not in ("jev", "deepseek"):
+        if provider not in ("jev", "deepseek") or (study == "reply_precedent" and provider != "deepseek"):
             raise ValueError("Reply validation uses Jev and DeepSeek")
-        plans, protocol = design.config()
+        plans, protocol = design.precedent_config() if study == "reply_precedent" else design.config()
     elif study in (
         "parameter_calibration",
         "parameter_test",
@@ -267,10 +267,14 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
-            if study == "reply_validation":
+            if study in ("reply_validation", "reply_precedent"):
                 def invoke(stage, questions, state):
                     return measure(name, item, stage, questions, state)
-                design.run_case(invoke, name, item["state"], plans[name], provider, positions[name, item["id"]])
+                pos = positions[name, item["id"]]
+                if study == "reply_precedent":
+                    design.precedent_case(invoke, item, plans[name], pos)
+                else:
+                    design.run_case(invoke, name, item["state"], plans[name], provider, pos)
                 return
             if study in (
                 "conditions",
@@ -371,6 +375,7 @@ if __name__ == "__main__":
         "study",
         choices=[
             "reply_validation",
+            "reply_precedent",
             "pilot",
             "review",
             "risk",
