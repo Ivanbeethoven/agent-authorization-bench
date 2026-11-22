@@ -169,8 +169,16 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study == "conditions":
-        import authorization_conditions as design
+    if study in ("conditions", "confirmation"):
+        if study == "confirmation":
+            import authorization_confirmation as design
+
+            if provider == "aliyun":
+                raise ValueError(
+                    "The two-review confirmation specifies Jev and DeepSeek"
+                )
+        else:
+            import authorization_conditions as design
 
         plans = design.populations()
         protocol = design.description()
@@ -242,11 +250,20 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
-            if study == "conditions":
+            if study in ("conditions", "confirmation"):
 
                 def invoke(stage, questions, state):
                     return measure(name, item, stage, questions, state)
 
+                if study == "confirmation":
+                    design.run_case(
+                        invoke,
+                        item["state"],
+                        plans[name],
+                        provider,
+                        positions[name, item["id"]],
+                    )
+                    return
                 design.run_case(
                     invoke,
                     item["state"],
@@ -312,7 +329,8 @@ def run(study, provider, workers):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument(
-        "study", choices=["pilot", "review", "risk", "coverage", "conditions"]
+        "study",
+        choices=["pilot", "review", "risk", "coverage", "conditions", "confirmation"],
     )
     p.add_argument("--provider", choices=MODEL, required=True)
     p.add_argument("--workers", type=int, choices=range(1, 17), default=8)

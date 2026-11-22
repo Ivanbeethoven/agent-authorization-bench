@@ -1,10 +1,11 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('deepseek','jev','aliyun')][string]$Provider,
-    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions')][string]$Study,
+    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation')][string]$Study,
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'
 if ($Provider -eq 'aliyun') {
+    if ($Study -eq 'confirmation') { throw 'Confirmation uses Jev and DeepSeek.' }
     & (Join-Path $PSScriptRoot 'bailian.ps1') -Study $Study -Workers $Workers
     return
 }
