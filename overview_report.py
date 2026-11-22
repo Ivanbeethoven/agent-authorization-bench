@@ -220,6 +220,8 @@ def tradeoff(rows):
     fig, ax = plt.subplots(figsize=(8.6, 0.59 * len(rows) + 1))
     fig.subplots_adjust(left=0.31, right=0.98, top=0.98, bottom=0.14)
     clean(ax)
+    ax.grid(False, axis="x")
+    ax.spines["bottom"].set_visible(True)
     for y, r in enumerate(rows):
         for offset, numerator, denominator, color in (
             (-0.17, "released", "positive", TEAL),
@@ -361,7 +363,9 @@ def cost_accuracy(points):
         bottom=(legend_height + 0.65) / height,
     )
     clean(ax)
-    ax.grid(axis="both", color=LINE, linewidth=0.65)
+    ax.grid(False, axis="both")
+    ax.spines[["left", "bottom"]].set_visible(True)
+    ax.tick_params(length=3, color=LINE)
     xs, ys = zip(*coords, strict=True)
     xmax = max(xs) or 1
     ax.set_xlim(-0.045 * xmax, 1.12 * xmax)
@@ -411,7 +415,7 @@ def cost_accuracy(points):
         ax.annotate(
             " / ".join(codes),
             (x, y),
-            xytext=(0, 6),
+            xytext=(0, 9),
             textcoords="offset points",
             ha="center",
             va="bottom",
