@@ -24,7 +24,7 @@ APIKEY.FAN 的 `jev-1.14.0` 和阿里云百炼北京地域的 `decision-model-pr
 
 [逐数据集比较](results/comparison.csv) · [同一样本的两份裁决](results/paired_predictions.csv) · [Jev 用量](results/summary.csv) · [百炼用量](results/aliyun/summary.csv)
 
-Jev 的 550 条评测使用了 381,780 个输入 token，另一次接入测试使用了 343 个。按当日 TypeSafe 公开分组的输入价每百万 token 0.294 元、输出免费估算，合计约 0.1123 元。百炼 550 条有效响应共报告 204,390 个输入 token，响应没有单列输出 token。北京地域该模型当日限时免费。[Jev 价格](https://apikey.fan/pricing) · [Jev 计费说明](https://apikey.fan/docs/typesafe) · [百炼价格](https://help.aliyun.com/zh/model-studio/decision-model-preview/)
+Jev 的 550 条评测使用了 381,780 个输入 token，另一次接入测试使用了 343 个。服务商当日用量记录共 551 次，382,123 个输入 token、19,089 个输出 token，账户扣费按中文用量页显示约为 0.1123 元。该分组按输入每百万 token 0.294 元计费，输出免费。百炼 550 条有效响应共报告 204,390 个输入 token，响应没有单列输出 token。北京地域该模型当日限时免费。[Jev 用量查询](https://apikey.fan/key-usage) · [Jev 价格](https://apikey.fan/pricing) · [百炼价格](https://help.aliyun.com/zh/model-studio/decision-model-preview/)
 
 ## 下载与采样
 
