@@ -47,7 +47,7 @@ def config():
         (prior.BASE / prior.STUDY / "deepseek/plan.json").read_text("utf8")
     )["plans"]
     plans.update({"recent." + k: stage[k] for k in prior.LOCKED_ROUTE})
-    ids, states = prior.past(ignore=(STUDY,))
+    ids, states = prior.past(ignore=(STUDY, "parameter_router"))
     pool, question, labels = ds.jev(270)
     families = {
         r["id"]: r["family_id"]

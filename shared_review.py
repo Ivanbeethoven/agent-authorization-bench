@@ -266,7 +266,12 @@ def config():
     seen = set()
     unseen_states = set()
     for file in BASE.glob("*/*/plan.json"):
-        if file.parents[1].name in (STUDY, "retained_validation", "jev_triage"):
+        if file.parents[1].name in (
+            STUDY,
+            "retained_validation",
+            "jev_triage",
+            "parameter_router",
+        ):
             continue
         for plan in json.loads(file.read_text("utf8"))["plans"].values():
             for row in plan["samples"]:

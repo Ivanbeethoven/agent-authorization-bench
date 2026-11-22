@@ -169,7 +169,24 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study == "jev_triage":
+    if study == "parameter_router":
+        import parameter_router as design
+
+        plans, protocol = design.config()
+        if provider == "jev":
+            from study_report import inputs
+
+            direct_plans, decisions, _ = inputs(study, "deepseek")
+            if direct_plans != plans:
+                raise ValueError("Different DeepSeek inputs")
+            provisional = {
+                (r["dataset"], r["id"]): r["answers"]["decision"]
+                for r in decisions
+                if not r.get("error")
+            }
+        elif provider != "deepseek":
+            raise ValueError("Parameter routing requires Jev and DeepSeek")
+    elif study == "jev_triage":
         import jev_triage as design
 
         plans, protocol = design.config()
@@ -297,6 +314,22 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "parameter_router":
+                plan = plans[name]
+                if provider == "deepseek":
+                    measure(
+                        name,
+                        item,
+                        "direct",
+                        {"decision": question(plan["instructions"], plan["choices"])},
+                    )
+                else:
+
+                    def invoke(stage, questions, state):
+                        return measure(name, item, stage, questions, state)
+
+                    design.run_jev(invoke, item, plan, provisional[name, item["id"]])
+                return
             if study == "jev_triage":
                 plan = plans[name]
                 if provider == "jev":
@@ -450,6 +483,7 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "parameter_router",
             "jev_triage",
             "retained_validation",
             "shared_review",
