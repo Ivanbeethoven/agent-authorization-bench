@@ -8,7 +8,7 @@
 @media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{width:calc(100% - 30px)}section{padding:23px 0}.method{padding:15px}header{padding:17px 0 25px}h1{margin-top:20px}th,td{padding:7px}.sectionhead{align-items:start}.case{padding:13px}.tablebox{scrollbar-color:#849e95 #f3f7f3}}
 @media print{header{background:white;color:var(--ink);padding:0}header p{color:var(--ink)}nav,.toggles,.sources,select,footer{display:none}.wrap{width:100%}.grid{display:block}.method{margin:8px 0}.tablebox{overflow:visible}.numbers{white-space:normal}section{padding:10px 0}}
 </style></head>
-<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#methods">四种方案</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a></nav>
+<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a></nav>
 <h1>四种 Agent 权限审查方案</h1><p>给定用户原话、当前状态和即将执行的动作，谁来决定是否放行？四种方案的差异，在于 Jev 何时介入、怎样选择值得复核的请求，以及谁给出最终决定。</p></div></header>
 <main class="wrap">
 <section id="methods"><h2>从一次直接判断，到有预算的复核</h2>
@@ -31,8 +31,18 @@
 <ol class="path" aria-label="处理顺序"><li>DeepSeek 初判</li><li>Jev 核对</li><li>Jev 判断是否值得复核</li></ol>
 <p>第一次 Jev 调用读取原始材料及 DeepSeek 的初判，对照四项内容。</p>
 <ul><li><strong>操作与对象</strong>，例如起草、提交是否属于同一步。</li><li><strong>接收方与范围</strong>，例如指定小组和公开分享的差别。</li><li><strong>数量与后果</strong>，例如金额、剩余库存、期限或不可撤销的承诺。</li><li><strong>授权与政策</strong>，例如批准是否已生效，例外条件是否满足。</li></ul>
-<p>每项标为已覆盖、冲突、未知或无关。Jev 从给出的原文片段中选一条作为主要依据，也可以不选。第二次 Jev 调用结合原文和四项结果估计 GPT 纠正初判的机会。进入名额的请求采用 GPT 的独立决定，其余沿用初判。</p></article>
+<p>每项标为已覆盖、冲突、未知或无关。Jev 从给出的原文片段中选一条作为主要依据，也可以不选。第二次 Jev 调用结合原文和四项结果估计 GPT 纠正初判的机会。进入名额的请求采用 GPT 的独立决定，其余沿用初判。</p>
+<p><strong>这两次复读值得吗？</strong> 四项检查依靠模型解释文字，数量、范围等约束尚未交给独立的程序验证。它与第三种方法同为 139/150，单条耗时中位数却从 2.59 秒增至 4.43 秒，还多放行了 1 条不该放行的请求。因此本轮把它作为检验额外复核价值的对照。下方库存例子展示了两次复核仍会遗漏的算术条件。</p></article>
 </div></section>
+<section id="separation"><h2>历史纠错收益如何与本轮测试分开？</h2>
+<p>第三种方案属于<strong>用历史标签校准转交规则</strong>。它需要知道过去哪些请求被 DeepSeek 答错、改交 GPT 又会怎样。学习发生在分组收益表，DeepSeek、Jev 和 GPT 的模型权重均保持固定。</p>
+<div class="tablebox" tabindex="0" aria-label="校准与测试的数据用途"><table><thead><tr><th>阶段</th><th>可用数据</th><th>实际用途</th></tr></thead><tbody>
+<tr><th>估计收益</th><td>上一轮 236 条带标签请求。其中 AuthGateBench 150 条、DelegationBench 50 条、Jev Boundary 36 条。</td><td>这些题在早期实验中曾用作测试。本轮明确改作校准集，仅用于估计每一组转交 GPT 的平均收益。</td></tr>
+<tr><th>分配复核名额</th><td>本轮每条请求的 Jev 输出，包括主要因素、审查建议和转交概率。</td><td>读取已固定的收益表，在各来源内排序。每项评测共 10 个名额，Jev Boundary 的两次抽样分别分配 6 个和 4 个。此步骤使用同批其他请求的分数，属于离线批量比较。</td></tr>
+<tr><th>评价方法</th><td>三项各 50 条新请求的参考答案。</td><td>名单固定后，把各方法的最终决定与参考答案比较，计算准确率、误放行和合法放行。历史 236 条没有计入本轮的 139/150。</td></tr>
+</tbody></table></div>
+<p class="case-lesson"><strong>实际核查。</strong> 236 条校准题与 150 条评分题的编号交集为 0，完整可见输入的交集也为 0。用历史校准记录重新计算，三项任务的分组收益均与保存的收益表一致。再移除本轮参考答案，仅用样本编号和已记录的 Jev 输出重放排序，150 条排名全部与公布的结果一致。</p>
+<p class="note">本轮检验的是在三种已知任务上迁移历史经验。第三种方案是在看过本轮结果后选为优先方案，同一批成绩也参与了这次选择。若要验证它对新场景家族的优势，下一轮可先按家族隔离开发、校准和盲测样本，固定收益表、预算和主指标，保存转交名单后再揭示盲测答案。</p></section>
 <section id="case"><div class="sectionhead"><div><h2>同样移动 6 件，授权条件只差 1 件</h2><p class="muted">两条实测请求来自同一对自编授权范围题。切换用户要求，可比较四种方法的实际决定。</p></div>
 <div class="toggles" role="group" aria-label="选择配对样本"><button type="button" data-example="0" aria-pressed="true">至少保留 6 件</button><button type="button" data-example="1" aria-pressed="false">至少保留 5 件</button></div></div>
 <div id="case-content" aria-live="polite"><div class="case"><p class="case-meta" id="case-id"></p><blockquote id="quote" lang="en"></blockquote><p id="translation"></p><p><strong>库存与动作</strong>　后架有 11 件，拟移 6 件到展示区，执行后会剩下 <strong>5 件</strong>。</p></div>
