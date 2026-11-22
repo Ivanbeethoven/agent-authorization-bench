@@ -7,10 +7,14 @@
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.72 "Source Sans 3","Microsoft YaHei UI","PingFang SC",sans-serif}h1,h2,h3,p,figure{margin:0}h1,h2,h3{line-height:1.33}a{color:var(--teal);text-underline-offset:4px}a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #ce852f;outline-offset:3px}.wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}header{background:var(--navy);color:white;padding:23px 0 36px}header a{color:#d5e8e1}nav{display:flex;gap:8px 22px;flex-wrap:wrap;font-size:14px}h1{font-size:clamp(32px,5vw,57px);letter-spacing:-.04em;margin:27px 0 12px}header p{max-width:830px;color:#e2efea;font-size:clamp(16px,2vw,19px)}section{padding:30px 0;border-bottom:1px solid var(--rule);scroll-margin-top:12px}h2{font-size:clamp(23px,3vw,33px);letter-spacing:-.025em;margin-bottom:8px}h3{font-size:21px}p+p{margin-top:8px}.muted,.note{color:var(--muted)}.note{font-size:14px;margin-top:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.method{border:1px solid var(--rule);border-top:4px solid var(--color);border-radius:5px;background:#fff;padding:20px;break-inside:avoid}.method h3{color:var(--color)}.path{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:12px 0;padding:0;font-size:13px;font-weight:600}.path li{padding:3px 7px;background:#f0f4f2;border-radius:3px}.path li+li::before{content:"→";color:#48615c;margin-right:7px}.method p{font-size:15px}.formula{margin:12px 0;background:#f4f4ee;padding:9px 12px;border-left:3px solid var(--color);font-size:15px}.method ul{padding-left:20px;margin:5px 0 10px;font-size:15px}.method li::marker{color:var(--color)}.sectionhead{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:8px}.toggles{display:flex;gap:6px;flex-wrap:wrap}button,select{color:var(--ink);background:white;border:1px solid #94aaa2;border-radius:5px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer}button[aria-pressed=true]{background:var(--teal);color:white;border-color:var(--teal)}.case{background:var(--soft);padding:17px 20px;border-radius:5px;margin:15px 0}.case blockquote{margin:8px 0 4px;border-left:3px solid var(--teal);padding-left:13px;font:600 clamp(17px,2.4vw,22px)/1.45 Georgia,"Microsoft YaHei",serif}.case code{font-family:"IBM Plex Mono",Consolas,monospace}.tablebox{max-width:100%;overflow-x:auto;margin-top:10px}table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;font-variant-numeric:tabular-nums}th,td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}thead{background:#e9f0eb}th{font-weight:650}tbody th{min-width:130px}.numbers{white-space:nowrap}.caps{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.caps span{padding:3px 8px;background:#f3f2e9;font-size:14px;border-radius:3px}.case-lesson{padding:12px 15px;border-left:3px solid var(--teal);background:#f3f7f3;margin-top:13px}.case-meta{font-size:13px;color:var(--muted);overflow-wrap:anywhere}.sources{display:flex;gap:10px 20px;flex-wrap:wrap;margin:14px 0 24px;font-size:14px}footer{padding:16px 0;color:var(--muted)}label{font-size:14px}label select{margin-left:4px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{width:calc(100% - 30px)}section{padding:23px 0}.method{padding:15px}header{padding:17px 0 25px}h1{margin-top:20px}th,td{padding:7px}.sectionhead{align-items:start}.case{padding:13px}.tablebox{scrollbar-color:#849e95 #f3f7f3}}
 @media print{header{background:white;color:var(--ink);padding:0}header p{color:var(--ink)}nav,.toggles,.sources,select,footer{display:none}.wrap{width:100%}.grid{display:block}.method{margin:8px 0}.tablebox{overflow:visible}.numbers{white-space:normal}section{padding:10px 0}}
+.flow-view{width:100%;overflow-x:auto;background:white;border:1px solid var(--rule);border-radius:5px;margin-top:14px}.flow-view svg{width:100%;height:auto;display:block}.flow-view.zoom svg{min-width:1320px}.flow-tools{display:flex;gap:8px;flex-wrap:wrap}.flow-caption{color:var(--muted);font-size:14px;margin-top:8px}
+@media print{.flow-tools{display:none}.flow-view.zoom svg{min-width:0}.flow-view{overflow:visible;break-inside:avoid}}
 </style></head>
-<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a></nav>
+<body><header><div class="wrap"><nav aria-label="本页目录"><a href="#flow">方法原理图</a><a href="#methods">四种方案</a><a href="#separation">校准与测试如何分开</a><a href="#case">同一请求的四种决定</a><a href="#results">三项实验结果</a></nav>
 <h1>四种 Agent 权限审查方案</h1><p>给定用户原话、当前状态和即将执行的动作，谁来决定是否放行？四种方案的差异，在于 Jev 何时介入、怎样选择值得复核的请求，以及谁给出最终决定。</p></div></header>
 <main class="wrap">
+<section id="flow"><div class="sectionhead"><h2>四种方案的决策流程</h2><div class="flow-tools"><button id="flow-zoom" type="button" aria-pressed="false" aria-controls="flow-view">放大查看</button><button id="flow-save" type="button">下载矢量图</button></div></div>
+<figure><div class="flow-view" id="flow-view" tabindex="0" aria-label="四种方案的流程对照，放大后可左右滚动">__REVIEW_DIAGRAM__</div><figcaption class="flow-caption">第二、三种先选择审查模型。第四种先取得 DeepSeek 的初判，只有进入复核名额时才由 GPT 替换初判。</figcaption></figure></section>
 <section id="methods"><h2>从一次直接判断，到有预算的复核</h2>
 <p>实验只评估动作执行前的权限判断。原始记录中的政策和用户授权决定了权限边界，工具返回的信息可以说明库存、对象或状态。GPT‑6.2 Sol 收到转交时独立阅读原始记录，给出该任务允许的决定。需要用户另行授权的请求，在复核后仍可要求授权。</p>
 <div class="grid">
@@ -94,5 +98,17 @@ function showScores(){
 }
 document.querySelectorAll("[data-example]").forEach(b=>b.addEventListener("click",()=>showExample(Number(b.dataset.example))));
 byId("scope").addEventListener("change",showScores);
+byId("flow-zoom").addEventListener("click",()=>{
+  const enlarged=byId("flow-view").classList.toggle("zoom");
+  byId("flow-zoom").setAttribute("aria-pressed",String(enlarged));
+  byId("flow-zoom").textContent=enlarged?"适应页面":"放大查看";
+});
+byId("flow-save").addEventListener("click",()=>{
+  const svg=new XMLSerializer().serializeToString(document.querySelector("#flow-view svg"));
+  const url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
+  const a=document.createElement("a");
+  a.href=url;a.download="四种权限审查方案原理图.svg";a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
 showExample(0);showScores();
 </script></body></html>

@@ -431,11 +431,15 @@ def render_method_guide(scores):
         ],
     }
     template = (ROOT / "scripts/permission_methods.html").read_text("utf8")
+    diagram = (DEST / "四种权限审查方案原理图.svg").read_text("utf8")
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace(
         "<", "\\u003c"
     )
     (DEST / "四种权限审查方案详解.html").write_text(
-        template.replace("__METHOD_GUIDE__", data), encoding="utf8"
+        template.replace("__METHOD_GUIDE__", data).replace(
+            "__REVIEW_DIAGRAM__", diagram
+        ),
+        encoding="utf8",
     )
 
 
