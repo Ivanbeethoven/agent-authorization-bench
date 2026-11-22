@@ -8,7 +8,7 @@ from decimal import Decimal
 from statistics import median
 
 from datasets_local import ROOT
-from material_facts import ARMS, REPLAY, STUDY, config, replay_config
+from material_facts import ARMS, REPLAY, STUDY, config, questions, replay_config
 from study_report import inputs, measurements
 
 DEST = ROOT / "results" / STUDY
@@ -124,6 +124,84 @@ def score_replies(checked):
     return bill
 
 
+def score_jev(plans, checked):
+    direct_plans, calls, ledger = inputs(STUDY, "jev")
+    saved = ROOT / "data/study_runs" / STUDY / "jev/plan.json"
+    expected = {"questions": {k: questions(p, "control") for k, p in plans.items()}}
+    if (
+        direct_plans != plans
+        or json.loads(saved.read_text("utf8"))["protocol"] != expected
+    ):
+        raise ValueError(
+            "Jev needs identical states, references and native decision questions"
+        )
+    measured, bill = measurements(STUDY, "jev", calls, ledger)
+    answers, elapsed, fees, attempts = {}, Counter(), defaultdict(Decimal), Counter()
+    for call, usage in zip(calls, measured, strict=True):
+        key = call["dataset"], call["id"]
+        if key not in checked or call["stage"] != "direct":
+            raise ValueError("Unexpected direct Jev call")
+        elapsed[key] += usage["seconds"]
+        fees[key] += usage["estimated_cny"]
+        attempts[key] += usage["attempts"]
+        if "answers" in call:
+            if (
+                key in answers
+                or call["returned_model"] != bill["model"]
+                or set(call["answers"]) != {"decision"}
+            ):
+                raise ValueError("Invalid direct Jev response")
+            answers[key] = call["answers"]["decision"]
+    if answers.keys() != checked.keys():
+        raise ValueError("Unpaired Jev comparison")
+    pairs = []
+    for key, r in checked.items():
+        jev, method, ref, allow = (
+            answers[key],
+            r["decision"],
+            r["reference"],
+            r["allow_label"],
+        )
+        pairs.append(
+            {
+                "benchmark": r["benchmark"],
+                "source": r["source"],
+                "id": r["id"],
+                "arm": "jev_direct",
+                "reference": ref,
+                "allow_label": allow,
+                "decision": jev,
+                "control": method,
+                "joint_allow": int(jev == method == allow),
+                "seconds": elapsed[key],
+                "attempts": attempts[key],
+                "cny": str(fees[key]),
+            }
+        )
+    scores = []
+    for name in ["合计", *dict.fromkeys(BENCH.values())]:
+        group = [r for r in pairs if name == "合计" or r["benchmark"] == name]
+        scores.append(
+            {
+                **score(group),
+                "benchmark": name,
+                "joint_false": sum(
+                    r["joint_allow"]
+                    for r in group
+                    if r["reference"] != r["allow_label"]
+                ),
+                "joint_legal": sum(
+                    r["joint_allow"]
+                    for r in group
+                    if r["reference"] == r["allow_label"]
+                ),
+            }
+        )
+    save_csv("jev_decisions.csv", pairs)
+    save_csv("jev_scores.csv", scores)
+    return bill
+
+
 def build():
     plans, raw, ledger = inputs(STUDY, "deepseek")
     expected_plans, protocol = config()
@@ -210,7 +288,8 @@ def build():
     save_csv("decisions.csv", rows)
     save_csv("scores.csv", scores)
     checked = {(r["source"], r["id"]): r for r in rows if r["arm"] == "check"}
-    save_csv("provider_usage.csv", [bill, score_replies(checked)])
+    bills = [bill, score_replies(checked), score_jev(plans, checked)]
+    save_csv("provider_usage.csv", bills)
     print(json.dumps(scores[:3], ensure_ascii=False, indent=1))
 
 

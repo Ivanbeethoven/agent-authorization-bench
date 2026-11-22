@@ -186,11 +186,20 @@ def run(study, provider, workers):
     if study in ("material_facts", "material_fact_replies"):
         import material_facts as design
 
-        if provider != "deepseek":
-            raise ValueError("This experiment uses only DeepSeek.")
+        if provider != "deepseek" and (study != design.STUDY or provider != "jev"):
+            raise ValueError(
+                "Only the primary experiment supports a direct Jev comparator."
+            )
         plans, protocol = (
             design.replay_config() if study == design.REPLAY else design.config()
         )
+        if provider == "jev":
+            protocol = {
+                "questions": {
+                    name: design.questions(plan, "control")
+                    for name, plan in plans.items()
+                }
+            }
     elif study in ("parameter_router", "parameter_router_extra"):
         import parameter_router as design
 
@@ -368,6 +377,9 @@ def run(study, provider, workers):
                     )
                 return
             if study == "material_facts":
+                if provider == "jev":
+                    measure(name, item, "direct", protocol["questions"][name])
+                    return
                 pos = positions[name, item["id"]]
                 for stage in design.order(pos):
                     arm = protocol["arms"][stage]

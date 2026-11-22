@@ -101,6 +101,7 @@ $benchmarks = @('jev','authgate','delegation','authbench','authorization','yolof
 
 ```powershell
 ./scripts/study.ps1 -Provider deepseek -Study material_facts -Workers 12
+./scripts/study.ps1 -Provider jev -Study material_facts -Workers 8
 ./scripts/study.ps1 -Provider deepseek -Study material_fact_replies -Workers 12
 $studyPython = uv python find
 & $studyPython -X utf8 material_fact_results.py

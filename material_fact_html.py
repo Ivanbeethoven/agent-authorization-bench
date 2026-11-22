@@ -8,7 +8,12 @@ from datasets_local import ROOT
 from material_fact_results import DEST, read_csv
 from material_facts import ARMS, CHECK, RULE
 
-NAMES = {"control": "原提示", "rule": "暂缓规则", "check": "澄清问题与两种答案"}
+NAMES = {
+    "control": "原提示",
+    "rule": "暂缓规则",
+    "check": "澄清问题与两种答案",
+    "jev_direct": "纯 Jev",
+}
 
 
 def table(columns, rows):
@@ -28,7 +33,46 @@ def render():
     scores = read_csv(DEST / "scores.csv")
     details = read_csv(DEST / "decisions.csv")
     replies = read_csv(DEST / "verified_replies.csv")
-    bill, extra = read_csv(DEST / "provider_usage.csv")
+    usage = {
+        (r["study"], r["provider"]): r for r in read_csv(DEST / "provider_usage.csv")
+    }
+    bill, extra = (
+        usage["material_facts", "deepseek"],
+        usage["material_fact_replies", "deepseek"],
+    )
+    jev_bill = usage["material_facts", "jev"]
+    jev_scores = read_csv(DEST / "jev_scores.csv")
+    jev_rows = read_csv(DEST / "jev_decisions.csv")
+    jev = {r["id"]: r for r in jev_rows}
+    paired = []
+    for j in jev_scores:
+        m = next(
+            r
+            for r in scores
+            if r["arm"] == "check" and r["benchmark"] == j["benchmark"]
+        )
+        paired.append(
+            [
+                j["benchmark"],
+                f"{j['correct']}/{j['n']} · {pct(j)}",
+                f"{m['correct']}/{m['n']} · {pct(m)}",
+                f"{j['false_allow']} / {m['false_allow']}",
+                f"{j['legal_allow']} / {m['legal_allow']}",
+                f"{j['joint_false']}/{j['negative']}",
+                f"{j['joint_legal']}/{j['positive']}",
+                f"{j['median_s']} / {m['median_s']}",
+                f"{Decimal(j['cny']):.5f} / {Decimal(m['cny']):.5f}",
+            ]
+        )
+    denied = [r for r in jev_rows if r["reference"] == "deny"]
+    missed = [
+        sum(r[k] == r["allow_label"] for r in denied) for k in ("decision", "control")
+    ]
+    shared = [
+        r["id"]
+        for r in jev_rows
+        if r["joint_allow"] == "1" and r["reference"] != r["allow_label"]
+    ]
     benchmarks = list(dict.fromkeys(r["benchmark"] for r in details))
     metrics = []
     for r in scores:
@@ -73,6 +117,7 @@ def render():
                 base["reference"],
                 base["previous"],
                 *(arms[a]["decision"] for a in ARMS),
+                jev[idx]["decision"],
                 arms["check"]["basis"],
             ]
         )
@@ -118,6 +163,26 @@ def render():
         "RULE": escape(RULE),
         "CHECK": escape(CHECK),
         "PANELS": "".join(panels),
+        "JEV_TABLE": table(
+            [
+                "评测",
+                "纯 Jev 正确",
+                "完整方法正确",
+                "误放行（Jev / 完整）",
+                "合法放行（Jev / 完整）",
+                "双方同意时误放行",
+                "双方同意时合法放行",
+                "中位秒（Jev / 完整）",
+                "费用元（Jev / 完整）",
+            ],
+            paired,
+        ),
+        "JEV_DETAILS": (
+            f"Jev Boundary 中有 {len(denied)} 条历史参考决定明确为拒绝，纯 Jev 和完整方法分别放行 {missed[0]} 条、{missed[1]} 条。"
+            f"两种方法共同误放行的全部编号为 {escape('、'.join(shared)) if shared else '无'}。"
+            f"纯 Jev 单独完成 {jev_bill['calls']} 次直接审批，并发用时 {jev_bill['wall_seconds']} 秒，按用量折算 ¥{jev_bill['estimated_cny']}。"
+            f"运行期间服务商用量账目增加 ¥{jev_bill['account_delta_cny']}。"
+        ),
         "SCORES": table(
             [
                 "评测",
@@ -146,6 +211,7 @@ def render():
                 "本次原提示",
                 "暂缓规则",
                 "澄清问题与两种答案",
+                "纯 Jev",
                 "模型归因",
             ],
             cases,

@@ -306,10 +306,11 @@ def efficiency_groups(history, boards, selection):
         }
 
     fact_scores = read("material_facts/scores.csv")
+    fact_scores.extend(read("material_facts/jev_scores.csv"))
     for cohort in dict.fromkeys(r["benchmark"] for r in fact_scores):
         rows = [r for r in fact_scores if r["benchmark"] == cohort]
         groups["facts_" + cohort] = {
-            "label": f"DeepSeek 暂缓规则 · {cohort} · {rows[0]['n']} 条",
+            "label": f"DeepSeek 暂缓规则与纯 Jev · {cohort} · {rows[0]['n']} 条",
             "points": [
                 point(fact_names[r["arm"]], r["correct"], r["n"], r["cny"])
                 for r in rows
@@ -363,6 +364,7 @@ def efficiency_groups(history, boards, selection):
 def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
+        "纯 Jev": "#594787",
         "原提示": "#525f72",
         "暂缓规则": "#b15b2b",
         "澄清问题与两种答案": "#137463",

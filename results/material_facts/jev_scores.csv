@@ -1,0 +1,5 @@
+﻿benchmark,arm,n,correct,negative,false_allow,positive,legal_allow,fixed,lost,median_s,p95_s,cny,attempts,joint_false,joint_legal
+合计,jev_direct,150,135,88,3,62,57,3,3,3.267,16.302,0.033476016,150,3,54
+AuthGateBench,jev_direct,50,48,25,2,25,25,1,0,2.95,4.877,0.006317766,50,2,24
+DelegationBench,jev_direct,50,50,27,0,23,23,1,0,4.383,16.475,0.007435260,50,0,22
+Jev Boundary,jev_direct,50,37,36,1,14,9,1,3,2.865,4.6,0.019722990,50,1,8

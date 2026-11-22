@@ -4,7 +4,8 @@ param(
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'
-if ($Study -in @('material_facts','material_fact_replies') -and $Provider -ne 'deepseek') { throw 'This study uses only DeepSeek.' }
+if ($Study -eq 'material_fact_replies' -and $Provider -ne 'deepseek') { throw 'The reply experiment uses only DeepSeek.' }
+if ($Study -eq 'material_facts' -and $Provider -notin @('deepseek','jev')) { throw 'The primary experiment supports DeepSeek and the Jev comparator.' }
 if ($Provider -eq 'aliyun') {
     if ($Study -in @('confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review','commitment_review')) { throw 'This experiment uses Jev and DeepSeek.' }
     & (Join-Path $PSScriptRoot 'bailian.ps1') -Study $Study -Workers $Workers
