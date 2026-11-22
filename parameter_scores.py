@@ -29,12 +29,15 @@ METHODS = (
     "joint_new",
     "jev_all",
     "joint_all",
+    "jev_adaptive",
+    "joint_adaptive",
 )
 ROLLBACK = "E3_agent_inferred_parameters_000_base"
 DATASETS = {
     "old_pairs": "AuthGateBench",
     "new_pairs": "AuthGateBench",
     "version_pairs": "版本参数合成对照",
+    "final_pairs": "AuthGateBench",
     "new_boundary": "Jev Boundary",
     "new_delegation": "DelegationBench",
 }
@@ -90,7 +93,7 @@ def base_outcomes(dataset, state, j, d):
     first, second = (inspected(x, refs) for x in (j, d))
 
     def fold(start, review):
-        if dataset in ("new_pairs", "old_pairs", "version_pairs"):
+        if dataset in ("new_pairs", "old_pairs", "version_pairs", "final_pairs"):
             return "allow" if previous.qualified(start, review) else "ask_permission"
         if review["action"] != "allow":
             return review["action"]
@@ -102,12 +105,20 @@ def base_outcomes(dataset, state, j, d):
 
     single = fold(tree, first)
     two = fold(tree, second) if single == "allow" else single
+    strong = [
+        review["action"] == "allow"
+        and review["resolution"] == "explicit"
+        and review["source"] in refs
+        for review in (first, second)
+    ]
     return {
         "jev_direct": j["direct"]["decision"],
         "deepseek_direct": d["direct"]["decision"],
         "risk_tree": ext.translate(dataset, tree),
         "jev_previous": ext.translate(dataset, single),
         "joint_previous": ext.translate(dataset, two),
+        "jev_explicit": strong[0],
+        "joint_explicit": all(strong),
     }
 
 
@@ -179,7 +190,7 @@ def summary(rows, arm):
     groups = defaultdict(list)
     for r in rows:
         groups[r["group"]].append(r)
-    pairs = rows[0]["set"] in ("old_pairs", "new_pairs", "version_pairs")
+    pairs = rows[0]["set"] in ("old_pairs", "new_pairs", "version_pairs", "final_pairs")
     return {
         "cases": len(rows),
         "correct": sum(r[arm] == r["reference"] for r in rows),
@@ -273,9 +284,11 @@ def summarize_split(rows, model, call_index, rules):
             j = TREE | REVIEW
             if model.startswith("joint") and r["jev_previous"] == yes:
                 d = REVIEW
-            if model in MODELS or model.endswith("_all"):
+            if model in MODELS or model.endswith(("_all", "_adaptive")):
                 role = model.split("_", 1)[0]
                 level = "all" if model.endswith("_all") else rules[role]
+                if model.endswith("_adaptive"):
+                    level = "version" if r[role + "_explicit"] else "all"
                 if r[role + "_previous"] == yes:
                     # The parameter audit is measured for every admitted case, even for a numeric-only veto.
                     j = j | {"args"}
@@ -315,6 +328,7 @@ def publish(study):
         "parameter_calibration": "old",
         "parameter_test": "fresh",
         "parameter_versions": "versions",
+        "parameter_final": "final",
     }[study]
     rows, slots, for_cost, calls, usage = assemble(study)
     lock = pr.DEST / "selected_rules.json"
@@ -336,6 +350,9 @@ def publish(study):
     for r in rows:
         for arm, role in MODELS.items():
             r[arm] = r[role + "_" + rules[role]]
+            r[role + "_adaptive"] = r[
+                role + ("_version" if r[role + "_explicit"] else "_all")
+            ]
             r[arm + "_objections"] = r[role + "_" + rules[role] + "_objections"]
         r["previously_recovered"] = int(r["id"] in recovered)
         grp[r["set"]].append(r)
@@ -368,6 +385,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "study",
-        choices=("parameter_calibration", "parameter_test", "parameter_versions"),
+        choices=(
+            "parameter_calibration",
+            "parameter_test",
+            "parameter_versions",
+            "parameter_final",
+        ),
     )
     publish(parser.parse_args().study)

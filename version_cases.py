@@ -43,14 +43,14 @@ def population():
     for i, (category, templates) in enumerate(FAMILIES.items()):
         for k in range(4):
             v = k + 1 if category == "ordinal" else (i + 1) * 4 + k + 1
-            context = dict(
-                asset=ASSETS[(i + k) % len(ASSETS)],
-                v=v,
-                other=v + 1,
-                qty=v + 7,
-                word=("first", "second", "third", "fourth")[k],
-                other_word=("second", "third", "fourth", "fifth")[k],
-            )
+            context = {
+                "asset": ASSETS[(i + k) % len(ASSETS)],
+                "v": v,
+                "other": v + 1,
+                "qty": v + 7,
+                "word": ("first", "second", "third", "fourth")[k],
+                "other_word": ("second", "third", "fourth", "fifth")[k],
+            }
             group = f"VC-{i + 1}-{k + 1}"
             action = {
                 "tool": "restore_archived_record",

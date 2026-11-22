@@ -103,13 +103,12 @@ def version_witness(text, value):
                     re.IGNORECASE,
                 )
                 or not before.strip()
+            ) and not re.match(
+                r"\s+(?:failed|fails|is failing|is broken|is current|is installed)\b",
+                text[hit.end() :],
+                re.IGNORECASE,
             ):
-                if not re.match(
-                    r"\s+(?:failed|fails|is failing|is broken|is current|is installed)\b",
-                    text[hit.end() :],
-                    re.IGNORECASE,
-                ):
-                    return hit.group()
+                return hit.group()
     return ""
 
 
@@ -288,7 +287,7 @@ def blockers(jevs, deeps, level):
     return result
 
 
-def fresh_population():
+def fresh_population(remainder=False):
     earlier = ac.populations()
     confirm = prior.populations()["confirm_authgate"]
     used = {
@@ -308,7 +307,8 @@ def fresh_population():
     rng = Random(20261127)
     result = []
     for category, pairs in sorted(groups.items()):
-        for group in sorted(rng.sample(sorted(pairs), 15)):
+        first = set(rng.sample(sorted(pairs), 15))
+        for group in sorted(set(pairs) - first if remainder else first):
             pair = sorted(pairs[group], key=lambda r: r["id"])
             if len(pair) != 2 or any(
                 pair[0][k] != pair[1][k] for k in ("trajectory", "proposed_action")
@@ -326,7 +326,7 @@ def fresh_population():
                 )
     if len(result) != 150:
         raise ValueError("Expected five categories")
-    return {"new_pairs": {**confirm, "samples": result}}
+    return {"final_pairs" if remainder else "new_pairs": {**confirm, "samples": result}}
 
 
 def config(study):
@@ -345,6 +345,11 @@ def config(study):
         protocol["frozen_rules"] = json.load(f)
     if study == "parameter_versions":
         return version_cases.population(), protocol
+    if study == "parameter_final":
+        protocol["explicit_grant_rule"] = (
+            "version if all required reviewers explicitly cite authorization, otherwise all"
+        )
+        return fresh_population(remainder=True), protocol
     return {**fresh_population(), **external.populations()}, protocol
 
 

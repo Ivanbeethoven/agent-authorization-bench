@@ -169,7 +169,12 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("parameter_calibration", "parameter_test", "parameter_versions"):
+    if study in (
+        "parameter_calibration",
+        "parameter_test",
+        "parameter_versions",
+        "parameter_final",
+    ):
         import parameter_review as design
 
         if provider == "aliyun":
@@ -262,6 +267,7 @@ def run(study, provider, workers):
                 "parameter_calibration",
                 "parameter_test",
                 "parameter_versions",
+                "parameter_final",
             ):
 
                 def invoke(stage, questions, state):
@@ -362,6 +368,7 @@ if __name__ == "__main__":
             "parameter_calibration",
             "parameter_test",
             "parameter_versions",
+            "parameter_final",
         ],
     )
     p.add_argument("--provider", choices=MODEL, required=True)
