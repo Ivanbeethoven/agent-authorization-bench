@@ -1,0 +1,13 @@
+data/
+__pycache__/
+.env
+.env.*
+*.credential
+*.xlsx
+results/*.jsonl
+results/*.lock
+results/*.tmp
+results/aliyun/*.jsonl
+results/aliyun/*.lock
+.venv/
+.ruff_cache/

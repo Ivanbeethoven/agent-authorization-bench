@@ -1,0 +1,64 @@
+# Agent 权限与隐私决策评测
+
+本仓库用公开任务记录评测结构化决策 API。每次请求只发送模型可见的业务状态、问题和候选类别。标签、分组和样本编号留在本地评分。工具调用以文本表示，测试程序不执行样本中的命令、发送邮件或操作网站。
+
+## 2026-11-22 的先导实验
+
+模型为 APIKEY.FAN 的 `jev-1.14.0`。11 个数据集各抽取 50 条，实际得到 550 个有效响应。选样种子为 `20261122`。AuthGateBench 和 YoloFS-Ext 各抽 25 个完整配对。其余按数据适配器规定的合格样本抽取。不同指标分别报告。
+
+| 数据集 | 一致数 / 测试数 | 本次评分的问题 |
+|---|---:|---|
+| Jev Authorization Boundary v1.2.0 | 48 / 50 | 在 270 条测试记录中抽样，给出原政策、状态和动作，直接预测 Allow、Hold、Deny。未使用论文 G0/G1 概率规则。 |
+| AuthGateBench | 45 / 50 | 候选调用是否获准。保留历史和用户请求，省略作者生成的环境信号，按 25 个配对评测。 |
+| DelegationBench | 31 / 50 | 在 149 个具有多数意见的场景中抽样，比对执行、征求许可、询问信息、拒绝四种响应。 |
+| AuthBench | 40 / 50 | 每个任务给出一个文件权限。25 个来自作者要求的权限，另外 25 个在同类型评分范围内，从其他任务选择，并排除已列及隐式权限。衡量与权限清单的一致性。 |
+| AuthorizationBench | 49 / 50 | 输入任务指令及作者列出的第一个越权行为，计数正确拦截。只包含越权样本。 |
+| YoloFS-Ext | 25 / 50 | 根据请求、命令预测是否发生指定损害。25 个安全和危险配对均保留；此设置没有工具实现或运行效果。 |
+| TS-Bench | 29 / 50 | 合并三个评估来源后抽样，风险标签 0 为安全，0.5 和 1 为不安全。 |
+| AgentDojo | 49 / 50 | 在 v1 基础任务中判断参考方案首个具名工具是否与请求相关。仅有正例；不衡量任务完成或攻击成功。 |
+| AgentDAM | 45 / 50 | 给出网页任务和作者列出的第一项敏感信息，衡量识别率。仅有敏感样本；不衡量实际披露率。 |
+| PrivacyLens | 49 / 50 | 根据种子描述判断该信息流是否适当。样本的参考答案均为不适当。 |
+| PrivacyLens-Live | 47 / 50 | 从两工具 MCP 配置的 150 份既有邮件记录中抽样，判断邮件是否披露指定信息，与作者的逐项检查结果比较。 |
+
+其中 Jev Boundary 的 27 个 Allow 中 1 个被暂缓，17 个 Hold 中 1 个被拒绝，6 个 Deny 均正确。AuthGateBench 放行了全部 25 个合法动作，也放行了 5 个应拦截动作。DelegationBench 中，22 个应征求许可的样本有 15 个被判断为可直接执行，抽到的 50 条中没有人工标为拒绝的样本。YoloFS-Ext 的 50 条全部被判为安全，25 条危险记录全部漏掉。样本单位为单次静态判断。两个同源变体或同一任务族的多条记录可能相关。
+
+[逐条结果](results/predictions.csv) · [分类汇总及用量](results/summary.csv)
+
+## 下载与采样
+
+使用 Python 3.11 或更新版本即可。以下命令可在项目根目录的 PowerShell 7 运行。`uv python find` 可替换为本机 Python 解释器路径。
+
+```powershell
+$py = uv python find
+& $py ./scripts/download.py
+$benchmarks = @('jev','authgate','delegation','authbench','authorization','yolofs','tsbench','agentdojo','agentdam','privacylens','privacylive')
+& $py ./pilot.py prepare @benchmarks --limit 50
+& $py ./pilot.py export
+```
+
+`data/raw/` 存放作者公开文件或静态字段，`data/batches/` 存放选样后的输入、题目、候选标签与评分参考。`prepare` 不调用模型。`export` 将所有样本整理为两份文件，`data/pilot50/inputs.jsonl` 含模型请求，`data/pilot50/references.jsonl` 含参考答案，两者以 benchmark 和 id 联结。只有 inputs 中的 request 对象发给模型。配对集要求偶数样本量。运行器核对已保存的样本清单，防止不同输入混入一组结果。新实验可使用项目的另一份工作副本。原始数据保留在本地，下载脚本重新取得复现实验所需的部分。公开源的 main 分支可能更新，逐条 CSV 保留本次实际编号。
+
+## 调用接口
+
+```powershell
+./scripts/credential.ps1
+./scripts/run.ps1 -Datasets $benchmarks -Limit 50 -Workers 5
+& $py ./pilot.py summarize
+```
+
+首次配置通过密码提示输入 TypeSafe 密钥，以 Windows 当前用户的 DPAPI 加密，存储在项目以外。如果已配置 `TYPESAFE_API_KEY`，运行器直接使用该环境变量。每个样本独立调用一次，记录实际响应模型、裁决、置信度和用量。中断后可使用相同参数继续运行。原始结果保存在 `results/<数据集>.jsonl`。汇总 CSV 一行代表一个数据集，逐条 CSV 可用来计算每类错误。[TypeSafe API](https://apikey.fan/docs/typesafe)
+
+阿里云百炼另有同协议的 `decision-model-preview`。本次只在北京工作空间做了一次连通性测试，得到有效的结构化裁决。运行下面的第一条命令可以检查接入。第二条命令可选，会使用相同的采样规则单独运行百炼批次。凭据可以从 `DASHSCOPE_API_KEY` 和 `DASHSCOPE_WORKSPACE_ID` 环境变量读取，在未提供密钥时也可以用已登录的 Aliyun CLI 读取现有可用凭据。[官方接口文档](https://help.aliyun.com/zh/model-studio/decision-model-api)
+
+```powershell
+./scripts/bailian.ps1 -Check
+./scripts/bailian.ps1 -Datasets $benchmarks -Limit 50 -Workers 5
+```
+
+## 数据来源
+
+- 授权与委托。[Jev Boundary v1.2.0](https://doi.org/10.5281/zenodo.22952538) · [AuthGateBench](https://github.com/Digital-Trust-Lab/AuthGateBench) · [DelegationBench](https://github.com/PieLord757/delegation-check)
+- 文件权限与作用范围。[AuthBench](https://github.com/evolvent-ai/Authbench) · [AuthorizationBench](https://github.com/PEACH-Research-Lab/AuthorizationBench) · [YoloFS-Ext](https://github.com/wudaoz/Caper/tree/main/yolofs_ext)
+- 工具风险与任务。[TS-Bench](https://huggingface.co/datasets/MurrayTom/TS-Bench) · [AgentDojo](https://github.com/ethz-spylab/agentdojo)
+- 隐私。[AgentDAM](https://github.com/facebookresearch/ai-agent-privacy) · [PrivacyLens](https://github.com/SALT-NLP/PrivacyLens) · [PrivacyLens-Live](https://github.com/microsoft/ACV/tree/main/misc/PrivacyInAction)
+- OverEager-Bench 的论文描述了 500 个场景，本次检索未取得作者的逐场景数据文件，仅保存论文，未纳入抽样和计分。[作者论文](https://arxiv.org/abs/2605.18583)
