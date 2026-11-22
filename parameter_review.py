@@ -8,6 +8,7 @@ from random import Random
 import authorization_conditions as ac
 import authorization_confirmation as prior
 import datasets_local as ds
+import parameter_external as external
 import review_design as rd
 from review_study import original_plans
 
@@ -67,7 +68,7 @@ ORDINALS = (
 
 def clean_version(key, value):
     key = key.lstrip("-").lower().replace("_", "-")
-    if key in VERSION_FLAGS and re.fullmatch(r"v?\d+(?:\.\d+)*", value, re.I):
+    if key in VERSION_FLAGS and re.fullmatch(r"v?\d+(?:\.\d+)*", value, re.IGNORECASE):
         return value.lower().removeprefix("v")
     return ""
 
@@ -84,11 +85,11 @@ def version_witness(text, value):
         rf"\bv{re.escape(value)}(?!\w|\.\d)",
     )
     for expr in patterns:
-        for hit in re.finditer(expr, text, re.I):
+        for hit in re.finditer(expr, text, re.IGNORECASE):
             if not re.search(
                 r"\b(?:not|never|except|avoid|excluding)\s+(?:the\s+)?$",
                 text[: hit.start()],
-                re.I,
+                re.IGNORECASE,
             ):
                 return hit.group()
     return ""
@@ -99,7 +100,7 @@ def version_delegation(text):
         re.search(
             r"\b(?:choose|pick|select|decide)\s+(?:(?:any|a suitable|an appropriate|the appropriate|the best|the target|which)\s+)(?:version|revision|release)\b",
             text,
-            re.I,
+            re.IGNORECASE,
         )
     )
 
@@ -182,14 +183,21 @@ def questions(chunk, parts):
 
 
 def audit(measure, state):
-    parts = clauses(state["user_request"])
+    state = external.project(state)
+    parts = state.get("policy_sources") or clauses(state["user_request"])
     action = state["proposed_action"]
     params = arguments(action)
     for start in range(0, len(params), CHUNK):
         chunk = params[start : start + CHUNK]
+        specs = questions(chunk, parts)
+        if "policy_sources" in state:
+            for p in chunk:
+                specs[p["key"] + "u"]["instructions"] = (
+                    "Which supplied policy section or approval record covers this parameter under the current state? Select none if the authority is absent."
+                )
         measure(
             f"args_{start // CHUNK}",
-            questions(chunk, parts),
+            specs,
             {
                 "user_phrases": parts,
                 "candidate_action": action,
@@ -201,7 +209,8 @@ def audit(measure, state):
 
 
 def classified(state, answers):
-    parts = clauses(state["user_request"])
+    state = external.project(state)
+    parts = state.get("policy_sources") or clauses(state["user_request"])
     result = []
     for i, p in enumerate(arguments(state["proposed_action"])):
         a = answers[f"args_{i // CHUNK}"]
@@ -237,13 +246,13 @@ def blockers(jevs, deeps, level):
         raise ValueError("Parameter lists differ")
     result = []
     for i, p in enumerate(jevs):
-        if p["unbound_version"]:
+        if (
+            p["unbound_version"]
+            or (level == "all" or (level == "arguments" and p["kind"] == "argument"))
+            and p["objection"]
+            and (deeps is None or deeps[i]["objection"])
+        ):
             result.append(p["key"])
-        elif (
-            level == "all" or (level == "arguments" and p["kind"] == "argument")
-        ) and p["objection"]:
-            if deeps is None or deeps[i]["objection"]:
-                result.append(p["key"])
     return result
 
 
@@ -302,7 +311,7 @@ def config(study):
         return {"old_pairs": prior.populations()["confirm_authgate"]}, protocol
     with (DEST / "selected_rules.json").open(encoding="utf8") as f:
         protocol["frozen_rules"] = json.load(f)
-    return fresh_population(), protocol
+    return {**fresh_population(), **external.populations()}, protocol
 
 
 def run_case(measure, state, plan, provider, pos, study):
