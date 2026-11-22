@@ -12,6 +12,7 @@ from statistics import median
 import parameter_scores as ps
 import shared_review as design
 from shared_cases import NOTES
+from strategy_selection import select_strategies
 from study_report import inputs, measurements
 
 ROOT = Path(__file__).resolve().parent
@@ -401,7 +402,11 @@ def publish_tables():
 
 def render():
     scores = read("shared_review/scores.csv")
+    selection = select_strategies(scores)
     for score in scores:
+        score["status"], score["alternative"] = selection[
+            score["batch"], score["method"]
+        ]
         for name in (
             "cases",
             "correct",
@@ -418,6 +423,16 @@ def render():
         ):
             score[name] = int(score[name])
         score["accuracy"] = float(score["accuracy"])
+    save(
+        "strategy_selection.csv",
+        [
+            {
+                k: row[k]
+                for k in ("batch", "benchmark", "method", "status", "alternative")
+            }
+            for row in scores
+        ],
+    )
     cases = read("shared_review/common_errors.csv")
     for case in cases:
         case["same"] = case["same"] == "True"

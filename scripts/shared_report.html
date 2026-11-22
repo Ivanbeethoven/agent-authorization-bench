@@ -19,7 +19,13 @@ details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{marg
 <body><header><div><nav aria-label="本页章节"><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#review">方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p>对同一条权限请求，各种方法能否给出参考决定，每判断 100 条需要花多少钱？</p></div></header>
 <main>
 <section id="charts"><div class="head"><div><h2>成本与准确率</h2><p class="sub">每张图对应一项评测。同一行共用横纵坐标，越靠左费用越低，越靠上准确率越高。</p></div><div class="tabs" id="switches" role="group" aria-label="比较批次"></div></div>
-<p id="scope-line" class="note"></p><p class="note mobile">左右滑动可继续查看相邻图表。</p><div class="deck-scroll" tabindex="0" aria-label="三项评测的并列图表"><div class="deck" id="deck"></div></div>
+<p id="scope-line" class="note"></p>
+<div class="filters"><label><input id="show-all" type="checkbox">显示全部已测策略</label><span id="selection-count" class="note" role="status"></span></div>
+<p id="excluded-strategies" class="note"></p>
+<details id="screening"><summary>筛选规则与本批剔除明细</summary>
+<p>每项评测只比较同一批请求。若另一方法的准确率至少高 10 个百分点、误放行率至少低 10 个百分点，并且合法放行数和此前已恢复的合法请求保留数均不减少，就从主要比较中剔除该策略。这条规则优先考虑判断质量，即使较弱策略更便宜也适用。</p>
+<p>若另一方法在准确率、误放行、合法放行、已恢复请求保留数、本批费用、耗时中位数六项上都持平或更好，且至少一项严格更好，也予以剔除。费用或耗时缺失时只使用上一条规则。仅复核对外承诺在两个非委托任务上直接使用 DeepSeek 的原判断，同一路径只展示一次。筛选反映本批观测值。</p><div id="selection-table" class="scroll"></div></details>
+<p class="note mobile">左右滑动可继续查看相邻图表。</p><div class="deck-scroll" tabindex="0" aria-label="三项评测的并列图表"><div class="deck" id="deck"></div></div>
 <p class="note">图例中的颜色和形状在三张图中保持一致。点选图例或散点可查看对应数值；坐标重合时可用图例分辨。GPT 的逐次人民币费用未披露，其准确率和实测用时列在下表。</p></section>
 <section id="scores"><h2>逐项评分与费用</h2><p class="sub">表格随上方批次切换。合法放行为正确允许数／应允许数，误放行为错误允许数／应暂停或拒绝数。准确率按各数据集的原生类别计算。</p>
 <div id="scores-table" class="scroll" tabindex="0" aria-label="方法指标"></div><p class="note">费用按实验时的 API 用量折算。每种方法只计入其判断路径所需的调用；同一调用可供多种方法复用。P50、P95 是每条请求路径耗时的中位数和第 95 百分位，历史 GPT 批处理按整批时长计。表中“—”表示没有完整记录。</p></section>
@@ -27,7 +33,7 @@ details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{marg
 <div class="box"><h3>先独立读授权，再看候选动作</h3><p>第一次读取用户原话及可用的策略或上下文，隐藏结构化候选动作与轨迹，选出已授权的操作和主要限制。第二次读取完整记录，判断动作是否在授权范围内、会产生什么后果，并给出原生决定。要把原有暂停改成放行，须同时满足授权覆盖或常规委托、影响普通、复审允许。自然语言上下文有时也会描述候选动作。</p><p>这一方法在 33 条共同错误中有 2 条命中参考答案。一条是 1,000 美元不可退款的采购，应先征求授权；另一条是用户只让整理桌面，参考却允许归档桌面外的文件。第二条值得重审参考标签。只采用普遍复审时，历史保留批次的误放行还会增加。</p></div>
 <div class="box"><h3>把修改限制在模型将要作出实质承诺时</h3><p>四分类委托任务先由 DeepSeek 直接判断。仅当它准备执行、复审明确识别到实质承诺、且复审选择“征求授权”时，才修改原决定。这一规则可以撤回误放行，同时保留已有暂停。AuthGateBench 与 Jev Boundary 沿用直接判断，因此这两个面板中的两点重合，费用也相同。</p>
 <p>在 30 条历史保留委托请求上，直接判断、仅复核对外承诺、先前的最小干预法分别答对 21、22、23 条。仅复核对外承诺识别出 1,000 美元采购，仍漏掉同一对中的 10 美元不可退款采购。进一步检验时，应让标注者分别判断“用户是否选择了这个对象”“是否授权实际扣款”“是否有不可撤销的后果”，再用新的真实委托请求检验。</p></div>
-<h3>每一批纠正了多少，又改错了多少</h3><div class="scroll" id="changes"></div>
+<details><summary>查看复审实验中各方法纠正和改错的记录</summary><div class="scroll" id="changes"></div></details>
 <p class="note">先读授权的联合方案与旧逐参数联合方法逐条配对，其余方案与同批直接判断配对；“原已恢复”指旧风险树拦截、逐参数联合方法正确恢复的合法动作。首次复审方案先在 236 条历史开发请求上设计，207 条历史保留请求已有早期实验记录。仅复核承诺的方法在看过首次复测后提出，其历史结果属于探索性分析。</p>
 <div class="box"><h3>新增调用与用时</h3><p id="usage"></p><p class="note">样本只进行静态判断。实验时 DeepSeek 接口的请求模型名为 deepseek-flash。每批结束时读取的钱包余额与开始时相同，金额采用返回的缓存命中、未命中及输出 token 用量折算。</p></div></section>
 <section id="cases"><h2>逐条检查共同错误</h2><p class="sub">在 300 条 AuthGateBench 请求中有 11 条、80 条 DelegationBench 请求中有 22 条、63 条 Jev Boundary 请求中有 0 条。下列归因是根据原始记录作的人工解释，参考标签保留原值。</p>
@@ -60,6 +66,31 @@ const order=(a,b)=>methods.indexOf(a.method)-methods.indexOf(b.method);
 const getRows=k=>D.scores.filter(r=>r.batch===k).sort(order);
 const scored=(r)=>r.cost_cny!=="";
 let tab=0,active="";
+const excluded=methods.filter(m=>{
+ const runs=D.scores.filter(r=>r.method===m);
+ return runs.length>0&&runs.every(r=>r.status==="quality"||r.status==="dominated");
+});
+$("excluded-strategies").textContent=excluded.length?"所有已测批次均剔除的策略有 "+excluded.map(m=>D.methods[m]).join("、")+"。":"";
+const reasonText={quality:"准确率和误放行率差距均达 10 个百分点",dominated:"六项指标均无优势",same_path:"与直接判断共用同一路径"};
+function describeSelection(parts){
+ const all=parts.flat(),kept=all.filter(r=>r.status==="keep").length,merged=all.filter(r=>r.status==="same_path").length;
+ const count=all.length-kept-merged;
+ $("selection-count").textContent=(showAll()?"显示全部记录。":"显示筛选结果。")+"本批保留 "+kept+" 项，剔除 "+count+" 项，合并相同路径 "+merged+" 项；同一策略在不同评测中分别计数。";
+ const rows=parts.flatMap(part=>part.filter(r=>r.status!=="keep").map(r=>{
+   const peer=part.find(p=>p.method===r.alternative);
+   const changes=[
+     r.correct+" → "+peer.correct+" / "+r.cases,
+     r.false_allows+" → "+peer.false_allows+" / "+r.negative,
+     r.released+" → "+peer.released+" / "+r.positive,
+     r.recovered_total?r.recovered_kept+" → "+peer.recovered_kept+" / "+r.recovered_total:"—",
+     [r,peer].map(v=>scored(v)?money(rate(v)):"未披露").join(" → "),
+     [r,peer].map(v=>v.p50_s||"未披露").join(" → ")
+   ];
+   return "<tr>"+[r.benchmark,D.methods[r.method],reasonText[r.status],D.methods[peer.method],...changes].map(v=>"<td>"+esc(v)+"</td>").join("")+"</tr>";
+ }));
+ $("selection-table").innerHTML=rows.length?'<table><thead><tr>'+["评测","原策略","筛选原因","对照策略","正确数","误放行","合法放行","保留原已恢复","每百条费用","P50（秒）"].map(v=>"<th>"+v+"</th>").join("")+'</tr></thead><tbody>'+rows.join("")+"</tbody></table>":"本批的策略全部保留。";
+}
+function showAll(){return $("show-all").checked}
 function symbol(i,x,y,col,size=4.6){
  const s=size, pts=p=>p.map(([a,b])=>(x+a*s)+","+(y+b*s)).join(" ");
  const shapes=[null,[[-1,-1],[1,-1],[1,1],[-1,1]],[[0,-1.35],[1.25,0],[0,1.35],[-1.25,0]],[[0,-1.3],[1.25,1],[-1.25,1]],[[-1.2,-.9],[1.2,-.9],[0,1.35]],[[-1,-.65],[0,-1.3],[1,-.65],[1,.65],[0,1.3],[-1,.65]],[[-.4,-1.2],[.4,-1.2],[.4,-.4],[1.2,-.4],[1.2,.4],[.4,.4],[.4,1.2],[-.4,1.2],[-.4,.4],[-1.2,.4],[-1.2,-.4],[-.4,-.4]],[[-1.1,-.4],[-.4,-1.1],[0,-.65],[.4,-1.1],[1.1,-.4],[.65,0],[1.1,.4],[.4,1.1],[0,.65],[-.4,1.1],[-1.1,.4],[-.65,0]]];
@@ -91,10 +122,14 @@ function nice(max){
  return 4*step*([1,2,2.5,5,10].find(x=>x>=unit)||10);
 }
 function buildDeck(){
- const group=groups[tab],parts=group.keys.map(getRows),maxX=nice(Math.max(...parts.flat().filter(scored).map(rate))),count=Math.max(...parts.map(p=>p.filter(scored).length));
+ const group=groups[tab],allParts=group.keys.map(getRows);
+ const parts=allParts.map(rows=>showAll()?rows:rows.filter(r=>r.status==="keep"));
+ const maxX=nice(Math.max(...parts.flat().filter(scored).map(rate))),count=Math.max(...parts.map(p=>p.filter(scored).length));
+ describeSelection(allParts);
  $("scope-line").textContent=group.note;
  $("deck").innerHTML=parts.map((rows,i)=>{const selected=rows.find(r=>r.method===active&&scored(r));
- const info=selected?esc(D.methods[active])+" · "+selected.correct+"/"+selected.cases+"（"+pct(selected.correct,selected.cases)+"） · 每百条 "+money(rate(selected)):active?"本批次未评测所选方法。":"点选一个方法，比较它在三项评测中的表现。";
+ const absent=allParts[i].find(r=>r.method===active);
+ const info=selected?esc(D.methods[active])+" · "+selected.correct+"/"+selected.cases+"（"+pct(selected.correct,selected.cases)+"） · 每百条 "+money(rate(selected)):!active?"点选一个方法，比较它在三项评测中的表现。":absent?esc(D.methods[active])+" · "+esc(reasonText[absent.status])+"，对照为"+esc(D.methods[absent.alternative])+"。":"本批次未评测所选方法。";
  return '<article class="panel"><div><h3>'+bench[i]+'</h3><p class="meta">'+native[i]+' · '+rows[0].cases+' 条<br>'+group.labels[i]+'</p></div><figure>'+drawPlot(rows,maxX,count,i)+'</figure><output>'+info+'</output></article>'}).join("");
  $("scores-table").innerHTML='<table><thead><tr><th>方法</th><th>正确数</th><th>准确率</th><th>合法放行</th><th>误放行</th><th>每百条费用</th><th>本批费用</th><th>调用数</th><th>P50（秒）</th><th>P95（秒）</th></tr></thead><tbody>'+parts.map((rows,i)=>'<tr class="grouprow"><th colspan="10">'+bench[i]+' · '+rows[0].cases+' 条</th></tr>'+rows.map(r=>'<tr class="'+(r.method===active?'focus-row':'')+'"><td class="method">'+esc(D.methods[r.method])+'</td>'+[r.correct+'/'+r.cases,pct(r.correct,r.cases),r.released+'/'+r.positive,r.false_allows+'/'+r.negative,scored(r)?money(rate(r)):'—',scored(r)?money(r.cost_cny):'—',r.calls||'—',r.p50_s||'—',r.p95_s||'—'].map(v=>'<td class="num">'+v+'</td>').join("")+'</tr>').join("")).join("")+'</tbody></table>';
 }
@@ -113,5 +148,6 @@ function caseList(){
  $("case-list").innerHTML=selected.length?selected.map(r=>'<details><summary><strong>'+esc(r.tag)+'</strong>'+esc(r.request)+' <small>'+esc(r.benchmark)+' · '+esc(r.kind)+'</small></summary><p class="kicker"><span class="case-id">'+esc(r.id)+'</span>'+(r.batch.startsWith("previous")?"历史开发":"历史保留")+'</p><div class="case-grid"><div><small>用户要求（摘要）</small>'+esc(r.request)+'</div><div><small>候选动作（摘要）</small>'+esc(r.action)+'</div></div>'+(r.user_quote?'<p lang="en" class="note"><b>用户原话</b> '+esc(r.user_quote)+'<br><b>候选动作原文</b> '+esc(r.action_quote)+'</p>':'')+'<p>'+esc(r.analysis)+'</p><p class="decisions"><span>参考决定 <b>'+esc(dec[r.reference])+'</b></span>'+["deepseek_direct","joint_adaptive","codex_sol","grant_direct","grant_joint","commitment"].map(m=>'<span>'+esc(D.methods[m])+' <span class="answer">'+esc(dec[r[m]])+'</span></span>').join("")+'</p><p class="note">第二次读取对本条的判断为“'+esc(scopes[r.scope])+'”与“'+esc(impacts[r.impact])+'”。</p></details>').join(""):'<p class="empty">此筛选范围内有 0 条共同错误。</p>';
 }
 for(const id of ["case-bench","case-mode","case-search"])$(id).addEventListener("input",caseList);
+$("show-all").addEventListener("change",()=>{active="";buildDeck()});
 tabs();buildDeck();changes();caseList();
 </script></body></html>

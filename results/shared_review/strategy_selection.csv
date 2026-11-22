@@ -1,0 +1,80 @@
+﻿batch,benchmark,method,status,alternative
+previous.new_pairs,AuthGateBench,deepseek_direct,keep,
+previous.new_pairs,AuthGateBench,jev_direct,keep,
+previous.new_pairs,AuthGateBench,joint_adaptive,keep,
+previous.new_pairs,AuthGateBench,grant_direct,dominated,deepseek_direct
+previous.new_pairs,AuthGateBench,grant_joint,dominated,deepseek_direct
+previous.new_pairs,AuthGateBench,commitment,same_path,deepseek_direct
+previous.new_pairs,AuthGateBench,codex_sol,keep,
+previous.new_delegation,DelegationBench,deepseek_direct,keep,
+previous.new_delegation,DelegationBench,jev_direct,keep,
+previous.new_delegation,DelegationBench,joint_adaptive,quality,codex_sol
+previous.new_delegation,DelegationBench,grant_direct,dominated,commitment
+previous.new_delegation,DelegationBench,grant_joint,dominated,commitment
+previous.new_delegation,DelegationBench,commitment,keep,
+previous.new_delegation,DelegationBench,codex_sol,keep,
+previous.new_boundary,Jev Boundary,deepseek_direct,keep,
+previous.new_boundary,Jev Boundary,jev_direct,keep,
+previous.new_boundary,Jev Boundary,joint_adaptive,dominated,deepseek_direct
+previous.new_boundary,Jev Boundary,grant_direct,dominated,deepseek_direct
+previous.new_boundary,Jev Boundary,grant_joint,dominated,deepseek_direct
+previous.new_boundary,Jev Boundary,commitment,same_path,deepseek_direct
+previous.new_boundary,Jev Boundary,codex_sol,keep,
+fresh.new_delegation,DelegationBench,deepseek_direct,keep,
+fresh.new_delegation,DelegationBench,jev_direct,quality,inverse
+fresh.new_delegation,DelegationBench,joint_adaptive,quality,inverse
+fresh.new_delegation,DelegationBench,inverse,keep,
+fresh.new_delegation,DelegationBench,grant_direct,quality,inverse
+fresh.new_delegation,DelegationBench,grant_joint,quality,inverse
+fresh.new_delegation,DelegationBench,commitment,dominated,inverse
+fresh.new_delegation,DelegationBench,subtype,quality,inverse
+fresh.new_delegation,DelegationBench,corroborated_veto,dominated,inverse
+fresh.new_delegation,DelegationBench,symmetric,dominated,inverse
+fresh.new_delegation,DelegationBench,precedent,keep,
+fresh.new_delegation,DelegationBench,codex_sol,quality,inverse
+fresh.new_delegation,DelegationBench,sol_arbitration,keep,
+fresh.new_boundary,Jev Boundary,deepseek_direct,keep,
+fresh.new_boundary,Jev Boundary,jev_direct,keep,
+fresh.new_boundary,Jev Boundary,joint_adaptive,dominated,jev_direct
+fresh.new_boundary,Jev Boundary,inverse,dominated,deepseek_direct
+fresh.new_boundary,Jev Boundary,grant_direct,dominated,jev_direct
+fresh.new_boundary,Jev Boundary,grant_joint,dominated,jev_direct
+fresh.new_boundary,Jev Boundary,commitment,same_path,deepseek_direct
+fresh.new_boundary,Jev Boundary,subtype,dominated,jev_direct
+fresh.new_boundary,Jev Boundary,corroborated_veto,dominated,deepseek_direct
+fresh.new_boundary,Jev Boundary,symmetric,keep,
+fresh.new_boundary,Jev Boundary,codex_sol,keep,
+fresh.new_boundary,Jev Boundary,sol_arbitration,keep,
+regression.final_pairs,AuthGateBench,deepseek_direct,keep,
+regression.final_pairs,AuthGateBench,jev_direct,keep,
+regression.final_pairs,AuthGateBench,joint_adaptive,keep,
+regression.final_pairs,AuthGateBench,inverse,keep,
+regression.final_pairs,AuthGateBench,grant_direct,quality,joint_adaptive
+regression.final_pairs,AuthGateBench,grant_joint,quality,joint_adaptive
+regression.final_pairs,AuthGateBench,commitment,same_path,deepseek_direct
+regression.final_pairs,AuthGateBench,subtype,dominated,joint_adaptive
+regression.final_pairs,AuthGateBench,corroborated_veto,dominated,deepseek_direct
+regression.final_pairs,AuthGateBench,symmetric,keep,
+regression.final_pairs,AuthGateBench,codex_sol,keep,
+regression.final_pairs,AuthGateBench,sol_arbitration,keep,
+control.new_pairs,AuthGateBench,deepseek_direct,keep,
+control.new_pairs,AuthGateBench,grant_direct,dominated,deepseek_direct
+control.new_pairs,AuthGateBench,commitment,same_path,deepseek_direct
+control.new_delegation,DelegationBench,deepseek_direct,keep,
+control.new_delegation,DelegationBench,grant_direct,dominated,deepseek_direct
+control.new_delegation,DelegationBench,commitment,dominated,deepseek_direct
+unseen.new_boundary,Jev Boundary,deepseek_direct,keep,
+unseen.new_boundary,Jev Boundary,grant_direct,dominated,deepseek_direct
+unseen.new_boundary,Jev Boundary,commitment,same_path,deepseek_direct
+control.commitment,DelegationBench,deepseek_direct,keep,
+control.commitment,DelegationBench,grant_direct,dominated,deepseek_direct
+control.commitment,DelegationBench,commitment,dominated,deepseek_direct
+pilot.authgate,AuthGateBench,deepseek_direct,keep,
+pilot.authgate,AuthGateBench,jev_direct,keep,
+pilot.authgate,AuthGateBench,aliyun_direct,quality,jev_direct
+pilot.delegation,DelegationBench,deepseek_direct,keep,
+pilot.delegation,DelegationBench,jev_direct,keep,
+pilot.delegation,DelegationBench,aliyun_direct,keep,
+pilot.jev,Jev Boundary,deepseek_direct,keep,
+pilot.jev,Jev Boundary,jev_direct,keep,
+pilot.jev,Jev Boundary,aliyun_direct,keep,

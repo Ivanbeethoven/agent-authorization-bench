@@ -4,7 +4,7 @@
 
 [打开单文件研究总报告](results/Agent权限管理研究总报告.html)。首页用成本与准确率散点图比较同一批请求上的方法，可切换三个主要批次、11 项初评及初评合计。报告还包含准确率热图、合法放行与误放行对照、错误样本、复审过程及各阶段费用。运行 `uv run --with matplotlib overview_report.py` 可使用仓库中的评分表和各份明细报告重新生成。
 
-[三项权限评测并排比较](results/shared_review/三项权限评测与共同错误.html) 把三个数据集的成本与准确率放在同一行，包含 33 条共同错误的逐条分析、两种授权复审的结果及额外 12 对付款与协议题。页面可离线使用。运行 `uv run shared_report.py --from-tables` 可从已发布的 CSV 重建此页。[方法与批次设计](SHARED_REVIEW.md)
+[三项权限评测并排比较](results/shared_review/三项权限评测与共同错误.html) 按批次筛选策略，并排展示三项评测的成本与准确率。图表可切换全部策略，展开剔除明细可核对各项指标。逐批选择列在 [策略筛选表](results/shared_review/strategy_selection.csv)。网页还包含 33 条共同错误的逐条分析、两种授权复审的结果及额外 12 对付款与协议题。页面可离线使用。运行 `uv run shared_report.py --from-tables` 可从已发布的 CSV 重建此页。[方法与批次设计](SHARED_REVIEW.md)
 
 ## 错误案例与权限判断方法
 

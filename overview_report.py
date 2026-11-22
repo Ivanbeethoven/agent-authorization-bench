@@ -16,6 +16,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
+from shared_report import DISPLAY as METHODS
+from strategy_selection import select_strategies
+
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 OUTPUT = RESULTS / "Agent权限管理研究总报告.html"
@@ -33,17 +36,6 @@ BENCH = {
     "privacylive": "PrivacyLens-Live",
 }
 MODELS = {"jev": "Jev", "deepseek": "DeepSeek", "aliyun": "百炼 Decision"}
-METHODS = {
-    "deepseek_direct": "DeepSeek 直接判断",
-    "joint_adaptive": "Jev 与 DeepSeek 逐参数复审",
-    "subtype": "保留暂停原因",
-    "inverse": "DeepSeek 最小干预",
-    "corroborated_veto": "两模型同意后撤回执行",
-    "symmetric": "两模型一致时双向修改",
-    "precedent": "跨家族专家示例",
-    "codex_sol": "GPT-6.2 Sol",
-    "sol_arbitration": "DeepSeek 分歧转交 GPT",
-}
 PHASES = {
     "pilot": "11 项直接判断",
     "review": "提示与复审对照",
@@ -112,7 +104,20 @@ def inputs():
         for r in read("reply_review/codex_scores.csv")
         if r["split"] in ("fresh", "regression")
     )
-    boards = {name: [r for r in runs if r["set"] == name] for name in COHORTS}
+    extras = {
+        (r["set"], r["method"]): r
+        for r in read("parameter_review/final_scores.csv") + runs
+    }
+    scores = read("shared_review/scores.csv")
+    selection = select_strategies(scores)
+    boards = {}
+    for name in COHORTS:
+        batch = ("regression." if name == "final_pairs" else "fresh.") + name
+        boards[name] = [
+            {**extras.get((name, r["method"]), {}), **r}
+            for r in scores
+            if r["batch"] == batch and selection[batch, r["method"]][0] == "keep"
+        ]
     for rows in boards.values():
         if len({r["method"] for r in rows}) != len(rows):
             raise ValueError("Duplicate method")
@@ -130,7 +135,7 @@ def inputs():
         }
         for name, phases in STAGE_GROUPS.items()
     }
-    return history, usage, boards, stages
+    return history, usage, boards, stages, selection
 
 
 def settings():
@@ -190,7 +195,7 @@ def accuracy_cells(ax, values, columns, rows, digits):
             ax.text(
                 j,
                 i,
-                "未评测" if math.isnan(val) else f"{val:.{digits}f}%",
+                "—" if math.isnan(val) else f"{val:.{digits}f}%",
                 ha="center",
                 va="center",
                 fontsize=10,
@@ -207,14 +212,17 @@ def latest_accuracy(boards):
         k: {r["method"]: 100 * int(r["correct"]) / int(r["cases"]) for r in rows}
         for k, rows in boards.items()
     }
-    values = [[keys[k].get(method, math.nan) for k in COHORTS] for method in METHODS]
+    retained = [
+        method for method in METHODS if any(method in part for part in keys.values())
+    ]
+    values = [[keys[k].get(method, math.nan) for k in COHORTS] for method in retained]
     fig, ax = plt.subplots(figsize=(8.4, 4.05))
     fig.subplots_adjust(left=0.33, right=0.99, top=0.91, bottom=0.025)
     accuracy_cells(
         ax,
         values,
         ["委托判断 · 30 条", "策略判断 · 27 条", "授权回归 · 150 条"],
-        list(METHODS.values()),
+        [METHODS[method] for method in retained],
         1,
     )
     return fig
@@ -269,7 +277,7 @@ def cost_chart(stages):
     return fig
 
 
-def efficiency_groups(history, boards):
+def efficiency_groups(history, boards, selection):
     groups = {}
 
     def point(name, correct, size, fee, partial=""):
@@ -319,6 +327,8 @@ def efficiency_groups(history, boards):
                 for p in MODELS
                 for r in group
                 if r["provider"] == p
+                and selection.get(("pilot." + b, p + "_direct"), ("keep", ""))[0]
+                == "keep"
             ],
         }
     return groups
@@ -331,6 +341,10 @@ def cost_accuracy(points):
         METHODS["deepseek_direct"]: "#305b9a",
         "Jev": "#147a6d",
         "百炼 Decision": "#a04c31",
+        METHODS["jev_direct"]: "#3e7959",
+        METHODS["commitment"]: "#1b5a39",
+        METHODS["grant_direct"]: "#b15528",
+        METHODS["grant_joint"]: "#8c3e53",
         METHODS["joint_adaptive"]: "#794799",
         METHODS["subtype"]: "#a35714",
         METHODS["inverse"]: "#147a6d",
@@ -460,8 +474,8 @@ def cost_accuracy(points):
     return fig
 
 
-def efficiency_plots(history, boards, audit_dir):
-    groups = efficiency_groups(history, boards)
+def efficiency_plots(history, boards, audit_dir, selection):
+    groups = efficiency_groups(history, boards, selection)
     if audit_dir:
         scatter_dir = audit_dir / "efficiency"
         scatter_dir.mkdir(exist_ok=True)
@@ -496,7 +510,7 @@ def build(audit_dir=None):
     settings()
     if audit_dir:
         audit_dir.mkdir(parents=True, exist_ok=True)
-    history, usage, boards, stages = inputs()
+    history, usage, boards, stages, selection = inputs()
     plots = {
         "pilot": image(heatmap(history), "pilot", audit_dir),
         "latest": image(latest_accuracy(boards), "latest", audit_dir),
@@ -526,7 +540,7 @@ def build(audit_dir=None):
             n[1 if r["reference"] == "allow" else 2] += 1
     data = {
         "plots": plots,
-        "efficiency": efficiency_plots(history, boards, audit_dir),
+        "efficiency": efficiency_plots(history, boards, audit_dir, selection),
         "history": history,
         "bench": BENCH,
         "models": MODELS,
