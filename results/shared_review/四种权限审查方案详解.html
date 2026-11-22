@@ -30,9 +30,9 @@
 <text x="30" y="171" font-size="17" font-weight="650" fill="#226d60" text-anchor="start">方法一</text>
 <text x="30" y="203" font-size="22" font-weight="700" fill="#18363a" text-anchor="start">DeepSeek</text>
 <text x="30" y="230" font-size="22" font-weight="700" fill="#18363a" text-anchor="start">直接判断</text>
-<text x="30" y="256" font-size="15" font-weight="400" fill="#455e60" text-anchor="start">每条请求调用一次</text>
+<text x="30" y="251" font-size="15" font-weight="400" fill="#455e60" text-anchor="start">每条请求调用一次</text>
 <g id="node-one-input"><rect x="244" y="170" width="170" height="65" rx="6" fill="#ffffff" stroke="#a3b4b4" stroke-width="1.4"/>
-<text x="329" y="208.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">原始请求</text>
+<text x="329" y="208.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">完整请求</text>
 </g>
 <g id="node-one-deepseek"><rect x="487" y="170" width="270" height="65" rx="6" fill="#f0f4f3" stroke="#a5b9b5" stroke-width="1.4"/>
 <text x="622" y="197.5" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">DeepSeek Flash</text>
@@ -74,7 +74,7 @@
 <text x="30" y="522" font-size="22" font-weight="700" fill="#18363a" text-anchor="start">选择审查者</text>
 <text x="30" y="548" font-size="15" font-weight="400" fill="#455e60" text-anchor="start">先校准，再用于新题</text>
 <g id="calibration-band"><rect x="230" y="440" width="664" height="105" rx="7" fill="#f1f7f3" stroke="#bdd6c9" stroke-width="1.4"/></g>
-<text x="244" y="463" font-size="16" font-weight="650" fill="#226d60" text-anchor="start">历史校准  ·  仅用 236 条旧题的标签</text>
+<text x="244" y="463" font-size="16" font-weight="650" fill="#226d60" text-anchor="start">历史校准  ·  236 条旧题的标签、模型决定与 Jev 分组</text>
 <g id="node-three-history"><rect x="244" y="474" width="311" height="58" rx="6" fill="#ffffff" stroke="#a3b4b4" stroke-width="1.4"/>
 <text x="399.5" y="498" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">比较 DeepSeek 与 GPT 的损失</text>
 <text x="399.5" y="521" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">一般错误计 1 分，误放行计 4 分</text>
@@ -118,8 +118,8 @@
 </g>
 <g id="node-four-audit"><rect x="425" y="737" width="205" height="114" rx="6" fill="#f2eded" stroke="#baaab2" stroke-width="1.4"/>
 <text x="527.5" y="767" font-size="18" font-weight="650" fill="#18363a" text-anchor="middle">Jev 第一次核对</text>
-<text x="527.5" y="790" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">动作与对象、接收范围</text>
-<text x="527.5" y="811" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">数量与后果、授权条件</text>
+<text x="527.5" y="790" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">操作对象、接收方与可见范围</text>
+<text x="527.5" y="811" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">数量及后果、授权与政策条件</text>
 <text x="527.5" y="832" font-size="15" font-weight="400" fill="#18363a" text-anchor="middle">选取相关原文片段</text>
 </g>
 <g id="node-four-route"><rect x="663" y="754" width="204" height="81" rx="6" fill="#f2eded" stroke="#baaab2" stroke-width="1.4"/>
@@ -143,7 +143,7 @@
 </g>
 <text x="426" y="880" font-size="15" font-weight="400" fill="#455e60" text-anchor="start">两次 Jev 调用均可读取原始材料。按第二次输出的转交概率分配名额。</text>
 <text x="30" y="938" font-size="16" font-weight="700" fill="#18363a" text-anchor="start">复核预算</text>
-<text x="130" y="938" font-size="16" font-weight="400" fill="#18363a" text-anchor="start">方法二至四每项评测各有 50 条请求、10 个 GPT 名额。GPT 独立阅读原始请求，作出权限决定。</text>
+<text x="130" y="938" font-size="16" font-weight="400" fill="#18363a" text-anchor="start">方法二至四每项评测各有 50 条请求、10 个 GPT 名额。GPT‑6.2 Sol 独立阅读原始请求，作出权限决定。</text>
 <text x="30" y="967" font-size="16" font-weight="700" fill="#18363a" text-anchor="start">测试评分</text>
 <text x="130" y="967" font-size="16" font-weight="400" fill="#18363a" text-anchor="start">本轮 150 条新题的参考答案只用于评分。虚线表示调用已固定的历史收益表。</text>
 </svg>
