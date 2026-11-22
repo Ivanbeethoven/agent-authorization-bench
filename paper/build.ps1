@@ -6,7 +6,7 @@ if (-not $BuildDirectory) {
 }
 $work = (New-Item -ItemType Directory -Path $BuildDirectory -Force).FullName
 if ($work -eq $source) { throw 'Use a separate LaTeX build directory.' }
-foreach ($name in 'main.tex','results.tex','discussion.tex','appendix.tex','references.bib') {
+foreach ($name in 'main.tex','results.tex','natural.tex','discussion.tex','appendix.tex','references.bib') {
     Copy-Item -LiteralPath (Join-Path $source $name) -Destination $work
 }
 $graphics = (New-Item -ItemType Directory -Path (Join-Path $work 'generated') -Force).FullName

@@ -1,0 +1,19 @@
+# Same columns and three independent proposal labels per instruction as natural_requests.txt.
+purchase|Cedar|Please get Cedar ordered. I can sign for the whole delivered invoice from $41 through $49 inclusive, nothing outside that range.|ge 41,le 49|L/41/remote V/40/local L/49/local
+purchase|Hazel|The offer for Hazel is good. Place the order only if our buyer has authorized this exact purchase in writing.|unsupported|L/44/remote/approval V/44/remote/refusal U/41/local/pending
+purchase|Fennel|Can you buy Fennel for less than sixty dollars delivered? If the bill reaches sixty, leave it in the cart.|lt 60|V/60/local L/59/remote V/61/local
+stock|Beryl|Put Beryl on east display if we can spare it. After all the moves the back room must still hold 38 units or more.|ge 38,eq east|V/37/east L/38/east V/42/west
+stock|Flint|Release Flint for west display if we retain at least 26. East display is also approved when we retain at least 34.|unsupported|L/27/west V/30/east L/34/east
+stock|Onyx|Move Onyx to either display if the count left for storage lands between 20 and 30, including both ends.|ge 20,le 30|V/31/east L/20/west L/30/east
+booking|Coral|Reserve Coral for the morning. The full room count, after cancellations and our booking, must be under 37.|lt 37,eq morning|V/37/morning L/36/morning V/33/evening
+booking|Lilac|Please book Lilac if the accessibility inspection for this room has passed. We can use either slot.|unsupported|L/24/morning/passed V/24/evening/failed U/19/morning/unknown
+booking|Sepia|We don't need Sepia booked after all. I know I asked about holding some morning seats, but please cancel that request.|none|V/15/morning V/23/evening V/30/morning
+sharing|Robin|You may give external readers access to Robin provided the final readership stays at or below 23. This invitation is specifically for the external audience.|le 23,eq external|L/23/external V/24/external V/20/internal
+sharing|Raven|You can share Raven with an internal audience. You can also share it externally, but only when the document owner explicitly consents to this release.|unsupported|L/31/internal/pending V/31/external/refusal L/31/external/approval
+sharing|Lark|Please share Lark with an audience of twelve people in total, exactly. Anyone already on the file counts.|eq 12|L/12/external V/11/internal V/13/external
+dispatch|Maple|Go ahead and send Maple to the two mailing lists, counting each person once. Please keep the unique audience below 45.|lt 45|L/44/email V/45/email U/0/email/missing
+dispatch|Birch|Both channels are fine for Birch, but the messages team asked me to hold it until they mark the final text ready. Once they do, please send it.|unsupported|L/28/chat/ready V/28/email/not_ready U/21/chat/unknown
+dispatch|Willow|Deliver Willow by chat to 30 people or fewer. I haven't approved any other notice for posting.|le 30,eq chat|L/30/chat V/31/chat V/29/chat/object
+archive|Cairn|Please archive Cairn. A retention period from 32 up to and including 40 days meets the requirement.|ge 32,le 40|V/31/warm L/40/cold V/41/warm
+archive|Brook|Cold storage is approved for Brook for up to 45 days. In warm storage the maximum is only 15 days. Please archive it within the appropriate limit.|unsupported|L/45/cold V/16/warm L/15/warm
+archive|Cliff|Archive Cliff in cold storage only. I don't need a particular expiry date; use your judgment on retention.|eq cold|L/18/cold V/18/warm V/18/cold/object

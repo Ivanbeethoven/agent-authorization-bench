@@ -2,6 +2,8 @@
 
 [英文论文 PDF](paper/authorization-review.pdf) · [可离线编译的源码包](results/authorization-review-source.zip) · [LaTeX 构建说明](paper/README.md) · [三个完整测试集的 HTML 结果](results/shared_review/三项权限评测与共同错误.html#full-permission)
 
+另有 102 条新编英文授权指令、306 个候选操作，分四批验证条件提取和程序核验。最终 72 个候选操作中，DeepSeek 提取、程序核验、Jev 核对审批记录的方法答对 66 个，拦住全部 31 个越界操作，放行 33 个合法操作中的 27 个。把相同记录交给 DeepSeek 核对，最终决定逐项一致。网页提供六个领域的结果、服务替换实验和逐题错误。[自然语言授权实验](results/natural_permissions/自然语言授权核验.html)
+
 正式评测包括 AuthGateBench 全部 700 条、DelegationBench 全部 156 条和 Jev Boundary 正式测试集 270 条。联合方法先由 Jev 判断，仅把放行请求交给 DeepSeek 独立复核。公开补充集和新生成的 96 条数值边界题单列。[逐题决定](results/full_permission/decisions.csv) · [逐方法结果](results/full_permission/scores.csv) · [数值边界结果](results/full_permission/numeric_decisions.csv)
 
 在已配置 Jev 和 DeepSeek 凭据的工作区，可按下列顺序重跑。生成图表和区间需要 NumPy 与 Matplotlib。

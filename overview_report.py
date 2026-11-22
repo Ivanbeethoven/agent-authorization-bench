@@ -81,6 +81,29 @@ STAGE_GROUPS = {
     "三个完整测试集与补充集": ("full_permission", "full_permission_review"),
     "数值边界专项": ("numeric_permission", "numeric_permission_review"),
 }
+for prefix, cohort, stages in (
+    ("natural", "自然语言授权", ("direct", "review", "extract", "matched")),
+    ("replica", "自然语言复测", ("direct", "review", "extract", "matched")),
+    ("branch", "条件分支确认", ("direct", "review", "original", "extract", "attest")),
+    (
+        "scope_confirm",
+        "类别约束确认",
+        ("direct", "review", "original", "extract", "attest"),
+    ),
+):
+    labels = {
+        "direct": "直接判断",
+        "review": "串行复核",
+        "extract": "授权条件提取",
+        "matched": "同提示复核",
+        "original": "第一版条件提取",
+        "attest": "审批记录核对",
+    }
+    studies = tuple(f"{prefix}_{stage}" for stage in stages)
+    PHASES.update(
+        {study: f"{cohort} · {labels[stage]}" for study, stage in zip(studies, stages)}
+    )
+    STAGE_GROUPS[cohort] = studies
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
     "new_boundary": "Jev Boundary · 新家族",
@@ -107,6 +130,10 @@ def inputs():
         "material_facts/provider_usage.csv",
         "full_permission/provider_usage.csv",
         "full_permission/numeric_usage.csv",
+        "natural_permissions/provider_usage.csv",
+        "natural_permissions/replication/provider_usage.csv",
+        "natural_permissions/confirmation/provider_usage.csv",
+        "natural_permissions/scope_confirmation/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -327,6 +354,26 @@ def efficiency_groups(history, boards, selection):
                 for r in rows
             ],
         }
+    from natural_report import COHORTS as natural_cohorts
+
+    for folder, title, arms, labels in natural_cohorts:
+        subset = {
+            k: v
+            for k, v in zip(arms, labels)
+            if k in ("jev", "deepseek", "cascade", "joint", "substitute", "aliyun")
+        }
+        rows = [
+            r
+            for r in read(folder / "scores.csv")
+            if r["domain"] == "all" and r["method"] in subset
+        ]
+        groups["new_" + folder.name] = {
+            "label": title + f" · {rows[0]['n']} 条",
+            "points": [
+                point(subset[r["method"]], r["correct"], r["n"], r["total_cny"])
+                for r in rows
+            ],
+        }
     fact_scores = read("material_facts/scores.csv")
     fact_scores.extend(read("material_facts/jev_scores.csv"))
     for cohort in dict.fromkeys(r["benchmark"] for r in fact_scores):
@@ -387,6 +434,11 @@ def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
         "纯 Jev": "#594787",
+        "原联合方法": "#967248",
+        "新联合方法": "#176c6a",
+        "Jev 核对记录": "#176c6a",
+        "DeepSeek 核对记录": "#987236",
+        "百炼核对记录": "#a83c59",
         "Jev＋DeepSeek": "#137463",
         "纯 DeepSeek": "#305b9a",
         "原提示": "#525f72",

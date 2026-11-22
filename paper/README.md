@@ -18,16 +18,23 @@ The source bundle includes the published decision tables under `results/full_per
 
 ```powershell
 uv run --with numpy full_permission_analysis.py --from-tables
+uv run natural_results.py --from-tables
+uv run branch_results.py --from-tables
 uv run --with numpy --with matplotlib paper_assets.py
 ./paper/build.ps1
 ```
 
 `decisions.csv` contains one row per public or supplementary request. The reference classes, all three native decisions, family, operational route, per-method latency and fees are stored together. `scores.csv` gives the main endpoints. `numeric_decisions.csv` contains the separate 96-case numeric experiment. `controls.csv`, `confidence_ties.csv`, `paired_intervals.csv` and `contrast_pairs.csv` can be regenerated without paid inference. The original project repository contains the complete API runner and download commands.
 
-## Interpreting the three populations
+## Interpreting the evaluation populations
 
 - The primary evaluation covers 700 AuthGateBench records under the no-signal condition, all 156 DelegationBench decisions, and all 270 official Jev Boundary test records. The 7 unresolved four-way DelegationBench labels are excluded only from native agreement. They have binary non-execution references.
 - The supplementary public sets comprise 96 explicit-policy delegation tests and 150 recorded historical Jev decisions. Their reference types differ from those in the primary tables.
 - The prospective numerical challenge has 32 scenario triplets across four templates. Its deterministic veto applies only to the four recognized sentence and operation schemas. The comparisons concern static decisions. No tool actions were executed.
+- The four subsequent natural-language cohorts contain 108, 54, 72 and 72 decisions. Their fixed instructions, proposal variants, independent reference labels and evaluation protocols are in this paper directory. The first two evaluate extraction with whole-request fallback. The third evaluates condition-specific review. The fourth tests the additional category check. The two latter sets include matched DeepSeek and Bailian substitutions for Jev. Results and service responses are under `results/natural_permissions`. Both scoring scripts run offline with the Python standard library using the commands above.
 
 The compiled manuscript is a research draft. No authorship, institutional affiliation or conference acceptance is asserted.
+
+For an individual static request, `branch_permissions.authorize(state, extract, attest)` runs the final policy and returns `allow` or `block`. The extraction callback takes a request view, fields and system prompt. The attestation callback takes a record packet and typed questions, and runs only when required. Both return decoded answer objects. The host supplies the schema and observations. Only a final `allow` authorizes the proposed action.
+
+The repository runner uses `scripts/study.ps1`. For the first two cohorts run the `natural_` or `replica_` stages in this order: direct (Jev and DeepSeek), review (DeepSeek), extract (DeepSeek), matched (DeepSeek). For the latter two cohorts use `branch_` or `scope_confirm_` with direct (both), review, original and extract (DeepSeek), then attest (Jev, DeepSeek and Aliyun). All review and extraction stages take their inputs from the frozen study specification. Model calls require separately configured credentials. The saved responses are sufficient for offline scoring.

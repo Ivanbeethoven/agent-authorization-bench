@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('deepseek','jev','aliyun')][string]$Provider,
-    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review','commitment_review','retained_validation','jev_triage','parameter_router','parameter_router_extra','material_facts','material_fact_replies','full_permission','full_permission_review','numeric_permission','numeric_permission_review')][string]$Study,
+    [Parameter(Mandatory=$true)][ValidateSet('pilot','review','risk','coverage','conditions','confirmation','parameter_calibration','parameter_test','parameter_versions','parameter_final','reply_validation','reply_precedent','shared_review','commitment_review','retained_validation','jev_triage','parameter_router','parameter_router_extra','material_facts','material_fact_replies','full_permission','full_permission_review','numeric_permission','numeric_permission_review','natural_direct','natural_review','natural_extract','natural_matched','replica_direct','replica_review','replica_extract','replica_matched','branch_direct','branch_review','branch_original','branch_extract','branch_attest','scope_confirm_direct','scope_confirm_review','scope_confirm_original','scope_confirm_extract','scope_confirm_attest')][string]$Study,
     [ValidateRange(1,16)][int]$Workers=8
 )
 $ErrorActionPreference='Stop'

@@ -1,0 +1,9 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+scope_confirm_direct,jev,jev-1.14.0,72,72,72,37248,2232,1.794,2.196,14.34,runner interval,0.010950912,0.010950912,provider key usage delta; 72 calls
+scope_confirm_direct,deepseek,deepseek-flash,72,72,72,21760,360,0.562,1.044,4.67,runner interval,0.023200,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+scope_confirm_review,deepseek,deepseek-flash,40,40,40,31785,1362,0.698,1.093,3.57,runner interval,0.03096100,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+scope_confirm_original,deepseek,deepseek-flash,72,72,72,31728,2037,0.811,1.204,5.36,runner interval,0.02620304,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+scope_confirm_extract,deepseek,deepseek-flash,72,72,72,36768,3785,0.922,1.303,6.32,runner interval,0.03501868,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+scope_confirm_attest,jev,jev-1.14.0,20,20,20,8115,858,2.053,2.311,7.38,runner interval,0.002385810,0.002385810,provider key usage delta; 20 calls
+scope_confirm_attest,deepseek,deepseek-flash,20,20,20,4081,128,0.529,0.793,2.52,runner interval,0.004593,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+scope_confirm_attest,aliyun,decision-model-preview,20,20,20,1947,,0.226,0.243,1.2,runner interval,0,,official limited-time free inference price

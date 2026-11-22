@@ -18,3 +18,17 @@ The primary denominator, legal-release denominator and exact-label denominator a
 
 \paragraph{Reconstruction.}
 Run \texttt{full\_permission} with each provider, followed by \texttt{full\_permission\_review} with DeepSeek. Repeat this sequence with \texttt{numeric\_permission} and \texttt{numeric\_permission\_review} for the challenge. Use \texttt{full\_permission\_results.py} to reconcile receipts and compute paired decisions, \texttt{full\_permission\_analysis.py} for the sensitivity analyses and \texttt{paper\_assets.py} for tables and figures. The paper source directory contains a PowerShell build script. The distributed decision tables permit recalculating the main comparisons without access to an API credential.
+
+\section{Natural-language cohorts and component controls}\label{app:prose}
+The tables below preserve the policy version evaluated on each cohort. Each row uses the calls its policy would require for the same actions. Shared calls appear in multiple method rows. Across the four natural-language cohorts and substitution controls, the experiment made 1,353 service calls with 1,354 attempts at an estimated total of CNY 0.46675. Jev account increments matched the input-token estimate. For DeepSeek we use returned usage and the off-peak token prices; immediate balance reads showed no change. The limited-time Bailian decision rate applied to 41 calls. We include returned conditions, answers, latency, token and charge attribution, per-domain predictions and paired transitions in the artifact. Jev's latency advantage or disadvantage depends on the provider, load and packet; these measurements used up to 14 parallel workers, five for Bailian.
+
+The whole-request extractor produced 102/108 and 52/54 exact matches to the first two sets' authored normalized policies (resource, status, unordered predicate triples, excluding quotation text). On the first set the known policy, passed to the host with source quotations, correctly decided all 90 cases in its language and referred all 18 conditional exceptions. Exact predicate matching alone did not ensure correct execution: a correct bound with a quote omitting its numeral could still fail literal grounding. On the 54-case replication, spelled-out numerals could be translated to the correct integer yet fail that grounding check. In the later sets benign errors also included conditional authorization interpreted as no grant and the wrong resource span. The one-category rule requires a domain vocabulary and may withhold actions when the wording only indicates a preference.
+
+\newcommand{\prosetable}[3]{\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\caption{#1. $V$, $U$ and $L$ are released violations, missing-fact actions and legal actions. #2. Time is the serial median in seconds; cost is CNY.}
+\begin{tabular}{lrrrrrrr}\toprule Method & Correct & $V$ & $U$ & $L$ & Attempts & Time & Cost\\\midrule
+\tablerows{#3}\bottomrule\end{tabular}\end{table}}
+\prosetable{Initial prose set, 108 actions}{The denominators are 59, five and 44}{generated/natural.tex}
+\prosetable{Whole-request fallback replication, 54 actions}{The denominators are 28, four and 22}{generated/replication.tex}
+\prosetable{Condition-specific review before the category check, 72 actions}{The denominators are 32, nine and 31}{generated/confirmation.tex}
+\FloatBarrier

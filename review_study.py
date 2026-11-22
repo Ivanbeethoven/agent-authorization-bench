@@ -129,7 +129,9 @@ def call(
                     q: a.get("probabilities") for q, a in res["answers"].items()
                 }
             if set(questions) != set(answers) or not all(
-                isinstance(answers[q], str)
+                (isinstance(answers[q], list) and len(answers[q]) <= spec["max_items"])
+                if deep and spec.get("type") == "array"
+                else isinstance(answers[q], str)
                 and (
                     0 < len(answers[q].strip()) <= spec["max_length"]
                     if deep and spec.get("type") == "short_text"
@@ -183,7 +185,15 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in (
+    if study.startswith(("branch_", "scope_confirm_")):
+        import branch_permissions as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study.startswith(("natural_", "replica_")):
+        import natural_permissions as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study in (
         "full_permission",
         "full_permission_review",
         "numeric_permission",
@@ -361,7 +371,48 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study in ("branch_attest", "scope_confirm_attest"):
+                packet, questions = protocol["packets"][item["id"]]
+                measure(name, item, "attest", questions, packet)
+                return
             if study in (
+                "branch_extract",
+                "branch_original",
+                "scope_confirm_extract",
+                "scope_confirm_original",
+            ):
+                measure(
+                    name,
+                    item,
+                    "extract",
+                    protocol["questions"][name],
+                    design.prose.request_view(item["state"]),
+                    system_prompt=protocol["system"],
+                    max_tokens=protocol["max_tokens"],
+                )
+                return
+            if study in ("natural_extract", "replica_extract"):
+                measure(
+                    name,
+                    item,
+                    "extract",
+                    protocol["questions"][name],
+                    design.request_view(item["state"]),
+                    system_prompt=protocol["system"],
+                    max_tokens=protocol["max_tokens"],
+                )
+                return
+            if study in (
+                "natural_direct",
+                "natural_review",
+                "natural_matched",
+                "replica_direct",
+                "replica_review",
+                "replica_matched",
+                "branch_direct",
+                "branch_review",
+                "scope_confirm_direct",
+                "scope_confirm_review",
                 "full_permission",
                 "full_permission_review",
                 "numeric_permission",
@@ -564,6 +615,14 @@ def run(study, provider, workers):
         # A full first case catches credential or schema errors before concurrent dispatch.
         positions = {(name, item["id"]): i for i, (name, item) in enumerate(cases)}
         leaf_order = {key: pos % 2 == 0 for key, pos in positions.items()}
+        if not cases:
+            if "after" not in budget:
+                budget.update(
+                    after=account(provider, key), end=datetime.now(UTC).isoformat()
+                )
+                atomic(ledger, budget)
+            print(study, provider, "no eligible cases", flush=True)
+            return
         evaluate(*cases[0])
         failed = []
         with ThreadPoolExecutor(max_workers=workers) as executor:
@@ -588,6 +647,24 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "natural_direct",
+            "natural_review",
+            "natural_extract",
+            "natural_matched",
+            "replica_direct",
+            "replica_review",
+            "replica_extract",
+            "replica_matched",
+            "branch_direct",
+            "branch_review",
+            "branch_original",
+            "branch_extract",
+            "branch_attest",
+            "scope_confirm_direct",
+            "scope_confirm_review",
+            "scope_confirm_original",
+            "scope_confirm_extract",
+            "scope_confirm_attest",
             "full_permission",
             "full_permission_review",
             "numeric_permission",

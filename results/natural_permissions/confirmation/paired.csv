@@ -1,0 +1,8 @@
+﻿comparator,legal_gained,legal_lost,new_violation,prevented_violation,new_unknown,prevented_unknown,net_legal,family_sensitivity_low,family_sensitivity_high
+jev,6,4,3,9,0,0,2,-4,9
+deepseek,8,4,3,9,0,0,4,-3,10
+cascade,7,4,3,8,0,0,3,-4,10
+previous,8,3,3,4,0,1,5,-2,11
+verifier,8,0,2,0,0,0,8,4,13
+aliyun,0,0,0,1,0,3,0,0,0
+substitute,0,0,0,0,0,0,0,0,0

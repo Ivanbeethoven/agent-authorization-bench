@@ -1,0 +1,3142 @@
+[
+ {
+  "id": "NR-026",
+  "part": "J",
+  "seconds": 1.782271,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-031",
+  "part": "J",
+  "seconds": 1.75114,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-002",
+  "part": "J",
+  "seconds": 1.761265,
+  "estimated_cny": "0.000153174",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-014",
+  "part": "J",
+  "seconds": 1.790283,
+  "estimated_cny": "0.000150528",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-029",
+  "part": "J",
+  "seconds": 1.7417,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-003",
+  "part": "J",
+  "seconds": 1.745412,
+  "estimated_cny": "0.000153468",
+  "attempts": 1,
+  "input_tokens": 522,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-008",
+  "part": "J",
+  "seconds": 1.781002,
+  "estimated_cny": "0.000152586",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-053",
+  "part": "J",
+  "seconds": 1.831386,
+  "estimated_cny": "0.000140826",
+  "attempts": 1,
+  "input_tokens": 479,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-025",
+  "part": "J",
+  "seconds": 1.790219,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-011",
+  "part": "J",
+  "seconds": 1.822655,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-039",
+  "part": "J",
+  "seconds": 1.831229,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-018",
+  "part": "J",
+  "seconds": 1.820235,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-041",
+  "part": "J",
+  "seconds": 1.859311,
+  "estimated_cny": "0.00015582",
+  "attempts": 1,
+  "input_tokens": 530,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-024",
+  "part": "J",
+  "seconds": 1.875722,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-019",
+  "part": "J",
+  "seconds": 1.904607,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-006",
+  "part": "J",
+  "seconds": 1.727409,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-036",
+  "part": "J",
+  "seconds": 1.713376,
+  "estimated_cny": "0.000151704",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-042",
+  "part": "J",
+  "seconds": 1.765088,
+  "estimated_cny": "0.000154644",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-015",
+  "part": "J",
+  "seconds": 1.729546,
+  "estimated_cny": "0.000150528",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-048",
+  "part": "J",
+  "seconds": 1.721134,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-013",
+  "part": "J",
+  "seconds": 1.737373,
+  "estimated_cny": "0.000150528",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-028",
+  "part": "J",
+  "seconds": 1.736884,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-017",
+  "part": "J",
+  "seconds": 1.720983,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-027",
+  "part": "J",
+  "seconds": 1.727659,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-046",
+  "part": "J",
+  "seconds": 1.737729,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-022",
+  "part": "J",
+  "seconds": 1.812005,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-037",
+  "part": "J",
+  "seconds": 1.794951,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-051",
+  "part": "J",
+  "seconds": 1.746644,
+  "estimated_cny": "0.000144354",
+  "attempts": 1,
+  "input_tokens": 491,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-020",
+  "part": "J",
+  "seconds": 1.785457,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-049",
+  "part": "J",
+  "seconds": 1.933721,
+  "estimated_cny": "0.000144354",
+  "attempts": 1,
+  "input_tokens": 491,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-030",
+  "part": "J",
+  "seconds": 1.960785,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-045",
+  "part": "J",
+  "seconds": 1.911591,
+  "estimated_cny": "0.000149352",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-038",
+  "part": "J",
+  "seconds": 2.039828,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-009",
+  "part": "J",
+  "seconds": 1.949969,
+  "estimated_cny": "0.000152586",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-005",
+  "part": "J",
+  "seconds": 1.985801,
+  "estimated_cny": "0.00015582",
+  "attempts": 1,
+  "input_tokens": 530,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-043",
+  "part": "J",
+  "seconds": 1.944363,
+  "estimated_cny": "0.000149058",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-001",
+  "part": "J",
+  "seconds": 1.972843,
+  "estimated_cny": "0.000153174",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-023",
+  "part": "J",
+  "seconds": 1.971145,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-044",
+  "part": "J",
+  "seconds": 2.029101,
+  "estimated_cny": "0.000149352",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-035",
+  "part": "J",
+  "seconds": 1.977743,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-050",
+  "part": "J",
+  "seconds": 2.067859,
+  "estimated_cny": "0.000144354",
+  "attempts": 1,
+  "input_tokens": 491,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-007",
+  "part": "J",
+  "seconds": 2.108148,
+  "estimated_cny": "0.00015288",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-010",
+  "part": "J",
+  "seconds": 2.062434,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-012",
+  "part": "J",
+  "seconds": 1.967337,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-033",
+  "part": "J",
+  "seconds": 1.930708,
+  "estimated_cny": "0.000158172",
+  "attempts": 1,
+  "input_tokens": 538,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-032",
+  "part": "J",
+  "seconds": 2.046005,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-054",
+  "part": "J",
+  "seconds": 2.032277,
+  "estimated_cny": "0.000140826",
+  "attempts": 1,
+  "input_tokens": 479,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-040",
+  "part": "J",
+  "seconds": 1.968406,
+  "estimated_cny": "0.000155526",
+  "attempts": 1,
+  "input_tokens": 529,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-021",
+  "part": "J",
+  "seconds": 1.942179,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-052",
+  "part": "J",
+  "seconds": 1.950292,
+  "estimated_cny": "0.000140826",
+  "attempts": 1,
+  "input_tokens": 479,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-016",
+  "part": "J",
+  "seconds": 1.941486,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-047",
+  "part": "J",
+  "seconds": 1.931973,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-004",
+  "part": "J",
+  "seconds": 2.011692,
+  "estimated_cny": "0.00015582",
+  "attempts": 1,
+  "input_tokens": 530,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-034",
+  "part": "J",
+  "seconds": 2.082784,
+  "estimated_cny": "0.000151704",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-026",
+  "part": "D",
+  "seconds": 0.482472,
+  "estimated_cny": "0.000332",
+  "attempts": 1,
+  "input_tokens": 312,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-011",
+  "part": "D",
+  "seconds": 0.480813,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-019",
+  "part": "D",
+  "seconds": 0.515564,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-024",
+  "part": "D",
+  "seconds": 0.485142,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-003",
+  "part": "D",
+  "seconds": 0.485585,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-025",
+  "part": "D",
+  "seconds": 0.519178,
+  "estimated_cny": "0.000332",
+  "attempts": 1,
+  "input_tokens": 312,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-053",
+  "part": "D",
+  "seconds": 0.574704,
+  "estimated_cny": "0.000287",
+  "attempts": 1,
+  "input_tokens": 267,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-018",
+  "part": "D",
+  "seconds": 0.513423,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-031",
+  "part": "D",
+  "seconds": 0.599774,
+  "estimated_cny": "0.000329",
+  "attempts": 1,
+  "input_tokens": 309,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-029",
+  "part": "D",
+  "seconds": 0.529418,
+  "estimated_cny": "0.000318",
+  "attempts": 1,
+  "input_tokens": 298,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-008",
+  "part": "D",
+  "seconds": 0.577571,
+  "estimated_cny": "0.000326",
+  "attempts": 1,
+  "input_tokens": 306,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-041",
+  "part": "D",
+  "seconds": 0.646343,
+  "estimated_cny": "0.000337",
+  "attempts": 1,
+  "input_tokens": 317,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-014",
+  "part": "D",
+  "seconds": 0.747193,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-039",
+  "part": "D",
+  "seconds": 0.939093,
+  "estimated_cny": "0.000315",
+  "attempts": 1,
+  "input_tokens": 295,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-002",
+  "part": "D",
+  "seconds": 0.99053,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-042",
+  "part": "D",
+  "seconds": 0.547642,
+  "estimated_cny": "0.000334",
+  "attempts": 1,
+  "input_tokens": 314,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-015",
+  "part": "D",
+  "seconds": 0.565807,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-017",
+  "part": "D",
+  "seconds": 0.525421,
+  "estimated_cny": "0.000326",
+  "attempts": 1,
+  "input_tokens": 306,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-028",
+  "part": "D",
+  "seconds": 0.572705,
+  "estimated_cny": "0.000318",
+  "attempts": 1,
+  "input_tokens": 298,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-027",
+  "part": "D",
+  "seconds": 0.489228,
+  "estimated_cny": "0.000332",
+  "attempts": 1,
+  "input_tokens": 312,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-046",
+  "part": "D",
+  "seconds": 0.51143,
+  "estimated_cny": "0.000288",
+  "attempts": 1,
+  "input_tokens": 268,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-006",
+  "part": "D",
+  "seconds": 0.72046,
+  "estimated_cny": "0.000336",
+  "attempts": 1,
+  "input_tokens": 316,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-013",
+  "part": "D",
+  "seconds": 0.686469,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-036",
+  "part": "D",
+  "seconds": 0.739048,
+  "estimated_cny": "0.000311",
+  "attempts": 1,
+  "input_tokens": 291,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-037",
+  "part": "D",
+  "seconds": 0.841652,
+  "estimated_cny": "0.000316",
+  "attempts": 1,
+  "input_tokens": 296,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-030",
+  "part": "D",
+  "seconds": 0.504518,
+  "estimated_cny": "0.000318",
+  "attempts": 1,
+  "input_tokens": 298,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-049",
+  "part": "D",
+  "seconds": 0.488987,
+  "estimated_cny": "0.000295",
+  "attempts": 1,
+  "input_tokens": 275,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-038",
+  "part": "D",
+  "seconds": 0.674576,
+  "estimated_cny": "0.000316",
+  "attempts": 1,
+  "input_tokens": 296,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-005",
+  "part": "D",
+  "seconds": 0.580603,
+  "estimated_cny": "0.00034",
+  "attempts": 1,
+  "input_tokens": 320,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-048",
+  "part": "D",
+  "seconds": 1.205379,
+  "estimated_cny": "0.000288",
+  "attempts": 1,
+  "input_tokens": 268,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-050",
+  "part": "D",
+  "seconds": 0.525476,
+  "estimated_cny": "0.000296",
+  "attempts": 1,
+  "input_tokens": 276,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-022",
+  "part": "D",
+  "seconds": 1.239602,
+  "estimated_cny": "0.000339",
+  "attempts": 1,
+  "input_tokens": 319,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-009",
+  "part": "D",
+  "seconds": 0.571025,
+  "estimated_cny": "0.000326",
+  "attempts": 1,
+  "input_tokens": 306,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-051",
+  "part": "D",
+  "seconds": 0.851803,
+  "estimated_cny": "0.000296",
+  "attempts": 1,
+  "input_tokens": 276,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-020",
+  "part": "D",
+  "seconds": 0.902736,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-045",
+  "part": "D",
+  "seconds": 0.782996,
+  "estimated_cny": "0.000314",
+  "attempts": 1,
+  "input_tokens": 294,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-043",
+  "part": "D",
+  "seconds": 0.804412,
+  "estimated_cny": "0.000313",
+  "attempts": 1,
+  "input_tokens": 293,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-035",
+  "part": "D",
+  "seconds": 0.457915,
+  "estimated_cny": "0.000311",
+  "attempts": 1,
+  "input_tokens": 291,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-044",
+  "part": "D",
+  "seconds": 0.96009,
+  "estimated_cny": "0.000313",
+  "attempts": 1,
+  "input_tokens": 293,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-054",
+  "part": "D",
+  "seconds": 0.455517,
+  "estimated_cny": "0.000287",
+  "attempts": 1,
+  "input_tokens": 267,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-012",
+  "part": "D",
+  "seconds": 0.468898,
+  "estimated_cny": "0.000329",
+  "attempts": 1,
+  "input_tokens": 309,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-040",
+  "part": "D",
+  "seconds": 0.493597,
+  "estimated_cny": "0.000335",
+  "attempts": 1,
+  "input_tokens": 315,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-007",
+  "part": "D",
+  "seconds": 0.693478,
+  "estimated_cny": "0.000326",
+  "attempts": 1,
+  "input_tokens": 306,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-001",
+  "part": "D",
+  "seconds": 0.904242,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-021",
+  "part": "D",
+  "seconds": 0.548447,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-010",
+  "part": "D",
+  "seconds": 0.66073,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-033",
+  "part": "D",
+  "seconds": 0.607209,
+  "estimated_cny": "0.000334",
+  "attempts": 1,
+  "input_tokens": 314,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-032",
+  "part": "D",
+  "seconds": 0.731548,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-034",
+  "part": "D",
+  "seconds": 0.452778,
+  "estimated_cny": "0.000311",
+  "attempts": 1,
+  "input_tokens": 291,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-052",
+  "part": "D",
+  "seconds": 0.53353,
+  "estimated_cny": "0.000286",
+  "attempts": 1,
+  "input_tokens": 266,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-023",
+  "part": "D",
+  "seconds": 1.14279,
+  "estimated_cny": "0.000339",
+  "attempts": 1,
+  "input_tokens": 319,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-016",
+  "part": "D",
+  "seconds": 0.578847,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NR-004",
+  "part": "D",
+  "seconds": 1.225915,
+  "estimated_cny": "0.000341",
+  "attempts": 1,
+  "input_tokens": 321,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-047",
+  "part": "D",
+  "seconds": 1.306919,
+  "estimated_cny": "0.000287",
+  "attempts": 1,
+  "input_tokens": 267,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NR-031",
+  "part": "C",
+  "seconds": 1.017988,
+  "estimated_cny": "0.00081056",
+  "attempts": 1,
+  "input_tokens": 800,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-028",
+  "part": "C",
+  "seconds": 0.568389,
+  "estimated_cny": "0.00079956",
+  "attempts": 1,
+  "input_tokens": 789,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-013",
+  "part": "C",
+  "seconds": 0.58196,
+  "estimated_cny": "0.00080856",
+  "attempts": 1,
+  "input_tokens": 798,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-029",
+  "part": "C",
+  "seconds": 0.624898,
+  "estimated_cny": "0.00080756",
+  "attempts": 1,
+  "input_tokens": 789,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-003",
+  "part": "C",
+  "seconds": 0.641807,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-008",
+  "part": "C",
+  "seconds": 0.796782,
+  "estimated_cny": "0.00080756",
+  "attempts": 1,
+  "input_tokens": 797,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-022",
+  "part": "C",
+  "seconds": 0.802053,
+  "estimated_cny": "0.00082056",
+  "attempts": 1,
+  "input_tokens": 810,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-002",
+  "part": "C",
+  "seconds": 0.897424,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-014",
+  "part": "C",
+  "seconds": 0.905529,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-019",
+  "part": "C",
+  "seconds": 0.918602,
+  "estimated_cny": "0.00081256",
+  "attempts": 1,
+  "input_tokens": 802,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-011",
+  "part": "C",
+  "seconds": 0.914507,
+  "estimated_cny": "0.00081156",
+  "attempts": 1,
+  "input_tokens": 801,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-017",
+  "part": "C",
+  "seconds": 0.941936,
+  "estimated_cny": "0.00080756",
+  "attempts": 1,
+  "input_tokens": 797,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-018",
+  "part": "C",
+  "seconds": 1.115355,
+  "estimated_cny": "0.00080856",
+  "attempts": 1,
+  "input_tokens": 798,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-020",
+  "part": "C",
+  "seconds": 1.070789,
+  "estimated_cny": "0.00081256",
+  "attempts": 1,
+  "input_tokens": 802,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-049",
+  "part": "C",
+  "seconds": 0.523548,
+  "estimated_cny": "0.00077656",
+  "attempts": 1,
+  "input_tokens": 766,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-009",
+  "part": "C",
+  "seconds": 0.52045,
+  "estimated_cny": "0.00069012",
+  "attempts": 1,
+  "input_tokens": 797,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-007",
+  "part": "C",
+  "seconds": 0.570934,
+  "estimated_cny": "0.00068212",
+  "attempts": 1,
+  "input_tokens": 797,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-001",
+  "part": "C",
+  "seconds": 0.632351,
+  "estimated_cny": "0.00068412",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-040",
+  "part": "C",
+  "seconds": 0.56633,
+  "estimated_cny": "0.00081656",
+  "attempts": 1,
+  "input_tokens": 806,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-047",
+  "part": "C",
+  "seconds": 0.565753,
+  "estimated_cny": "0.00076856",
+  "attempts": 1,
+  "input_tokens": 758,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-015",
+  "part": "C",
+  "seconds": 1.60077,
+  "estimated_cny": "0.00068412",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-034",
+  "part": "C",
+  "seconds": 0.83102,
+  "estimated_cny": "0.00093656",
+  "attempts": 1,
+  "input_tokens": 782,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "basis": "missing_fact",
+   "clarification": "Should the final reader count be exactly 12, meaning 2 new invitees (10 current + 2 new = 12), rather than the proposed 5 invitees?",
+   "decision": "block",
+   "if_no": "block",
+   "if_yes": "allow"
+  }
+ },
+ {
+  "id": "NR-033",
+  "part": "C",
+  "seconds": 1.055402,
+  "estimated_cny": "0.00069012",
+  "attempts": 1,
+  "input_tokens": 805,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-010",
+  "part": "C",
+  "seconds": 1.146769,
+  "estimated_cny": "0.00068612",
+  "attempts": 1,
+  "input_tokens": 801,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-004",
+  "part": "C",
+  "seconds": 1.084833,
+  "estimated_cny": "0.00082256",
+  "attempts": 1,
+  "input_tokens": 812,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-016",
+  "part": "C",
+  "seconds": 1.089766,
+  "estimated_cny": "0.00068312",
+  "attempts": 1,
+  "input_tokens": 798,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-026",
+  "part": "E",
+  "seconds": 0.543112,
+  "estimated_cny": "0.00039156",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Sepia"
+  }
+ },
+ {
+  "id": "NR-041",
+  "part": "E",
+  "seconds": 0.51629,
+  "estimated_cny": "0.00038856",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Birch"
+  }
+ },
+ {
+  "id": "NR-014",
+  "part": "E",
+  "seconds": 0.584704,
+  "estimated_cny": "0.00038756",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Flint"
+  }
+ },
+ {
+  "id": "NR-024",
+  "part": "E",
+  "seconds": 0.555369,
+  "estimated_cny": "0.00038556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilac"
+  }
+ },
+ {
+  "id": "NR-019",
+  "part": "E",
+  "seconds": 0.642399,
+  "estimated_cny": "0.00049456",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 43,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "slot",
+     "eq",
+     "morning",
+     "for the morning"
+    ],
+    [
+     "final_occupancy",
+     "lt",
+     37,
+     "must be under 37"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Coral"
+  }
+ },
+ {
+  "id": "NR-011",
+  "part": "E",
+  "seconds": 0.647193,
+  "estimated_cny": "0.00050556",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "display",
+     "eq",
+     "east",
+     "on east display"
+    ],
+    [
+     "remaining_units",
+     "ge",
+     38,
+     "must still hold 38 units or more"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Beryl"
+  }
+ },
+ {
+  "id": "NR-031",
+  "part": "E",
+  "seconds": 0.723558,
+  "estimated_cny": "0.00038456",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Raven"
+  }
+ },
+ {
+  "id": "NR-002",
+  "part": "E",
+  "seconds": 0.911588,
+  "estimated_cny": "0.00049756",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "ge",
+     41,
+     "from $41"
+    ],
+    [
+     "delivered_usd",
+     "le",
+     49,
+     "through $49 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cedar"
+  }
+ },
+ {
+  "id": "NR-008",
+  "part": "E",
+  "seconds": 1.008218,
+  "estimated_cny": "0.00044356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     60,
+     "less than sixty dollars delivered"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fennel"
+  }
+ },
+ {
+  "id": "NR-042",
+  "part": "E",
+  "seconds": 0.506622,
+  "estimated_cny": "0.00026312",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Birch"
+  }
+ },
+ {
+  "id": "NR-053",
+  "part": "E",
+  "seconds": 1.078786,
+  "estimated_cny": "0.00041356",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 27,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "in cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cliff"
+  }
+ },
+ {
+  "id": "NR-018",
+  "part": "E",
+  "seconds": 1.092035,
+  "estimated_cny": "0.00038956",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Onyx"
+  }
+ },
+ {
+  "id": "NR-025",
+  "part": "E",
+  "seconds": 1.107841,
+  "estimated_cny": "0.00026612",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Sepia"
+  }
+ },
+ {
+  "id": "NR-003",
+  "part": "E",
+  "seconds": 1.147186,
+  "estimated_cny": "0.00049756",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "ge",
+     41,
+     "from $41"
+    ],
+    [
+     "delivered_usd",
+     "le",
+     49,
+     "through $49 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cedar"
+  }
+ },
+ {
+  "id": "NR-029",
+  "part": "E",
+  "seconds": 1.181472,
+  "estimated_cny": "0.00051656",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 49,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     23,
+     "the final readership stays at or below 23"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "specifically for the external audience"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Robin"
+  }
+ },
+ {
+  "id": "NR-006",
+  "part": "E",
+  "seconds": 0.807045,
+  "estimated_cny": "0.00038556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Hazel"
+  }
+ },
+ {
+  "id": "NR-039",
+  "part": "E",
+  "seconds": 1.386367,
+  "estimated_cny": "0.00044556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "lt",
+     45,
+     "keep the unique audience below 45"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Maple"
+  }
+ },
+ {
+  "id": "NR-015",
+  "part": "E",
+  "seconds": 0.846818,
+  "estimated_cny": "0.00026212",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Flint"
+  }
+ },
+ {
+  "id": "NR-048",
+  "part": "E",
+  "seconds": 0.805754,
+  "estimated_cny": "0.00049756",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     32,
+     "from 32"
+    ],
+    [
+     "retention_days",
+     "le",
+     40,
+     "up to and including 40 days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cairn"
+  }
+ },
+ {
+  "id": "NR-022",
+  "part": "E",
+  "seconds": 0.860568,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilac"
+  }
+ },
+ {
+  "id": "NR-036",
+  "part": "E",
+  "seconds": 0.928426,
+  "estimated_cny": "0.00044856",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "eq",
+     12,
+     "an audience of twelve people in total, exactly"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lark"
+  }
+ },
+ {
+  "id": "NR-013",
+  "part": "E",
+  "seconds": 0.605486,
+  "estimated_cny": "0.00026212",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Flint"
+  }
+ },
+ {
+  "id": "NR-046",
+  "part": "E",
+  "seconds": 0.712408,
+  "estimated_cny": "0.00041612",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 59,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     32,
+     "from 32"
+    ],
+    [
+     "retention_days",
+     "le",
+     40,
+     "up to and including 40 days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cairn"
+  }
+ },
+ {
+  "id": "NR-028",
+  "part": "E",
+  "seconds": 0.857,
+  "estimated_cny": "0.00038712",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     23,
+     "final readership stays at or below 23"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "specifically for the external audience"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Robin"
+  }
+ },
+ {
+  "id": "NR-027",
+  "part": "E",
+  "seconds": 0.8399,
+  "estimated_cny": "0.00026612",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Sepia"
+  }
+ },
+ {
+  "id": "NR-030",
+  "part": "E",
+  "seconds": 0.619912,
+  "estimated_cny": "0.00038712",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     23,
+     "final readership stays at or below 23"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "specifically for the external audience"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Robin"
+  }
+ },
+ {
+  "id": "NR-005",
+  "part": "E",
+  "seconds": 0.605931,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Hazel"
+  }
+ },
+ {
+  "id": "NR-045",
+  "part": "E",
+  "seconds": 0.629918,
+  "estimated_cny": "0.00047056",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 39,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "le",
+     30,
+     "30 people or fewer"
+    ],
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Willow"
+  }
+ },
+ {
+  "id": "NR-037",
+  "part": "E",
+  "seconds": 1.25764,
+  "estimated_cny": "0.00044556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "lt",
+     45,
+     "keep the unique audience below 45"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Maple"
+  }
+ },
+ {
+  "id": "NR-049",
+  "part": "E",
+  "seconds": 0.711159,
+  "estimated_cny": "0.00037556",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Brook"
+  }
+ },
+ {
+  "id": "NR-051",
+  "part": "E",
+  "seconds": 0.956401,
+  "estimated_cny": "0.00037556",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Brook"
+  }
+ },
+ {
+  "id": "NR-009",
+  "part": "E",
+  "seconds": 0.600788,
+  "estimated_cny": "0.00031812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     60,
+     "less than sixty dollars delivered"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fennel"
+  }
+ },
+ {
+  "id": "NR-038",
+  "part": "E",
+  "seconds": 0.895995,
+  "estimated_cny": "0.00032012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "lt",
+     45,
+     "keep the unique audience below 45"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Maple"
+  }
+ },
+ {
+  "id": "NR-020",
+  "part": "E",
+  "seconds": 1.076215,
+  "estimated_cny": "0.00036912",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 43,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "slot",
+     "eq",
+     "morning",
+     "for the morning"
+    ],
+    [
+     "final_occupancy",
+     "lt",
+     37,
+     "must be under 37"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Coral"
+  }
+ },
+ {
+  "id": "NR-017",
+  "part": "E",
+  "seconds": 1.239033,
+  "estimated_cny": "0.00042012",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 56,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     20,
+     "between 20 and 30, including both ends"
+    ],
+    [
+     "remaining_units",
+     "le",
+     30,
+     "between 20 and 30, including both ends"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Onyx"
+  }
+ },
+ {
+  "id": "NR-007",
+  "part": "E",
+  "seconds": 0.583456,
+  "estimated_cny": "0.00031812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     60,
+     "less than sixty dollars delivered"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fennel"
+  }
+ },
+ {
+  "id": "NR-043",
+  "part": "E",
+  "seconds": 0.768058,
+  "estimated_cny": "0.00034512",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 39,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ],
+    [
+     "recipient_count",
+     "le",
+     30,
+     "30 people or fewer"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Willow"
+  }
+ },
+ {
+  "id": "NR-054",
+  "part": "E",
+  "seconds": 0.516696,
+  "estimated_cny": "0.00028812",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 27,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "in cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cliff"
+  }
+ },
+ {
+  "id": "NR-032",
+  "part": "E",
+  "seconds": 0.541387,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Raven"
+  }
+ },
+ {
+  "id": "NR-044",
+  "part": "E",
+  "seconds": 1.239398,
+  "estimated_cny": "0.00047056",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 39,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "le",
+     30,
+     "30 people or fewer"
+    ],
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Willow"
+  }
+ },
+ {
+  "id": "NR-001",
+  "part": "E",
+  "seconds": 0.810687,
+  "estimated_cny": "0.00037212",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "ge",
+     41,
+     "from $41"
+    ],
+    [
+     "delivered_usd",
+     "le",
+     49,
+     "through $49 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cedar"
+  }
+ },
+ {
+  "id": "NR-033",
+  "part": "E",
+  "seconds": 0.524018,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Raven"
+  }
+ },
+ {
+  "id": "NR-040",
+  "part": "E",
+  "seconds": 0.550447,
+  "estimated_cny": "0.00026312",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Birch"
+  }
+ },
+ {
+  "id": "NR-010",
+  "part": "E",
+  "seconds": 0.704197,
+  "estimated_cny": "0.00038012",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "display",
+     "eq",
+     "east",
+     "on east display"
+    ],
+    [
+     "remaining_units",
+     "ge",
+     38,
+     "must still hold 38 units or more"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Beryl"
+  }
+ },
+ {
+  "id": "NR-012",
+  "part": "E",
+  "seconds": 0.597407,
+  "estimated_cny": "0.00038012",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "display",
+     "eq",
+     "east",
+     "on east display"
+    ],
+    [
+     "remaining_units",
+     "ge",
+     38,
+     "must still hold 38 units or more"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Beryl"
+  }
+ },
+ {
+  "id": "NR-050",
+  "part": "E",
+  "seconds": 0.96459,
+  "estimated_cny": "0.00037556",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Brook"
+  }
+ },
+ {
+  "id": "NR-023",
+  "part": "E",
+  "seconds": 0.84875,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilac"
+  }
+ },
+ {
+  "id": "NR-004",
+  "part": "E",
+  "seconds": 0.495327,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Hazel"
+  }
+ },
+ {
+  "id": "NR-021",
+  "part": "E",
+  "seconds": 0.892779,
+  "estimated_cny": "0.00036912",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 43,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "slot",
+     "eq",
+     "morning",
+     "for the morning"
+    ],
+    [
+     "final_occupancy",
+     "lt",
+     37,
+     "must be under 37"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Coral"
+  }
+ },
+ {
+  "id": "NR-035",
+  "part": "E",
+  "seconds": 1.1503,
+  "estimated_cny": "0.00032312",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "eq",
+     12,
+     "an audience of twelve people in total, exactly"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lark"
+  }
+ },
+ {
+  "id": "NR-034",
+  "part": "E",
+  "seconds": 0.879195,
+  "estimated_cny": "0.00032312",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "eq",
+     12,
+     "an audience of twelve people in total, exactly"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lark"
+  }
+ },
+ {
+  "id": "NR-016",
+  "part": "E",
+  "seconds": 0.806903,
+  "estimated_cny": "0.00026412",
+  "attempts": 1,
+  "input_tokens": 447,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Onyx"
+  }
+ },
+ {
+  "id": "NR-052",
+  "part": "E",
+  "seconds": 0.875662,
+  "estimated_cny": "0.00028812",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 27,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "in cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cliff"
+  }
+ },
+ {
+  "id": "NR-047",
+  "part": "E",
+  "seconds": 0.881292,
+  "estimated_cny": "0.00041612",
+  "attempts": 1,
+  "input_tokens": 431,
+  "output_tokens": 59,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     32,
+     "from 32"
+    ],
+    [
+     "retention_days",
+     "le",
+     40,
+     "up to and including 40 days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cairn"
+  }
+ },
+ {
+  "id": "NR-041",
+  "part": "M",
+  "seconds": 0.570173,
+  "estimated_cny": "0.00073312",
+  "attempts": 1,
+  "input_tokens": 808,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "basis": "missing_fact",
+   "clarification": "Has the messages team marked the final text ready?",
+   "decision": "block",
+   "if_no": "block",
+   "if_yes": "allow"
+  }
+ },
+ {
+  "id": "NR-042",
+  "part": "M",
+  "seconds": 0.596791,
+  "estimated_cny": "0.00073012",
+  "attempts": 1,
+  "input_tokens": 805,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "basis": "missing_fact",
+   "clarification": "Has the messages team marked the final text ready?",
+   "decision": "block",
+   "if_no": "block",
+   "if_yes": "allow"
+  }
+ },
+ {
+  "id": "NR-024",
+  "part": "M",
+  "seconds": 0.622233,
+  "estimated_cny": "0.00073812",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "basis": "missing_fact",
+   "clarification": "Has the accessibility inspection for the Lilac room passed?",
+   "decision": "block",
+   "if_no": "block",
+   "if_yes": "allow"
+  }
+ },
+ {
+  "id": "NR-005",
+  "part": "M",
+  "seconds": 0.664643,
+  "estimated_cny": "0.00070412",
+  "attempts": 1,
+  "input_tokens": 811,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-050",
+  "part": "M",
+  "seconds": 0.661944,
+  "estimated_cny": "0.00065212",
+  "attempts": 1,
+  "input_tokens": 767,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-032",
+  "part": "M",
+  "seconds": 0.728407,
+  "estimated_cny": "0.00069712",
+  "attempts": 1,
+  "input_tokens": 804,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-023",
+  "part": "M",
+  "seconds": 0.86017,
+  "estimated_cny": "0.00070312",
+  "attempts": 1,
+  "input_tokens": 810,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-051",
+  "part": "M",
+  "seconds": 1.001066,
+  "estimated_cny": "0.00065212",
+  "attempts": 1,
+  "input_tokens": 767,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NR-006",
+  "part": "M",
+  "seconds": 1.130495,
+  "estimated_cny": "0.00076012",
+  "attempts": 1,
+  "input_tokens": 807,
+  "output_tokens": 51,
+  "error": null,
+  "answers": {
+   "basis": "missing_consent",
+   "clarification": "Has our buyer authorized this exact purchase of 8 units of Hazel in writing?",
+   "decision": "block",
+   "if_no": "block",
+   "if_yes": "allow"
+  }
+ }
+]

@@ -1,5 +1,6 @@
 """Build LaTeX tables and vector figures from the published prediction tables."""
 
+import csv
 from collections import defaultdict
 from pathlib import Path
 
@@ -25,6 +26,71 @@ DATA = {
 COLORS = ["#52596e", "#b15b35", "#09766d"]
 
 
+def prose_figure():
+    folder = OUT.parents[1] / "results/natural_permissions"
+    settings = [
+        ("", "Initial fallback"),
+        ("replication", "Fallback replication"),
+        ("confirmation", "Condition review"),
+        ("scope_confirmation", "Category check"),
+    ]
+    methods = [
+        ("jev", "Jev direct", "#725898", "o"),
+        ("deepseek", "DeepSeek direct", "#b46a35", "s"),
+        ("cascade", "Serial review", "#56799a", "^"),
+        ("joint", "Tested verifier", "#0a7564", "D"),
+    ]
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.7), sharey=True)
+    for cohort, (sub, _) in enumerate(settings):
+        with (folder / sub / "scores.csv").open(encoding="utf-8-sig", newline="") as f:
+            rows = {r["method"]: r for r in csv.DictReader(f) if r["domain"] == "all"}
+        for k, (method, label, color, marker) in enumerate(methods):
+            r = rows[method]
+            y = cohort + (k - 1.5) * 0.12
+            for ax, numer, denom in zip(
+                axes, ("violation_allow", "legal_allow"), ("violations", "legal")
+            ):
+                ax.scatter(
+                    100 * int(r[numer]) / int(r[denom]),
+                    y,
+                    marker=marker,
+                    color=color,
+                    s=22,
+                    label=label if cohort == 0 else None,
+                    zorder=3,
+                )
+    axes[0].set(
+        xlim=(-2, 43),
+        xticks=[0, 10, 20, 30, 40],
+        xlabel="Explicit violations released (%)",
+    )
+    axes[1].set(
+        xlim=(59, 100),
+        xticks=[60, 70, 80, 90, 100],
+        xlabel="Legal actions released (%)",
+    )
+    axes[0].set_yticks(range(4), [s[1] for s in settings])
+    axes[0].set_ylim(3.45, -0.5)
+    for ax in axes:
+        ax.grid(axis="x", color="#dce4e1", linewidth=0.6)
+        ax.spines[["top", "right", "left"]].set_visible(False)
+        ax.tick_params(axis="y", length=0, labelsize=8)
+        ax.tick_params(axis="x", labelsize=8)
+        ax.xaxis.label.set_size(8)
+    fig.legend(
+        *axes[0].get_legend_handles_labels(),
+        loc="upper center",
+        ncol=4,
+        fontsize=8,
+        frameon=False,
+        columnspacing=1.3,
+        handletextpad=0.25,
+    )
+    fig.subplots_adjust(left=0.22, right=0.98, bottom=0.2, top=0.86, wspace=0.13)
+    fig.savefig(OUT / "prose-operating-points.pdf")
+    plt.close(fig)
+
+
 def texrows(name, rows):
     (OUT / name).write_text(
         "\n".join(" & ".join(map(str, row)) + r" \\" for row in rows) + "\n",
@@ -34,6 +100,7 @@ def texrows(name, rows):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    prose_figure()
     (OUT / "system.tex").write_text(
         (OUT.parents[1] / "results/full_permission/system_prompt.txt")
         .read_text("utf8")

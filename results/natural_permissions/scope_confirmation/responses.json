@@ -1,0 +1,7153 @@
+[
+ {
+  "id": "NS-019",
+  "part": "J",
+  "seconds": 1.792487,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "J",
+  "seconds": 1.832218,
+  "estimated_cny": "0.000154938",
+  "attempts": 1,
+  "input_tokens": 527,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-042",
+  "part": "J",
+  "seconds": 1.945612,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "J",
+  "seconds": 1.945039,
+  "estimated_cny": "0.000156702",
+  "attempts": 1,
+  "input_tokens": 533,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "J",
+  "seconds": 1.906806,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-068",
+  "part": "J",
+  "seconds": 1.930643,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-018",
+  "part": "J",
+  "seconds": 2.149518,
+  "estimated_cny": "0.000149058",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-039",
+  "part": "J",
+  "seconds": 2.184319,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "J",
+  "seconds": 2.155334,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "J",
+  "seconds": 2.15422,
+  "estimated_cny": "0.000144354",
+  "attempts": 1,
+  "input_tokens": 491,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "J",
+  "seconds": 2.127591,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-040",
+  "part": "J",
+  "seconds": 2.201165,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-017",
+  "part": "J",
+  "seconds": 2.179639,
+  "estimated_cny": "0.000149058",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-022",
+  "part": "J",
+  "seconds": 2.370334,
+  "estimated_cny": "0.000153174",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-028",
+  "part": "J",
+  "seconds": 2.599925,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-064",
+  "part": "J",
+  "seconds": 1.798399,
+  "estimated_cny": "0.00013965",
+  "attempts": 1,
+  "input_tokens": 475,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "J",
+  "seconds": 1.794499,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-056",
+  "part": "J",
+  "seconds": 1.793875,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-062",
+  "part": "J",
+  "seconds": 1.785999,
+  "estimated_cny": "0.000145824",
+  "attempts": 1,
+  "input_tokens": 496,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "J",
+  "seconds": 1.793701,
+  "estimated_cny": "0.000146118",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "J",
+  "seconds": 1.750065,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "J",
+  "seconds": 1.739425,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-063",
+  "part": "J",
+  "seconds": 1.749733,
+  "estimated_cny": "0.000145824",
+  "attempts": 1,
+  "input_tokens": 496,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-066",
+  "part": "J",
+  "seconds": 1.779311,
+  "estimated_cny": "0.000139356",
+  "attempts": 1,
+  "input_tokens": 474,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "J",
+  "seconds": 1.855167,
+  "estimated_cny": "0.000145824",
+  "attempts": 1,
+  "input_tokens": 496,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "J",
+  "seconds": 1.852641,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-038",
+  "part": "J",
+  "seconds": 1.815147,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "J",
+  "seconds": 1.742177,
+  "estimated_cny": "0.000151704",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "J",
+  "seconds": 1.762685,
+  "estimated_cny": "0.000155232",
+  "attempts": 1,
+  "input_tokens": 528,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "J",
+  "seconds": 1.72,
+  "estimated_cny": "0.00015582",
+  "attempts": 1,
+  "input_tokens": 530,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-023",
+  "part": "J",
+  "seconds": 1.737888,
+  "estimated_cny": "0.000153468",
+  "attempts": 1,
+  "input_tokens": 522,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-009",
+  "part": "J",
+  "seconds": 1.738972,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "J",
+  "seconds": 1.724883,
+  "estimated_cny": "0.00015582",
+  "attempts": 1,
+  "input_tokens": 530,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-021",
+  "part": "J",
+  "seconds": 1.775072,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-055",
+  "part": "J",
+  "seconds": 1.732479,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-036",
+  "part": "J",
+  "seconds": 1.717333,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-051",
+  "part": "J",
+  "seconds": 1.777843,
+  "estimated_cny": "0.000154644",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-032",
+  "part": "J",
+  "seconds": 1.737766,
+  "estimated_cny": "0.000155526",
+  "attempts": 1,
+  "input_tokens": 529,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-004",
+  "part": "J",
+  "seconds": 1.741972,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-008",
+  "part": "J",
+  "seconds": 1.789202,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-037",
+  "part": "J",
+  "seconds": 1.955728,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-024",
+  "part": "J",
+  "seconds": 1.821368,
+  "estimated_cny": "0.000154938",
+  "attempts": 1,
+  "input_tokens": 527,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-020",
+  "part": "J",
+  "seconds": 1.79666,
+  "estimated_cny": "0.000150822",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-054",
+  "part": "J",
+  "seconds": 1.747032,
+  "estimated_cny": "0.00014847",
+  "attempts": 1,
+  "input_tokens": 505,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-045",
+  "part": "J",
+  "seconds": 1.769292,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "J",
+  "seconds": 1.746503,
+  "estimated_cny": "0.000151704",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-052",
+  "part": "J",
+  "seconds": 1.773709,
+  "estimated_cny": "0.000148176",
+  "attempts": 1,
+  "input_tokens": 504,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-057",
+  "part": "J",
+  "seconds": 1.783073,
+  "estimated_cny": "0.000151116",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-016",
+  "part": "J",
+  "seconds": 1.757926,
+  "estimated_cny": "0.000149058",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-007",
+  "part": "J",
+  "seconds": 1.728466,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-015",
+  "part": "J",
+  "seconds": 1.811326,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-026",
+  "part": "J",
+  "seconds": 1.772336,
+  "estimated_cny": "0.000158466",
+  "attempts": 1,
+  "input_tokens": 539,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-033",
+  "part": "J",
+  "seconds": 1.986598,
+  "estimated_cny": "0.000155526",
+  "attempts": 1,
+  "input_tokens": 529,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-030",
+  "part": "J",
+  "seconds": 2.195975,
+  "estimated_cny": "0.000154056",
+  "attempts": 1,
+  "input_tokens": 524,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-069",
+  "part": "J",
+  "seconds": 1.816046,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-053",
+  "part": "J",
+  "seconds": 2.157292,
+  "estimated_cny": "0.000148176",
+  "attempts": 1,
+  "input_tokens": 504,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-043",
+  "part": "J",
+  "seconds": 2.08921,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-044",
+  "part": "J",
+  "seconds": 1.742572,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-065",
+  "part": "J",
+  "seconds": 1.720014,
+  "estimated_cny": "0.00013965",
+  "attempts": 1,
+  "input_tokens": 475,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-050",
+  "part": "J",
+  "seconds": 1.748667,
+  "estimated_cny": "0.000154644",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "J",
+  "seconds": 1.79746,
+  "estimated_cny": "0.000158466",
+  "attempts": 1,
+  "input_tokens": 539,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-005",
+  "part": "J",
+  "seconds": 1.771791,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-029",
+  "part": "J",
+  "seconds": 1.76936,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-002",
+  "part": "J",
+  "seconds": 1.796527,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-027",
+  "part": "J",
+  "seconds": 2.012721,
+  "estimated_cny": "0.000158466",
+  "attempts": 1,
+  "input_tokens": 539,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-031",
+  "part": "J",
+  "seconds": 1.832995,
+  "estimated_cny": "0.000155526",
+  "attempts": 1,
+  "input_tokens": 529,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "J",
+  "seconds": 1.802051,
+  "estimated_cny": "0.000144648",
+  "attempts": 1,
+  "input_tokens": 492,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-006",
+  "part": "J",
+  "seconds": 1.771796,
+  "estimated_cny": "0.00015141",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-067",
+  "part": "J",
+  "seconds": 1.796409,
+  "estimated_cny": "0.000142002",
+  "attempts": 1,
+  "input_tokens": 483,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "J",
+  "seconds": 1.79696,
+  "estimated_cny": "0.000154644",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-041",
+  "part": "J",
+  "seconds": 1.987206,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-003",
+  "part": "J",
+  "seconds": 1.781332,
+  "estimated_cny": "0.000158172",
+  "attempts": 1,
+  "input_tokens": 538,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-019",
+  "part": "D",
+  "seconds": 0.484905,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-039",
+  "part": "D",
+  "seconds": 0.508279,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-042",
+  "part": "D",
+  "seconds": 0.518231,
+  "estimated_cny": "0.000317",
+  "attempts": 1,
+  "input_tokens": 297,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "D",
+  "seconds": 0.503511,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-018",
+  "part": "D",
+  "seconds": 0.511108,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-040",
+  "part": "D",
+  "seconds": 0.562849,
+  "estimated_cny": "0.000317",
+  "attempts": 1,
+  "input_tokens": 297,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "D",
+  "seconds": 0.535499,
+  "estimated_cny": "0.000296",
+  "attempts": 1,
+  "input_tokens": 276,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "D",
+  "seconds": 0.542581,
+  "estimated_cny": "0.000337",
+  "attempts": 1,
+  "input_tokens": 317,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-028",
+  "part": "D",
+  "seconds": 0.512583,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-017",
+  "part": "D",
+  "seconds": 0.593349,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "D",
+  "seconds": 0.571708,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "D",
+  "seconds": 0.538984,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "D",
+  "seconds": 0.593207,
+  "estimated_cny": "0.000339",
+  "attempts": 1,
+  "input_tokens": 319,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-022",
+  "part": "D",
+  "seconds": 0.629948,
+  "estimated_cny": "0.000335",
+  "attempts": 1,
+  "input_tokens": 315,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-068",
+  "part": "D",
+  "seconds": 0.697012,
+  "estimated_cny": "0.000289",
+  "attempts": 1,
+  "input_tokens": 269,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-064",
+  "part": "D",
+  "seconds": 0.470146,
+  "estimated_cny": "0.000282",
+  "attempts": 1,
+  "input_tokens": 262,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "D",
+  "seconds": 0.493813,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "D",
+  "seconds": 0.591914,
+  "estimated_cny": "0.000343",
+  "attempts": 1,
+  "input_tokens": 323,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "D",
+  "seconds": 0.570639,
+  "estimated_cny": "0.000303",
+  "attempts": 1,
+  "input_tokens": 283,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "D",
+  "seconds": 0.542508,
+  "estimated_cny": "0.000301",
+  "attempts": 1,
+  "input_tokens": 281,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-062",
+  "part": "D",
+  "seconds": 0.578578,
+  "estimated_cny": "0.0003",
+  "attempts": 1,
+  "input_tokens": 280,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-038",
+  "part": "D",
+  "seconds": 0.502958,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "D",
+  "seconds": 0.494654,
+  "estimated_cny": "0.000322",
+  "attempts": 1,
+  "input_tokens": 302,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-066",
+  "part": "D",
+  "seconds": 0.615428,
+  "estimated_cny": "0.000282",
+  "attempts": 1,
+  "input_tokens": 262,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "D",
+  "seconds": 0.558423,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-056",
+  "part": "D",
+  "seconds": 0.763245,
+  "estimated_cny": "0.000319",
+  "attempts": 1,
+  "input_tokens": 299,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "D",
+  "seconds": 0.772331,
+  "estimated_cny": "0.000339",
+  "attempts": 1,
+  "input_tokens": 319,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-063",
+  "part": "D",
+  "seconds": 0.839762,
+  "estimated_cny": "0.000301",
+  "attempts": 1,
+  "input_tokens": 281,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "D",
+  "seconds": 0.531936,
+  "estimated_cny": "0.000324",
+  "attempts": 1,
+  "input_tokens": 304,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-023",
+  "part": "D",
+  "seconds": 0.468688,
+  "estimated_cny": "0.000336",
+  "attempts": 1,
+  "input_tokens": 316,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-009",
+  "part": "D",
+  "seconds": 0.470341,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-037",
+  "part": "D",
+  "seconds": 0.467056,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "D",
+  "seconds": 1.043542,
+  "estimated_cny": "0.000339",
+  "attempts": 1,
+  "input_tokens": 319,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-032",
+  "part": "D",
+  "seconds": 0.497651,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-051",
+  "part": "D",
+  "seconds": 0.547547,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-036",
+  "part": "D",
+  "seconds": 0.547685,
+  "estimated_cny": "0.000323",
+  "attempts": 1,
+  "input_tokens": 303,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-008",
+  "part": "D",
+  "seconds": 0.506718,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "D",
+  "seconds": 0.664524,
+  "estimated_cny": "0.000335",
+  "attempts": 1,
+  "input_tokens": 315,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-055",
+  "part": "D",
+  "seconds": 0.770928,
+  "estimated_cny": "0.000319",
+  "attempts": 1,
+  "input_tokens": 299,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-004",
+  "part": "D",
+  "seconds": 0.607413,
+  "estimated_cny": "0.000323",
+  "attempts": 1,
+  "input_tokens": 303,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-021",
+  "part": "D",
+  "seconds": 0.924238,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-020",
+  "part": "D",
+  "seconds": 0.560663,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-052",
+  "part": "D",
+  "seconds": 0.543333,
+  "estimated_cny": "0.000309",
+  "attempts": 1,
+  "input_tokens": 289,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-016",
+  "part": "D",
+  "seconds": 0.442155,
+  "estimated_cny": "0.000322",
+  "attempts": 1,
+  "input_tokens": 302,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-024",
+  "part": "D",
+  "seconds": 0.764728,
+  "estimated_cny": "0.00034",
+  "attempts": 1,
+  "input_tokens": 320,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "D",
+  "seconds": 0.516104,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-007",
+  "part": "D",
+  "seconds": 0.532377,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-057",
+  "part": "D",
+  "seconds": 0.741867,
+  "estimated_cny": "0.000319",
+  "attempts": 1,
+  "input_tokens": 299,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-054",
+  "part": "D",
+  "seconds": 0.817333,
+  "estimated_cny": "0.000309",
+  "attempts": 1,
+  "input_tokens": 289,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-030",
+  "part": "D",
+  "seconds": 0.455493,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-043",
+  "part": "D",
+  "seconds": 0.449255,
+  "estimated_cny": "0.000315",
+  "attempts": 1,
+  "input_tokens": 295,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-053",
+  "part": "D",
+  "seconds": 0.512225,
+  "estimated_cny": "0.000309",
+  "attempts": 1,
+  "input_tokens": 289,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-026",
+  "part": "D",
+  "seconds": 0.854069,
+  "estimated_cny": "0.000345",
+  "attempts": 1,
+  "input_tokens": 325,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-045",
+  "part": "D",
+  "seconds": 1.111948,
+  "estimated_cny": "0.000315",
+  "attempts": 1,
+  "input_tokens": 295,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-015",
+  "part": "D",
+  "seconds": 1.00377,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-033",
+  "part": "D",
+  "seconds": 0.871524,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-050",
+  "part": "D",
+  "seconds": 0.445538,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-002",
+  "part": "D",
+  "seconds": 0.451578,
+  "estimated_cny": "0.000343",
+  "attempts": 1,
+  "input_tokens": 323,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-044",
+  "part": "D",
+  "seconds": 0.646203,
+  "estimated_cny": "0.000315",
+  "attempts": 1,
+  "input_tokens": 295,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-005",
+  "part": "D",
+  "seconds": 0.473402,
+  "estimated_cny": "0.000323",
+  "attempts": 1,
+  "input_tokens": 303,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "D",
+  "seconds": 0.618469,
+  "estimated_cny": "0.000345",
+  "attempts": 1,
+  "input_tokens": 325,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-065",
+  "part": "D",
+  "seconds": 0.773615,
+  "estimated_cny": "0.000283",
+  "attempts": 1,
+  "input_tokens": 263,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-027",
+  "part": "D",
+  "seconds": 0.858698,
+  "estimated_cny": "0.000345",
+  "attempts": 1,
+  "input_tokens": 325,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-041",
+  "part": "D",
+  "seconds": 0.498082,
+  "estimated_cny": "0.000317",
+  "attempts": 1,
+  "input_tokens": 297,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-006",
+  "part": "D",
+  "seconds": 0.573644,
+  "estimated_cny": "0.000323",
+  "attempts": 1,
+  "input_tokens": 303,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-003",
+  "part": "D",
+  "seconds": 0.522163,
+  "estimated_cny": "0.000343",
+  "attempts": 1,
+  "input_tokens": 323,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-069",
+  "part": "D",
+  "seconds": 1.195827,
+  "estimated_cny": "0.000288",
+  "attempts": 1,
+  "input_tokens": 268,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-029",
+  "part": "D",
+  "seconds": 0.955131,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-031",
+  "part": "D",
+  "seconds": 0.965018,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "D",
+  "seconds": 0.911415,
+  "estimated_cny": "0.000297",
+  "attempts": 1,
+  "input_tokens": 277,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "D",
+  "seconds": 0.863445,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-067",
+  "part": "D",
+  "seconds": 1.207339,
+  "estimated_cny": "0.000289",
+  "attempts": 1,
+  "input_tokens": 269,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NS-019",
+  "part": "C",
+  "seconds": 0.62822,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "C",
+  "seconds": 0.61267,
+  "estimated_cny": "0.00082456",
+  "attempts": 1,
+  "input_tokens": 814,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "C",
+  "seconds": 0.61875,
+  "estimated_cny": "0.00081956",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "C",
+  "seconds": 0.690568,
+  "estimated_cny": "0.00081856",
+  "attempts": 1,
+  "input_tokens": 808,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "C",
+  "seconds": 0.643294,
+  "estimated_cny": "0.00082056",
+  "attempts": 1,
+  "input_tokens": 810,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "C",
+  "seconds": 0.642762,
+  "estimated_cny": "0.00080556",
+  "attempts": 1,
+  "input_tokens": 795,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "C",
+  "seconds": 0.684816,
+  "estimated_cny": "0.00078256",
+  "attempts": 1,
+  "input_tokens": 772,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-017",
+  "part": "C",
+  "seconds": 0.743077,
+  "estimated_cny": "0.00080256",
+  "attempts": 1,
+  "input_tokens": 792,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-068",
+  "part": "C",
+  "seconds": 0.743581,
+  "estimated_cny": "0.00077056",
+  "attempts": 1,
+  "input_tokens": 760,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-018",
+  "part": "C",
+  "seconds": 0.777214,
+  "estimated_cny": "0.00080256",
+  "attempts": 1,
+  "input_tokens": 792,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-021",
+  "part": "C",
+  "seconds": 0.705679,
+  "estimated_cny": "0.00069112",
+  "attempts": 1,
+  "input_tokens": 798,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-022",
+  "part": "C",
+  "seconds": 1.009869,
+  "estimated_cny": "0.00081656",
+  "attempts": 1,
+  "input_tokens": 806,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "C",
+  "seconds": 1.04125,
+  "estimated_cny": "0.00077756",
+  "attempts": 1,
+  "input_tokens": 767,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-056",
+  "part": "C",
+  "seconds": 1.015584,
+  "estimated_cny": "0.00080056",
+  "attempts": 1,
+  "input_tokens": 790,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-028",
+  "part": "C",
+  "seconds": 1.207706,
+  "estimated_cny": "0.00081256",
+  "attempts": 1,
+  "input_tokens": 802,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-055",
+  "part": "C",
+  "seconds": 0.595617,
+  "estimated_cny": "0.00080056",
+  "attempts": 1,
+  "input_tokens": 790,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-020",
+  "part": "C",
+  "seconds": 0.544238,
+  "estimated_cny": "0.00068412",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-051",
+  "part": "C",
+  "seconds": 0.616902,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-037",
+  "part": "C",
+  "seconds": 0.673784,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "C",
+  "seconds": 0.603913,
+  "estimated_cny": "0.00080256",
+  "attempts": 1,
+  "input_tokens": 792,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-004",
+  "part": "C",
+  "seconds": 0.666891,
+  "estimated_cny": "0.00080456",
+  "attempts": 1,
+  "input_tokens": 794,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-015",
+  "part": "C",
+  "seconds": 0.820197,
+  "estimated_cny": "0.00069412",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-033",
+  "part": "C",
+  "seconds": 0.602574,
+  "estimated_cny": "0.00081456",
+  "attempts": 1,
+  "input_tokens": 804,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-045",
+  "part": "C",
+  "seconds": 0.967381,
+  "estimated_cny": "0.00079656",
+  "attempts": 1,
+  "input_tokens": 786,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-032",
+  "part": "C",
+  "seconds": 1.002938,
+  "estimated_cny": "0.00081456",
+  "attempts": 1,
+  "input_tokens": 804,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-043",
+  "part": "C",
+  "seconds": 0.752307,
+  "estimated_cny": "0.00079656",
+  "attempts": 1,
+  "input_tokens": 786,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-065",
+  "part": "C",
+  "seconds": 0.542025,
+  "estimated_cny": "0.00076456",
+  "attempts": 1,
+  "input_tokens": 754,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-016",
+  "part": "C",
+  "seconds": 0.859079,
+  "estimated_cny": "0.00067812",
+  "attempts": 1,
+  "input_tokens": 793,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-057",
+  "part": "C",
+  "seconds": 1.144101,
+  "estimated_cny": "0.00080056",
+  "attempts": 1,
+  "input_tokens": 790,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-005",
+  "part": "C",
+  "seconds": 0.545443,
+  "estimated_cny": "0.00067912",
+  "attempts": 1,
+  "input_tokens": 794,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-027",
+  "part": "C",
+  "seconds": 0.605362,
+  "estimated_cny": "0.00082656",
+  "attempts": 1,
+  "input_tokens": 816,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "C",
+  "seconds": 0.561156,
+  "estimated_cny": "0.00082656",
+  "attempts": 1,
+  "input_tokens": 816,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-029",
+  "part": "C",
+  "seconds": 0.56282,
+  "estimated_cny": "0.00068712",
+  "attempts": 1,
+  "input_tokens": 802,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-044",
+  "part": "C",
+  "seconds": 0.714867,
+  "estimated_cny": "0.00079656",
+  "attempts": 1,
+  "input_tokens": 786,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "C",
+  "seconds": 0.559987,
+  "estimated_cny": "0.00068412",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-069",
+  "part": "C",
+  "seconds": 1.093285,
+  "estimated_cny": "0.00076956",
+  "attempts": 1,
+  "input_tokens": 759,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-031",
+  "part": "C",
+  "seconds": 0.821558,
+  "estimated_cny": "0.00068912",
+  "attempts": 1,
+  "input_tokens": 804,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-041",
+  "part": "C",
+  "seconds": 0.934048,
+  "estimated_cny": "0.00079856",
+  "attempts": 1,
+  "input_tokens": 788,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-006",
+  "part": "C",
+  "seconds": 0.965882,
+  "estimated_cny": "0.00067912",
+  "attempts": 1,
+  "input_tokens": 794,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-003",
+  "part": "C",
+  "seconds": 0.936206,
+  "estimated_cny": "0.00069912",
+  "attempts": 1,
+  "input_tokens": 814,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NS-019",
+  "part": "O",
+  "seconds": 0.493031,
+  "estimated_cny": "0.00038856",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "O",
+  "seconds": 0.572492,
+  "estimated_cny": "0.00038056",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-022",
+  "part": "O",
+  "seconds": 0.629078,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "O",
+  "seconds": 0.639277,
+  "estimated_cny": "0.00037156",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-068",
+  "part": "O",
+  "seconds": 0.681886,
+  "estimated_cny": "0.00037156",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "O",
+  "seconds": 0.631654,
+  "estimated_cny": "0.00037856",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-039",
+  "part": "O",
+  "seconds": 0.844701,
+  "estimated_cny": "0.00037756",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "O",
+  "seconds": 0.816944,
+  "estimated_cny": "0.00038056",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-028",
+  "part": "O",
+  "seconds": 0.882543,
+  "estimated_cny": "0.00038456",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "O",
+  "seconds": 0.966062,
+  "estimated_cny": "0.00037756",
+  "attempts": 1,
+  "input_tokens": 435,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-040",
+  "part": "O",
+  "seconds": 1.066649,
+  "estimated_cny": "0.00045056",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     32,
+     "up to 32 readers in total"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-042",
+  "part": "O",
+  "seconds": 1.075788,
+  "estimated_cny": "0.00045056",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     32,
+     "up to 32 readers in total"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-017",
+  "part": "O",
+  "seconds": 1.060768,
+  "estimated_cny": "0.00053056",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     26,
+     "between 26 and 34 units, inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     34,
+     "between 26 and 34 units, inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "O",
+  "seconds": 1.037767,
+  "estimated_cny": "0.00036556",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-018",
+  "part": "O",
+  "seconds": 1.194224,
+  "estimated_cny": "0.00053056",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     26,
+     "between 26 and 34 units, inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     34,
+     "between 26 and 34 units, inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-056",
+  "part": "O",
+  "seconds": 0.607702,
+  "estimated_cny": "0.00038856",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-062",
+  "part": "O",
+  "seconds": 0.704426,
+  "estimated_cny": "0.00036856",
+  "attempts": 1,
+  "input_tokens": 430,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "O",
+  "seconds": 0.858097,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "O",
+  "seconds": 0.576486,
+  "estimated_cny": "0.00038456",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "O",
+  "seconds": 0.686044,
+  "estimated_cny": "0.00025512",
+  "attempts": 1,
+  "input_tokens": 438,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "O",
+  "seconds": 0.845182,
+  "estimated_cny": "0.00024012",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-064",
+  "part": "O",
+  "seconds": 0.910316,
+  "estimated_cny": "0.00042156",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     30,
+     "at least thirty days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "O",
+  "seconds": 0.739878,
+  "estimated_cny": "0.00036856",
+  "attempts": 1,
+  "input_tokens": 430,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "O",
+  "seconds": 0.518002,
+  "estimated_cny": "0.00038456",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "O",
+  "seconds": 0.54591,
+  "estimated_cny": "0.00024612",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-063",
+  "part": "O",
+  "seconds": 0.581,
+  "estimated_cny": "0.00036856",
+  "attempts": 1,
+  "input_tokens": 430,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-066",
+  "part": "O",
+  "seconds": 0.8663,
+  "estimated_cny": "0.00042156",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     30,
+     "at least thirty days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-038",
+  "part": "O",
+  "seconds": 0.80546,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "O",
+  "seconds": 0.756927,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 435,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "O",
+  "seconds": 0.834644,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 435,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-055",
+  "part": "O",
+  "seconds": 0.514934,
+  "estimated_cny": "0.00026312",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-036",
+  "part": "O",
+  "seconds": 0.532738,
+  "estimated_cny": "0.00025312",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-032",
+  "part": "O",
+  "seconds": 0.537807,
+  "estimated_cny": "0.00039256",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-023",
+  "part": "O",
+  "seconds": 0.799407,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "O",
+  "seconds": 0.730229,
+  "estimated_cny": "0.00025312",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-051",
+  "part": "O",
+  "seconds": 0.755613,
+  "estimated_cny": "0.00047856",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ],
+    [
+     "recipient_count",
+     "le",
+     33,
+     "at most 33 distinct recipients"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-009",
+  "part": "O",
+  "seconds": 0.909266,
+  "estimated_cny": "0.00065256",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 82,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "supplier",
+     "eq",
+     "local",
+     "For Thyme you may place a local order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     52,
+     "with a delivered bill below 52 dollars"
+    ],
+    [
+     "supplier",
+     "eq",
+     "remote",
+     "A remote order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     46,
+     "must come in below 46 dollars"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-021",
+  "part": "O",
+  "seconds": 0.972897,
+  "estimated_cny": "0.00051912",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 80,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     31,
+     "if we keep at least 31 in storage"
+    ],
+    [
+     "display",
+     "eq",
+     "east",
+     "East display can take Pyrite"
+    ],
+    [
+     "remaining_units",
+     "ge",
+     19,
+     "For west display a reserve of 19 is enough"
+    ],
+    [
+     "display",
+     "eq",
+     "west",
+     "For west display"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-037",
+  "part": "O",
+  "seconds": 1.000921,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-004",
+  "part": "O",
+  "seconds": 0.738401,
+  "estimated_cny": "0.00043756",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "le",
+     57,
+     "up to $57"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-054",
+  "part": "O",
+  "seconds": 0.680567,
+  "estimated_cny": "0.00044756",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     20,
+     "exactly twenty people counting each recipient once"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "send_notice"
+  }
+ },
+ {
+  "id": "NS-024",
+  "part": "O",
+  "seconds": 0.865618,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 441,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-057",
+  "part": "O",
+  "seconds": 0.646623,
+  "estimated_cny": "0.00026312",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-008",
+  "part": "O",
+  "seconds": 1.207213,
+  "estimated_cny": "0.00065256",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 82,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "supplier",
+     "eq",
+     "local",
+     "For Thyme you may place a local order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     52,
+     "with a delivered bill below 52 dollars"
+    ],
+    [
+     "supplier",
+     "eq",
+     "remote",
+     "A remote order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     46,
+     "must come in below 46 dollars"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-052",
+  "part": "O",
+  "seconds": 0.722554,
+  "estimated_cny": "0.00044356",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     20,
+     "exactly twenty people counting each recipient once"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Alder"
+  }
+ },
+ {
+  "id": "NS-045",
+  "part": "O",
+  "seconds": 0.90242,
+  "estimated_cny": "0.00062556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 77,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "internal",
+     "Internal sharing of Grebe is fine"
+    ],
+    [
+     "final_readers",
+     "le",
+     28,
+     "through a total readership of 28"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "For external sharing"
+    ],
+    [
+     "final_readers",
+     "le",
+     14,
+     "stop at 14 total readers"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-015",
+  "part": "O",
+  "seconds": 0.711047,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-016",
+  "part": "O",
+  "seconds": 0.734844,
+  "estimated_cny": "0.00040512",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     26,
+     "between 26 and 34 units, inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     34,
+     "between 26 and 34 units, inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-033",
+  "part": "O",
+  "seconds": 0.604284,
+  "estimated_cny": "0.00026712",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "O",
+  "seconds": 1.071878,
+  "estimated_cny": "0.00024612",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-020",
+  "part": "O",
+  "seconds": 1.409621,
+  "estimated_cny": "0.00043912",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 60,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     31,
+     "East display can take Pyrite if we keep at least 31 in storage"
+    ],
+    [
+     "remaining_units",
+     "ge",
+     19,
+     "For west display a reserve of 19 is enough"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-069",
+  "part": "O",
+  "seconds": 0.734504,
+  "estimated_cny": "0.00024612",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-030",
+  "part": "O",
+  "seconds": 0.932339,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-044",
+  "part": "O",
+  "seconds": 0.691187,
+  "estimated_cny": "0.00050012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 77,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "internal",
+     "Internal sharing of Grebe is fine"
+    ],
+    [
+     "final_readers",
+     "le",
+     28,
+     "through a total readership of 28"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "For external sharing"
+    ],
+    [
+     "final_readers",
+     "le",
+     14,
+     "stop at 14 total readers"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-027",
+  "part": "O",
+  "seconds": 0.582423,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-026",
+  "part": "O",
+  "seconds": 1.056696,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "O",
+  "seconds": 0.599352,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-007",
+  "part": "O",
+  "seconds": 1.216813,
+  "estimated_cny": "0.00052712",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 82,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "supplier",
+     "eq",
+     "local",
+     "For Thyme you may place a local order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     52,
+     "with a delivered bill below 52 dollars"
+    ],
+    [
+     "supplier",
+     "eq",
+     "remote",
+     "A remote order"
+    ],
+    [
+     "delivered_usd",
+     "lt",
+     46,
+     "must come in below 46 dollars"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-053",
+  "part": "O",
+  "seconds": 0.952597,
+  "estimated_cny": "0.00032212",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     20,
+     "exactly twenty people counting each recipient once"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "send_notice"
+  }
+ },
+ {
+  "id": "NS-002",
+  "part": "O",
+  "seconds": 0.542794,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-043",
+  "part": "O",
+  "seconds": 1.095448,
+  "estimated_cny": "0.00050012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 77,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "internal",
+     "Internal sharing of Grebe is fine"
+    ],
+    [
+     "final_readers",
+     "le",
+     28,
+     "through a total readership of 28"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "For external sharing"
+    ],
+    [
+     "final_readers",
+     "le",
+     14,
+     "stop at 14 total readers"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-065",
+  "part": "O",
+  "seconds": 1.203632,
+  "estimated_cny": "0.00029612",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "retention_days",
+     "ge",
+     30,
+     "at least thirty days"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-050",
+  "part": "O",
+  "seconds": 1.07682,
+  "estimated_cny": "0.00035312",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ],
+    [
+     "recipient_count",
+     "le",
+     33,
+     "at most 33 distinct recipients"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-005",
+  "part": "O",
+  "seconds": 0.888538,
+  "estimated_cny": "0.00033212",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 35,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "le",
+     57,
+     "The delivered bill can be up to $57."
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-006",
+  "part": "O",
+  "seconds": 0.681532,
+  "estimated_cny": "0.00033212",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 35,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "le",
+     57,
+     "The delivered bill can be up to $57."
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-031",
+  "part": "O",
+  "seconds": 0.844678,
+  "estimated_cny": "0.00026712",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "O",
+  "seconds": 0.855398,
+  "estimated_cny": "0.00024012",
+  "attempts": 1,
+  "input_tokens": 427,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-029",
+  "part": "O",
+  "seconds": 0.934247,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-003",
+  "part": "O",
+  "seconds": 0.754832,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-067",
+  "part": "O",
+  "seconds": 0.847825,
+  "estimated_cny": "0.00024612",
+  "attempts": 1,
+  "input_tokens": 433,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "O",
+  "seconds": 1.005976,
+  "estimated_cny": "0.00035312",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "channel",
+     "eq",
+     "chat",
+     "by chat"
+    ],
+    [
+     "recipient_count",
+     "le",
+     33,
+     "at most 33 distinct recipients"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-041",
+  "part": "O",
+  "seconds": 1.12653,
+  "estimated_cny": "0.00032512",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     32,
+     "up to 32 readers in total"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-019",
+  "part": "E",
+  "seconds": 0.914999,
+  "estimated_cny": "0.00067856",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 71,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "East display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      31,
+      "at least 31 in storage"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "west display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      19,
+      "reserve of 19 is enough"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "E",
+  "seconds": 0.811958,
+  "estimated_cny": "0.00052656",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "as soon as the seller confirms stock for this item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-040",
+  "part": "E",
+  "seconds": 0.919322,
+  "estimated_cny": "0.00052456",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      32,
+      "up to 32 readers in total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-022",
+  "part": "E",
+  "seconds": 1.006642,
+  "estimated_cny": "0.00045756",
+  "attempts": 1,
+  "input_tokens": 511,
+  "output_tokens": 18,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "E",
+  "seconds": 1.06612,
+  "estimated_cny": "0.00050356",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms closure for this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "E",
+  "seconds": 1.054036,
+  "estimated_cny": "0.00051256",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "event coordinator has accepted the actual slot"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "E",
+  "seconds": 1.12911,
+  "estimated_cny": "0.00051356",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "its editor has approved the final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-018",
+  "part": "E",
+  "seconds": 1.152164,
+  "estimated_cny": "0.00060456",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 54,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      26,
+      "between 26 and 34 units, inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      34,
+      "between 26 and 34 units, inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "E",
+  "seconds": 1.107527,
+  "estimated_cny": "0.00052656",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "as soon as the seller confirms stock for this item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-042",
+  "part": "E",
+  "seconds": 1.236799,
+  "estimated_cny": "0.00052456",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      32,
+      "up to 32 readers in total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "E",
+  "seconds": 1.241075,
+  "estimated_cny": "0.00051156",
+  "attempts": 1,
+  "input_tokens": 505,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "its owner consents to this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-068",
+  "part": "E",
+  "seconds": 1.246854,
+  "estimated_cny": "0.00066956",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 73,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      44,
+      "up to 44 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      22,
+      "up to 22 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-039",
+  "part": "E",
+  "seconds": 1.336678,
+  "estimated_cny": "0.00063156",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer has marked it ready"
+     ],
+     [
+      "audience",
+      "eq",
+      "internal",
+      "sharing Ibis internally"
+     ],
+     [
+      "final_readers",
+      "eq",
+      0,
+      "Do not invite any other audience"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-028",
+  "part": "E",
+  "seconds": 1.379375,
+  "estimated_cny": "0.00069856",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 76,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning was my first choice"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "should not exceed 28"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "evening works as well"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "should not exceed 28"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-017",
+  "part": "E",
+  "seconds": 1.48221,
+  "estimated_cny": "0.00060456",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 54,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      26,
+      "between 26 and 34 units, inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      34,
+      "between 26 and 34 units, inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "E",
+  "seconds": 0.734634,
+  "estimated_cny": "0.00064556",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 64,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has cleared the order"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      40,
+      "My limit is forty dollars including delivery"
+     ],
+     [
+      "supplier",
+      "eq",
+      "local",
+      "from a local supplier"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "E",
+  "seconds": 0.555242,
+  "estimated_cny": "0.00037812",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms closure for this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "E",
+  "seconds": 0.577256,
+  "estimated_cny": "0.00040112",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "as soon as the seller confirms stock for this item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oregano"
+  }
+ },
+ {
+  "id": "NS-064",
+  "part": "E",
+  "seconds": 0.92423,
+  "estimated_cny": "0.00049556",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "ge",
+      30,
+      "at least thirty days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-062",
+  "part": "E",
+  "seconds": 0.711323,
+  "estimated_cny": "0.00062256",
+  "attempts": 1,
+  "input_tokens": 500,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once Records signs off on filing Heath"
+     ],
+     [
+      "retention_days",
+      "le",
+      35,
+      "no more than 35 days"
+     ],
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-056",
+  "part": "E",
+  "seconds": 0.826598,
+  "estimated_cny": "0.00067056",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "channel",
+      "eq",
+      "email",
+      "Use email"
+     ],
+     [
+      "recipient_count",
+      "le",
+      21,
+      "no more than 21 recipients"
+     ]
+    ],
+    [
+     [
+      "channel",
+      "eq",
+      "chat",
+      "For chat"
+     ],
+     [
+      "recipient_count",
+      "le",
+      37,
+      "as high as 37 recipients"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "E",
+  "seconds": 0.761119,
+  "estimated_cny": "0.00058256",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after Noor releases the batch"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      24,
+      "retain at least 24 units"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "E",
+  "seconds": 0.566711,
+  "estimated_cny": "0.00038812",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "its editor has approved the final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-038",
+  "part": "E",
+  "seconds": 0.822192,
+  "estimated_cny": "0.00050612",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer has marked it ready"
+     ],
+     [
+      "audience",
+      "eq",
+      "internal",
+      "sharing Ibis internally"
+     ],
+     [
+      "final_readers",
+      "eq",
+      0,
+      "Do not invite any other audience"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-066",
+  "part": "E",
+  "seconds": 0.974976,
+  "estimated_cny": "0.00065156",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "ge",
+      30,
+      "at least thirty days"
+     ],
+     [
+      "tier",
+      "eq",
+      "cold",
+      "either tier"
+     ]
+    ],
+    [
+     [
+      "retention_days",
+      "ge",
+      30,
+      "at least thirty days"
+     ],
+     [
+      "tier",
+      "eq",
+      "warm",
+      "either tier"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "E",
+  "seconds": 1.029269,
+  "estimated_cny": "0.00058656",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 49,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after Noor releases the batch"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      24,
+      "Storage must retain at least 24 units"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-063",
+  "part": "E",
+  "seconds": 1.004023,
+  "estimated_cny": "0.00049712",
+  "attempts": 1,
+  "input_tokens": 500,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once Records signs off on filing Heath"
+     ],
+     [
+      "retention_days",
+      "le",
+      35,
+      "no more than 35 days"
+     ],
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "E",
+  "seconds": 1.109776,
+  "estimated_cny": "0.00049712",
+  "attempts": 1,
+  "input_tokens": 500,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once Records signs off on filing Heath"
+     ],
+     [
+      "retention_days",
+      "le",
+      35,
+      "no more than 35 days"
+     ],
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Heath"
+  }
+ },
+ {
+  "id": "NS-009",
+  "part": "E",
+  "seconds": 0.65053,
+  "estimated_cny": "0.00067056",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "local order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      52,
+      "below 52 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "remote order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      46,
+      "below 46 dollars"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "E",
+  "seconds": 0.787483,
+  "estimated_cny": "0.00039012",
+  "attempts": 1,
+  "input_tokens": 505,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after its owner consents to this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "E",
+  "seconds": 0.599081,
+  "estimated_cny": "0.00038712",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "event coordinator has accepted the actual slot"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "E",
+  "seconds": 1.036423,
+  "estimated_cny": "0.00039012",
+  "attempts": 1,
+  "input_tokens": 505,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after its owner consents to this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Avocet"
+  }
+ },
+ {
+  "id": "NS-023",
+  "part": "E",
+  "seconds": 0.958946,
+  "estimated_cny": "0.00033212",
+  "attempts": 1,
+  "input_tokens": 511,
+  "output_tokens": 18,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-055",
+  "part": "E",
+  "seconds": 0.711836,
+  "estimated_cny": "0.00042164",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "channel",
+      "eq",
+      "email",
+      "Use email"
+     ],
+     [
+      "recipient_count",
+      "le",
+      21,
+      "no more than 21 recipients"
+     ]
+    ],
+    [
+     [
+      "channel",
+      "eq",
+      "chat",
+      "For chat"
+     ],
+     [
+      "recipient_count",
+      "le",
+      37,
+      "as high as 37 recipients"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-037",
+  "part": "E",
+  "seconds": 0.697805,
+  "estimated_cny": "0.00050612",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 62,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer has marked it ready"
+     ],
+     [
+      "audience",
+      "eq",
+      "internal",
+      "sharing Ibis internally"
+     ],
+     [
+      "final_readers",
+      "eq",
+      0,
+      "Do not invite any other audience"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ibis"
+  }
+ },
+ {
+  "id": "NS-021",
+  "part": "E",
+  "seconds": 0.931111,
+  "estimated_cny": "0.00042768",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 71,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "East display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      31,
+      "at least 31 in storage"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "west display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      19,
+      "reserve of 19 is enough"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-051",
+  "part": "E",
+  "seconds": 0.683494,
+  "estimated_cny": "0.00060856",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 56,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "once communications clears the notice"
+     ],
+     [
+      "recipient_count",
+      "le",
+      33,
+      "at most 33 distinct recipients"
+     ],
+     [
+      "channel",
+      "eq",
+      "chat",
+      "by chat"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-036",
+  "part": "E",
+  "seconds": 0.683478,
+  "estimated_cny": "0.00038712",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "event coordinator has accepted the actual slot"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Citrine"
+  }
+ },
+ {
+  "id": "NS-032",
+  "part": "E",
+  "seconds": 0.660688,
+  "estimated_cny": "0.00069056",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 74,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "in the morning"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      38,
+      "up to 38 people total"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      26,
+      "up to 26"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-024",
+  "part": "E",
+  "seconds": 0.819215,
+  "estimated_cny": "0.00033212",
+  "attempts": 1,
+  "input_tokens": 511,
+  "output_tokens": 18,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Fluorite"
+  }
+ },
+ {
+  "id": "NS-054",
+  "part": "E",
+  "seconds": 0.947431,
+  "estimated_cny": "0.00051756",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      20,
+      "exactly twenty people counting each recipient once"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Alder"
+  }
+ },
+ {
+  "id": "NS-004",
+  "part": "E",
+  "seconds": 1.135012,
+  "estimated_cny": "0.00060756",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 55,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      57,
+      "up to $57"
+     ],
+     [
+      "supplier",
+      "eq",
+      "local",
+      "Either supplier works"
+     ],
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "Either supplier works"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-057",
+  "part": "E",
+  "seconds": 0.876476,
+  "estimated_cny": "0.00042164",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "channel",
+      "eq",
+      "email",
+      "Use email"
+     ],
+     [
+      "recipient_count",
+      "le",
+      21,
+      "no more than 21 recipients"
+     ]
+    ],
+    [
+     [
+      "channel",
+      "eq",
+      "chat",
+      "For chat"
+     ],
+     [
+      "recipient_count",
+      "le",
+      37,
+      "as high as 37 recipients"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Cypress"
+  }
+ },
+ {
+  "id": "NS-008",
+  "part": "E",
+  "seconds": 1.199401,
+  "estimated_cny": "0.00041968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "local order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      52,
+      "below 52 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "remote order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      46,
+      "below 46 dollars"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-016",
+  "part": "E",
+  "seconds": 0.777897,
+  "estimated_cny": "0.0003576",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 54,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      26,
+      "between 26 and 34 units, inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      34,
+      "between 26 and 34 units, inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Basalt"
+  }
+ },
+ {
+  "id": "NS-045",
+  "part": "E",
+  "seconds": 1.048056,
+  "estimated_cny": "0.00069156",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 76,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "Internal sharing of Grebe"
+     ],
+     [
+      "final_readers",
+      "le",
+      28,
+      "through a total readership of 28"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external sharing"
+     ],
+     [
+      "final_readers",
+      "le",
+      14,
+      "stop at 14 total readers"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-020",
+  "part": "E",
+  "seconds": 1.110626,
+  "estimated_cny": "0.00042768",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 71,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "East display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      31,
+      "at least 31 in storage"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "west display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      19,
+      "reserve of 19 is enough"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Pyrite"
+  }
+ },
+ {
+  "id": "NS-033",
+  "part": "E",
+  "seconds": 0.673226,
+  "estimated_cny": "0.00043968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 74,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "in the morning"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      38,
+      "up to 38 people total"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      26,
+      "up to 26"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-007",
+  "part": "E",
+  "seconds": 0.82911,
+  "estimated_cny": "0.00041968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "local order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      52,
+      "below 52 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "remote order"
+     ],
+     [
+      "delivered_usd",
+      "lt",
+      46,
+      "below 46 dollars"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Thyme"
+  }
+ },
+ {
+  "id": "NS-026",
+  "part": "E",
+  "seconds": 1.01825,
+  "estimated_cny": "0.00061756",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 57,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "facilities confirms accessibility for our event"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "below thirty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "E",
+  "seconds": 1.244392,
+  "estimated_cny": "0.00038812",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "its editor has approved the final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Poplar"
+  }
+ },
+ {
+  "id": "NS-052",
+  "part": "E",
+  "seconds": 1.254068,
+  "estimated_cny": "0.00051756",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      20,
+      "exactly twenty people counting each recipient once"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Alder"
+  }
+ },
+ {
+  "id": "NS-030",
+  "part": "E",
+  "seconds": 0.836827,
+  "estimated_cny": "0.00046368",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 80,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning was my first choice"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "final count should not exceed 28"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "evening works as well"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "final count should not exceed 28"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-015",
+  "part": "E",
+  "seconds": 1.280152,
+  "estimated_cny": "0.00032564",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 46,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after Noor releases the batch"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      24,
+      "at least 24 units"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Agate"
+  }
+ },
+ {
+  "id": "NS-043",
+  "part": "E",
+  "seconds": 0.729245,
+  "estimated_cny": "0.00042558",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 71,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      null
+     ],
+     [
+      "final_readers",
+      "le",
+      28,
+      "through a total readership of 28"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      null
+     ],
+     [
+      "final_readers",
+      "le",
+      14,
+      "stop at 14 total readers"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-065",
+  "part": "E",
+  "seconds": 0.649827,
+  "estimated_cny": "0.00052612",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "ge",
+      30,
+      "at least thirty days"
+     ],
+     [
+      "tier",
+      "eq",
+      "cold",
+      "either tier"
+     ]
+    ],
+    [
+     [
+      "retention_days",
+      "ge",
+      30,
+      "at least thirty days"
+     ],
+     [
+      "tier",
+      "eq",
+      "warm",
+      "either tier"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grove"
+  }
+ },
+ {
+  "id": "NS-027",
+  "part": "E",
+  "seconds": 0.697668,
+  "estimated_cny": "0.00036962",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 57,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "if facilities confirms accessibility for our event"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "below thirty"
+     ],
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-050",
+  "part": "E",
+  "seconds": 0.683732,
+  "estimated_cny": "0.00048312",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 56,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "once communications clears the notice"
+     ],
+     [
+      "recipient_count",
+      "le",
+      33,
+      "at most 33 distinct recipients"
+     ],
+     [
+      "channel",
+      "eq",
+      "chat",
+      "by chat"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-002",
+  "part": "E",
+  "seconds": 0.710562,
+  "estimated_cny": "0.00039762",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 64,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has cleared the order"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      40,
+      "My limit is forty dollars including delivery"
+     ],
+     [
+      "supplier",
+      "eq",
+      "local",
+      "from a local supplier"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-044",
+  "part": "E",
+  "seconds": 0.848949,
+  "estimated_cny": "0.00042558",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 71,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      null
+     ],
+     [
+      "final_readers",
+      "le",
+      28,
+      "through a total readership of 28"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      null
+     ],
+     [
+      "final_readers",
+      "le",
+      14,
+      "stop at 14 total readers"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Grebe"
+  }
+ },
+ {
+  "id": "NS-069",
+  "part": "E",
+  "seconds": 1.078977,
+  "estimated_cny": "0.00054412",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 73,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      44,
+      "up to 44 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      22,
+      "up to 22 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-005",
+  "part": "E",
+  "seconds": 0.674483,
+  "estimated_cny": "0.00026558",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      57,
+      "up to $57"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "E",
+  "seconds": 1.056596,
+  "estimated_cny": "0.00036962",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 57,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "if facilities confirms accessibility for our event"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "below thirty"
+     ],
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Linen"
+  }
+ },
+ {
+  "id": "NS-053",
+  "part": "E",
+  "seconds": 1.303083,
+  "estimated_cny": "0.00039212",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      20,
+      "exactly twenty people counting each recipient once"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Alder"
+  }
+ },
+ {
+  "id": "NS-006",
+  "part": "E",
+  "seconds": 0.614627,
+  "estimated_cny": "0.00026558",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      57,
+      "up to $57"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Clover"
+  }
+ },
+ {
+  "id": "NS-003",
+  "part": "E",
+  "seconds": 0.670048,
+  "estimated_cny": "0.00039762",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 64,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has cleared the order"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      40,
+      "My limit is forty dollars including delivery"
+     ],
+     [
+      "supplier",
+      "eq",
+      "local",
+      "from a local supplier"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Nettle"
+  }
+ },
+ {
+  "id": "NS-041",
+  "part": "E",
+  "seconds": 0.91397,
+  "estimated_cny": "0.0002776",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      32,
+      "up to 32 readers in total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Osprey"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "E",
+  "seconds": 0.960385,
+  "estimated_cny": "0.00037812",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 33,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms closure for this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Bluff"
+  }
+ },
+ {
+  "id": "NS-029",
+  "part": "E",
+  "seconds": 1.049156,
+  "estimated_cny": "0.00046368",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 80,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning was my first choice"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "final count should not exceed 28"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "evening works as well"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      28,
+      "final count should not exceed 28"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Azure"
+  }
+ },
+ {
+  "id": "NS-031",
+  "part": "E",
+  "seconds": 1.050986,
+  "estimated_cny": "0.00043968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 74,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "in the morning"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      38,
+      "up to 38 people total"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      26,
+      "up to 26"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Lilypad"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "E",
+  "seconds": 0.792617,
+  "estimated_cny": "0.00048312",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 56,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "le",
+      33,
+      "at most 33 distinct recipients"
+     ],
+     [
+      "channel",
+      "eq",
+      "chat",
+      "by chat"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "once communications clears the notice"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Larch"
+  }
+ },
+ {
+  "id": "NS-067",
+  "part": "E",
+  "seconds": 1.051779,
+  "estimated_cny": "0.00054412",
+  "attempts": 1,
+  "input_tokens": 503,
+  "output_tokens": 73,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      44,
+      "up to 44 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      22,
+      "up to 22 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Knoll"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "A",
+  "seconds": 1.723055,
+  "estimated_cny": "0.000119952",
+  "attempts": 1,
+  "input_tokens": 408,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "A",
+  "seconds": 2.022018,
+  "estimated_cny": "0.000118188",
+  "attempts": 1,
+  "input_tokens": 402,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "A",
+  "seconds": 2.065573,
+  "estimated_cny": "0.000118482",
+  "attempts": 1,
+  "input_tokens": 403,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "A",
+  "seconds": 2.040033,
+  "estimated_cny": "0.000118776",
+  "attempts": 1,
+  "input_tokens": 404,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "A",
+  "seconds": 2.06473,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "A",
+  "seconds": 1.996485,
+  "estimated_cny": "0.000118776",
+  "attempts": 1,
+  "input_tokens": 404,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "A",
+  "seconds": 2.044342,
+  "estimated_cny": "0.000118188",
+  "attempts": 1,
+  "input_tokens": 402,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "A",
+  "seconds": 2.069812,
+  "estimated_cny": "0.000120834",
+  "attempts": 1,
+  "input_tokens": 411,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "A",
+  "seconds": 2.126951,
+  "estimated_cny": "0.000118776",
+  "attempts": 1,
+  "input_tokens": 404,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "A",
+  "seconds": 2.060733,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "A",
+  "seconds": 2.104489,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "A",
+  "seconds": 2.140511,
+  "estimated_cny": "0.000121716",
+  "attempts": 1,
+  "input_tokens": 414,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "A",
+  "seconds": 2.113401,
+  "estimated_cny": "0.00012054",
+  "attempts": 1,
+  "input_tokens": 410,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "A",
+  "seconds": 2.374138,
+  "estimated_cny": "0.000120834",
+  "attempts": 1,
+  "input_tokens": 411,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "A",
+  "seconds": 2.310649,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "A",
+  "seconds": 1.900777,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "A",
+  "seconds": 1.875157,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "A",
+  "seconds": 1.921306,
+  "estimated_cny": "0.000117894",
+  "attempts": 1,
+  "input_tokens": 401,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "A",
+  "seconds": 1.925336,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "A",
+  "seconds": 1.897516,
+  "estimated_cny": "0.000118482",
+  "attempts": 1,
+  "input_tokens": 403,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "B",
+  "seconds": 1.004474,
+  "estimated_cny": "0.00023",
+  "attempts": 1,
+  "input_tokens": 206,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "B",
+  "seconds": 0.5067,
+  "estimated_cny": "0.000233",
+  "attempts": 1,
+  "input_tokens": 209,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "B",
+  "seconds": 0.52692,
+  "estimated_cny": "0.000235",
+  "attempts": 1,
+  "input_tokens": 203,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "B",
+  "seconds": 0.544335,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "B",
+  "seconds": 0.520508,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "B",
+  "seconds": 0.561716,
+  "estimated_cny": "0.000237",
+  "attempts": 1,
+  "input_tokens": 213,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "B",
+  "seconds": 0.553733,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "B",
+  "seconds": 0.530272,
+  "estimated_cny": "0.000232",
+  "attempts": 1,
+  "input_tokens": 208,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "B",
+  "seconds": 0.512769,
+  "estimated_cny": "0.000236",
+  "attempts": 1,
+  "input_tokens": 204,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "B",
+  "seconds": 0.509267,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "B",
+  "seconds": 0.52474,
+  "estimated_cny": "0.000225",
+  "attempts": 1,
+  "input_tokens": 201,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "B",
+  "seconds": 0.5258,
+  "estimated_cny": "0.000225",
+  "attempts": 1,
+  "input_tokens": 201,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "B",
+  "seconds": 0.526373,
+  "estimated_cny": "0.000228",
+  "attempts": 1,
+  "input_tokens": 204,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "B",
+  "seconds": 0.627045,
+  "estimated_cny": "0.000227",
+  "attempts": 1,
+  "input_tokens": 203,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "B",
+  "seconds": 0.712093,
+  "estimated_cny": "0.000233",
+  "attempts": 1,
+  "input_tokens": 209,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "B",
+  "seconds": 0.479342,
+  "estimated_cny": "0.000228",
+  "attempts": 1,
+  "input_tokens": 204,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "B",
+  "seconds": 0.521993,
+  "estimated_cny": "0.000235",
+  "attempts": 1,
+  "input_tokens": 203,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "B",
+  "seconds": 0.552276,
+  "estimated_cny": "0.000224",
+  "attempts": 1,
+  "input_tokens": 200,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "B",
+  "seconds": 0.614532,
+  "estimated_cny": "0.000232",
+  "attempts": 1,
+  "input_tokens": 200,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "B",
+  "seconds": 0.793351,
+  "estimated_cny": "0.000229",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-048",
+  "part": "Y",
+  "seconds": 0.223102,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 100,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-059",
+  "part": "Y",
+  "seconds": 0.229936,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 106,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-070",
+  "part": "Y",
+  "seconds": 0.239193,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 96,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-011",
+  "part": "Y",
+  "seconds": 0.239618,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 103,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-012",
+  "part": "Y",
+  "seconds": 0.222514,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-034",
+  "part": "Y",
+  "seconds": 0.238899,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 94,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-001",
+  "part": "Y",
+  "seconds": 0.203526,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 98,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-010",
+  "part": "Y",
+  "seconds": 0.211242,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 103,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-072",
+  "part": "Y",
+  "seconds": 0.227869,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 102,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NS-013",
+  "part": "Y",
+  "seconds": 0.226657,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 94,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-061",
+  "part": "Y",
+  "seconds": 0.243427,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 95,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-014",
+  "part": "Y",
+  "seconds": 0.183036,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 94,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-035",
+  "part": "Y",
+  "seconds": 0.199717,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 92,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-060",
+  "part": "Y",
+  "seconds": 0.225612,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-047",
+  "part": "Y",
+  "seconds": 0.233896,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 96,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NS-046",
+  "part": "Y",
+  "seconds": 0.217926,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 98,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-071",
+  "part": "Y",
+  "seconds": 0.202314,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-049",
+  "part": "Y",
+  "seconds": 0.202984,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 92,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-025",
+  "part": "Y",
+  "seconds": 0.2434,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 96,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NS-058",
+  "part": "Y",
+  "seconds": 0.349792,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ }
+]

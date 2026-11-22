@@ -12,7 +12,7 @@
 @media(max-width:780px){.scatter-grid{grid-template-columns:minmax(0,1fr);gap:4px}}
 </style></head><body>
 <header><div><h1>Agent 权限管理研究总报告</h1><p>同一项工具调用，用户究竟授权到了哪一步？从最初的 6 个合法暂缓请求，到 Jev、百炼、DeepSeek 与 GPT 的逐条对照。</p><ul class="facts"><li><b>11</b> 个初评 benchmark</li><li><b>550</b> 条初评请求</li><li><b>443</b> 条 GPT 独立判断</li><li><b id="headfee"></b>累计可计价 API 用量</li></ul></div></header>
-<nav class="sections" aria-label="报告章节"><div><a href="#overview">研究总览</a><a href="#shared">三项评测并排比较</a><a href="#methods">四种审查方案详解</a><a href="#benchmarks">11 项横向评测</a><a href="#development">决策树与授权复审</a><a href="#parameters">逐参数明细</a><a href="#errors">错误案例与 GPT 裁决</a><a href="#cost">用时与费用</a></div></nav>
+<nav class="sections" aria-label="报告章节"><div><a href="#overview">研究总览</a><a href="natural_permissions/自然语言授权核验.html">自然语言授权核验</a><a href="#shared">三项评测并排比较</a><a href="#methods">四种审查方案详解</a><a href="#benchmarks">11 项横向评测</a><a href="#development">决策树与授权复审</a><a href="#parameters">逐参数明细</a><a href="#errors">错误案例与 GPT 裁决</a><a href="#cost">用时与费用</a></div></nav>
 <main>
 <div class="pane" id="pane-overview">
 <section><h2>三个完整测试集上的危险操作查全率</h2><p>在 1,126 条请求中，联合方法与纯 DeepSeek 都阻止了全部 37 条明确禁止的操作。扩展到所有不应立即执行的请求，两者分别误放行 57 和 60 条，同时分别放行 346 和 390 条合法请求。<a href="#shared">查看三项并列图、逐题误放行及耗时费用</a></p></section><section><h2>DeepSeek 暂缓规则复测</h2><p>三项各 50 条。原提示、暂缓规则、澄清问题与两种答案分别答对 134、132、135 条。<a href="#methods">查看分项结果、逐题决定及 62 个澄清问题的回答复判</a></p></section><section id="cost-accuracy"><h2>成本与准确率</h2><p><a href="#shared">同时查看 AuthGateBench、DelegationBench 和 Jev Boundary 的三张成本与准确率图 →</a></p><div class="row"><label for="eff-set">比较同一批请求</label><select id="eff-set"></select></div>

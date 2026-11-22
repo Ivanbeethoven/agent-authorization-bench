@@ -1,0 +1,9 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+branch_direct,jev,jev-1.14.0,72,72,72,37270,2232,1.832,2.034,14.63,runner interval,0.010957380,0.010957380,provider key usage delta; 72 calls
+branch_direct,deepseek,deepseek-flash,72,72,72,21816,360,0.619,1.113,4.73,runner interval,0.023256,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+branch_review,deepseek,deepseek-flash,34,34,34,27040,1160,0.784,1.412,3.2,runner interval,0.02653696,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+branch_original,deepseek,deepseek-flash,72,72,72,31776,1653,0.707,1.168,5.53,runner interval,0.02446416,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+branch_extract,deepseek,deepseek-flash,72,72,72,36816,3342,0.844,1.286,6.35,runner interval,0.03328488,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+branch_attest,jev,jev-1.14.0,21,21,21,8525,906,1.768,1.828,7.09,runner interval,0.002506350,0.002506350,provider key usage delta; 21 calls
+branch_attest,deepseek,deepseek-flash,21,21,21,4294,138,0.723,1.16,2.69,runner interval,0.004846,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+branch_attest,aliyun,decision-model-preview,21,21,21,2051,,0.218,0.246,1.14,runner interval,0,,official limited-time free inference price

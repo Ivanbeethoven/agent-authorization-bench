@@ -1,0 +1,6 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+replica_direct,jev,jev-1.14.0,54,54,54,27780,1674,1.868,2.068,11.11,runner interval,0.008167320,0.008167320,provider key usage delta; 54 calls
+replica_direct,deepseek,deepseek-flash,54,54,54,16242,270,0.578,1.226,4.25,runner interval,0.017322,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+replica_review,deepseek,deepseek-flash,26,26,26,20700,924,0.864,1.147,3.23,runner interval,0.02025648,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+replica_extract,deepseek,deepseek-flash,54,54,54,23964,1628,0.809,1.239,4.4,runner interval,0.01981360,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+replica_matched,deepseek,deepseek-flash,9,9,9,7188,360,0.665,1.13,1.91,runner interval,0.00637008,0.00,immediate wallet change; posting may lag; amount attributed by token usage

@@ -1,0 +1,6768 @@
+[
+ {
+  "id": "NF-021",
+  "part": "J",
+  "seconds": 1.826149,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "J",
+  "seconds": 1.773046,
+  "estimated_cny": "0.000151704",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "J",
+  "seconds": 1.781721,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-010",
+  "part": "J",
+  "seconds": 1.799035,
+  "estimated_cny": "0.000153468",
+  "attempts": 1,
+  "input_tokens": 522,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-070",
+  "part": "J",
+  "seconds": 1.811286,
+  "estimated_cny": "0.00013965",
+  "attempts": 1,
+  "input_tokens": 475,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-022",
+  "part": "J",
+  "seconds": 1.820224,
+  "estimated_cny": "0.000149646",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-059",
+  "part": "J",
+  "seconds": 1.837189,
+  "estimated_cny": "0.000145236",
+  "attempts": 1,
+  "input_tokens": 494,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-015",
+  "part": "J",
+  "seconds": 1.770712,
+  "estimated_cny": "0.000149352",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-013",
+  "part": "J",
+  "seconds": 1.786174,
+  "estimated_cny": "0.000149352",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-014",
+  "part": "J",
+  "seconds": 1.751984,
+  "estimated_cny": "0.000149352",
+  "attempts": 1,
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-028",
+  "part": "J",
+  "seconds": 1.771713,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "J",
+  "seconds": 1.88461,
+  "estimated_cny": "0.00015729",
+  "attempts": 1,
+  "input_tokens": 535,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-030",
+  "part": "J",
+  "seconds": 1.83334,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-006",
+  "part": "J",
+  "seconds": 1.89271,
+  "estimated_cny": "0.000152586",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "J",
+  "seconds": 1.866879,
+  "estimated_cny": "0.000144942",
+  "attempts": 1,
+  "input_tokens": 493,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-038",
+  "part": "J",
+  "seconds": 1.783201,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-040",
+  "part": "J",
+  "seconds": 1.779084,
+  "estimated_cny": "0.000153174",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-047",
+  "part": "J",
+  "seconds": 1.76827,
+  "estimated_cny": "0.000155232",
+  "attempts": 1,
+  "input_tokens": 528,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-037",
+  "part": "J",
+  "seconds": 1.764477,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-064",
+  "part": "J",
+  "seconds": 1.788394,
+  "estimated_cny": "0.000142296",
+  "attempts": 1,
+  "input_tokens": 484,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-052",
+  "part": "J",
+  "seconds": 1.80386,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-054",
+  "part": "J",
+  "seconds": 1.811347,
+  "estimated_cny": "0.00014994",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-035",
+  "part": "J",
+  "seconds": 1.838384,
+  "estimated_cny": "0.000152292",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-041",
+  "part": "J",
+  "seconds": 1.819301,
+  "estimated_cny": "0.000153174",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-066",
+  "part": "J",
+  "seconds": 1.823269,
+  "estimated_cny": "0.000142296",
+  "attempts": 1,
+  "input_tokens": 484,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-058",
+  "part": "J",
+  "seconds": 1.880699,
+  "estimated_cny": "0.000145236",
+  "attempts": 1,
+  "input_tokens": 494,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "J",
+  "seconds": 1.845964,
+  "estimated_cny": "0.000146118",
+  "attempts": 1,
+  "input_tokens": 497,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-012",
+  "part": "J",
+  "seconds": 1.880441,
+  "estimated_cny": "0.000153468",
+  "attempts": 1,
+  "input_tokens": 522,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "J",
+  "seconds": 1.907016,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-051",
+  "part": "J",
+  "seconds": 2.072312,
+  "estimated_cny": "0.00015435",
+  "attempts": 1,
+  "input_tokens": 525,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "J",
+  "seconds": 2.008721,
+  "estimated_cny": "0.00014553",
+  "attempts": 1,
+  "input_tokens": 495,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-027",
+  "part": "J",
+  "seconds": 1.932479,
+  "estimated_cny": "0.00015729",
+  "attempts": 1,
+  "input_tokens": 535,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "J",
+  "seconds": 1.888806,
+  "estimated_cny": "0.00015876",
+  "attempts": 1,
+  "input_tokens": 540,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "J",
+  "seconds": 1.949564,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-072",
+  "part": "J",
+  "seconds": 1.912622,
+  "estimated_cny": "0.000139944",
+  "attempts": 1,
+  "input_tokens": 476,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-048",
+  "part": "J",
+  "seconds": 1.950289,
+  "estimated_cny": "0.000155232",
+  "attempts": 1,
+  "input_tokens": 528,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-062",
+  "part": "J",
+  "seconds": 2.033953,
+  "estimated_cny": "0.000144942",
+  "attempts": 1,
+  "input_tokens": 493,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "J",
+  "seconds": 2.103876,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-004",
+  "part": "J",
+  "seconds": 2.061875,
+  "estimated_cny": "0.000152292",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-046",
+  "part": "J",
+  "seconds": 1.987164,
+  "estimated_cny": "0.000155232",
+  "attempts": 1,
+  "input_tokens": 528,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-002",
+  "part": "J",
+  "seconds": 1.938909,
+  "estimated_cny": "0.00015729",
+  "attempts": 1,
+  "input_tokens": 535,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-065",
+  "part": "J",
+  "seconds": 1.939175,
+  "estimated_cny": "0.000142296",
+  "attempts": 1,
+  "input_tokens": 484,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "J",
+  "seconds": 1.981769,
+  "estimated_cny": "0.000151998",
+  "attempts": 1,
+  "input_tokens": 517,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "J",
+  "seconds": 1.818428,
+  "estimated_cny": "0.000155232",
+  "attempts": 1,
+  "input_tokens": 528,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-007",
+  "part": "J",
+  "seconds": 1.856571,
+  "estimated_cny": "0.000159642",
+  "attempts": 1,
+  "input_tokens": 543,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "J",
+  "seconds": 1.828419,
+  "estimated_cny": "0.000143766",
+  "attempts": 1,
+  "input_tokens": 489,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "J",
+  "seconds": 1.84431,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-005",
+  "part": "J",
+  "seconds": 1.870959,
+  "estimated_cny": "0.000152292",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-009",
+  "part": "J",
+  "seconds": 1.911713,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "J",
+  "seconds": 1.88488,
+  "estimated_cny": "0.00015288",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-024",
+  "part": "J",
+  "seconds": 1.937769,
+  "estimated_cny": "0.000149646",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "J",
+  "seconds": 1.964864,
+  "estimated_cny": "0.000152586",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-026",
+  "part": "J",
+  "seconds": 1.892027,
+  "estimated_cny": "0.000156114",
+  "attempts": 1,
+  "input_tokens": 531,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-011",
+  "part": "J",
+  "seconds": 1.984092,
+  "estimated_cny": "0.000153762",
+  "attempts": 1,
+  "input_tokens": 523,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-049",
+  "part": "J",
+  "seconds": 2.01234,
+  "estimated_cny": "0.000154938",
+  "attempts": 1,
+  "input_tokens": 527,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-023",
+  "part": "J",
+  "seconds": 1.957584,
+  "estimated_cny": "0.000149646",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "J",
+  "seconds": 1.957105,
+  "estimated_cny": "0.000157878",
+  "attempts": 1,
+  "input_tokens": 537,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "J",
+  "seconds": 1.75573,
+  "estimated_cny": "0.000153468",
+  "attempts": 1,
+  "input_tokens": 522,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-050",
+  "part": "J",
+  "seconds": 1.762479,
+  "estimated_cny": "0.000154644",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-034",
+  "part": "J",
+  "seconds": 1.780394,
+  "estimated_cny": "0.000152586",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-032",
+  "part": "J",
+  "seconds": 1.707902,
+  "estimated_cny": "0.00015876",
+  "attempts": 1,
+  "input_tokens": 540,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-025",
+  "part": "J",
+  "seconds": 1.73212,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-053",
+  "part": "J",
+  "seconds": 1.779802,
+  "estimated_cny": "0.000149646",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "J",
+  "seconds": 1.726687,
+  "estimated_cny": "0.000156702",
+  "attempts": 1,
+  "input_tokens": 533,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-060",
+  "part": "J",
+  "seconds": 1.736714,
+  "estimated_cny": "0.00014553",
+  "attempts": 1,
+  "input_tokens": 495,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-036",
+  "part": "J",
+  "seconds": 1.800485,
+  "estimated_cny": "0.000152292",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-071",
+  "part": "J",
+  "seconds": 1.745331,
+  "estimated_cny": "0.00013965",
+  "attempts": 1,
+  "input_tokens": 475,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-029",
+  "part": "J",
+  "seconds": 1.775151,
+  "estimated_cny": "0.000156996",
+  "attempts": 1,
+  "input_tokens": 534,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-008",
+  "part": "J",
+  "seconds": 1.724567,
+  "estimated_cny": "0.000159642",
+  "attempts": 1,
+  "input_tokens": 543,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-020",
+  "part": "J",
+  "seconds": 1.829869,
+  "estimated_cny": "0.000156408",
+  "attempts": 1,
+  "input_tokens": 532,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "J",
+  "seconds": 1.782164,
+  "estimated_cny": "0.00014406",
+  "attempts": 1,
+  "input_tokens": 490,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-042",
+  "part": "J",
+  "seconds": 1.799853,
+  "estimated_cny": "0.00015288",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 31,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "D",
+  "seconds": 0.555817,
+  "estimated_cny": "0.000347",
+  "attempts": 1,
+  "input_tokens": 327,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-006",
+  "part": "D",
+  "seconds": 0.513317,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-059",
+  "part": "D",
+  "seconds": 0.506472,
+  "estimated_cny": "0.000301",
+  "attempts": 1,
+  "input_tokens": 281,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-070",
+  "part": "D",
+  "seconds": 0.540047,
+  "estimated_cny": "0.000282",
+  "attempts": 1,
+  "input_tokens": 262,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "D",
+  "seconds": 0.662424,
+  "estimated_cny": "0.000332",
+  "attempts": 1,
+  "input_tokens": 312,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-015",
+  "part": "D",
+  "seconds": 0.610394,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "D",
+  "seconds": 0.695128,
+  "estimated_cny": "0.0003",
+  "attempts": 1,
+  "input_tokens": 280,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-030",
+  "part": "D",
+  "seconds": 0.736347,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "D",
+  "seconds": 0.855332,
+  "estimated_cny": "0.000341",
+  "attempts": 1,
+  "input_tokens": 321,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-028",
+  "part": "D",
+  "seconds": 0.787715,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "D",
+  "seconds": 0.919335,
+  "estimated_cny": "0.000329",
+  "attempts": 1,
+  "input_tokens": 309,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-022",
+  "part": "D",
+  "seconds": 0.91345,
+  "estimated_cny": "0.000324",
+  "attempts": 1,
+  "input_tokens": 304,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-013",
+  "part": "D",
+  "seconds": 0.880251,
+  "estimated_cny": "0.000326",
+  "attempts": 1,
+  "input_tokens": 306,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-010",
+  "part": "D",
+  "seconds": 0.921046,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-047",
+  "part": "D",
+  "seconds": 0.478892,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-040",
+  "part": "D",
+  "seconds": 0.585145,
+  "estimated_cny": "0.000316",
+  "attempts": 1,
+  "input_tokens": 296,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-064",
+  "part": "D",
+  "seconds": 0.572345,
+  "estimated_cny": "0.00029",
+  "attempts": 1,
+  "input_tokens": 270,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-037",
+  "part": "D",
+  "seconds": 0.562216,
+  "estimated_cny": "0.000329",
+  "attempts": 1,
+  "input_tokens": 309,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-035",
+  "part": "D",
+  "seconds": 0.590479,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-054",
+  "part": "D",
+  "seconds": 0.47985,
+  "estimated_cny": "0.000314",
+  "attempts": 1,
+  "input_tokens": 294,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-014",
+  "part": "D",
+  "seconds": 1.293451,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "D",
+  "seconds": 0.553416,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-066",
+  "part": "D",
+  "seconds": 0.558861,
+  "estimated_cny": "0.000289",
+  "attempts": 1,
+  "input_tokens": 269,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-038",
+  "part": "D",
+  "seconds": 1.110416,
+  "estimated_cny": "0.000331",
+  "attempts": 1,
+  "input_tokens": 311,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-052",
+  "part": "D",
+  "seconds": 0.87835,
+  "estimated_cny": "0.000314",
+  "attempts": 1,
+  "input_tokens": 294,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-058",
+  "part": "D",
+  "seconds": 0.816072,
+  "estimated_cny": "0.000301",
+  "attempts": 1,
+  "input_tokens": 281,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "D",
+  "seconds": 0.728756,
+  "estimated_cny": "0.000304",
+  "attempts": 1,
+  "input_tokens": 284,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-041",
+  "part": "D",
+  "seconds": 0.753735,
+  "estimated_cny": "0.000316",
+  "attempts": 1,
+  "input_tokens": 296,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "D",
+  "seconds": 0.590873,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-012",
+  "part": "D",
+  "seconds": 0.701222,
+  "estimated_cny": "0.000329",
+  "attempts": 1,
+  "input_tokens": 309,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-004",
+  "part": "D",
+  "seconds": 0.675359,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-046",
+  "part": "D",
+  "seconds": 0.554104,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "D",
+  "seconds": 0.539948,
+  "estimated_cny": "0.000346",
+  "attempts": 1,
+  "input_tokens": 326,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-062",
+  "part": "D",
+  "seconds": 0.784571,
+  "estimated_cny": "0.000299",
+  "attempts": 1,
+  "input_tokens": 279,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "D",
+  "seconds": 0.779092,
+  "estimated_cny": "0.000299",
+  "attempts": 1,
+  "input_tokens": 279,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-002",
+  "part": "D",
+  "seconds": 0.472671,
+  "estimated_cny": "0.000341",
+  "attempts": 1,
+  "input_tokens": 321,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-027",
+  "part": "D",
+  "seconds": 0.563659,
+  "estimated_cny": "0.00034",
+  "attempts": 1,
+  "input_tokens": 320,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-051",
+  "part": "D",
+  "seconds": 1.067754,
+  "estimated_cny": "0.000327",
+  "attempts": 1,
+  "input_tokens": 307,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-048",
+  "part": "D",
+  "seconds": 0.932389,
+  "estimated_cny": "0.000321",
+  "attempts": 1,
+  "input_tokens": 301,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-049",
+  "part": "D",
+  "seconds": 0.545903,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-072",
+  "part": "D",
+  "seconds": 0.839361,
+  "estimated_cny": "0.000284",
+  "attempts": 1,
+  "input_tokens": 264,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-011",
+  "part": "D",
+  "seconds": 0.586145,
+  "estimated_cny": "0.00033",
+  "attempts": 1,
+  "input_tokens": 310,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "D",
+  "seconds": 0.490164,
+  "estimated_cny": "0.000324",
+  "attempts": 1,
+  "input_tokens": 304,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "D",
+  "seconds": 0.512549,
+  "estimated_cny": "0.000333",
+  "attempts": 1,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "D",
+  "seconds": 0.514836,
+  "estimated_cny": "0.000293",
+  "attempts": 1,
+  "input_tokens": 273,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "D",
+  "seconds": 1.094142,
+  "estimated_cny": "0.000346",
+  "attempts": 1,
+  "input_tokens": 326,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "D",
+  "seconds": 1.121179,
+  "estimated_cny": "0.000332",
+  "attempts": 1,
+  "input_tokens": 312,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-007",
+  "part": "D",
+  "seconds": 1.112546,
+  "estimated_cny": "0.000349",
+  "attempts": 1,
+  "input_tokens": 329,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-065",
+  "part": "D",
+  "seconds": 1.185268,
+  "estimated_cny": "0.00029",
+  "attempts": 1,
+  "input_tokens": 270,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-024",
+  "part": "D",
+  "seconds": 0.73152,
+  "estimated_cny": "0.000324",
+  "attempts": 1,
+  "input_tokens": 304,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-023",
+  "part": "D",
+  "seconds": 0.608947,
+  "estimated_cny": "0.000323",
+  "attempts": 1,
+  "input_tokens": 303,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-009",
+  "part": "D",
+  "seconds": 0.736284,
+  "estimated_cny": "0.000343",
+  "attempts": 1,
+  "input_tokens": 323,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "D",
+  "seconds": 0.565049,
+  "estimated_cny": "0.000344",
+  "attempts": 1,
+  "input_tokens": 324,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-005",
+  "part": "D",
+  "seconds": 0.493028,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "D",
+  "seconds": 0.511106,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "D",
+  "seconds": 0.595574,
+  "estimated_cny": "0.000324",
+  "attempts": 1,
+  "input_tokens": 304,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "D",
+  "seconds": 0.504747,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-026",
+  "part": "D",
+  "seconds": 0.855033,
+  "estimated_cny": "0.000336",
+  "attempts": 1,
+  "input_tokens": 316,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-050",
+  "part": "D",
+  "seconds": 0.625323,
+  "estimated_cny": "0.000328",
+  "attempts": 1,
+  "input_tokens": 308,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-034",
+  "part": "D",
+  "seconds": 0.772088,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-032",
+  "part": "D",
+  "seconds": 0.511392,
+  "estimated_cny": "0.000346",
+  "attempts": 1,
+  "input_tokens": 326,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-020",
+  "part": "D",
+  "seconds": 0.612202,
+  "estimated_cny": "0.000346",
+  "attempts": 1,
+  "input_tokens": 326,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-053",
+  "part": "D",
+  "seconds": 0.552864,
+  "estimated_cny": "0.000314",
+  "attempts": 1,
+  "input_tokens": 294,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-036",
+  "part": "D",
+  "seconds": 0.548629,
+  "estimated_cny": "0.000325",
+  "attempts": 1,
+  "input_tokens": 305,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "D",
+  "seconds": 0.564324,
+  "estimated_cny": "0.00034",
+  "attempts": 1,
+  "input_tokens": 320,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-029",
+  "part": "D",
+  "seconds": 0.677233,
+  "estimated_cny": "0.000338",
+  "attempts": 1,
+  "input_tokens": 318,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-008",
+  "part": "D",
+  "seconds": 0.433684,
+  "estimated_cny": "0.000349",
+  "attempts": 1,
+  "input_tokens": 329,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "D",
+  "seconds": 0.716479,
+  "estimated_cny": "0.000295",
+  "attempts": 1,
+  "input_tokens": 275,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-060",
+  "part": "D",
+  "seconds": 0.747122,
+  "estimated_cny": "0.000301",
+  "attempts": 1,
+  "input_tokens": 281,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-071",
+  "part": "D",
+  "seconds": 0.779086,
+  "estimated_cny": "0.000283",
+  "attempts": 1,
+  "input_tokens": 263,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-025",
+  "part": "D",
+  "seconds": 0.971344,
+  "estimated_cny": "0.000337",
+  "attempts": 1,
+  "input_tokens": 317,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "allow"
+  }
+ },
+ {
+  "id": "NF-042",
+  "part": "D",
+  "seconds": 0.606833,
+  "estimated_cny": "0.000315",
+  "attempts": 1,
+  "input_tokens": 295,
+  "output_tokens": 5,
+  "error": null,
+  "answers": {
+   "decision": "block"
+  }
+ },
+ {
+  "id": "NF-006",
+  "part": "C",
+  "seconds": 0.683742,
+  "estimated_cny": "0.00080656",
+  "attempts": 1,
+  "input_tokens": 796,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-070",
+  "part": "C",
+  "seconds": 0.665622,
+  "estimated_cny": "0.00076356",
+  "attempts": 1,
+  "input_tokens": 753,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "C",
+  "seconds": 0.689071,
+  "estimated_cny": "0.00082256",
+  "attempts": 1,
+  "input_tokens": 812,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-028",
+  "part": "C",
+  "seconds": 0.684985,
+  "estimated_cny": "0.00081956",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "C",
+  "seconds": 0.802773,
+  "estimated_cny": "0.00081356",
+  "attempts": 1,
+  "input_tokens": 803,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-038",
+  "part": "C",
+  "seconds": 0.814329,
+  "estimated_cny": "0.00081256",
+  "attempts": 1,
+  "input_tokens": 802,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-030",
+  "part": "C",
+  "seconds": 0.83787,
+  "estimated_cny": "0.00082756",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-058",
+  "part": "C",
+  "seconds": 0.784048,
+  "estimated_cny": "0.00078256",
+  "attempts": 1,
+  "input_tokens": 772,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-037",
+  "part": "C",
+  "seconds": 0.815988,
+  "estimated_cny": "0.00081056",
+  "attempts": 1,
+  "input_tokens": 800,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-041",
+  "part": "C",
+  "seconds": 0.783871,
+  "estimated_cny": "0.00079756",
+  "attempts": 1,
+  "input_tokens": 787,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-022",
+  "part": "C",
+  "seconds": 0.878168,
+  "estimated_cny": "0.00080556",
+  "attempts": 1,
+  "input_tokens": 795,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-013",
+  "part": "C",
+  "seconds": 0.902059,
+  "estimated_cny": "0.00080756",
+  "attempts": 1,
+  "input_tokens": 797,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-052",
+  "part": "C",
+  "seconds": 0.892287,
+  "estimated_cny": "0.00079556",
+  "attempts": 1,
+  "input_tokens": 785,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "C",
+  "seconds": 1.023515,
+  "estimated_cny": "0.00078156",
+  "attempts": 1,
+  "input_tokens": 771,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-054",
+  "part": "C",
+  "seconds": 1.050731,
+  "estimated_cny": "0.00079556",
+  "attempts": 1,
+  "input_tokens": 785,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-066",
+  "part": "C",
+  "seconds": 0.558055,
+  "estimated_cny": "0.00077056",
+  "attempts": 1,
+  "input_tokens": 760,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-023",
+  "part": "C",
+  "seconds": 0.515436,
+  "estimated_cny": "0.00067912",
+  "attempts": 1,
+  "input_tokens": 794,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-002",
+  "part": "C",
+  "seconds": 0.607471,
+  "estimated_cny": "0.00069712",
+  "attempts": 1,
+  "input_tokens": 812,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "C",
+  "seconds": 0.709487,
+  "estimated_cny": "0.00082756",
+  "attempts": 1,
+  "input_tokens": 817,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "C",
+  "seconds": 0.566507,
+  "estimated_cny": "0.00080556",
+  "attempts": 1,
+  "input_tokens": 795,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-024",
+  "part": "C",
+  "seconds": 0.690012,
+  "estimated_cny": "0.00068012",
+  "attempts": 1,
+  "input_tokens": 795,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-005",
+  "part": "C",
+  "seconds": 0.566422,
+  "estimated_cny": "0.00068112",
+  "attempts": 1,
+  "input_tokens": 796,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "C",
+  "seconds": 0.976656,
+  "estimated_cny": "0.00082756",
+  "attempts": 1,
+  "input_tokens": 817,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "C",
+  "seconds": 1.004728,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-050",
+  "part": "C",
+  "seconds": 0.577437,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-020",
+  "part": "C",
+  "seconds": 0.521679,
+  "estimated_cny": "0.00082756",
+  "attempts": 1,
+  "input_tokens": 817,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-025",
+  "part": "C",
+  "seconds": 0.619211,
+  "estimated_cny": "0.00081856",
+  "attempts": 1,
+  "input_tokens": 808,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "C",
+  "seconds": 1.265,
+  "estimated_cny": "0.00077456",
+  "attempts": 1,
+  "input_tokens": 764,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-007",
+  "part": "C",
+  "seconds": 1.316885,
+  "estimated_cny": "0.00083056",
+  "attempts": 1,
+  "input_tokens": 820,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-029",
+  "part": "C",
+  "seconds": 0.704695,
+  "estimated_cny": "0.00070212",
+  "attempts": 1,
+  "input_tokens": 809,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "basis": "prohibited",
+   "clarification": "NA",
+   "decision": "block",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-032",
+  "part": "C",
+  "seconds": 0.763056,
+  "estimated_cny": "0.00070212",
+  "attempts": 1,
+  "input_tokens": 817,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-053",
+  "part": "C",
+  "seconds": 0.80474,
+  "estimated_cny": "0.00067012",
+  "attempts": 1,
+  "input_tokens": 785,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-065",
+  "part": "C",
+  "seconds": 1.412297,
+  "estimated_cny": "0.00077156",
+  "attempts": 1,
+  "input_tokens": 761,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-049",
+  "part": "C",
+  "seconds": 1.450232,
+  "estimated_cny": "0.00080956",
+  "attempts": 1,
+  "input_tokens": 799,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "basis": "covered",
+   "clarification": "NA",
+   "decision": "allow",
+   "if_no": "NA",
+   "if_yes": "NA"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "O",
+  "seconds": 0.912503,
+  "estimated_cny": "0.00038956",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-028",
+  "part": "O",
+  "seconds": 0.524735,
+  "estimated_cny": "0.00039456",
+  "attempts": 1,
+  "input_tokens": 456,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-014",
+  "part": "O",
+  "seconds": 0.520557,
+  "estimated_cny": "0.00038656",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "O",
+  "seconds": 0.631979,
+  "estimated_cny": "0.00037756",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-070",
+  "part": "O",
+  "seconds": 0.599479,
+  "estimated_cny": "0.00040656",
+  "attempts": 1,
+  "input_tokens": 428,
+  "output_tokens": 26,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "in cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-006",
+  "part": "O",
+  "seconds": 0.65069,
+  "estimated_cny": "0.00038356",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "O",
+  "seconds": 0.702917,
+  "estimated_cny": "0.00038456",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-059",
+  "part": "O",
+  "seconds": 0.736157,
+  "estimated_cny": "0.00046356",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 40,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     18,
+     "exactly eighteen distinct people"
+    ],
+    [
+     "channel",
+     "eq",
+     "email",
+     "by email"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "O",
+  "seconds": 0.726332,
+  "estimated_cny": "0.00036756",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-015",
+  "part": "O",
+  "seconds": 0.711755,
+  "estimated_cny": "0.00038656",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "O",
+  "seconds": 0.794943,
+  "estimated_cny": "0.00037856",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-010",
+  "part": "O",
+  "seconds": 0.784187,
+  "estimated_cny": "0.00047256",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 37,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     62,
+     "below that total with shipping and the voucher taken into account"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-022",
+  "part": "O",
+  "seconds": 0.809706,
+  "estimated_cny": "0.00053256",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     22,
+     "in the range 22 through 29 inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     29,
+     "in the range 22 through 29 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-013",
+  "part": "O",
+  "seconds": 0.890539,
+  "estimated_cny": "0.00038656",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-040",
+  "part": "O",
+  "seconds": 0.543916,
+  "estimated_cny": "0.00043456",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 29,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     20,
+     "no more than twenty"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-041",
+  "part": "O",
+  "seconds": 0.551553,
+  "estimated_cny": "0.00043456",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 29,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     20,
+     "no more than twenty"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-058",
+  "part": "O",
+  "seconds": 0.601487,
+  "estimated_cny": "0.00033812",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 40,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     18,
+     "exactly eighteen distinct people"
+    ],
+    [
+     "channel",
+     "eq",
+     "email",
+     "by email"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-030",
+  "part": "O",
+  "seconds": 1.423795,
+  "estimated_cny": "0.00039456",
+  "attempts": 1,
+  "input_tokens": 456,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-037",
+  "part": "O",
+  "seconds": 0.843549,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-064",
+  "part": "O",
+  "seconds": 0.87028,
+  "estimated_cny": "0.00037256",
+  "attempts": 1,
+  "input_tokens": 434,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-047",
+  "part": "O",
+  "seconds": 0.954757,
+  "estimated_cny": "0.00059956",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "internal",
+     "internal group"
+    ],
+    [
+     "final_readers",
+     "le",
+     35,
+     "up to 35 readers in total"
+    ],
+    [
+     "audience",
+     "eq",
+     "external",
+     "external group"
+    ],
+    [
+     "final_readers",
+     "le",
+     16,
+     "at or below 16"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-066",
+  "part": "O",
+  "seconds": 0.793556,
+  "estimated_cny": "0.00037256",
+  "attempts": 1,
+  "input_tokens": 434,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "O",
+  "seconds": 0.68088,
+  "estimated_cny": "0.00024212",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-052",
+  "part": "O",
+  "seconds": 0.939349,
+  "estimated_cny": "0.00048856",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 43,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "le",
+     42,
+     "at most 42 recipients"
+    ],
+    [
+     "channel",
+     "eq",
+     "chat",
+     "Send Aspen in chat"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-038",
+  "part": "O",
+  "seconds": 1.168345,
+  "estimated_cny": "0.00025912",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-054",
+  "part": "O",
+  "seconds": 0.995167,
+  "estimated_cny": "0.00048856",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 43,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "le",
+     42,
+     "at most 42 recipients"
+    ],
+    [
+     "channel",
+     "eq",
+     "chat",
+     "Send Aspen in chat"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "O",
+  "seconds": 0.987292,
+  "estimated_cny": "0.00042956",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 29,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "external",
+     "share Oriole externally only"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-035",
+  "part": "O",
+  "seconds": 1.201991,
+  "estimated_cny": "0.00038556",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "O",
+  "seconds": 0.676225,
+  "estimated_cny": "0.00030412",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 29,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "external",
+     "share Oriole externally only"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "O",
+  "seconds": 0.600233,
+  "estimated_cny": "0.00036256",
+  "attempts": 1,
+  "input_tokens": 424,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-027",
+  "part": "O",
+  "seconds": 0.505699,
+  "estimated_cny": "0.00037556",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "O",
+  "seconds": 0.606879,
+  "estimated_cny": "0.00026412",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-051",
+  "part": "O",
+  "seconds": 0.906349,
+  "estimated_cny": "0.00038256",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "send_notice"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "O",
+  "seconds": 0.573215,
+  "estimated_cny": "0.00039056",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "O",
+  "seconds": 0.584124,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-046",
+  "part": "O",
+  "seconds": 0.804455,
+  "estimated_cny": "0.00026212",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-072",
+  "part": "O",
+  "seconds": 0.623166,
+  "estimated_cny": "0.00027712",
+  "attempts": 1,
+  "input_tokens": 428,
+  "output_tokens": 25,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-012",
+  "part": "O",
+  "seconds": 1.238564,
+  "estimated_cny": "0.00034712",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 37,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     62,
+     "below that total with shipping and the voucher taken into account"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-048",
+  "part": "O",
+  "seconds": 0.914859,
+  "estimated_cny": "0.00026212",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-004",
+  "part": "O",
+  "seconds": 1.09266,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-062",
+  "part": "O",
+  "seconds": 1.103342,
+  "estimated_cny": "0.00024212",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-065",
+  "part": "O",
+  "seconds": 0.591767,
+  "estimated_cny": "0.00024712",
+  "attempts": 1,
+  "input_tokens": 434,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-002",
+  "part": "O",
+  "seconds": 0.756845,
+  "estimated_cny": "0.00025312",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-049",
+  "part": "O",
+  "seconds": 0.534113,
+  "estimated_cny": "0.00025712",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "send_notice"
+  }
+ },
+ {
+  "id": "NF-007",
+  "part": "O",
+  "seconds": 0.687945,
+  "estimated_cny": "0.00038756",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "O",
+  "seconds": 0.503693,
+  "estimated_cny": "0.00023712",
+  "attempts": 1,
+  "input_tokens": 424,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-009",
+  "part": "O",
+  "seconds": 0.545562,
+  "estimated_cny": "0.00038756",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "O",
+  "seconds": 0.50931,
+  "estimated_cny": "0.00026512",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "O",
+  "seconds": 0.700497,
+  "estimated_cny": "0.00037456",
+  "attempts": 1,
+  "input_tokens": 436,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "O",
+  "seconds": 0.539462,
+  "estimated_cny": "0.00037456",
+  "attempts": 1,
+  "input_tokens": 436,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-023",
+  "part": "O",
+  "seconds": 0.723313,
+  "estimated_cny": "0.00040712",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     22,
+     "in the range 22 through 29 inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     29,
+     "in the range 22 through 29 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-024",
+  "part": "O",
+  "seconds": 0.757745,
+  "estimated_cny": "0.00040712",
+  "attempts": 1,
+  "input_tokens": 446,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "remaining_units",
+     "ge",
+     22,
+     "in the range 22 through 29 inclusive"
+    ],
+    [
+     "remaining_units",
+     "le",
+     29,
+     "in the range 22 through 29 inclusive"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-026",
+  "part": "O",
+  "seconds": 0.523771,
+  "estimated_cny": "0.00025012",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-005",
+  "part": "O",
+  "seconds": 0.608347,
+  "estimated_cny": "0.00025812",
+  "attempts": 1,
+  "input_tokens": 445,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "O",
+  "seconds": 0.570164,
+  "estimated_cny": "0.00029612",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 27,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "audience",
+     "eq",
+     "external",
+     "externally only"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-011",
+  "part": "O",
+  "seconds": 1.047685,
+  "estimated_cny": "0.00034712",
+  "attempts": 1,
+  "input_tokens": 450,
+  "output_tokens": 37,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "delivered_usd",
+     "lt",
+     62,
+     "below that total with shipping and the voucher taken into account"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-050",
+  "part": "O",
+  "seconds": 0.525553,
+  "estimated_cny": "0.00025712",
+  "attempts": 1,
+  "input_tokens": 440,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "send_notice"
+  }
+ },
+ {
+  "id": "NF-034",
+  "part": "O",
+  "seconds": 0.700043,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "O",
+  "seconds": 1.143744,
+  "estimated_cny": "0.00037456",
+  "attempts": 1,
+  "input_tokens": 436,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-020",
+  "part": "O",
+  "seconds": 0.511624,
+  "estimated_cny": "0.00026412",
+  "attempts": 1,
+  "input_tokens": 451,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "O",
+  "seconds": 0.691217,
+  "estimated_cny": "0.00025212",
+  "attempts": 1,
+  "input_tokens": 439,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-032",
+  "part": "O",
+  "seconds": 0.557658,
+  "estimated_cny": "0.00026512",
+  "attempts": 1,
+  "input_tokens": 448,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-025",
+  "part": "O",
+  "seconds": 0.55213,
+  "estimated_cny": "0.00025012",
+  "attempts": 1,
+  "input_tokens": 437,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "O",
+  "seconds": 0.576736,
+  "estimated_cny": "0.00025312",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 15,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-053",
+  "part": "O",
+  "seconds": 0.804157,
+  "estimated_cny": "0.00039512",
+  "attempts": 1,
+  "input_tokens": 442,
+  "output_tokens": 51,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "le",
+     42,
+     "at most 42 recipients"
+    ],
+    [
+     "recipient_count",
+     "le",
+     24,
+     "For an email send, make that at most 24"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "O",
+  "seconds": 0.71713,
+  "estimated_cny": "0.00023712",
+  "attempts": 1,
+  "input_tokens": 424,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-008",
+  "part": "O",
+  "seconds": 0.509152,
+  "estimated_cny": "0.00026212",
+  "attempts": 1,
+  "input_tokens": 449,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-036",
+  "part": "O",
+  "seconds": 0.930513,
+  "estimated_cny": "0.00026012",
+  "attempts": 1,
+  "input_tokens": 443,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-071",
+  "part": "O",
+  "seconds": 0.8262,
+  "estimated_cny": "0.00027712",
+  "attempts": 1,
+  "input_tokens": 428,
+  "output_tokens": 25,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "tier",
+     "eq",
+     "cold",
+     "cold storage"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-060",
+  "part": "O",
+  "seconds": 0.813092,
+  "estimated_cny": "0.00033812",
+  "attempts": 1,
+  "input_tokens": 429,
+  "output_tokens": 40,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "recipient_count",
+     "eq",
+     18,
+     "exactly eighteen distinct people"
+    ],
+    [
+     "channel",
+     "eq",
+     "email",
+     "by email"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-029",
+  "part": "O",
+  "seconds": 1.099481,
+  "estimated_cny": "0.00026912",
+  "attempts": 1,
+  "input_tokens": 456,
+  "output_tokens": 16,
+  "error": null,
+  "answers": {
+   "clauses": [],
+   "mode": "residual",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-042",
+  "part": "O",
+  "seconds": 1.00848,
+  "estimated_cny": "0.00030912",
+  "attempts": 1,
+  "input_tokens": 444,
+  "output_tokens": 29,
+  "error": null,
+  "answers": {
+   "clauses": [
+    [
+     "final_readers",
+     "le",
+     20,
+     "no more than twenty"
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "E",
+  "seconds": 1.286322,
+  "estimated_cny": "0.000721",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after the floor supervisor clears the move"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      17,
+      "Keep at least 17 units in storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-070",
+  "part": "E",
+  "seconds": 0.577237,
+  "estimated_cny": "0.00042856",
+  "attempts": 1,
+  "input_tokens": 498,
+  "output_tokens": 14,
+  "error": null,
+  "answers": {
+   "branches": [
+    []
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-030",
+  "part": "E",
+  "seconds": 0.667032,
+  "estimated_cny": "0.00068056",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 70,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning in Teal"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      36,
+      "36 or less"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      25,
+      "below 25"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "E",
+  "seconds": 0.681843,
+  "estimated_cny": "0.00056956",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 49,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "le",
+      40,
+      "forty days or fewer"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "signed off on filing this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "E",
+  "seconds": 0.822433,
+  "estimated_cny": "0.00058056",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      50,
+      "no more than fifty dollars"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has approved this order"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-015",
+  "part": "E",
+  "seconds": 0.771092,
+  "estimated_cny": "0.00066456",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 68,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "east display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      20,
+      "storage keeps at least twenty"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "West display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      30,
+      "reserve of thirty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "E",
+  "seconds": 0.914398,
+  "estimated_cny": "0.00051956",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Noor has released this particular batch from inspection"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "E",
+  "seconds": 0.96157,
+  "estimated_cny": "0.00059856",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "internal readers"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "file owner approves this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-006",
+  "part": "E",
+  "seconds": 1.00232,
+  "estimated_cny": "0.00068956",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 75,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "Order Rue locally"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      48,
+      "ceiling of 48 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "For remote stock"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      56,
+      "stretch to 56 dollars"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-010",
+  "part": "E",
+  "seconds": 0.989731,
+  "estimated_cny": "0.00057056",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "lt",
+      62,
+      "$62 is the point where I want to reconsider. Please buy it below that total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-022",
+  "part": "E",
+  "seconds": 1.024782,
+  "estimated_cny": "0.00059056",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      22,
+      "range 22 through 29 inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      29,
+      "range 22 through 29 inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-014",
+  "part": "E",
+  "seconds": 1.125854,
+  "estimated_cny": "0.00065656",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 66,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "east display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      20,
+      "at least twenty"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "West display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      30,
+      "reserve of thirty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-040",
+  "part": "E",
+  "seconds": 0.55676,
+  "estimated_cny": "0.00050856",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      20,
+      "no more than twenty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-013",
+  "part": "E",
+  "seconds": 1.282467,
+  "estimated_cny": "0.00065656",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 66,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "display",
+      "eq",
+      "east",
+      "east display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      20,
+      "at least twenty"
+     ]
+    ],
+    [
+     [
+      "display",
+      "eq",
+      "west",
+      "West display"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      30,
+      "reserve of thirty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Slate"
+  }
+ },
+ {
+  "id": "NF-035",
+  "part": "E",
+  "seconds": 0.492433,
+  "estimated_cny": "0.00045556",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-059",
+  "part": "E",
+  "seconds": 1.475382,
+  "estimated_cny": "0.00053756",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      18,
+      "exactly eighteen distinct people"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-038",
+  "part": "E",
+  "seconds": 0.942853,
+  "estimated_cny": "0.00052112",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 65,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "If the audience is external"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "If the audience is external"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "share it only after the file owner approves this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-028",
+  "part": "E",
+  "seconds": 1.518107,
+  "estimated_cny": "0.00046568",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 79,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning in Teal"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      36,
+      "final headcount of 36 or less"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      25,
+      "keep the final count below 25"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-054",
+  "part": "E",
+  "seconds": 0.690589,
+  "estimated_cny": "0.00064256",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 64,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "channel",
+      "eq",
+      "chat",
+      "chat"
+     ],
+     [
+      "recipient_count",
+      "le",
+      42,
+      "at most 42 recipients"
+     ]
+    ],
+    [
+     [
+      "channel",
+      "eq",
+      "email",
+      "email"
+     ],
+     [
+      "recipient_count",
+      "le",
+      24,
+      "at most 24"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-064",
+  "part": "E",
+  "seconds": 0.901048,
+  "estimated_cny": "0.00067056",
+  "attempts": 1,
+  "input_tokens": 504,
+  "output_tokens": 73,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      21,
+      "up to 21 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      51,
+      "up to 51 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-058",
+  "part": "E",
+  "seconds": 0.722702,
+  "estimated_cny": "0.00053756",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      18,
+      "exactly eighteen distinct people"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-037",
+  "part": "E",
+  "seconds": 0.90283,
+  "estimated_cny": "0.00047312",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "internal readers"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "file owner approves this release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Kestrel"
+  }
+ },
+ {
+  "id": "NF-047",
+  "part": "E",
+  "seconds": 1.026487,
+  "estimated_cny": "0.00066956",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "internal group"
+     ],
+     [
+      "final_readers",
+      "le",
+      35,
+      "up to 35 readers"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external group"
+     ],
+     [
+      "final_readers",
+      "le",
+      16,
+      "at or below 16"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-052",
+  "part": "E",
+  "seconds": 0.858226,
+  "estimated_cny": "0.00069456",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 77,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "le",
+      42,
+      "at most 42 recipients"
+     ],
+     [
+      "channel",
+      "ne",
+      "email",
+      "For an email send"
+     ]
+    ],
+    [
+     [
+      "recipient_count",
+      "le",
+      24,
+      "For an email send, make that at most 24"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "For an email send"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-041",
+  "part": "E",
+  "seconds": 0.704376,
+  "estimated_cny": "0.0002616",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      20,
+      "no more than twenty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "E",
+  "seconds": 0.969949,
+  "estimated_cny": "0.00052756",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer to have marked the document ready for release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "E",
+  "seconds": 0.777804,
+  "estimated_cny": "0.00044412",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 49,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "le",
+      40,
+      "forty days or fewer"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "signed off on filing this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-012",
+  "part": "E",
+  "seconds": 0.801725,
+  "estimated_cny": "0.00031968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "lt",
+      62,
+      "$62 is the point where I want to reconsider. Please buy it below that total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-051",
+  "part": "E",
+  "seconds": 0.675347,
+  "estimated_cny": "0.00059656",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once communications clears Olive for delivery"
+     ],
+     [
+      "recipient_count",
+      "lt",
+      27,
+      "below 27"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "notice"
+  }
+ },
+ {
+  "id": "NF-066",
+  "part": "E",
+  "seconds": 1.086028,
+  "estimated_cny": "0.00067056",
+  "attempts": 1,
+  "input_tokens": 504,
+  "output_tokens": 73,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      21,
+      "up to 21 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      51,
+      "up to 51 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "E",
+  "seconds": 0.659404,
+  "estimated_cny": "0.00049656",
+  "attempts": 1,
+  "input_tokens": 494,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms it can be closed"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-046",
+  "part": "E",
+  "seconds": 0.663922,
+  "estimated_cny": "0.00041868",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "internal group"
+     ],
+     [
+      "final_readers",
+      "le",
+      35,
+      "up to 35 readers"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external group"
+     ],
+     [
+      "final_readers",
+      "le",
+      16,
+      "at or below 16"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-062",
+  "part": "E",
+  "seconds": 0.775376,
+  "estimated_cny": "0.00044412",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 49,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "retention_days",
+      "le",
+      40,
+      "forty days or fewer"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "signed off on filing this particular item"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mesa"
+  }
+ },
+ {
+  "id": "NF-072",
+  "part": "E",
+  "seconds": 0.577086,
+  "estimated_cny": "0.00036712",
+  "attempts": 1,
+  "input_tokens": 498,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "The grant applies to Ford alone"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-048",
+  "part": "E",
+  "seconds": 0.925024,
+  "estimated_cny": "0.00041868",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 69,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "audience",
+      "eq",
+      "internal",
+      "internal group"
+     ],
+     [
+      "final_readers",
+      "le",
+      35,
+      "up to 35 readers"
+     ]
+    ],
+    [
+     [
+      "audience",
+      "eq",
+      "external",
+      "external group"
+     ],
+     [
+      "final_readers",
+      "le",
+      16,
+      "at or below 16"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Dove"
+  }
+ },
+ {
+  "id": "NF-027",
+  "part": "E",
+  "seconds": 0.905764,
+  "estimated_cny": "0.00044956",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-004",
+  "part": "E",
+  "seconds": 1.178173,
+  "estimated_cny": "0.00044962",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 77,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "Order Rue locally"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      48,
+      "delivered ceiling of 48 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "For remote stock"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      56,
+      "stretch to 56 dollars delivered"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-007",
+  "part": "E",
+  "seconds": 0.54826,
+  "estimated_cny": "0.00046156",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "E",
+  "seconds": 0.808143,
+  "estimated_cny": "0.00039412",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Noor has released this particular batch from inspection"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "E",
+  "seconds": 1.227354,
+  "estimated_cny": "0.00034468",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after the floor supervisor clears the move"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      17,
+      "Keep at least 17 units in storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-065",
+  "part": "E",
+  "seconds": 0.802248,
+  "estimated_cny": "0.00054912",
+  "attempts": 1,
+  "input_tokens": 504,
+  "output_tokens": 74,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "tier",
+      "eq",
+      "warm",
+      "in warm storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      21,
+      "up to 21 days"
+     ]
+    ],
+    [
+     [
+      "tier",
+      "eq",
+      "cold",
+      "in cold storage"
+     ],
+     [
+      "retention_days",
+      "le",
+      51,
+      "up to 51 days"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Glade"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "E",
+  "seconds": 1.591051,
+  "estimated_cny": "0.00040212",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer to have marked the document ready for release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "E",
+  "seconds": 0.605034,
+  "estimated_cny": "0.00052056",
+  "attempts": 1,
+  "input_tokens": 506,
+  "output_tokens": 35,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "the editor has approved this specific final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "E",
+  "seconds": 1.122933,
+  "estimated_cny": "0.00062856",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 59,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "coordinator has accepted this slot"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "stays below thirty"
+     ],
+     [
+      "slot",
+      "eq",
+      "morning",
+      "morning reservation"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "E",
+  "seconds": 0.763655,
+  "estimated_cny": "0.00052056",
+  "attempts": 1,
+  "input_tokens": 506,
+  "output_tokens": 35,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "the editor has approved this specific final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-011",
+  "part": "E",
+  "seconds": 0.904778,
+  "estimated_cny": "0.00031968",
+  "attempts": 1,
+  "input_tokens": 520,
+  "output_tokens": 44,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "lt",
+      62,
+      "$62 is the point where I want to reconsider. Please buy it below that total"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mint"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "E",
+  "seconds": 0.666651,
+  "estimated_cny": "0.00037112",
+  "attempts": 1,
+  "input_tokens": 494,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms it can be closed"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-002",
+  "part": "E",
+  "seconds": 1.127528,
+  "estimated_cny": "0.0003336",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      50,
+      "no more than fifty dollars"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has approved this order"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-049",
+  "part": "E",
+  "seconds": 1.101706,
+  "estimated_cny": "0.00047112",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once communications clears Olive for delivery"
+     ],
+     [
+      "recipient_count",
+      "lt",
+      27,
+      "below 27"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "notice"
+  }
+ },
+ {
+  "id": "NF-023",
+  "part": "E",
+  "seconds": 0.598253,
+  "estimated_cny": "0.00034164",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      22,
+      "range 22 through 29 inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      29,
+      "range 22 through 29 inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-024",
+  "part": "E",
+  "seconds": 0.828835,
+  "estimated_cny": "0.00034164",
+  "attempts": 1,
+  "input_tokens": 516,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "remaining_units",
+      "ge",
+      22,
+      "range 22 through 29 inclusive"
+     ],
+     [
+      "remaining_units",
+      "le",
+      29,
+      "range 22 through 29 inclusive"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Chalk"
+  }
+ },
+ {
+  "id": "NF-026",
+  "part": "E",
+  "seconds": 0.533137,
+  "estimated_cny": "0.00032412",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-009",
+  "part": "E",
+  "seconds": 0.864644,
+  "estimated_cny": "0.00021068",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "E",
+  "seconds": 0.595883,
+  "estimated_cny": "0.00040212",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 36,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "designated reviewer to have marked the document ready for release"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Oriole"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "E",
+  "seconds": 0.791772,
+  "estimated_cny": "0.00037768",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 59,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "coordinator has accepted this slot"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "stays below thirty"
+     ],
+     [
+      "slot",
+      "eq",
+      "morning",
+      "morning reservation"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-005",
+  "part": "E",
+  "seconds": 0.721257,
+  "estimated_cny": "0.00044162",
+  "attempts": 1,
+  "input_tokens": 515,
+  "output_tokens": 75,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "supplier",
+      "eq",
+      "local",
+      "Order Rue locally"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      48,
+      "ceiling of 48 dollars"
+     ]
+    ],
+    [
+     [
+      "supplier",
+      "eq",
+      "remote",
+      "For remote stock"
+     ],
+     [
+      "delivered_usd",
+      "le",
+      56,
+      "stretch to 56 dollars"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Rue"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "E",
+  "seconds": 0.767396,
+  "estimated_cny": "0.00039512",
+  "attempts": 1,
+  "input_tokens": 506,
+  "output_tokens": 35,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "the editor has approved this specific final text for sending"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Spruce"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "E",
+  "seconds": 0.634368,
+  "estimated_cny": "0.00039412",
+  "attempts": 1,
+  "input_tokens": 509,
+  "output_tokens": 34,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Noor has released this particular batch from inspection"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mica"
+  }
+ },
+ {
+  "id": "NF-034",
+  "part": "E",
+  "seconds": 0.74852,
+  "estimated_cny": "0.00020958",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-008",
+  "part": "E",
+  "seconds": 0.597079,
+  "estimated_cny": "0.00021068",
+  "attempts": 1,
+  "input_tokens": 519,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Basil"
+  }
+ },
+ {
+  "id": "NF-050",
+  "part": "E",
+  "seconds": 1.081844,
+  "estimated_cny": "0.00047112",
+  "attempts": 1,
+  "input_tokens": 510,
+  "output_tokens": 53,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "Once communications clears Olive for delivery"
+     ],
+     [
+      "recipient_count",
+      "lt",
+      27,
+      "below 27"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "notice"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "E",
+  "seconds": 0.768497,
+  "estimated_cny": "0.00037112",
+  "attempts": 1,
+  "input_tokens": 494,
+  "output_tokens": 32,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "project lead confirms it can be closed"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Ridge"
+  }
+ },
+ {
+  "id": "NF-020",
+  "part": "E",
+  "seconds": 1.117063,
+  "estimated_cny": "0.00034468",
+  "attempts": 1,
+  "input_tokens": 521,
+  "output_tokens": 50,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "after the floor supervisor clears the move"
+     ],
+     [
+      "remaining_units",
+      "ge",
+      17,
+      "Keep at least 17 units in storage"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Zinc"
+  }
+ },
+ {
+  "id": "NF-071",
+  "part": "E",
+  "seconds": 0.756666,
+  "estimated_cny": "0.00030312",
+  "attempts": 1,
+  "input_tokens": 498,
+  "output_tokens": 14,
+  "error": null,
+  "answers": {
+   "branches": [
+    []
+   ],
+   "mode": "grant",
+   "resource": "Ford"
+  }
+ },
+ {
+  "id": "NF-042",
+  "part": "E",
+  "seconds": 0.594012,
+  "estimated_cny": "0.0002616",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 30,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "final_readers",
+      "le",
+      20,
+      "no more than twenty"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Swan"
+  }
+ },
+ {
+  "id": "NF-025",
+  "part": "E",
+  "seconds": 0.881787,
+  "estimated_cny": "0.00032412",
+  "attempts": 1,
+  "input_tokens": 507,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Ivory"
+  }
+ },
+ {
+  "id": "NF-029",
+  "part": "E",
+  "seconds": 0.959251,
+  "estimated_cny": "0.00044968",
+  "attempts": 1,
+  "input_tokens": 526,
+  "output_tokens": 75,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "slot",
+      "eq",
+      "morning",
+      "Morning in Teal"
+     ],
+     [
+      "final_occupancy",
+      "le",
+      36,
+      "final headcount of 36 or less"
+     ]
+    ],
+    [
+     [
+      "slot",
+      "eq",
+      "evening",
+      "in the evening"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      25,
+      "below 25"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Teal"
+  }
+ },
+ {
+  "id": "NF-036",
+  "part": "E",
+  "seconds": 1.075357,
+  "estimated_cny": "0.00020958",
+  "attempts": 1,
+  "input_tokens": 513,
+  "output_tokens": 17,
+  "error": null,
+  "answers": {
+   "branches": [],
+   "mode": "no_grant",
+   "resource": "Pearl"
+  }
+ },
+ {
+  "id": "NF-053",
+  "part": "E",
+  "seconds": 1.253254,
+  "estimated_cny": "0.00049312",
+  "attempts": 1,
+  "input_tokens": 512,
+  "output_tokens": 58,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "le",
+      42,
+      "at most 42 recipients"
+     ]
+    ],
+    [
+     [
+      "channel",
+      "eq",
+      "email",
+      "For an email send"
+     ],
+     [
+      "recipient_count",
+      "le",
+      24,
+      "at most 24"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Aspen"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "E",
+  "seconds": 1.026975,
+  "estimated_cny": "0.0003336",
+  "attempts": 1,
+  "input_tokens": 514,
+  "output_tokens": 48,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "delivered_usd",
+      "le",
+      50,
+      "no more than fifty dollars"
+     ],
+     [
+      "attested",
+      "yes",
+      null,
+      "Mina in purchasing has approved this order"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Fern"
+  }
+ },
+ {
+  "id": "NF-032",
+  "part": "E",
+  "seconds": 1.253211,
+  "estimated_cny": "0.00037768",
+  "attempts": 1,
+  "input_tokens": 518,
+  "output_tokens": 59,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "attested",
+      "yes",
+      null,
+      "coordinator has accepted this slot"
+     ],
+     [
+      "final_occupancy",
+      "lt",
+      30,
+      "stays below thirty"
+     ],
+     [
+      "slot",
+      "eq",
+      "morning",
+      "morning reservation"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Mauve"
+  }
+ },
+ {
+  "id": "NF-060",
+  "part": "E",
+  "seconds": 1.104201,
+  "estimated_cny": "0.00041212",
+  "attempts": 1,
+  "input_tokens": 499,
+  "output_tokens": 41,
+  "error": null,
+  "answers": {
+   "branches": [
+    [
+     [
+      "recipient_count",
+      "eq",
+      18,
+      "exactly eighteen distinct people"
+     ],
+     [
+      "channel",
+      "eq",
+      "email",
+      "by email"
+     ]
+    ]
+   ],
+   "mode": "grant",
+   "resource": "Elm"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "A",
+  "seconds": 1.723828,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "A",
+  "seconds": 1.740686,
+  "estimated_cny": "0.000120834",
+  "attempts": 1,
+  "input_tokens": 411,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "A",
+  "seconds": 1.730356,
+  "estimated_cny": "0.000119658",
+  "attempts": 1,
+  "input_tokens": 407,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "A",
+  "seconds": 1.75634,
+  "estimated_cny": "0.000117894",
+  "attempts": 1,
+  "input_tokens": 401,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "A",
+  "seconds": 1.780968,
+  "estimated_cny": "0.000118776",
+  "attempts": 1,
+  "input_tokens": 404,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "A",
+  "seconds": 1.785024,
+  "estimated_cny": "0.000118482",
+  "attempts": 1,
+  "input_tokens": 403,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "A",
+  "seconds": 1.768023,
+  "estimated_cny": "0.000119952",
+  "attempts": 1,
+  "input_tokens": 408,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "A",
+  "seconds": 1.810617,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "A",
+  "seconds": 1.770817,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "A",
+  "seconds": 1.755428,
+  "estimated_cny": "0.000117894",
+  "attempts": 1,
+  "input_tokens": 401,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "A",
+  "seconds": 1.771936,
+  "estimated_cny": "0.00012054",
+  "attempts": 1,
+  "input_tokens": 410,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "A",
+  "seconds": 1.738815,
+  "estimated_cny": "0.00012201",
+  "attempts": 1,
+  "input_tokens": 415,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "A",
+  "seconds": 1.761533,
+  "estimated_cny": "0.000118776",
+  "attempts": 1,
+  "input_tokens": 404,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "A",
+  "seconds": 1.828418,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "A",
+  "seconds": 1.834236,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "A",
+  "seconds": 1.713975,
+  "estimated_cny": "0.000119952",
+  "attempts": 1,
+  "input_tokens": 408,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "A",
+  "seconds": 1.722402,
+  "estimated_cny": "0.000119364",
+  "attempts": 1,
+  "input_tokens": 406,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "A",
+  "seconds": 1.785001,
+  "estimated_cny": "0.000117306",
+  "attempts": 1,
+  "input_tokens": 399,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "A",
+  "seconds": 1.744783,
+  "estimated_cny": "0.000118482",
+  "attempts": 1,
+  "input_tokens": 403,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "A",
+  "seconds": 1.770656,
+  "estimated_cny": "0.000120834",
+  "attempts": 1,
+  "input_tokens": 411,
+  "output_tokens": 42,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "A",
+  "seconds": 1.779922,
+  "estimated_cny": "0.00011907",
+  "attempts": 1,
+  "input_tokens": 405,
+  "output_tokens": 45,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "B",
+  "seconds": 0.986949,
+  "estimated_cny": "0.000229",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "B",
+  "seconds": 0.541836,
+  "estimated_cny": "0.000229",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "B",
+  "seconds": 0.601364,
+  "estimated_cny": "0.000228",
+  "attempts": 1,
+  "input_tokens": 204,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "B",
+  "seconds": 0.579102,
+  "estimated_cny": "0.000231",
+  "attempts": 1,
+  "input_tokens": 207,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "B",
+  "seconds": 0.707633,
+  "estimated_cny": "0.000233",
+  "attempts": 1,
+  "input_tokens": 209,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "B",
+  "seconds": 0.781066,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "B",
+  "seconds": 0.767424,
+  "estimated_cny": "0.00023",
+  "attempts": 1,
+  "input_tokens": 206,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "B",
+  "seconds": 0.694504,
+  "estimated_cny": "0.000225",
+  "attempts": 1,
+  "input_tokens": 201,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "B",
+  "seconds": 0.735272,
+  "estimated_cny": "0.000237",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "B",
+  "seconds": 0.473591,
+  "estimated_cny": "0.000231",
+  "attempts": 1,
+  "input_tokens": 199,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "B",
+  "seconds": 0.469635,
+  "estimated_cny": "0.000229",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "B",
+  "seconds": 1.124118,
+  "estimated_cny": "0.000231",
+  "attempts": 1,
+  "input_tokens": 199,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "B",
+  "seconds": 1.117633,
+  "estimated_cny": "0.000237",
+  "attempts": 1,
+  "input_tokens": 205,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "B",
+  "seconds": 1.159341,
+  "estimated_cny": "0.00023",
+  "attempts": 1,
+  "input_tokens": 206,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "B",
+  "seconds": 1.160087,
+  "estimated_cny": "0.000225",
+  "attempts": 1,
+  "input_tokens": 201,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "B",
+  "seconds": 1.14393,
+  "estimated_cny": "0.000238",
+  "attempts": 1,
+  "input_tokens": 214,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "B",
+  "seconds": 0.61838,
+  "estimated_cny": "0.00023",
+  "attempts": 1,
+  "input_tokens": 206,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "B",
+  "seconds": 1.230859,
+  "estimated_cny": "0.000226",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "B",
+  "seconds": 0.652779,
+  "estimated_cny": "0.000234",
+  "attempts": 1,
+  "input_tokens": 210,
+  "output_tokens": 6,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "B",
+  "seconds": 0.702527,
+  "estimated_cny": "0.000234",
+  "attempts": 1,
+  "input_tokens": 202,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "B",
+  "seconds": 0.72317,
+  "estimated_cny": "0.000233",
+  "attempts": 1,
+  "input_tokens": 201,
+  "output_tokens": 8,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-021",
+  "part": "Y",
+  "seconds": 0.22586,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-039",
+  "part": "Y",
+  "seconds": 0.223197,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 93,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-044",
+  "part": "Y",
+  "seconds": 0.218322,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 103,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-016",
+  "part": "Y",
+  "seconds": 0.24375,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-001",
+  "part": "Y",
+  "seconds": 0.252219,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-061",
+  "part": "Y",
+  "seconds": 0.245855,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 95,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-063",
+  "part": "Y",
+  "seconds": 0.212972,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 99,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-069",
+  "part": "Y",
+  "seconds": 0.203292,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 100,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-043",
+  "part": "Y",
+  "seconds": 0.221326,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 100,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-019",
+  "part": "Y",
+  "seconds": 0.212786,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 97,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-031",
+  "part": "Y",
+  "seconds": 0.216456,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 93,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-057",
+  "part": "Y",
+  "seconds": 0.196548,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 98,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-018",
+  "part": "Y",
+  "seconds": 0.222289,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 98,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-056",
+  "part": "Y",
+  "seconds": 0.204097,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 107,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-033",
+  "part": "Y",
+  "seconds": 0.203178,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 91,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-067",
+  "part": "Y",
+  "seconds": 0.228211,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 94,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-055",
+  "part": "Y",
+  "seconds": 0.199673,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 98,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-045",
+  "part": "Y",
+  "seconds": 0.218482,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 100,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ },
+ {
+  "id": "NF-017",
+  "part": "Y",
+  "seconds": 0.220596,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 103,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "unknown"
+  }
+ },
+ {
+  "id": "NF-068",
+  "part": "Y",
+  "seconds": 0.224564,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 95,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "contradicted"
+  }
+ },
+ {
+  "id": "NF-003",
+  "part": "Y",
+  "seconds": 0.213056,
+  "estimated_cny": "0",
+  "attempts": 1,
+  "input_tokens": 96,
+  "output_tokens": null,
+  "error": null,
+  "answers": {
+   "q0": "supported"
+  }
+ }
+]
