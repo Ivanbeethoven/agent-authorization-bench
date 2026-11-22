@@ -1,0 +1,12 @@
+﻿benchmark,samples,jev_correct,aliyun_correct,same_decision,only_jev_correct,only_aliyun_correct
+authgate,50,45,28,33,17,0
+delegation,50,31,27,38,7,3
+jev,50,48,41,41,8,1
+authbench,50,40,25,19,23,8
+authorization,50,49,30,31,19,0
+yolofs,50,25,25,50,0,0
+agentdojo,50,49,50,49,0,1
+tsbench,50,29,29,46,2,2
+agentdam,50,45,28,33,17,0
+privacylens,50,49,37,38,12,0
+privacylive,50,47,38,39,10,1

@@ -1,15 +1,15 @@
 """Run static decisions on public benchmark inputs. Outputs are checkpointed per case."""
 
 import argparse
-from collections import Counter
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from contextlib import contextmanager
 import csv
-from datetime import datetime, timezone
 import json
 import os
 import re
 import time
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import contextmanager
+from datetime import UTC, datetime
 from urllib.error import HTTPError, URLError
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
@@ -34,18 +34,19 @@ METHODS = {
 }
 
 
-def configure_aliyun(workspace, region):
+def configure_aliyun(workspace, region, *, online=True):
     global ENDPOINT, MODEL, OUT, DATA
-    if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,62}", workspace or "") or region not in (
-        "cn-beijing",
-        "ap-southeast-1",
-    ):
-        raise ValueError(
-            "Provide DASHSCOPE_WORKSPACE_ID and a supported DASHSCOPE_REGION."
-        )
-    ENDPOINT = (
-        f"https://{workspace}.{region}.maas.aliyuncs.com/compatible-mode/v1/systemone"
-    )
+    if online:
+        if not re.fullmatch(
+            r"[a-z0-9][a-z0-9-]{0,62}", workspace or ""
+        ) or region not in (
+            "cn-beijing",
+            "ap-southeast-1",
+        ):
+            raise ValueError(
+                "Provide DASHSCOPE_WORKSPACE_ID and a supported DASHSCOPE_REGION."
+            )
+        ENDPOINT = f"https://{workspace}.{region}.maas.aliyuncs.com/compatible-mode/v1/systemone"
     MODEL = "decision-model-preview"
     OUT = ds.ROOT / "results" / "aliyun"
     DATA = ds.ROOT / "data" / "aliyun-batches"
@@ -178,7 +179,7 @@ def run(name, limit, workers, prepare_only=False):
                         "id": r["id"],
                         "reference": r["gold"],
                         "group": r["group"],
-                        "utc": datetime.now(timezone.utc).isoformat(),
+                        "utc": datetime.now(UTC).isoformat(),
                         **future.result(),
                     }
                     append_json(log, res)
@@ -238,6 +239,12 @@ def summarize():
             good = [r for r in old.values() if "prediction" in r]
             scored = [r for r in good if r["reference"] is not None]
             dist = Counter(r["prediction"] for r in good)
+            token_totals = [
+                sum(r["usage"][field] for r in good)
+                if good and all(field in r["usage"] for r in good)
+                else None
+                for field in ("input_tokens", "output_tokens")
+            ]
             row = [
                 name,
                 method,
@@ -246,8 +253,7 @@ def summarize():
                 len(scored),
                 sum(r["reference"] == r["prediction"] for r in scored),
                 len(items) - len(good),
-                sum(r["usage"].get("input_tokens", 0) for r in good),
-                sum(r["usage"].get("output_tokens", 0) for r in good),
+                *token_totals,
                 json.dumps(dist, ensure_ascii=False),
             ]
             summary.writerow(dict(zip(fields, row)))
@@ -316,6 +322,7 @@ if __name__ == "__main__":
         configure_aliyun(
             os.getenv("DASHSCOPE_WORKSPACE_ID"),
             os.getenv("DASHSCOPE_REGION", "cn-beijing"),
+            online=args.command == "run",
         )
     if args.command in ("run", "prepare"):
         if (

@@ -1,0 +1,12 @@
+﻿benchmark,measurement,sampled,responses,scored,correct,errors,input_tokens,output_tokens,distribution
+authgate,原生二分类；25 对，无合成信号,50,50,50,28,0,21155,,"{""allow"": 47, ""block"": 3}"
+delegation,原生四类决策；只抽有多数意见的场景,50,50,50,27,0,7277,,"{""ACT"": 46, ""REQUEST_INFORMATION"": 2, ""REFUSE"": 2}"
+jev,官方三态标签；测试集，直接三分类,50,50,50,41,0,58123,,"{""deny"": 12, ""allow"": 30, ""hold"": 8}"
+authbench,派生文件权限题；每个样本一个任务和一个候选权限,50,50,50,25,0,23167,,"{""required"": 50}"
+authorization,作者列明越权行为的拦截率；仅负例,50,50,50,30,0,9284,,"{""allow"": 20, ""block"": 30}"
+yolofs,静态描述预测损害；25 对，不运行工具,50,50,50,25,0,3496,,"{""safe"": 50}"
+agentdojo,参考方案首个具名工具的相关性；仅正例,50,50,50,50,0,5659,,"{""relevant"": 50}"
+tsbench,官方逐步风险标签；严格二分类,50,50,50,29,0,26353,,"{""safe"": 49, ""unsafe"": 1}"
+agentdam,识别人工列出的敏感项；仅正例,50,50,50,28,0,24787,,"{""sensitive"": 28, ""ordinary"": 22}"
+privacylens,种子情境共享适当性；仅不当共享,50,50,50,37,0,4464,,"{""yes"": 13, ""no"": 37}"
+privacylive,与作者对既有邮件的泄露判断一致率；静态,50,50,50,38,0,20625,,"{""clear"": 36, ""leak"": 14}"
