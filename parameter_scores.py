@@ -27,11 +27,14 @@ METHODS = (
     "joint_previous",
     "jev_new",
     "joint_new",
+    "jev_all",
+    "joint_all",
 )
 ROLLBACK = "E3_agent_inferred_parameters_000_base"
 DATASETS = {
     "old_pairs": "AuthGateBench",
     "new_pairs": "AuthGateBench",
+    "version_pairs": "版本参数合成对照",
     "new_boundary": "Jev Boundary",
     "new_delegation": "DelegationBench",
 }
@@ -87,7 +90,7 @@ def base_outcomes(dataset, state, j, d):
     first, second = (inspected(x, refs) for x in (j, d))
 
     def fold(start, review):
-        if dataset in ("new_pairs", "old_pairs"):
+        if dataset in ("new_pairs", "old_pairs", "version_pairs"):
             return "allow" if previous.qualified(start, review) else "ask_permission"
         if review["action"] != "allow":
             return review["action"]
@@ -176,7 +179,7 @@ def summary(rows, arm):
     groups = defaultdict(list)
     for r in rows:
         groups[r["group"]].append(r)
-    pairs = rows[0]["benchmark"] == "AuthGateBench"
+    pairs = rows[0]["set"] in ("old_pairs", "new_pairs", "version_pairs")
     return {
         "cases": len(rows),
         "correct": sum(r[arm] == r["reference"] for r in rows),
@@ -270,9 +273,9 @@ def summarize_split(rows, model, call_index, rules):
             j = TREE | REVIEW
             if model.startswith("joint") and r["jev_previous"] == yes:
                 d = REVIEW
-            if model in MODELS:
-                role = MODELS[model]
-                level = rules[role]
+            if model in MODELS or model.endswith("_all"):
+                role = model.split("_", 1)[0]
+                level = "all" if model.endswith("_all") else rules[role]
                 if r[role + "_previous"] == yes:
                     # The parameter audit is measured for every admitted case, even for a numeric-only veto.
                     j = j | {"args"}
@@ -308,7 +311,11 @@ def summarize_split(rows, model, call_index, rules):
 
 
 def publish(study):
-    prefix = "old" if study == "parameter_calibration" else "fresh"
+    prefix = {
+        "parameter_calibration": "old",
+        "parameter_test": "fresh",
+        "parameter_versions": "versions",
+    }[study]
     rows, slots, for_cost, calls, usage = assemble(study)
     lock = pr.DEST / "selected_rules.json"
     recovered = set()
@@ -359,5 +366,8 @@ def publish(study):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("study", choices=("parameter_calibration", "parameter_test"))
+    parser.add_argument(
+        "study",
+        choices=("parameter_calibration", "parameter_test", "parameter_versions"),
+    )
     publish(parser.parse_args().study)

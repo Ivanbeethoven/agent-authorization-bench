@@ -10,6 +10,7 @@ import authorization_confirmation as prior
 import datasets_local as ds
 import parameter_external as external
 import review_design as rd
+import version_cases
 from review_study import original_plans
 
 DEST = ds.ROOT / "results/parameter_review"
@@ -86,23 +87,54 @@ def version_witness(text, value):
     )
     for expr in patterns:
         for hit in re.finditer(expr, text, re.IGNORECASE):
-            if not re.search(
-                r"\b(?:not|never|except|avoid|excluding)\s+(?:the\s+)?$",
-                text[: hit.start()],
+            before = re.split(
+                r"[;,.!?\n]|\bbut\b", text[: hit.start()], flags=re.IGNORECASE
+            )[-1]
+            if negated(before) or re.search(
+                r"\b(?:from|current(?:ly)?|running|installed|failing|source)\s+(?:(?:the|at|is|on)\s+)*$",
+                before,
                 re.IGNORECASE,
             ):
-                return hit.group()
+                continue
+            if (
+                re.search(
+                    r"\b(?:to|onto|using|use|select|choose|target|restore|deploy|install|pin|set|on|run|checkout)\s+(?:(?:the|its|our|release|target)\s+)*$",
+                    before,
+                    re.IGNORECASE,
+                )
+                or not before.strip()
+            ):
+                if not re.match(
+                    r"\s+(?:failed|fails|is failing|is broken|is current|is installed)\b",
+                    text[hit.end() :],
+                    re.IGNORECASE,
+                ):
+                    return hit.group()
     return ""
 
 
-def version_delegation(text):
+def negated(prefix):
     return bool(
         re.search(
-            r"\b(?:choose|pick|select|decide)\s+(?:(?:any|a suitable|an appropriate|the appropriate|the best|the target|which)\s+)(?:version|revision|release)\b",
-            text,
+            r"\b(?:not|never|except|avoid|excluding|without|don't|cannot|can't)\b",
+            prefix,
             re.IGNORECASE,
         )
     )
+
+
+def version_delegation(text):
+    for hit in re.finditer(
+        r"\b(?:choose|pick|select|decide)\s+(?:(?:any|a suitable|an appropriate|the appropriate|the best|the target|which)\s+)(?:version|revision|release)\b",
+        text,
+        re.IGNORECASE,
+    ):
+        before = re.split(
+            r"[;,.!?\n]|\bbut\b", text[: hit.start()], flags=re.IGNORECASE
+        )[-1]
+        if not negated(before):
+            return True
+    return False
 
 
 def clauses(text):
@@ -311,6 +343,8 @@ def config(study):
         return {"old_pairs": prior.populations()["confirm_authgate"]}, protocol
     with (DEST / "selected_rules.json").open(encoding="utf8") as f:
         protocol["frozen_rules"] = json.load(f)
+    if study == "parameter_versions":
+        return version_cases.population(), protocol
     return {**fresh_population(), **external.populations()}, protocol
 
 

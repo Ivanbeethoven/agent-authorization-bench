@@ -113,5 +113,6 @@ def translate(dataset, action):
             "new_delegation": "delegation",
             "new_pairs": "authgate",
             "old_pairs": "authgate",
+            "version_pairs": "authgate",
         }[dataset]
     ][action]
