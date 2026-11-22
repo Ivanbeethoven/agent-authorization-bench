@@ -6,7 +6,9 @@
 
 [三项权限评测并排比较](results/shared_review/三项权限评测与共同错误.html) 按批次筛选策略，并排展示三项评测的成本与准确率。图表可切换全部策略，展开剔除明细可核对各项指标。逐批选择列在 [策略筛选表](results/shared_review/strategy_selection.csv)。网页还包含 33 条共同错误的逐条分析、两种授权复审的结果及额外 12 对付款与协议题。页面可离线使用。运行 `uv run shared_report.py --from-tables` 可从已发布的 CSV 重建此页。[方法与批次设计](SHARED_REVIEW.md)
 
-最新一轮比较此前保留的策略。页面默认显示两项各 50 条的自建对照与 50 条未使用的 Jev Boundary 公开题，并单列 7 条公开争议题的二分类结果。可逐项查看与纯 DeepSeek 的配对差异、人民币费用、GPT 调用次数及按预先规则选出的方案。[复测设计](RETAINED_VALIDATION.md) · [逐策略成绩](results/retained_validation/scores.csv) · [逐条预测与路径耗时](results/retained_validation/decisions.csv)
+保留策略复测包含两项各 50 条的自建对照与 50 条未使用的 Jev Boundary 公开题，并单列 7 条公开争议题的二分类结果。可逐项查看与纯 DeepSeek 的配对差异、人民币费用、GPT 调用次数及按预先规则选出的方案。[复测设计](RETAINED_VALIDATION.md) · [逐策略成绩](results/retained_validation/scores.csv) · [逐条预测与路径耗时](results/retained_validation/decisions.csv)
+
+Jev 转交实验让 Jev 选择 DeepSeek 或 GPT 审查每一条权限请求，另外抽取 50 条此前未用的 Jev Boundary 公开题。页面可切换批次与评测，查看转交数量、纠正与改错、误放行、费用与用时。[网页结果](results/shared_review/三项权限评测与共同错误.html#triage) · [实验设计](JEV_TRIAGE.md) · [评分表](results/jev_triage/scores.csv) · [逐条判断](results/jev_triage/decisions.csv)
 
 ## 错误案例与权限判断方法
 

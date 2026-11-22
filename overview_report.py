@@ -52,6 +52,7 @@ PHASES = {
     "shared_review": "先读授权的复审",
     "commitment_review": "对外承诺配对验证",
     "retained_validation": "保留策略独立复测",
+    "jev_triage": "Jev 选择审查模型",
 }
 STAGE_GROUPS = {
     "三模型直接判断": ("pilot",),
@@ -66,6 +67,7 @@ STAGE_GROUPS = {
     "最小干预与专家示例": ("reply_validation", "reply_precedent"),
     "共同错误与承诺复审": ("shared_review", "commitment_review"),
     "保留策略独立复测": ("retained_validation",),
+    "Jev 选择审查模型": ("jev_triage",),
 }
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
@@ -88,6 +90,7 @@ def inputs():
         "reply_review/provider_usage.csv",
         "shared_review/provider_usage.csv",
         "retained_validation/provider_usage.csv",
+        "jev_triage/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -534,9 +537,14 @@ def build(audit_dir=None):
     }
     early = [{**r, **risk[r["provider"], r["dataset"]]} for r in early]
     cli = read("reply_review/codex_calls.csv")
-    new_cli = json.loads(
-        (RESULTS / "retained_validation/report.json").read_text("utf8")
-    )["cli"]
+    added_cli = [
+        json.loads((RESULTS / folder / "report.json").read_text("utf8"))["cli"]
+        for folder in ("retained_validation", "jev_triage")
+    ]
+    new_cli = {
+        key: sum(row[key] for row in added_cli)
+        for key in ("calls", "input_tokens", "output_tokens")
+    }
     mask = read("authorization_conditions/mask_restore.csv")
     mask_stats = defaultdict(lambda: [0, 0, 0])
     for r in mask:

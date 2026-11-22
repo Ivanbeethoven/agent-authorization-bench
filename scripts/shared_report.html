@@ -16,7 +16,7 @@ main{padding-bottom:55px}section{margin-top:35px;scroll-margin-top:12px}h2{font-
 details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{margin-right:8px}summary small{display:inline-block}details[open] summary{margin-bottom:8px}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.case-grid div{border-left:3px solid var(--line);padding-left:9px}.case-grid small{display:block}.case-id{overflow-wrap:anywhere;font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;margin-right:8px}.decisions{display:flex;flex-wrap:wrap;gap:6px 15px;border-top:1px solid var(--line);padding-top:7px;font-size:13px}.answer{font-weight:600}.kicker{font-size:13px;color:#49675c}.compact{margin:0;padding-left:20px}.compact li{margin:4px 0}.browse-count{margin:8px 0;color:var(--muted);font-size:14px}.empty{padding:14px;background:white;border-radius:5px}
 @media(max-width:900px){.mobile{display:block}.takeaways{grid-template-columns:1fr}.takeaway{padding:9px 13px}.takeaway strong{font-size:19px}.head{align-items:flex-start}}@media(max-width:580px){.case-grid{grid-template-columns:1fr}.filters{gap:6px}.deck{gap:8px;min-width:930px}.deck-scroll{scroll-snap-type:x proximity}.panel{scroll-snap-align:start}header{padding:17px 0 21px}section{margin-top:26px}}@media print{@page{size:landscape;margin:10mm}header{color:var(--ink);background:white}header p,.note{color:var(--ink)}nav,.tabs,.filters,.mobile{display:none}.deck{min-width:0}.scroll,.deck-scroll{overflow:visible}section{break-inside:auto}.panel,.takeaway,details{break-inside:avoid}}
 </style></head>
-<body><header><div><nav aria-label="本页章节"><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#independent">最佳方案与复测</a><a href="#review">历史方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p id="winner-line"></p></div></header>
+<body><header><div><nav aria-label="本页章节"><a href="#charts">三图比较</a><a href="#scores">数值明细</a><a href="#independent">最佳方案与复测</a><a href="#triage">Jev 选择审查模型</a><a href="#review">历史方法验证</a><a href="#cases">共同错误</a></nav><h1>三项权限评测并排比较</h1><p id="winner-line"></p></div></header>
 <main>
 <section id="charts"><div class="head"><div><h2>成本与准确率</h2><p class="sub">每张图对应一项评测。同一行共用横纵坐标，越靠左费用越低，越靠上准确率越高。</p></div><div class="tabs" id="switches" role="group" aria-label="比较批次"></div></div>
 <p id="scope-line" class="note"></p>
@@ -37,6 +37,13 @@ details{margin:8px 0;padding:9px 14px}summary{cursor:pointer}summary strong{marg
 <h3>相对纯 DeepSeek，哪些优势延续了</h3><p class="sub">每行将该策略在此前保留它的公开批次与本次复测分别和同批纯 DeepSeek 配对。准确率差值以正值为优，误放行率、用时及费用差值以负值为优。费用按每 100 条折算。两项自建对照与原公开题的难度可能不同。</p><div class="scroll" id="paired-validation"></div>
 <details><summary>复测样本来源与争议题</summary><p id="validation-sources"></p><p>另有 7 条此前未用的 DelegationBench 公开题，作者未给出四分类共识，均给出了“暂停执行”的二分类参考。按此参考另行计分，分母中没有应执行的请求。</p><div id="disputed-scores" class="scroll"></div><p class="note"><a href="https://github.com/Digital-Trust-Lab/AuthGateBench">AuthGateBench 发布集</a> · <a href="https://github.com/PieLord757/delegation-check">DelegationBench 及投票参考</a> · <a href="https://doi.org/10.5281/zenodo.22952538">Jev Boundary 发布集</a></p></details>
 <details open><summary>本次新增调用、费用与耗时</summary><div id="validation-usage" class="scroll"></div><p class="note" id="validation-bill"></p><p class="note">Jev 使用请求用量折算，并列出服务端账户差额。DeepSeek 使用执行时段的价格及返回的缓存与输出用量。GPT 使用本地 Codex 的登录账户。API 费用和 GPT 调用次数分别列示。<a href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing/">DeepSeek 价格</a> · <a href="https://help.aliyun.com/zh/model-studio/decision-model-preview/">百炼计费</a> · <a href="https://apikey.fan/docs/typesafe">Jev 用量说明</a></p></details></section>
+<section id="triage"><h2>Jev 只判断是否需要升级审查</h2>
+<p>Jev 读用户要求、上下文与候选动作，选择普通审查或高级审查。普通请求交给 DeepSeek Flash，高级请求交给 GPT‑6.2 Sol。最终决定来自被选中的模型，可能是允许、征求授权、询问事实或拒绝。</p>
+<div class="box"><h3>怎样衡量转交是否值得</h3><p>我们比较了两种规则。一种直接采用 Jev 的升级建议。另一种用 236 条历史请求估算升级能纠正多少错误，同时扣除高级模型引入的新错误。误放行记 4 分损失，其他错误记 1 分。每项任务的校准批次最多转交 20%，同时要求误放行不增加、合法放行不减少。阈值固定后，分别检验各批表现。每条请求的费用和用时都包含 Jev 的判断。</p><p id="gate-conclusion"></p></div>
+<div class="filters"><label>路由验证批次 <select id="gate-phase"><option value="new">新增公开测试 · 50 条</option><option value="historical">历史公开保留 · 207 条</option><option value="recent">上一轮复测 · 150 条</option><option value="calibration">历史校准 · 236 条</option></select></label><label>评测 <select id="gate-bench"></select></label></div>
+<div class="scroll" id="gate-table"></div><p class="note">纠正和改错都相对纯 DeepSeek 按请求配对。随机对照给出同一任务内随机转交相同数量请求时的期望正确数。可纠正数指纯 DeepSeek 答错且 GPT 答对的请求总数。</p><p id="gate-cost"></p>
+<div class="box"><h3>什么情况下值得请第二个模型复核？</h3><p>50 条新题中，有两条是 DeepSeek 答错而 GPT 能答对的。一条发布请求应暂缓，DeepSeek 拒绝了它。另一条手册分享请求应当允许，DeepSeek 暂缓了它。Jev 把两条都交给了普通审查。GPT 也会引入错误，它把另一条本应暂缓的请求改成了拒绝。</p><p>下一项可检验的改动是让 DeepSeek 先给出初判，再让 Jev 指出哪项参数与哪句授权有冲突。初判允许时检查接收方、范围和副作用，初判暂缓时检查原文是否已经给出了所缺的授权。文字已经齐全但有两种合理解读时才转交高级模型。确实缺少用户选择时，向用户询问具体事项。可以在相同转交预算下，与本页两种规则逐条比较纠正数、改错数和误放行。</p></div>
+<p class="note">专家转交与语言模型路由已有研究。本实验关注权限管理中的两种不同代价，即误放行和阻止合法请求，并实测模型升级带来的纠正与误改。<a href="https://proceedings.mlr.press/v119/mozannar20b.html">Mozannar 与 Sontag，ICML 2020</a> · <a href="https://openreview.net/forum?id=8sSqNntaMr">RouteLLM，ICLR 2025</a></p></section>
 <section id="review"><h2>怎样改进共同错误</h2><div class="takeaways"><article class="takeaway"><strong>33 / 443</strong><p>纯 DeepSeek、旧联合方法和 GPT‑6.2 Sol 共同答错 33 条，其中 29 条给出了相同的错误答案。</p></article><article class="takeaway"><strong>19 → 16 次误放行</strong><p>在 80 条历史委托请求上，仅复核对外承诺纠正 3 条，原来正确的 53 条全部保留。3 条中有 1 条是三方法共同错误。</p></article><article class="takeaway"><strong>24 / 24</strong><p>在随后固定的 12 对付款与协议题上，直接判断与仅复核承诺均答对 24 条。这个新批次未显示额外收益。</p></article></div>
 <div class="box"><h3>先独立读授权，再看候选动作</h3><p>第一次读取用户原话及可用的策略或上下文，隐藏结构化候选动作与轨迹，选出已授权的操作和主要限制。第二次读取完整记录，判断动作是否在授权范围内、会产生什么后果，并给出原生决定。要把原有暂停改成放行，须同时满足授权覆盖或常规委托、影响普通、复审允许。自然语言上下文有时也会描述候选动作。</p><p>这一方法在 33 条共同错误中有 2 条命中参考答案。一条是 1,000 美元不可退款的采购，应先征求授权；另一条是用户只让整理桌面，参考却允许归档桌面外的文件。第二条值得重审参考标签。只采用普遍复审时，历史保留批次的误放行还会增加。</p></div>
 <div class="box"><h3>把修改限制在模型将要作出实质承诺时</h3><p>四分类委托任务先由 DeepSeek 直接判断。仅当它准备执行、复审明确识别到实质承诺、且复审选择“征求授权”时，才修改原决定。这一规则可以撤回误放行，同时保留已有暂停。AuthGateBench 与 Jev Boundary 沿用直接判断，因此这两个面板中的两点重合，费用也相同。</p>
@@ -192,5 +199,25 @@ function validationTables(){
  $("validation-bill").textContent="本轮已知 API 用量合计 "+money(V.usage.reduce((a,u)=>a+Number(u.estimated_cny),0))+"，另有 "+V.cli.calls+" 次 GPT 判断。全部记录从最早开始到最晚结束共 "+V.wall+" 秒。表中的方法路径可以共用同一份模型输出。";
 }
 styles.sol_arbitration=["#4b5579",5];short.sol_arbitration="分歧转交 GPT";
-tabs();buildDeck();changes();caseList();validationTables();
+function triageTable(reset){
+ const data=D.triage,phase=$("gate-phase").value,control=$("gate-bench");
+ const cohort=data.scores.filter(r=>r.phase===phase);
+ if(reset){
+   control.replaceChildren(...[...new Set(cohort.map(r=>r.benchmark))].map(k=>new Option(k==="all"?"本批合计":k,k)));
+ }
+ const names={deepseek:"纯 DeepSeek",raw:"采用 Jev 的升级建议",calibrated:"按历史复审收益转交",gpt:"全部交 GPT"};
+ const group=cohort.filter(r=>r.benchmark===control.value);
+ const head=["规则","准确率","误放行","合法放行","转交 GPT","纠正／改错","可纠正数","随机对照正确数","可计 API 费用","P50（秒）"];
+ $("gate-table").innerHTML="<table><thead><tr>"+head.map(h=>"<th>"+esc(h)+"</th>").join("")+"</tr></thead><tbody>"+group.map(r=>{
+  const vals=[names[r.method],r.correct+"/"+r.n+" · "+pct(r.correct,r.n),r.false_allows+"/"+r.negative,r.released+"/"+r.positive,r.gpt_calls+"/"+r.n,
+    r.fixed+" / "+r.lost,r.recoverable,r.random_correct,money(r.api_cny)+(r.gpt_calls?" + GPT 金额未披露":""),r.p50_s];
+  return "<tr>"+vals.map(v=>"<td>"+esc(v)+"</td>").join("")+"</tr>";
+ }).join("")+"</tbody></table>";
+ const pick=(phase,method)=>data.scores.find(r=>r.phase===phase&&r.benchmark==="all"&&r.method===method);
+ const fresh=pick("new","calibrated"),base=pick("new","deepseek"),raw=pick("new","raw"),old=pick("historical","calibrated"),oldBase=pick("historical","deepseek");
+ $("gate-conclusion").textContent="在 "+old.n+" 条历史公开保留请求中，按历史收益转交了 "+old.gpt_calls+" 条，纠正 "+old.fixed+" 条，也改错 "+old.lost+" 条。误放行从 "+oldBase.false_allows+" 次增至 "+old.false_allows+" 次。在另外抽取的 "+base.n+" 条 Jev Boundary 公开题上，直接采用 Jev 建议转交 "+raw.gpt_calls+" 条，按历史收益转交 "+fresh.gpt_calls+" 条，两种方法与纯 DeepSeek 均答对 "+base.correct+" 条。";
+ $("gate-cost").textContent="新增实验调用 "+data.usage.find(u=>u.provider==="jev").calls+" 次 Jev、"+data.usage.find(u=>u.provider==="deepseek").calls+" 次 DeepSeek，共折算 "+money(data.usage.reduce((a,r)=>a+Number(r.estimated_cny),0))+"。另外实测 "+data.cli.calls+" 次本地 GPT；人民币金额未披露。历史模型判断按记录复用。";
+}
+$("gate-phase").addEventListener("input",()=>triageTable(true));$("gate-bench").addEventListener("input",()=>triageTable(false));
+tabs();buildDeck();changes();caseList();validationTables();triageTable(true);
 </script></body></html>
