@@ -98,12 +98,21 @@ def review_allows(answers):
 
 
 def run_config(study, provider):
-    from effect_benchmark import inputs
+    if study.startswith("effects_expanded_"):
+        from effect_expansion import inputs
+    else:
+        from effect_benchmark import inputs
 
     plans = inputs()
-    if study == "effects_direct" and provider == "deepseek":
+    if (
+        study in ("effects_direct", "effects_expanded_direct")
+        and provider == "deepseek"
+    ):
         questions = DIRECT
-    elif study == "effects_review" and provider in ("jev", "deepseek"):
+    elif study in ("effects_review", "effects_expanded_review") and provider in (
+        "jev",
+        "deepseek",
+    ):
         questions = REVIEW
         if provider == "deepseek":
             plans = {
@@ -117,7 +126,7 @@ def run_config(study, provider):
     else:
         raise ValueError("Unexpected effect experiment stage or provider")
     return plans, {
-        "mode": "direct" if study == "effects_direct" else "review",
+        "mode": "direct" if questions == DIRECT else "review",
         "questions": questions,
         "system": DEEPSEEK_FORMAT,
         "max_tokens": 160,

@@ -1,79 +1,122 @@
 \documentclass[10pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,graphicx,array,xcolor}
-\usepackage[margin=1.02in,top=.86in,bottom=.90in]{geometry}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,array,graphicx,xcolor}
+\usepackage[margin=1.04in,top=.86in,bottom=.90in]{geometry}
 \usepackage{caption,placeins}
 \usepackage[colorlinks=true,linkcolor=teal!65!black,citecolor=teal!65!black,urlcolor=teal!65!black]{hyperref}
-\urlstyle{same}
-\hypersetup{pdftitle={When a Second Authorization Check Helps},pdfauthor={Anonymous research manuscript},pdfsubject={Prohibited-action recall and legal access in tool-using AI agents}}
 \captionsetup{font=small,labelfont=bf}
-\setlength{\parskip}{2.5pt}
+\setlength{\parskip}{3pt}
 \setlength{\emergencystretch}{1.5em}
 \makeatletter
 \newcommand{\tablerows}[1]{\@@input #1 }
 \makeatother
-\title{\bfseries When a Second Authorization Check Helps\\[4pt]\large Prohibited-action recall and legal access in tool-using AI agents}
+\input{generated/effect_macros}
+\title{\bfseries Verifying Agent Authorization\\from Tool Effect Previews}
 \author{Anonymous research manuscript}
 \date{23 November 2026}
 \begin{document}
 \maketitle
+
 \begin{abstract}
-An agent authorization policy must stop actions outside the user's grant while preserving access to authorized tools. On 1,126 actions from three public evaluations, a cascade that checked Jev approvals with DeepSeek released 57 of 592 actions that should have been withheld. Direct DeepSeek released 60. Both stopped all 37 explicitly prohibited actions, but the cascade lost 44 legal releases. We next studied whether models could extract grants for a program to verify. On the last of four authored cohorts, this approach released none of 31 violations and 27 of 33 legal actions, versus ten violations and 26 legal releases for direct DeepSeek. The frozen verifier then withheld all 534 legal actions in the public corpora because their tools did not supply its required representation. We replaced that interface with native tool arguments, programmatic checks and selective Jev review. Relative to a fresh binary DeepSeek control, legal releases rose from 327 to 411, while false releases rose from 76 to 102. Both stopped all 37 explicit prohibitions. On 106 previously unused SteerBench-Work scenarios, the method reduced false releases from one to zero while losing seven legal releases. The observed trade-off depends on the authorization representation, the comparator's decision question and the population of actions.
+Tool authorization depends on which objects an action affects, where its effects occur, and how much it changes. We evaluate a policy-as-code verifier that checks these effects against a user-confirmed grant and refers outstanding qualitative conditions to a model. Across 1,824 cases in two cohorts from three controlled benchmarks, adding the verifier prevented 274 false releases relative to Jev alone with the same legal-release counts. In the 1,440-case expansion, verifier plus Jev released 428 of 432 legal requests and 130 of 1,008 requests that should have been held. Direct DeepSeek released 199 legal and 145 non-execution requests. Jev's residual errors concentrated on approval records from the wrong source. Substituting DeepSeek as reviewer reduced false releases to 28 and legal releases to 375, while reducing false-release counts relative to direct DeepSeek in every benchmark. The paired reductions isolate the benefit of numerical scope checks. The reviewer comparison shows that approval provenance remains a distinct source of error.
 \end{abstract}
 
 \section{Introduction}
-A user can authorize an agent to draft a message without authorizing delivery, or approve a purchase only below a cap. Authorization concerns a particular action, its parameters and the applicable grant at the moment of execution. An erroneous release can create an irreversible effect. Withholding a legitimate action costs time or requires another interaction. Confusing missing information with an absolute prohibition also gives the user the wrong way to resolve a denial.
+An agent can select the right tool and still exceed the user's authorization. A sharing tool can resolve a group to recipients outside the approved audience, and a stock transfer can exceed its limit only when several lines are added together. Both failures arise at the level of effects. Tool implementations already hold the catalogs and quantity types needed to preview those effects before execution.
 
-Requiring a second model's agreement mechanically reduces the set of approvals relative to the first model. It says little about \emph{which} approvals are removed. The reviewers might make the same arithmetic error or interpret the same policy clause too broadly. Alternatively, the second reviewer might detect an action outside the user's grant. The operational question is how often it does so, at what cost to legitimate requests, and whether a less expensive restriction achieves the same result.
+We study whether a tool-supplied preview lets a host enforce a confirmed grant while preserving access to authorized actions. Our design pairs a deterministic verifier with model review for any remaining condition. Two matched comparisons isolate the verifier's contribution and the effect of changing the reviewer. The direct-model comparison measures the operating point of the complete method.
 
-We ask four questions. \textbf{RQ1} concerns the recall of explicitly prohibited actions and the fraction of legal requests still released. \textbf{RQ2} asks what a structured second opinion adds beyond withholding more requests or requiring agreement between two direct answers. \textbf{RQ3} asks whether proposed clarifications and decisions at numeric permission boundaries behave as their wording predicts. \textbf{RQ4} asks whether extracting conditions from prose, computing their effects in the host, and consulting a reviewer only for outstanding facts can preserve legal access. We compare whole-request and condition-specific review on new instructions, with a reviewer-substitution control and a fresh cohort after each method change. The accompanying artifact contains the per-request decisions underlying the claims.
+Complete mediation and fail-safe defaults place the authorization decision at the execution boundary \cite{saltzer}. CaMeL uses capabilities to control information flows in tool-using agents \cite{camel}. We focus on verifying the concrete effects of a single proposal against a confirmed grant. AuthGateBench varies user scope for a fixed action and history \cite{authgate}. DelegationBench distinguishes gaps in authority and information from reasons to refuse \cite{delegation}. SteerBench-Work studies whether to commit or hold workplace actions \cite{steerwork}. Our controlled benchmarks vary previewed effects or approval records within families of actions.
 
-\section{Prior work}
-AuthGateBench changes the user's grant while keeping a candidate action and its trajectory fixed \cite{authgate}. It enables a test of whether a model understands both permissions in a contrast pair. DelegationBench, maintained as DelegationCheck, separates missing authorization, missing information and independent grounds for refusing. Its authors also study sensitivity to elicitation format \cite{delegation}. Jev Boundary provides policy-conditioned variants, family identifiers, and a historical collection with recorded human decisions \cite{jevdata}. We preserve the native responses and report the historical collection separately.
+\section{Method}
+\paragraph{User grant and tool preview.}
+The user sees and confirms the structured grant \(g=(o,u,O,D,\ell,L,c)\). It specifies the operation \(o\), unit \(u\), permitted objects \(O\), permitted destinations \(D\), per-object limits \(\ell\), transaction limit \(L\), and optional qualitative condition \(c\). The confirmed form supplies the authority for the decision.
 
-AgentBoundary varies the apparent risk and actual permissibility of executable tasks \cite{agentboundary}. AgentDojo evaluates an agent operating on untrusted tool outputs \cite{agentdojo}. Here the candidate action is fixed and every reviewer sees the same proposal. Paired differences can therefore be attributed to changes in review behavior. The experiment does not observe task completion after intervention or the consequences of an executed action.
+Before execution, the tool produces a list \(E\) of planned effect rows \((x,d,q)\), with object \(x\), destination \(d\), and positive integer quantity \(q\) in the declared unit. Sharing resolves an audience to recipients and emits one row per new link. Inventory transfer emits one row per stock line. Refunds resolve the payment destination and report each adjustment in cents. The preview describes the proposal's effects (Fig.~\ref{fig:workflow}).
 
-Selective classification studies the relationship between risk and coverage \cite{selective}. In authorization, withholding an action can itself be the correct decision. We therefore condition on legal and non-executable actions separately and compare methods at the same release volume. CaMeL separates trusted control flow from untrusted data and enforces policies at tool calls \cite{camel}. Our reviewers make semantic judgments from the same record. Agreement alone cannot confer a capability, verify a user's identity, or enforce a policy after the review.
+\begin{figure}[tbp]\centering
+\includegraphics[width=\linewidth]{generated/effect_workflow.pdf}
+\caption{\textbf{Authorization from tool effects.} The host applies the user-confirmed grant to the tool's preview. A failed check stops execution. Passing proposals proceed directly when no qualitative condition remains. On a conditional proposal, the model must affirm both scope coverage and the applicable condition.}
+\label{fig:workflow}
+\end{figure}
 
-Lawal et al. translate natural-language access specifications into machine-interpretable policies \cite{lawal}. Wessner et al. resolve help-desk requests into structured network access policies and study intent accuracy under different knowledge-base sizes \cite{nlac}. We study a different empirical endpoint: whether a proposed tool action satisfies the translated grant, how often translation omits a restriction, and whether a second service improves a matched fact-checking decision.
-
-Model cascades can route queries among services to reduce inference cost \cite{frugal}. Work on AI control evaluates models monitoring other models under a threat of intentional subversion \cite{aicontrol}. Our selection criterion is an initial permission to execute, with no assumption about intentional subversion. The expected safety gain depends on whether the selected second opinions detect errors conditional on that permission. In access-control terms, withholding a proposal until its grant is verified implements a fail-safe default only if the host mediates the action at execution \cite{saltzer}.
-
-\section{Threat model and decision policy}
-The input \(x\) contains the user request or supplied state, the candidate operation and parameters, and a trusted policy when the dataset supplies one. Tool outputs can describe observations. They cannot grant new authority. The hazard measured here is immediate release of a proposal that the reference withholds. No attacker is required: the agent may infer a recipient or exceed a spending limit. We assume the host faithfully transmits the proposal and respects a non-execution decision. Adaptive attackers, compromised services and changes in resource state between review and execution lie outside this experiment.
-
-Write \(a_b\) for the execute-now option in benchmark \(b\). Direct Jev returns one native option using a structured API (\texttt{jev-1.14.0}) \cite{jevapi}. Direct DeepSeek uses \texttt{deepseek-flash} (documented as V4.1-Flash-1017), non-thinking mode, temperature zero and JSON output \cite{dsapi}. Its system message specifies the output format. Both services receive the same benchmark-specific question and options; neither sees the other's answer. Sample identifiers, labels, group identifiers and authoring notes stay local.
-
-\paragraph{Serial review.} Write \(J(x)\) for direct Jev and \(C(x)\) for the structured DeepSeek review. The final native decision is
+\paragraph{Policy as code.}
+The host checks the operation and unit, requires a nonempty \(E\), validates the quantity and verifies \(x\in O\) and \(d\in D\) for every row. It enforces both quantity limits,
 \[
-  F(x)=
-  \begin{cases}
-     J(x), & J(x)\ne a_b,\\
-     C(x), & J(x)=a_b .
-  \end{cases}
+     \sum_{(x',\,d,\,q)\in E\,:\,x'=x} q \leq \ell(x)\quad \forall x\in O,
+     \qquad
+     \sum_{(x,\,d,\,q)\in E} q\leq L.
 \]
-The second call receives the original record without Jev's answer or confidence. It checks the operation, object, recipient and applicable limits. If an unresolved fact would change the decision, it must name a concrete clarification and predict the native decisions under yes and no answers. It should request missing consent from the party entitled to give it. A known prohibition calls for declining the action. The host uses the current decision; hypothetical answers do not grant authorization. If Jev asks for information, requests permission or refuses, that native response is preserved. Appendix~\ref{app:protocol} contains the system instruction.
+Each occurrence counts in the sums. For example, a 100-unit grant for the same object and warehouse covers separate rows of 60 and 40 units. Rows of 60 and 50 units exceed it, and the program withholds the action before review. Passing proposals can execute directly if \(c\) is absent. When \(c\) applies, the model receives the same grant, proposal and preview together with the current records. Execution requires affirmative answers on both scope coverage and satisfaction of \(c\).
 
-\paragraph{Effect of a veto.} Let \(R_J\) and \(R_F\) denote the corresponding release sets. By construction \(R_F\subseteq R_J\). For non-executable actions \(N\), the number of Jev errors prevented is \(|(R_J\setminus R_F)\cap N|\). The same difference intersected with the legal set counts lost legitimate approvals. Neither identity requires an assumption about independence of reviewer errors.
+\paragraph{Safety property and deployment requirements.}
+Every release satisfies the structured bounds when the preview enumerates each effect faithfully and the host executes against the reviewed proposal, grant and state. This property applies to the fields represented in the preview. The qualitative decision depends on the reviewer's assessment of \(c\). A deployment must recheck or atomically bind the proposal, catalog and approvals at execution. We evaluate the decision with local simulated tools.
 
-\section{Evaluation design}
-\paragraph{Populations.} We run complete public test populations. AuthGateBench contributes 700 decisions in 350 balanced contrast pairs. We use the no-signal input representation and the project's native scope question; the optional author-generated environment signals and the paper's detailed policy-prompt condition are omitted. DelegationBench contributes 156 scenarios. All have binary references and 149 have a four-way majority among three annotators. Seven unresolved four-way cases retain their published binary non-execution reference. Jev Boundary v1.2.0 contributes 270 test records in 30 families, each with three policy regimes and three controlled variants. We exclude the 108 development records. Thus 1,126 actions receive binary scores and 1,119 receive native-category scores.
+\section{Evaluation}
+\paragraph{Cases.}
+Three project-authored benchmarks cover document sharing, inventory transfer and payment refunds. Each benchmark has 16 families of eight cases, for 128 cases and 48 legal references per benchmark. Within each family, three cases authorize execution (routine, exactly at the amount limit, and with a satisfied qualitative condition). Five ask the system to withhold execution (an extra object, an unauthorized destination, excessive combined quantity, an unsatisfied condition, and insufficient records). We vary object and recipient identifiers, scalar and combined limits, and eight qualitative record patterns, including restrictions lifted for a trial but still in effect for production. The scenario transformations determine the reference labels. The runner projects only model-visible inputs and does not send family IDs or reference metadata. The artifact provides the input generator and fixed presets. We froze the policy and the evaluation protocol before eliciting predictions.
 
-\paragraph{Endpoints.} Define \(D\) as the records with native reference \texttt{deny} or \texttt{REFUSE}. Explicit prohibition is our label-supported proxy for danger. Realized harm severity is unobserved. Define \(N\) as all requests that should not execute now, including \(D\), unconfirmed permissions and missing facts. Define \(L\) as the actions allowed now. The primary sets contain \(|D|=37\), \(|N|=592\) and \(|L|=534\). AuthGateBench's binary blocks do not identify absolute prohibitions. DelegationBench contributes one refusal and Jev Boundary contributes 36 prohibitions across 11 families. We display absent classes as undefined.
+We then froze an expansion of 48 new ten-case families per benchmark before inference. Its 1,440 requests use family identifiers and request texts absent from the initial cohort. The expansion includes multiple objects, split line items, asymmetric limits and independent violations of per-object and transaction ceilings. It also tests 16 approval patterns, with affirmative records tied to the correct source, effective period and operation. Each family includes three legal cases and seven non-execution cases. We reuse the models, prompts, routing and score definitions. We report the two cohorts separately because their case distributions differ.
 
-For release indicator \(r_i\), prohibited-action stop recall is \(1-\sum_{i\in D} r_i/|D|\). Both a hold and a refusal stop immediate execution. The explicit refusal rate on \(D\) counts only a refusal. Additional endpoints are false releases on \(N\), legal release rate \(\sum_{i\in L} r_i/|L|\), binary agreement and exact native agreement. A method that always withholds has perfect stop recall and zero legal releases.
+\paragraph{Matched comparisons.}
+All four policies see the same state and tool preview. Direct DeepSeek predicts execute or withhold in a single call. Jev only uses the two review questions in all cases. Verifier plus Jev applies the program and consults Jev on the cases with passing structured checks and a qualitative condition. Verifier plus DeepSeek uses the same program, review cases and questions as the Jev version. The Jev call on a reviewed request is shared between the Jev-only and verifier-plus-Jev policies, so their comparison changes only the program's effect on the decision. We use \texttt{deepseek-flash} in non-thinking JSON mode at temperature zero and \texttt{jev-1.14.0} with fixed-choice outputs \cite{dsapi,jevapi}.
 
-\paragraph{Uncertainty and controls.} Differences are paired by request. We resample families within each benchmark with replacement: 350 AuthGate pairs, 26 Delegation families and 30 Boundary families per draw. All members of each selected family and all methods travel together; a family drawn twice contributes twice. We recompute pooled ratios across 10,000 draws (seed 20261123) and report percentile intervals for paired differences. The exhaustive corpus counts themselves have no sampling error. These intervals describe sensitivity to the empirical family mix, not deployment risk or repeat-call variability.
+\paragraph{Endpoints.}
+For benchmark \(b\), let \(L_b\) count legal requests, \(N_b\) count requests that should be withheld, \(A_b\) count correctly released legal requests, and \(F_b\) count false releases. We report accuracy, both error directions, and the normalized probability
+\[
+    S=\frac{1}{B}\sum_{b=1}^{B} S_b,
+    \qquad S_b=\frac12\left(\frac{A_b}{L_b}+1-\frac{F_b}{N_b}\right).
+\]
+This is the empirical chance of a correct decision under uniform sampling over benchmarks, then over the two reference classes, then over observations in that class. It is a benchmark-level performance measure. A method that always withholds scores 0.5. We prespecified higher legal-release counts with no increase in false-release counts in any benchmark relative to direct DeepSeek. We also count newly introduced and prevented false releases separately. We estimate percentile intervals for paired score changes using 5,000 family-level resamples, independently within each benchmark. Each draw keeps every variant and policy for a sampled family together.
 
-Three comparisons distinguish informative review from more frequent withholding. (i) An intersection of the two direct decisions removes the structured review prompt. (ii) Within each dataset we retain exactly as many Jev approvals as the cascade, ranking by Jev's probability for the execute option. A fixed label-blind shuffle breaks ties. The matched volume is retrospective; this control supplies no deployable threshold. (iii) Uniform thinning of Jev approvals to that volume gives an expected number of false releases under indiscriminate withholding. References never determine which approvals a control keeps.
+Time is the sum of serial API time required for each decision, including any retries. Locally decided requests contribute zero API time. Usage-based fees use recorded input and output tokens, cache status and the provider time band where applicable. We report fees per policy and count shared calls once when reporting the cost of running the experiment.
 
-\paragraph{Reuse and supplementary cohorts.} All primary model-visible states occur in earlier project input manifests. Inference was rerun for every primary record. We treat this as a public-corpus census after method development. Two additional populations have different references: 96 explicit-policy delegation cases and 150 historical Jev records. Respectively 46 and 100 of their states had no exact match in earlier manifests. A new numerical challenge tests a specific failure mechanism after the public census (Section~\ref{sec:diagnostics}).
+\section{Results}
+\subsection{Initial cohort}
 
-\input{results}
-\input{natural}
-\input{native}
-\input{discussion}
+\paragraph{Legal access and false releases.}
+Verifier plus Jev gained \EffectLegalGain{} legal releases and lost none relative to direct DeepSeek. It prevented \EffectPreventedFalse{} false releases and introduced \EffectNewFalse{} (Table~\ref{tab:paired}). False-release counts fell or stayed constant within each benchmark (Table~\ref{tab:rates}). The equal-weight score increased from \EffectDirectScore{} to \EffectJointScore{}, a difference of 15.07 percentage points (95\% paired family-resampling interval 12.64 to 17.71).
+
+\paragraph{Contribution of the program.}
+Compared with Jev alone, the verifier intercepted 26 excessive-quantity proposals and one proposed action on an unauthorized object. Both methods released all 144 legal requests. The program directly allowed 96 unconditional requests and withheld 144 structured violations. This left 144 proposals for review, reducing the number of Jev calls by 62.5\%. Mean API latency fell from 2.348 to \EffectJointTime{} seconds per request. Local verification took \EffectLocalTime{} microseconds on average.
+
+\begin{table}[!htb]\centering\small
+\setlength{\tabcolsep}{5pt}
+\caption{Authorization results and resource use. \(S_b\) weights the two reference classes equally. The overall score \(S\) weights the three benchmarks equally. Accuracy is unweighted within the reported population. Time is mean serial API seconds per request.}
+\label{tab:rates}
+\begin{tabular}{@{}llrrrrrr@{}}\toprule
+Benchmark & Method & Score & Acc.\ (\%) & Legal & False & s & CNY \\ \midrule
+\tablerows{generated/effect_scores.tex}
+\bottomrule\end{tabular}
+\end{table}
+
+\paragraph{Contribution of the reviewer.}
+Both reviewers released all 48 conditionally authorized actions. Their decisions differed on two inventory transfers. Jev accepted the end of a trial restriction even though the corresponding production restriction remained active. DeepSeek withheld both on the same inputs, giving zero observed false releases for the complete policy. The estimated fees were CNY 0.1173 for verifier plus DeepSeek and CNY \EffectJointFee{} for verifier plus Jev. The corresponding mean API times were 0.282 and \EffectJointTime{} seconds. The experiment used \EffectStudyCalls{} distinct API calls at an estimated CNY \EffectStudyCost{}.
+
+\begin{table}[!htb]\centering\small
+\caption{Paired changes for verifier plus Jev relative to each comparator on the same 384 requests. Gains and losses count individual changes in legal releases. The last column is the 95\% family-resampling interval for the score difference, in percentage points.}
+\label{tab:paired}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Comparator & Legal gains & Legal losses & New false & Stopped false & 95\% interval \\ \midrule
+\tablerows{generated/effect_paired.tex}
+\bottomrule\end{tabular}
+\end{table}
+
+\input{expansion}
+\FloatBarrier
+
+\section{Discussion}
+The main gain persisted when proposals included multiple objects, split quantities and separate limits. The expansion shifted the remaining errors toward approval provenance. An affirmative record from a person or register outside the user's stated authority often passed Jev review. DeepSeek withheld more of these cases and more genuinely approved cases as well. Paired reporting reveals new failures even for the configuration with the lowest overall false-release count.
+
+The benchmark design controls grant structure and preview fidelity, which makes the two component comparisons interpretable. Each domain uses a finite set of authored variants, with execution labels determined by construction. The resulting rates describe structured grants and simulated tools. Live integrations add uncertainty about whether the preview fully captures the actual effects, and free-form grants add uncertainty about the authority encoded in the form. The family intervals describe sensitivity to the observed scenario mix. Each policy was evaluated once per request.
+
+\section{Conclusion}
+Tool effect previews let a host verify categorical restrictions and quantity limits before execution. The program preserved legal access relative to Jev alone and prevented excess quantities in both cohorts. The expanded comparison also showed that benchmark-level safety depends on which model reviews conditional approvals. A deployment must preserve the integrity of the preview and the identities behind approval records.
+
+\paragraph{Artifact availability.}
+The companion archive contains the benchmark generator, policy, fixed questions, per-case decisions, token receipts, and sources for the analysis, figures and manuscript. The published tables and figures are reproducible offline. The experiment used simulated tool outputs and assessed fixed proposals without executing them.
+
+\FloatBarrier
 \bibliographystyle{plain}
 \bibliography{references}
-\input{appendix}
 \end{document}

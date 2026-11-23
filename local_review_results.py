@@ -249,12 +249,12 @@ def render():
         )
     return (
         '<article id="local-review"><h2>RTX 5070 Laptop 上的权限判断</h2><p>在同一台 8 GB 显存的笔记本上，分别测试纯本地判断和本地模型接替 Jev 复核。后者沿用上一轮的 DeepSeek 提取和程序检查，只替换 883 条请求的复核模型。原三个评测占 813 条，SteerBench-Work 占 70 条。评分使用冻结后的决定，候选工具均未执行。</p>'
-        + '<p><strong>两款模型都能在这台显卡上部署。本次设置下，两者接替 Jev 后都降低了权限判断准确率。</strong>在原三个评测上，Granite 复核后暂缓全部请求。AgentDecision 比 Jev 多放行 41 条合法请求，也多放行 198 条应阻止请求，其中有 1 条明确禁止。外部 SteerBench-Work 上，Jev 误放行 0/50 条，换成 AgentDecision 后为 18/50 条。</p>'
+        + "<p><strong>两款模型都能在这台显卡上部署。本次设置下，两者接替 Jev 后都降低了权限判断准确率。</strong>在原三个评测上，Granite 复核后暂缓全部请求。AgentDecision 比 Jev 多放行 41 条合法请求，也多放行 198 条应阻止请求，其中有 1 条明确禁止。外部 SteerBench-Work 上，Jev 误放行 0/50 条，换成 AgentDecision 后为 18/50 条。</p>"
         + '<div class="nl-scroll">'
         + tab([r for r in scores if r["dataset"] == "pooled"])
         + "</div>"
         + "".join(blocks)
-        + '<details><summary>独立办公请求检查</summary><p>评分完成后另写了 8 对简单请求，分别只改变房间、人数、收件人等一个参数。16 条中有 8 条明确授权、8 条明确禁止。AgentDecision 在原选项顺序和交换放行、暂缓顺序时均答对 16/16。Granite 对 16 条均报告风险，答对 8/16。使用 IBM 默认风险定义测试询问图书馆开门时间时，它正常返回无风险。这组诊断使用独立样本，未计入上表。</p></details>'
+        + "<details><summary>独立办公请求检查</summary><p>评分完成后另写了 8 对简单请求，分别只改变房间、人数、收件人等一个参数。16 条中有 8 条明确授权、8 条明确禁止。AgentDecision 在原选项顺序和交换放行、暂缓顺序时均答对 16/16。Granite 对 16 条均报告风险，答对 8/16。使用 IBM 默认风险定义测试询问图书馆开门时间时，它正常返回无风险。这组诊断使用独立样本，未计入上表。</p></details>"
         + '<h3>本地推理用时与显存</h3><div class="nl-scroll">'
         + table(
             (
@@ -274,15 +274,26 @@ def render():
     )
 
 
+def write_local_page():
+    next_report = DEST.parent / "permission_heads" / "本地授权模型优化实验.html"
+    link = (
+        '<nav><a href="../permission_heads/本地授权模型优化实验.html">查看 AgentDecision-4B 训练后的权限评测</a></nav>'
+        if next_report.exists()
+        else ""
+    )
+    (DEST / "本地小模型权限评测.html").write_text(
+        '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTX 5070 Laptop 权限评测</title>'
+        "<style>body{max-width:1170px;padding:16px;margin:20px auto;font:16px/1.6 system-ui,sans-serif;color:#203b40}h2,h3{line-height:1.3}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:7px;text-align:left;border-bottom:1px solid #ccdad9}th{background:#eaf2f1}summary{cursor:pointer;font-weight:600;padding:8px 0}.nl-scroll{max-width:100%;overflow-x:auto}a{color:#12635a}</style></head><body><main>"
+        + link
+        + render()
+        + "</main></body></html>",
+        encoding="utf8",
+    )
+
+
 if __name__ == "__main__":
     data = collect()
     write("decisions.csv", data)
     write("scores.csv", summarize(data))
     write("paired.csv", joined(data))
-    (DEST / "本地小模型权限评测.html").write_text(
-        '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTX 5070 Laptop 权限评测</title>'
-        "<style>body{max-width:1170px;padding:16px;margin:20px auto;font:16px/1.6 system-ui,sans-serif;color:#203b40}h2,h3{line-height:1.3}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:7px;text-align:left;border-bottom:1px solid #ccdad9}th{background:#eaf2f1}summary{cursor:pointer;font-weight:600;padding:8px 0}.nl-scroll{max-width:100%;overflow-x:auto}a{color:#12635a}</style></head><body><main>"
-        + render()
-        + "</main></body></html>",
-        encoding="utf8",
-    )
+    write_local_page()

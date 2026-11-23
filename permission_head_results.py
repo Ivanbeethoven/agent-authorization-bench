@@ -53,10 +53,13 @@ def predict(splits):
             for k, group, (a, b, c) in zip(keys, groups, info)
         ]
         valid = np.array([v[0] != "unrepresentable" for v in info])
+        timing = {}
         for name, item in spec.items():
+            begin = time.perf_counter()
             values = scores(x, weights[name], item["bias"])
+            timing[name] = (time.perf_counter() - begin) / len(x)
             for i, r in enumerate(results):
-                r[name + "_score"] = format(values[i], ".12g") if valid[i] else ""
+                r[name + "_score"] = format(values[i], ".17g") if valid[i] else ""
             for policy, cut in item["cuts"].items():
                 pred = valid & (values >= cut)
                 for r, yes in zip(results, pred):
@@ -70,6 +73,7 @@ def predict(splits):
                         "split": split,
                         "n": len(keys),
                         "readout_seconds": elapsed,
+                        "batch_scoring_seconds_per_case": timing,
                         "completed_utc": datetime.now(UTC).isoformat(),
                     }
                 ),
@@ -130,6 +134,12 @@ def assemble():
 
     public = index(predictions["public"])
     routed = index(predictions["routed"])
+    with (OUT / "prediction_runs.jsonl").open(encoding="utf8") as f:
+        timings = {
+            r["split"]: r["batch_scoring_seconds_per_case"]
+            for line in f
+            if (r := json.loads(line))
+        }
     gold = external_gold()
     past = read_csv(ARCHIVE / "decisions.csv")
     old = defaultdict(dict)
@@ -201,7 +211,7 @@ def assemble():
                 ref,
                 danger,
                 ps[arm],
-                ps["feature_seconds"],
+                float(ps["feature_seconds"]) + timings["public"][arm.split("_")[0]],
                 0,
                 ps["coverage"],
             )
@@ -210,7 +220,9 @@ def assemble():
             if key in routed:
                 answer = routed[key]
                 allow = answer[arm]
-                seconds += float(answer["feature_seconds"])
+                seconds += (
+                    float(answer["feature_seconds"]) + timings["routed"]["paired"]
+                )
                 coverage = answer["coverage"]
             else:
                 allow = base["allow"]
@@ -269,7 +281,7 @@ def assemble():
                     ref,
                     danger,
                     ps[arm],
-                    ps["feature_seconds"],
+                    float(ps["feature_seconds"]) + timings[split][arm.split("_")[0]],
                     0,
                     ps["coverage"],
                 )
@@ -311,13 +323,15 @@ def summarize(data):
                 "hold": int(sum(1 - y)),
                 "false_allow": int((a * (1 - y)).sum()),
                 "hold_recall": round(float((1 - a[y == 0]).mean()), 6)
-                if np.any(y == 0) else "",
+                if np.any(y == 0)
+                else "",
                 "severe": len(danger) if rows[0][5] is not None else "",
                 "severe_allow": sum(r[6] for r in danger)
                 if rows[0][5] is not None
                 else "",
                 "severe_recall": round(1 - sum(r[6] for r in danger) / len(danger), 6)
-                if danger else "",
+                if danger
+                else "",
                 "mean_s": round(times.mean(), 5),
                 "p95_s": round(np.quantile(times, 0.95, method="higher"), 5),
                 "api_cny": str(sum((r[8] for r in rows), Decimal())),

@@ -22,6 +22,7 @@ from strategy_selection import select_strategies
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 OUTPUT = RESULTS / "Agent权限管理研究总报告.html"
+EXPANDED = (RESULTS / "effect_expansion/scores.csv").is_file()
 BENCH = {
     "jev": "Jev Boundary",
     "authgate": "AuthGateBench",
@@ -37,6 +38,8 @@ BENCH = {
 }
 MODELS = {"jev": "Jev", "deepseek": "DeepSeek", "aliyun": "百炼 Decision"}
 PHASES = {
+    "effects_direct": "工具预览 · 直接判断",
+    "effects_review": "工具预览 · 授权复核",
     "pilot": "11 项直接判断",
     "review": "提示与复审对照",
     "risk": "风险决策树",
@@ -63,6 +66,7 @@ PHASES = {
     "numeric_permission_review": "数值边界放行复核",
 }
 STAGE_GROUPS = {
+    "工具预览与程序核验": ("effects_direct", "effects_review"),
     "三模型直接判断": ("pilot",),
     "提示与风险决策树": ("review", "risk", "coverage"),
     "授权条件与双模型确认": ("conditions", "confirmation"),
@@ -109,6 +113,15 @@ for prefix, cohort, stages in (
         {study: f"{cohort} · {labels[stage]}" for study, stage in zip(studies, stages)}
     )
     STAGE_GROUPS[cohort] = studies
+if EXPANDED:
+    PHASES.update(
+        effects_expanded_direct="工具预览扩测 · 直接判断",
+        effects_expanded_review="工具预览扩测 · 授权复核",
+    )
+    STAGE_GROUPS["工具预览扩测"] = (
+        "effects_expanded_direct",
+        "effects_expanded_review",
+    )
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
     "new_boundary": "Jev Boundary · 新家族",
@@ -141,10 +154,13 @@ def inputs():
         "natural_permissions/scope_confirmation/provider_usage.csv",
         "public_transfer/provider_usage.csv",
         "native_permissions/provider_usage.csv",
+        "effect_permissions/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
     )
+    if EXPANDED:
+        ledgers.append("effect_expansion/provider_usage.csv")
     usage = [r for file in ledgers for r in read(file)]
     if (
         len({(r["study"], r["provider"]) for r in usage}) != len(usage)
@@ -381,11 +397,47 @@ def efficiency_groups(history, boards, selection):
                 for r in rows
             ],
         }
+    from effect_display import METHODS as effect_methods
+    from effect_display import NAMES as effect_names
     from native_results import METHODS as native_methods
     from native_results import NAMES as native_names
+
+    effect_cohorts = [("effects_", "effect_permissions", "工具预览首轮")]
+    if EXPANDED:
+        effect_cohorts.insert(
+            0, ("effects_expanded_", "effect_expansion", "工具预览扩测")
+        )
+    for prefix, folder, title in effect_cohorts:
+        effect_rows = read(f"{folder}/scores.csv")
+        for key, name in effect_names.items():
+            rows = [r for r in effect_rows if r["dataset"] == key]
+            groups[prefix + key] = {
+                "label": f"{title} · {name} · {rows[0]['n']} 条",
+                "points": [
+                    point(effect_methods[r["method"]], r["correct"], r["n"], r["cny"])
+                    for r in rows
+                ],
+            }
     from public_transfer import NAMES as transfer_names
 
+    local_scores = (
+        read("local_review/scores.csv")
+        if (RESULTS / "local_review/scores.csv").is_file()
+        else []
+    )
+    if local_scores:
+        from local_review_results import ARMS as local_arms
+
     for k, dataset in native_names.items():
+        local_rows = [r for r in local_scores if r["dataset"] == k]
+        if local_rows:
+            groups["local_" + k] = {
+                "label": f"RTX 5070 Laptop · {dataset} · {local_rows[0]['n']} 条",
+                "points": [
+                    point(local_arms[r["arm"]], r["correct"], r["n"], r["api_cny"])
+                    for r in local_rows
+                ],
+            }
         rows = [r for r in read("native_permissions/scores.csv") if r["dataset"] == k]
         groups["native_" + k] = {
             "label": f"原始工具与授权范围 · {dataset} · {rows[0]['n']} 条",
@@ -463,6 +515,15 @@ def efficiency_groups(history, boards, selection):
 def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
+        "程序核验＋Jev": "#117563",
+        "程序核验＋DeepSeek": "#a45b16",
+        "纯 Jev（去掉程序核验）": "#8a5793",
+        "纯 Granite Guardian 3.2": "#8d5b31",
+        "纯 AgentDecision-4B": "#854d82",
+        "DeepSeek＋Granite Guardian 3.2": "#b66d2c",
+        "DeepSeek＋AgentDecision-4B": "#7a509b",
+        "DeepSeek＋Jev": "#117563",
+        "DeepSeek＋DeepSeek": "#456777",
         "DeepSeek＋程序＋Jev": "#117563",
         "DeepSeek＋程序＋DeepSeek": "#a45b16",
         "纯 Jev": "#594787",
@@ -651,6 +712,7 @@ def build(audit_dir=None):
     settings()
     if audit_dir:
         audit_dir.mkdir(parents=True, exist_ok=True)
+    from effect_display import headline as effect_headline
     from native_display import headline
 
     history, usage, boards, stages, selection = inputs()
@@ -718,6 +780,7 @@ def build(audit_dir=None):
         },
         "sources": sources,
         "native_summary": headline(),
+        "effect_summary": effect_headline(expanded=EXPANDED),
     }
     template = (ROOT / "scripts/overview_report.html").read_text("utf8")
     if template.count("__OVERVIEW_DATA__") != 1:

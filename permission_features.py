@@ -47,10 +47,9 @@ def render(template, state):
 
 def bounded(template, state, base):
     views = render(template, state)
-    longest = max(views, key=len)
 
     def fits():
-        if len(longest.encode()) <= 3900:
+        if max(len(view.encode()) for view in views) + 1 <= 3900:
             return True
         lengths = [
             len(
@@ -75,7 +74,6 @@ def bounded(template, state, base):
             "end": observed[-size // 2 :] if size else "",
         }
         views = render(template, {**state, "observations": excerpt})
-        longest = max(views, key=len)
         if fits():
             return views, "observations_shortened"
     return [], "unrepresentable"

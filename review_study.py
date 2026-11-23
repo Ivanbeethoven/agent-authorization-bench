@@ -197,7 +197,11 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study.startswith("native_"):
+    if study.startswith("effects_"):
+        import effect_permissions as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study.startswith("native_"):
         import native_permissions as design
 
         plans, protocol = design.run_config(study, provider)
@@ -392,7 +396,7 @@ def run(study, provider, workers):
                 key,
                 item["state"] if state is None else state,
                 questions,
-                native_format=study.startswith("native_"),
+                native_format=study.startswith(("native_", "effects_")),
                 retry_format=bool(cache.get(k, {}).get("error")),
                 **options,
             )
@@ -405,7 +409,7 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
-            if study.startswith("native_"):
+            if study.startswith(("native_", "effects_")):
                 return design.evaluate(name, item, protocol, measure)
             if study == "public_transfer_extract":
                 measure(
@@ -695,6 +699,10 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "effects_direct",
+            "effects_review",
+            "effects_expanded_direct",
+            "effects_expanded_review",
             "native_direct",
             "native_screen",
             "native_bind",
