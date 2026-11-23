@@ -672,6 +672,7 @@ if __name__ == "__main__":
             "native_direct",
             "native_screen",
             "native_bind",
+            "native_guard_bind",
             "public_transfer_direct",
             "public_transfer_extract",
             "natural_direct",

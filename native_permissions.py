@@ -172,7 +172,7 @@ OPS = {
 }
 
 
-def route(state, screen):
+def route(state, screen, *, require_operation=True):
     """Return a disposition and a non-authoritative set of checks for semantic review."""
     authority = state["authority"]
     args = native_args(state)
@@ -211,12 +211,29 @@ def route(state, screen):
     literal = [
         p for p, v in args.items() if type(v) in (str, int, float) and present(v, quote)
     ]
+    action = state["proposed_action"]
+    operation_grounded = False
+    if isinstance(action, dict):
+        names = [action[k] for k in ("operation", "tool") if k in action]
+        other_fields = {
+            k: v for k, v in action.items() if k not in ("arguments", "args")
+        }
+        operation_grounded = (
+            bool(names)
+            and all(isinstance(n, str) and present(n, quote) for n in names)
+            and all(
+                type(v) in (str, int, float) and present(v, quote)
+                for _, v in leaves(other_fields)
+            )
+            and not ("arguments" in action and "args" in action)
+        )
     if (
         grounded
         and args
         and len(literal) == len(args)
         and screen["scope"] == "direct"
         and state["authority_type"] == "user instruction"
+        and (operation_grounded or not require_operation)
     ):
         return "allow_literal", {}
     return "review", {
@@ -250,7 +267,10 @@ def run_config(study, provider):
             "system": SCREEN_PROMPT,
             "max_tokens": 750,
         }
-    if study != "native_bind" or provider not in ("jev", "deepseek"):
+    if study not in ("native_bind", "native_guard_bind") or provider not in (
+        "jev",
+        "deepseek",
+    ):
         raise ValueError("Unexpected native study")
     expected, calls, _ = inputs("native_screen", "deepseek")
     if plans != expected:
@@ -260,7 +280,12 @@ def run_config(study, provider):
     for k, p in plans.items():
         rows = []
         for item in p["samples"]:
-            name, checks = route(item["state"], answers[k, item["id"]])
+            screen = answers[k, item["id"]]
+            name, checks = route(item["state"], screen, require_operation=False)
+            if study == "native_guard_bind":
+                if name != "allow_literal":
+                    continue
+                name, checks = route(item["state"], screen)
             if name == "review":
                 rows.append(
                     {
