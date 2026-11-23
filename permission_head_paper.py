@@ -40,7 +40,7 @@ def render():
         for r in read_csv(source / "paired.csv")
     }
     intervals = {(r["arm"], r["metric"]): r for r in read_csv(source / "intervals.csv")}
-    direct, joined = s["pooled", MAIN], s["pooled", "cascade_" + MAIN]
+    joined = s["pooled", "cascade_" + MAIN]
     comp = s["pooled", "joint"]
     diff = p["pooled", "cascade_" + MAIN, "joint"]
     delta_ci = intervals[MAIN, "accuracy"]
@@ -103,19 +103,60 @@ def render():
             )
         )
     tab.extend([r"\bottomrule\end{tabular}", r"\end{table}"])
-    raw = s["pooled", "agentdecision_direct"]
+    local_changes = p["pooled", MAIN, "agentdecision_direct"]
+    primary_rows = []
+    for key, title in (
+        ("agentdecision_direct", "AgentDecision-4B"),
+        (MAIN, "Trained local classifier"),
+        ("direct", "DeepSeek"),
+        ("joint", "DeepSeek + program + Jev"),
+        ("cascade_" + MAIN, "DeepSeek + program + local"),
+    ):
+        row = s["pooled", key]
+        primary_rows.append(line([
+            title, acc(row), row["legal_allow"], row["false_allow"], row["severe_allow"],
+            f"{float(row['mean_s']):.2f}", f"{float(row['api_cny']):.2f}",
+        ]))
+    primary_text = (
+        f"The trained local model prevented {local_changes['prevented_false']} false releases made by the "
+        f"original model and introduced {local_changes['new_false']}. It also withheld "
+        f"{local_changes['legal_loss']} authorized actions that the original released. Its accuracy increased "
+        f"by {100*(int(s['pooled',MAIN]['correct'])-int(s['pooled','agentdecision_direct']['correct']))/int(joined['n']):.1f} "
+        f"percentage points (95\\% paired family-bootstrap interval {float(delta_ci['low_pp']):.1f} to "
+        f"{float(delta_ci['high_pp']):.1f}). Direct DeepSeek made fewer false releases than either local model "
+        "(Table~\\ref{tab:local-primary})."
+    )
+    replacement = (
+        f"Replacing Jev in the pipeline {('met' if criterion else 'missed')} the prespecified criterion. "
+        f"On matched requests, the substitution gained {diff['legal_gain']} authorized releases and lost "
+        f"{diff['legal_loss']}, introduced {diff['new_false']} false releases and prevented {diff['prevented_false']}. "
+        f"Both pipelines withheld all {comp['severe']} explicitly prohibited cases. For the broader set of "
+        "non-executable requests, which also includes missing authorization or information, the two reviewers "
+        "differed substantially."
+    )
+    primary_table = [
+        r"\begin{table}[!htbp]\centering\small\setlength{\tabcolsep}{4pt}",
+        r"\caption{Decisions on the same 1,126 public requests. Authorized releases are out of 534. False releases are out of 592 cases requiring withholding, including 37 explicitly prohibited cases. Seconds are mean recorded time per request. CNY gives the estimated fee for all 1,126 requests on each path, including the archived upstream calls. Local hardware and electricity are excluded.}",
+        r"\label{tab:local-primary}\begin{tabular}{@{}lrrrrrr@{}}\toprule",
+        r"Method & Acc.\ (\%) & Authorized & False & Prohibited & s & CNY \\ \midrule",
+        *primary_rows, r"\bottomrule\end{tabular}\end{table}",
+    ]
+    generated = ROOT / "paper/generated"
+    (generated / "local_primary_results.tex").write_text(
+        "\n\n".join((primary_text, "\n".join(primary_table), replacement)) + "\n", encoding="utf8"
+    )
     z = s["pooled", "paired_zero"]
     single, dual = s["pooled", "single_risk02"], s["pooled", "dual_risk02"]
     cal = json.loads((source / "training.json").read_text("utf8"))["heads"]["paired"][
         "calibration_counts"
     ]["risk02"]
     first = (
-        f"On the three primary corpora, the trained local classifier released {pair(direct, 'legal_allow', 'legal')} authorized "
-        f"actions and {pair(direct, 'false_allow', 'hold')} non-executable actions. The original model released "
-        f"{raw['legal_allow']} and {raw['false_allow']}, respectively. Accuracy changed from {acc(raw)} to {acc(direct)}\\% "
-        f"(95\\% paired, corpus-stratified family bootstrap interval for the difference, {delta_ci['low_pp']} to "
-        f"{delta_ci['high_pp']} percentage points, 5,000 draws). On calibration data the trained classifier released "
-        f"{cal['false_allow']}/576 negatives. Table~\\ref{{tab:readout-transfer}} reports transfer by corpus."
+        f"The selected threshold released {cal['false_allow']}/576 calibration negatives. The 10,130 evaluation "
+        "records comprise 1,126 primary authorization requests, 106 SteerBench-Work requests, "
+        "1,536 held-out office requests, 180 XAAB scenarios and 7,182 TS-Bench steps. The office challenge changes "
+        "domains and wording within the same generator. XAAB evaluates a static restriction policy "
+        "\\cite{xaab}. TS-Bench labels tool safety, and several steps can come from one trajectory "
+        "\\cite{toolsafe}. Table~\\ref{tab:readout-transfer} reports each population separately."
     )
     delegation = next(
         r
@@ -124,36 +165,23 @@ def render():
         and r["reference"] == "ASK_AUTHORIZATION"
         and r["arm"] == MAIN
     )
-    first += (
-        f" One prominent error persisted: the classifier released {delegation['allow']} of the "
-        f"{delegation['n']} DelegationBench actions labeled as requiring further authorization."
-    )
     second = (
-        f"The local replacement in the DeepSeek pipeline {'met' if criterion else 'missed'} the prespecified criterion. Relative "
-        f"to Jev it gained {diff['legal_gain']} and lost {diff['legal_loss']} authorized releases, introduced {diff['new_false']} "
-        f"and prevented {diff['prevented_false']} false releases, and newly released {diff['new_severe']} explicitly prohibited actions. "
-        f"The local and Jev pipelines respectively released {pair(joined, 'severe_allow', 'severe')} and "
-        f"{pair(comp, 'severe_allow', 'severe')} explicitly prohibited actions. Their mean per-request path times were "
-        f"{float(joined['mean_s']):.2f} and {float(comp['mean_s']):.2f} seconds. Metered costs for the primary cohort "
-        f"were CNY {float(joined['api_cny']):.2f} and {float(comp['api_cny']):.2f}, including the archived upstream calls. "
-        "Local inference incurred no API charge."
+        f"On DelegationBench, the classifier released {delegation['allow']}/{delegation['n']} requests "
+        "that explicitly required further authorization. On XAAB it withheld every permitted action "
+        f"({s['xaab', MAIN]['legal']} cases) and released {s['xaab', MAIN]['false_allow']} restricted action. "
+        "These two error profiles would require different changes to the release rule."
     )
     third = (
         f"The single-question and two-question logistic controls respectively released {single['legal_allow']} and "
         f"{dual['legal_allow']} authorized requests, with {single['false_allow']} and {dual['false_allow']} false releases on "
         f"the three primary corpora. Requiring zero false releases on calibration data yielded {z['legal_allow']} authorized and "
-        f"{z['false_allow']} false releases there. The full experiment covered 10,130 evaluation records. The office challenge "
-        "uses held-out domains and grant wording from the same generator. XAAB supplies static restrictions and prior "
-        "actions \\cite{xaab}. TS-Bench labels tool safety at the step level \\cite{toolsafe}. These tasks have different "
-        "targets. The four established authorization corpora had been examined in earlier project experiments."
+        f"{z['false_allow']} false releases on the primary corpora."
     )
     original_cut = s["pooled", "original_risk02"]
-    xaab = s["xaab", MAIN]
     third += (
         f" Calibrating the original output weights alone produced {original_cut['false_allow']} false and "
-        f"{original_cut['legal_allow']} authorized releases on the primary corpora. On XAAB, the trained "
-        f"classifier released {xaab['legal_allow']}/{xaab['legal']} permitted actions and "
-        f"{xaab['false_allow']}/{xaab['hold']} restricted actions. Its accuracy there largely reflects the prevalence of restricted actions."
+        f"{original_cut['legal_allow']} authorized releases on the same requests. The stricter settings "
+        "traded authorized access for fewer false releases on this population."
     )
     dest = ROOT / "paper/generated/local_readout_findings.tex"
     dest.write_text(

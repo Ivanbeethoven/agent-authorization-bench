@@ -1,0 +1,14 @@
+The trained local model prevented 210 false releases made by the original model and introduced 3. It also withheld 149 authorized actions that the original released. Its accuracy increased by 5.2 percentage points (95\% paired family-bootstrap interval 2.4 to 7.9). Direct DeepSeek made fewer false releases than either local model (Table~\ref{tab:local-primary}).
+
+\begin{table}[!htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Decisions on the same 1,126 public requests. Authorized releases are out of 534. False releases are out of 592 cases requiring withholding, including 37 explicitly prohibited cases. Seconds are mean recorded time per request. CNY gives the estimated fee for all 1,126 requests on each path, including the archived upstream calls. Local hardware and electricity are excluded.}
+\label{tab:local-primary}\begin{tabular}{@{}lrrrrrr@{}}\toprule
+Method & Acc.\ (\%) & Authorized & False & Prohibited & s & CNY \\ \midrule
+AgentDecision-4B & 61.2 & 519 & 422 & 1 & 0.35 & 0.00 \\
+Trained local classifier & 66.3 & 370 & 215 & 0 & 1.39 & 0.00 \\
+DeepSeek & 74.9 & 327 & 76 & 0 & 0.87 & 1.11 \\
+DeepSeek + program + Jev & 80.0 & 411 & 102 & 0 & 16.72 & 10.28 \\
+DeepSeek + program + local & 66.7 & 362 & 203 & 0 & 15.77 & 10.02 \\
+\bottomrule\end{tabular}\end{table}
+
+Replacing Jev in the pipeline missed the prespecified criterion. On matched requests, the substitution gained 36 authorized releases and lost 85, introduced 114 false releases and prevented 13. Both pipelines withheld all 37 explicitly prohibited cases. For the broader set of non-executable requests, which also includes missing authorization or information, the two reviewers differed substantially.

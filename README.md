@@ -1,5 +1,7 @@
 # Agent 权限与隐私决策评测
 
+[研究交接提示词](研究交接提示词.txt) · [论文 PDF](paper/authorization-review.pdf) · [离线论文源码与数据表](results/authorization-review-source.zip) · [各项评测的样本覆盖范围](BENCHMARK_COVERAGE.md)
+
 [RTX 5070 Laptop 上的授权分类器实验](paper/source_data/local_reviewer/本地授权模型优化实验.html) · [按评测拆分的结果](paper/source_data/local_reviewer/scores.csv) · [训练与校准方法](PERMISSION_HEADS.md)
 
 ## 本地部署与分类头训练
