@@ -701,6 +701,8 @@ if __name__ == "__main__":
         choices=[
             "effects_direct",
             "effects_review",
+            "effects_expanded_direct",
+            "effects_expanded_review",
             "native_direct",
             "native_screen",
             "native_bind",
