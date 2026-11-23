@@ -185,7 +185,11 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study in ("public_transfer_direct", "public_transfer_extract"):
+    if study.startswith("native_"):
+        import native_permissions as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study in ("public_transfer_direct", "public_transfer_extract"):
         import public_transfer as design
 
         plans, protocol = design.run_config(study, provider)
@@ -375,6 +379,8 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study.startswith("native_"):
+                return design.evaluate(name, item, protocol, measure)
             if study == "public_transfer_extract":
                 measure(
                     name,
@@ -663,6 +669,9 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "native_direct",
+            "native_screen",
+            "native_bind",
             "public_transfer_direct",
             "public_transfer_extract",
             "natural_direct",
