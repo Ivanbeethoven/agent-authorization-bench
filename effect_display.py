@@ -48,20 +48,77 @@ def headline():
     )
 
 
+def outcome_charts(s):
+    panels = []
+    for key, base, title in (
+        ("legal_allow", "legal_n", "合法放行"),
+        ("false_allow", "unsafe_n", "误放行"),
+    ):
+        bars = []
+        denominator = int(s["all", "direct"][base])
+        scale = (
+            denominator
+            if key == "legal_allow"
+            else max(1, *(int(s["all", arm][key]) for arm in METHODS))
+        )
+        for arm, name in METHODS.items():
+            value = int(s["all", arm][key])
+            bars.append(
+                f'<div class="ep-label"><span>{name}</span><b>{value}/{denominator}</b></div>'
+                f'<div class="ep-track" aria-hidden="true"><i style="width:{value / scale:.2%};background:{COLORS[arm]}"></i></div>'
+            )
+        panels.append(
+            f'<figure class="ep-card"><h4>{title}</h4>{"".join(bars)}'
+            f'<figcaption class="ep-scale">条形刻度 0–{scale} 条</figcaption></figure>'
+        )
+    return '<div class="ep-outcomes">' + "".join(panels) + "</div>"
+
+
+def cost_chart(s):
+    points, legend = [], []
+    for arm, name in METHODS.items():
+        row = s["all", arm]
+        fee, p = float(row["cny"]), float(row["probability"])
+        points.append(
+            f'<i style="left:{fee / 0.32:.4%};bottom:{(p - 0.80) / 0.21:.4%};background:{COLORS[arm]}"></i>'
+        )
+        legend.append(
+            f'<li><i style="background:{COLORS[arm]}" aria-hidden="true"></i><span>{name}</span><b>{p:.2%} · ¥{fee:.5f}</b></li>'
+        )
+    price_ticks = "".join(
+        f'<span style="left:{price / 0.32:.1%}">{price:.2f}</span>'
+        for price in (0, 0.1, 0.2, 0.3)
+    )
+    score_ticks = "".join(
+        f'<span style="bottom:{(p - 0.8) / 0.21:.2%}">{p:.0%}</span>'
+        for p in (0.80, 0.90, 1.0)
+    )
+    return (
+        '<figure class="ep-card ep-cost"><h4>费用与等权评分</h4>'
+        '<div class="ep-scatter" aria-hidden="true">'
+        f'<div class="ep-plot">{score_ticks}{"".join(points)}</div>'
+        f'<div class="ep-price-ticks">{price_ticks}</div>'
+        '<div class="ep-axis-label">384 条请求的估算费用（元）</div></div>'
+        f'<figcaption><ul class="ep-legend">{"".join(legend)}</ul></figcaption></figure>'
+    )
+
+
 def html():
     from material_fact_html import table
 
     s = scores()
     cost, _, local = expenses()
     panels = []
-    for k in (*BENCHMARKS, "all"):
+    for k in BENCHMARKS:
         lines = []
         for arm, name in METHODS.items():
             p = float(s[k, arm]["probability"])
             lines.append(
                 f'<div class="ep-label"><span>{name}</span><b>{p:.2%}</b></div><div class="ep-track"><i style="width:{p:.3%};background:{COLORS[arm]}"></i></div>'
             )
-        panels.append(f"<section><h4>{NAMES[k]}</h4>{''.join(lines)}</section>")
+        panels.append(
+            f'<section class="ep-card"><h4>{NAMES[k]}</h4>{"".join(lines)}</section>'
+        )
     performance = table(
         (
             "评测",
@@ -125,17 +182,29 @@ def html():
             for r in read("variants")
         ],
     )
+    styles = (ROOT / "scripts/tool_effects.css").read_text(encoding="utf8")
+    scoped = [r for r in read("paired") if r["dataset"] == "all"]
+    paired = {r["comparator"]: r for r in scoped}
+    removed = paired["unverified"]["prevented_false"]
+    d = paired["direct"]
+    replacement = paired["substitute"]["new_false"]
     return (
-        '<article id="tool-effects"><h2>工具预览与程序核验</h2>'
-        "<style>.ep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}.ep-grid section{padding:12px;border:1px solid #cfdfd8;border-radius:5px}.ep-grid h4{margin:0 0 10px}.ep-label{display:flex;justify-content:space-between;gap:8px;font-size:.84em}.ep-track{height:6px;background:#e1eee7;margin:3px 0 8px}.ep-track i{display:block;height:100%}</style>"
-        f"<p><strong>{headline()}</strong></p>"
-        "<p>三项各 128 条，围绕同一场景构造能执行与应暂缓的近邻样本。工具预览列出每个对象、目的地和数量。用户确认授权后，程序核对范围并合计重复条目。只有结构化条件符合且仍存在定性审批要求时，才请 Jev 查阅当前记录。四种方法均读到同一份输入。</p>"
-        "<p>归一化概率是按以下方式抽样时判定正确的比例。三个评测等概率抽取，每项中的合法类和应阻止类各占一半，再在所选类别中均匀抽取一条请求。图中与表中的得分均为这个比例。</p>"
+        '<article id="tool-effects"><h2>根据工具预览核验授权</h2>'
+        f"<style>{styles}</style>"
+        "<p>文档共享、库存调拨和退款各 128 条。所有方法读取相同的工具预览和已确认的用户授权。实验使用本地模拟工具。</p>"
+        '<ol class="ep-flow"><li><b>读取授权与预览</b><span>用户确认许可。工具列出实际对象、目的地和数量。</span></li>'
+        "<li><b>用代码执行策略</b><span>核对对象和范围，合计数量。任一条件不符即拦截。</span></li>"
+        "<li><b>复核剩余条件</b><span>只有通过结构化核验且仍需审批时，才把记录交给模型。</span></li></ol>"
+        "<h3>程序核验如何改变执行决定</h3>"
+        f"<p>与纯 DeepSeek 相比，程序核验＋Jev 多放行 {d['legal_gained']} 条合法请求，拦住 {d['prevented_false']} 条原有误放行，同时新增 {d['new_false']} 条库存审批误放行。</p>"
+        + outcome_charts(s)
+        + f"<p>保留 Jev 并去掉程序，误放行增加 {removed} 条。保留程序并把复核交给 DeepSeek，拦住了这 {replacement} 条库存审批误放行。两项对照均保持 144 条合法放行。</p>"
+        + "<h3>三个评测的等权评分</h3><p>每项评测占三分之一。每项内部，合法放行率与应阻止请求的拦截率各占一半。</p>"
         f'<div class="ep-grid">{"".join(panels)}</div>'
-        f'<h3>准确率、耗时和费用</h3><div class="nl-scroll">{performance}</div>'
-        f'<h3>逐题比较 · 程序核验＋Jev</h3><div class="nl-scroll">{changes}</div>'
-        f'<details><summary>各场景变体的放行条数</summary><div class="nl-scroll">{checks}</div></details>'
-        f"<p>本轮服务用量估算为 ¥{cost:.5f}，共享的 Jev 调用只计费一次。单题用时报告串行 API 时间，未调用模型时计为 0。程序核验在本机单独测得平均 {local:.2f} 微秒，包含校验和路由。实际工具的查询、执行与状态更新没有计入。三项均为本研究新建的受控评测，工具预览由本地模拟实现生成。</p></article>"
+        + cost_chart(s)
+        + f'<h3>各方法的准确率、耗时和费用</h3><div class="nl-scroll">{performance}</div>'
+        + f'<details><summary>逐题对照与各变体的放行条数</summary><div class="nl-scroll">{changes}</div><div class="nl-scroll">{checks}</div></details>'
+        + f'<p class="ep-note">本轮服务用量估算为 ¥{cost:.5f}，共享 Jev 调用只计一次。单题耗时是串行 API 时间。无需调用模型的请求计为 0 秒 API 时间，本机程序核验另测得平均 {local:.2f} 微秒。费用和时间覆盖授权评测。</p></article>'
     )
 
 

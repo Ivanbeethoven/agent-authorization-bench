@@ -11,6 +11,7 @@ From the repository or archive root, reproduce the result tables and compile the
 ~~~powershell
 uv run effect_results.py --from-tables
 uv run effect_display.py
+uv run --with matplotlib effect_figures.py
 ./paper/build.ps1
 ~~~
 
