@@ -82,8 +82,9 @@ def scores_table(rows, names):
 
 
 def render():
-    from public_transfer_html import render as public_transfer_section
+    from effect_display import html as effect_section
     from native_display import render as native_section
+    from public_transfer_html import render as public_transfer_section
 
     sections = []
     for folder, title, arms, labels in COHORTS:
@@ -164,16 +165,27 @@ def render():
     #natural-authorization table{border-collapse:collapse;font-size:.87rem;width:100%;background:#fff}
     #natural-authorization th,#natural-authorization td{padding:.48em .55em;border-bottom:1px solid #d8e4e0;text-align:left}
     #natural-authorization th{background:#eaf2ef;white-space:nowrap}#natural-authorization td:first-child{min-width:7em}
-    </style><h2>从用户原话到可验证的授权条件</h2>
+    </style>"""
+        + effect_section()
+        + """<h2>从用户原话到可验证的授权条件</h2>
     <p>DeepSeek 阅读原话并提取每种可行方案。程序逐项检查操作、资源、数值和范围。第三批实验中，只有某个方案的这些条件全部通过、同时还需要核实审批时，程序才请 Jev 判断可信记录是否满足该项审批。所有必要条件成立才能执行。</p>
     <p>第四批增加了独立的类别检查。若用户只点名了一个渠道、受众或其他类别，候选操作必须与它一致。这会阻止模型漏读的限制，也可能拦住仅作偏好表述的合法请求。</p>
     <p><strong>最终确认集</strong>中，新方法答对 66/72，原联合方法答对 56/72。新方法阻止了全部 31 个越界操作和 8 个缺少事实的操作。33 个已授权操作中，新方法放行 27 个，纯 Jev 放行 29 个、纯 DeepSeek 放行 26 个。用相同输入把 Jev 替换为 DeepSeek，72 个决定逐项相同；替换为百炼后新增 2 个越界放行和 1 个缺少事实的放行。</p>
     <p>四批均为本研究新编的英文请求。每条原话配有三个候选操作。越界指违反明示授权范围，费用按服务返回的用量估算，耗时是每个操作所需 API 调用的串行时间之和。</p>"""
+        + render_local_review()
         + native_section()
         + public_transfer_section()
         + "".join(sections)
         + "</section>"
     )
+
+
+def render_local_review():
+    if not (natural_results.DEST.parent / "local_review/scores.csv").is_file():
+        return ""
+    from local_review_results import render
+
+    return render()
 
 
 def standalone():

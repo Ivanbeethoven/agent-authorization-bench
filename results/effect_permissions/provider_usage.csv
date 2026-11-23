@@ -1,0 +1,4 @@
+﻿study,provider,model,samples,calls,attempts,input_tokens,output_tokens,median_seconds,p95_seconds,wall_seconds,interval,estimated_cny,account_delta_cny,charge_basis
+effects_direct,deepseek,deepseek-flash,384,384,384,141518,1920,0.626,1.132,18.52,runner interval,0.29789424,0.00,immediate wallet change; posting may lag; amount attributed by token usage
+effects_review,jev,jev-1.14.0,384,384,384,285472,27105,2.002,4.185,63.53,runner interval,0.083928768,0.083928768,provider key usage delta; 384 calls
+effects_review,deepseek,deepseek-flash,144,144,144,74403,1392,0.691,1.12,8.11,runner interval,0.11729240,0.00,immediate wallet change; posting may lag; amount attributed by token usage
