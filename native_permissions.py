@@ -280,6 +280,9 @@ def run_config(study, provider):
     for k, p in plans.items():
         rows = []
         for item in p["samples"]:
+            if (k, item["id"]) not in answers:
+                # The completed screen ledger may contain an exhausted transport abstention.
+                continue
             screen = answers[k, item["id"]]
             name, checks = route(item["state"], screen, require_operation=False)
             if study == "native_guard_bind":

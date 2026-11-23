@@ -374,6 +374,18 @@ def run(study, provider, workers):
             k = (name, item["id"], stage)
             if k in cache and "answers" in cache[k]:
                 return cache[k]["answers"]
+            if (
+                study == "native_screen"
+                and k in cache
+                and cache[k].get("error") in ("JSONDecodeError", "ValueError")
+            ):
+                history = [
+                    row
+                    for row in ds.records(log)
+                    if (row["dataset"], row["id"], row["stage"]) == k
+                ]
+                if sum(r["attempts"] for r in history if r.get("error")) >= 12:
+                    return None
             result = call(
                 provider,
                 url,
