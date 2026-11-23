@@ -22,6 +22,7 @@ from strategy_selection import select_strategies
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 OUTPUT = RESULTS / "Agent权限管理研究总报告.html"
+EXPANDED = (RESULTS / "effect_expansion/scores.csv").is_file()
 BENCH = {
     "jev": "Jev Boundary",
     "authgate": "AuthGateBench",
@@ -112,6 +113,15 @@ for prefix, cohort, stages in (
         {study: f"{cohort} · {labels[stage]}" for study, stage in zip(studies, stages)}
     )
     STAGE_GROUPS[cohort] = studies
+if EXPANDED:
+    PHASES.update(
+        effects_expanded_direct="工具预览扩测 · 直接判断",
+        effects_expanded_review="工具预览扩测 · 授权复核",
+    )
+    STAGE_GROUPS["工具预览扩测"] = (
+        "effects_expanded_direct",
+        "effects_expanded_review",
+    )
 COHORTS = {
     "new_delegation": "DelegationBench · 新请求",
     "new_boundary": "Jev Boundary · 新家族",
@@ -149,6 +159,8 @@ def inputs():
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
     )
+    if EXPANDED:
+        ledgers.append("effect_expansion/provider_usage.csv")
     usage = [r for file in ledgers for r in read(file)]
     if (
         len({(r["study"], r["provider"]) for r in usage}) != len(usage)
@@ -390,16 +402,22 @@ def efficiency_groups(history, boards, selection):
     from native_results import METHODS as native_methods
     from native_results import NAMES as native_names
 
-    effect_rows = read("effect_permissions/scores.csv")
-    for key, name in effect_names.items():
-        rows = [r for r in effect_rows if r["dataset"] == key]
-        groups["effects_" + key] = {
-            "label": f"工具预览与程序核验 · {name} · {rows[0]['n']} 条",
-            "points": [
-                point(effect_methods[r["method"]], r["correct"], r["n"], r["cny"])
-                for r in rows
-            ],
-        }
+    effect_cohorts = [("effects_", "effect_permissions", "工具预览首轮")]
+    if EXPANDED:
+        effect_cohorts.insert(
+            0, ("effects_expanded_", "effect_expansion", "工具预览扩测")
+        )
+    for prefix, folder, title in effect_cohorts:
+        effect_rows = read(f"{folder}/scores.csv")
+        for key, name in effect_names.items():
+            rows = [r for r in effect_rows if r["dataset"] == key]
+            groups[prefix + key] = {
+                "label": f"{title} · {name} · {rows[0]['n']} 条",
+                "points": [
+                    point(effect_methods[r["method"]], r["correct"], r["n"], r["cny"])
+                    for r in rows
+                ],
+            }
     from public_transfer import NAMES as transfer_names
 
     local_scores = (
@@ -762,7 +780,7 @@ def build(audit_dir=None):
         },
         "sources": sources,
         "native_summary": headline(),
-        "effect_summary": effect_headline(),
+        "effect_summary": effect_headline(expanded=EXPANDED),
     }
     template = (ROOT / "scripts/overview_report.html").read_text("utf8")
     if template.count("__OVERVIEW_DATA__") != 1:

@@ -1,0 +1,13 @@
+﻿dataset,comparator,legal_gained,legal_lost,new_false,prevented_false
+sharing,direct,68,3,40,62
+sharing,unverified,0,0,0,58
+sharing,substitute,3,3,31,1
+inventory,direct,63,1,39,54
+inventory,unverified,0,0,0,94
+inventory,substitute,26,1,41,3
+refunds,direct,102,0,39,17
+refunds,unverified,0,0,0,95
+refunds,substitute,28,0,39,5
+all,direct,233,4,118,133
+all,unverified,0,0,0,247
+all,substitute,57,4,111,9

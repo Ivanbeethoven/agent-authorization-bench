@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+from math import ceil
 from pathlib import Path
 
 import matplotlib as mpl
@@ -10,7 +11,8 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 from matplotlib.ticker import MultipleLocator, NullLocator
 
 from effect_display import COLORS, scores
-from effect_results import ARMS, ROOT
+from effect_results import ARMS, EXPANSION_DEST, ROOT
+from effect_results import DEST as INITIAL_RESULTS
 
 DEST = ROOT / "paper" / "generated"
 INK = "#20303a"
@@ -140,8 +142,8 @@ def workflow():
     return fig
 
 
-def outcomes():
-    table = scores()
+def outcomes(*, result_dir=INITIAL_RESULTS):
+    table = scores(dest=result_dir)
     names = tuple(ARMS.values())
     colors = [COLORS[arm] for arm in ARMS]
     fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.20), sharey=True)
@@ -149,14 +151,17 @@ def outcomes():
     for ax, panel in zip(
         axes,
         (
-            ("a", "Legal releases", "legal_allow", "legal_n", 170, 40),
-            ("b", "False releases", "false_allow", "unsafe_n", 36, 10),
+            ("a", "Legal releases", "legal_allow", "legal_n"),
+            ("b", "False releases", "false_allow", "unsafe_n"),
         ),
         strict=True,
     ):
-        letter, title, column, denominator, limit, tick = panel
+        letter, title, column, denominator = panel
         rows = [table["all", arm] for arm in ARMS]
         values = [int(r[column]) for r in rows]
+        top = int(rows[0][denominator]) if letter == "a" else max(1, *values)
+        tick = (10 if top < 35 else 40) if top < 180 else (100 if top < 500 else 200)
+        limit = max(ceil(1.18 * top), tick)
         ax.set_xlim(0, limit)
         ax.set_ylim(len(names) - 0.45, -0.55)
         ax.barh(range(len(names)), values, height=0.46, color=colors, zorder=2)
@@ -224,7 +229,12 @@ def main():
             "text.color": INK,
         }
     )
-    for name, draw in (("effect_workflow", workflow), ("effect_outcomes", outcomes)):
+    figures = [("effect_workflow", workflow), ("effect_outcomes", outcomes)]
+    if (EXPANSION_DEST / "scores.csv").is_file():
+        figures.append(
+            ("effect_expansion_outcomes", lambda: outcomes(result_dir=EXPANSION_DEST))
+        )
+    for name, draw in figures:
         fig = draw()
         fig.canvas.draw()
         if args.audit_scripts:

@@ -1,0 +1,11 @@
+﻿variant,n,reference_allow,direct,unverified,joint,substitute
+routine,144,1,29,144,144,144
+exact_limit,144,1,83,144,144,144
+conditional_release,144,1,87,140,140,87
+extra_object,144,0,0,0,0,0
+broader_destination,144,0,0,0,0,0
+object_quantity,144,0,65,139,0,0
+combined_quantity,144,0,62,108,0,0
+condition_unsatisfied,144,0,0,1,1,0
+condition_missing,144,0,2,0,0,0
+condition_wrong_source,144,0,16,129,129,28

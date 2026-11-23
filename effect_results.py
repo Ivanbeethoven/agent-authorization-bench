@@ -14,6 +14,7 @@ from time import perf_counter_ns
 from datasets_local import ROOT
 
 DEST = ROOT / "results/effect_permissions"
+EXPANSION_DEST = ROOT / "results/effect_expansion"
 BENCHMARKS = {
     "sharing": "Document sharing",
     "inventory": "Inventory transfer",
@@ -33,27 +34,37 @@ RUNS = {
 COMPARATORS = ("direct", "unverified", "substitute")
 
 
-def write(name, rows):
-    with (DEST / (name + ".csv")).open("w", encoding="utf-8-sig", newline="") as stream:
+def write(name, rows, *, dest=DEST):
+    with (dest / (name + ".csv")).open("w", encoding="utf-8-sig", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=tuple(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
 
 
-def read(name):
-    with (DEST / (name + ".csv")).open(encoding="utf-8-sig", newline="") as stream:
+def read(name, *, dest=DEST):
+    with (dest / (name + ".csv")).open(encoding="utf-8-sig", newline="") as stream:
         return list(csv.DictReader(stream))
 
 
-def capture():
-    import effect_benchmark as bench
+def capture(*, dest=DEST, expanded=False):
     import effect_permissions as policy
     from study_report import inputs, measurements
 
+    if expanded:
+        import effect_expansion as bench
+
+        runs = {
+            arm: (study.replace("effects_", "effects_expanded_", 1), provider)
+            for arm, (study, provider) in RUNS.items()
+        }
+    else:
+        import effect_benchmark as bench
+
+        runs = RUNS
     if BENCHMARKS != bench.BENCHMARKS:
         raise ValueError("Benchmark configuration mismatch")
     by_stage, receipts, statements = {}, [], []
-    for stage, (study, provider) in RUNS.items():
+    for stage, (study, provider) in runs.items():
         plans, calls, ledger = inputs(study, provider)
         expected, protocol = policy.run_config(study, provider)
         manifest = json.loads(
@@ -153,9 +164,9 @@ def capture():
     for r in rows:
         variant, allowed = expected[r["dataset"], r["id"]]
         r.update(variant=variant, legal=int(allowed))
-    write("decisions", rows)
-    write("provider_usage", statements)
-    write("receipts", receipts)
+    write("decisions", rows, dest=dest)
+    write("provider_usage", statements, dest=dest)
+    write("receipts", receipts, dest=dest)
 
 
 def probability(group, arm):
@@ -164,8 +175,8 @@ def probability(group, arm):
     return (mean(legal) + mean(safe)) / 2
 
 
-def summary():
-    cases = read("decisions")
+def summary(*, dest=DEST):
+    cases = read("decisions", dest=dest)
     for r in cases:
         for k in ("legal", *ARMS):
             r[k] = int(r[k])
@@ -219,10 +230,10 @@ def summary():
                 **{arm: sum(r[arm] for r in group) for arm in ARMS},
             }
         )
-    write("scores", per_cohort)
-    write("paired", paired)
-    write("variants", variants)
-    write("intervals", bootstrap(cohorts))
+    write("scores", per_cohort, dest=dest)
+    write("paired", paired, dest=dest)
+    write("variants", variants, dest=dest)
+    write("intervals", bootstrap(cohorts), dest=dest)
 
 
 def bootstrap(cohorts):
@@ -265,8 +276,10 @@ def bootstrap(cohorts):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--from-tables", action="store_true")
+    parser.add_argument("--expanded", action="store_true")
     args = parser.parse_args()
-    DEST.mkdir(parents=True, exist_ok=True)
+    dest = EXPANSION_DEST if args.expanded else DEST
+    dest.mkdir(parents=True, exist_ok=True)
     if not args.from_tables:
-        capture()
-    summary()
+        capture(dest=dest, expanded=args.expanded)
+    summary(dest=dest)
