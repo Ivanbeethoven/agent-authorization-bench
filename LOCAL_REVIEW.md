@@ -8,3 +8,17 @@ This comparison uses the three previously evaluated public corpora (1,126 reques
 The direct comparison uses a single execute-or-withhold question. The substitution comparison replaces Jev on the same 883 selected requests. Scope and prerequisites must both pass. All other decisions and DeepSeek extraction fees are reused unchanged. The authors' training populations and model providers' private training corpora have not been audited for overlap with these public cases.
 
 The runner writes one response per question, resumes saved responses and fails on truncated input. It keeps labels and case identifiers out of the prompt. The per-question time includes local HTTP handling and inference with concurrent slots. GPU-board readings sample the whole GPU during inference. They exclude CPU, wall-socket losses and model loading. Local calls incur no metered API charge. End-to-end cascade estimates include the archived upstream service fees.
+
+## Reproducing the run
+
+On Windows with PowerShell 7, supply the paths to the local llama.cpp executable, GGUF weights and original model template. `--list-devices` lists the GPU names accepted by llama.cpp. The launcher binds to loopback and stops its own server when the run finishes.
+
+```powershell
+./scripts/local-review.ps1 -Model granite -Server $llamaServer -Weights $graniteWeights -Template $graniteTokenizerConfig -Backend Vulkan -Device Vulkan1
+./scripts/local-review.ps1 -Model agentdecision -Server $llamaServer -Weights $qwenWeights -Adapter $decisionAdapter -Template $decisionChatTemplate -Backend Vulkan -Device Vulkan1
+& (uv python find) local_review_results.py
+```
+
+The decision adapter is the authors' PEFT checkpoint converted to GGUF using llama.cpp's LoRA converter. Inference requires the original archived request plans under `data/study_runs`. Offline scoring and reporting require only the two local answer tables, timing and configuration files, and the published tables under `results/native_permissions`.
+
+After scoring, the optional `-Controls` switch runs eight synthetic office-task pairs. Each pair changes one authorized parameter. AgentDecision also sees the choice order reversed. Granite additionally receives one benign request using IBM's built-in harm criterion. These checks use separate output files and do not contribute to the benchmark scores or reported benchmark timings.

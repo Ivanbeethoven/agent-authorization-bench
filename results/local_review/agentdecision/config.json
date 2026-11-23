@@ -1,0 +1,16 @@
+{
+  "model": "agentdecision",
+  "gguf": "qwen3-4b-q4_k_m.gguf",
+  "adapters": [
+    "AgentDecision-4B-lora-f16.gguf"
+  ],
+  "runtime": "b12646-f4f6f2e7d",
+  "backend": "Vulkan",
+  "slots": 2,
+  "workers": 2,
+  "template": "chat_template.jinja",
+  "temperature": 0,
+  "output_tokens": 1,
+  "direct_cases": 1232,
+  "review_cases": 883
+}

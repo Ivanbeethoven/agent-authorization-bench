@@ -1,0 +1,14 @@
+{
+  "model": "granite",
+  "gguf": "granite-guardian-3.2-3b-a800m-q4_k_m.gguf",
+  "adapters": [],
+  "runtime": "b12646-f4f6f2e7d",
+  "backend": "Vulkan",
+  "slots": 2,
+  "workers": 2,
+  "template": "tokenizer_config.json",
+  "temperature": 0,
+  "output_tokens": 1,
+  "direct_cases": 1232,
+  "review_cases": 883
+}
