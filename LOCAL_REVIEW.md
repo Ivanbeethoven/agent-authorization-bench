@@ -13,6 +13,8 @@ The runner writes one response per question, resumes saved responses and fails o
 
 On Windows with PowerShell 7, supply the paths to the local llama.cpp executable, GGUF weights and original model template. `--list-devices` lists the GPU names accepted by llama.cpp. The launcher binds to loopback and stops its own server when the run finishes.
 
+Once Python 3.14 and Jinja2 are cached by uv, set `$env:UV_OFFLINE='1'` to run the launcher without package-index access.
+
 ```powershell
 ./scripts/local-review.ps1 -Model granite -Server $llamaServer -Weights $graniteWeights -Template $graniteTokenizerConfig -Backend Vulkan -Device Vulkan1
 ./scripts/local-review.ps1 -Model agentdecision -Server $llamaServer -Weights $qwenWeights -Adapter $decisionAdapter -Template $decisionChatTemplate -Backend Vulkan -Device Vulkan1
