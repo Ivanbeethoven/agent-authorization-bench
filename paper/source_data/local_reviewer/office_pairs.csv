@@ -1,0 +1,13 @@
+﻿arm,contrast,pairs,both_correct,positive_correct,negative_correct
+original_nominal,destination_grant,128,22,128,22
+original_nominal,resource,128,56,120,64
+original_nominal,quantity,128,40,123,42
+original_nominal,approval,128,72,128,72
+original_nominal,register_destination,128,128,128,128
+original_nominal,untrusted_redirect,128,5,9,62
+paired_risk02,destination_grant,128,128,128,128
+paired_risk02,resource,128,92,108,112
+paired_risk02,quantity,128,102,110,120
+paired_risk02,approval,128,128,128,128
+paired_risk02,register_destination,128,128,128,128
+paired_risk02,untrusted_redirect,128,124,128,124

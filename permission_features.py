@@ -141,6 +141,7 @@ def run(splits, port, template_path, workers):
         if not done.issubset({r[0] for r in samples}):
             raise ValueError("Cached cases differ from current population")
         pending = [(i, s) for i, _, s, _ in samples if i not in done]
+        written = 0
         start = time.perf_counter()
         stop = threading.Event()
         readings = []
@@ -158,10 +159,11 @@ def run(splits, port, template_path, workers):
                 for offset in range(0, len(pending), 32):
                     for ident, result in pool.map(one, pending[offset : offset + 32]):
                         coverage, tokens, vec, sec = result
-                        db.execute(
-                            "INSERT INTO vectors VALUES (?,?,?,?,?,?)",
+                        inserted = db.execute(
+                            "INSERT INTO vectors VALUES (?,?,?,?,?,?) ON CONFLICT(split,id) DO NOTHING",
                             (split, ident, coverage, tokens, vec, sec),
                         )
+                        written += inserted.rowcount
                     db.commit()
         finally:
             stop.set()
@@ -173,7 +175,8 @@ def run(splits, port, template_path, workers):
                     json.dumps(
                         {
                             "split": split,
-                            "records": len(pending),
+                            "records": written,
+                            "concurrent_reuses": len(pending) - written,
                             "wall_s": time.perf_counter() - start,
                             "backend": props.get("build_info"),
                             "workers": workers,

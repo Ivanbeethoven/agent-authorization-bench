@@ -1,0 +1,12 @@
+﻿dataset,coverage,n,correct,legal,legal_allow,false_allow
+authgate,full,700,458,350,248,140
+delegation,full,156,78,69,57,66
+boundary,full,270,211,115,65,9
+steerwork,full,106,99,56,52,3
+challenge,full,1536,1470,768,730,28
+xaab,full,180,134,45,0,1
+AgentDojo-Traj,full,1060,589,791,337,17
+AgentDojo-Traj,observations_shortened,160,109,77,28,2
+AgentHarm-Traj,full,725,503,206,99,115
+AgentHarm-Traj,observations_shortened,6,5,0,0,1
+ASB-Traj,full,5231,2976,2696,1345,904

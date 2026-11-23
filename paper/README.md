@@ -2,6 +2,8 @@
 
 The paper is in `authorization-review.pdf`. `main.tex` contains the manuscript, `references.bib` contains its references, and `generated/effect_*.tex` contains the experiment tables and measured values. A TeX Live installation and PowerShell 7 are sufficient to build it.
 
+The appendix evaluates a trained local authorization classifier on the public corpora and external tasks. Its aggregate source data and offline HTML report are under `source_data/local_reviewer/`. Run `python permission_head_paper.py` from the repository root to regenerate its LaTeX results from the published tables. The training protocol is in [PERMISSION_HEADS.md](../PERMISSION_HEADS.md).
+
 ~~~powershell
 ./paper/build.ps1
 ~~~

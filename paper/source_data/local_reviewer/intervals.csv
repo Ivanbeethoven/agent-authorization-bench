@@ -1,0 +1,7 @@
+﻿arm,control,metric,low_pp,high_pp,families,draws
+paired_risk02,agentdecision_direct,accuracy,2.376,7.876,406,5000
+paired_risk02,agentdecision_direct,legal_allow_rate,-31.993,-23.909,406,5000
+paired_risk02,agentdecision_direct,false_allow_rate,-39.116,-31.029,406,5000
+cascade_paired_risk02,joint,accuracy,-15.939,-10.676,406,5000
+cascade_paired_risk02,joint,legal_allow_rate,-13.458,-5.01,406,5000
+cascade_paired_risk02,joint,false_allow_rate,13.388,20.87,406,5000

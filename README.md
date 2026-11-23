@@ -1,5 +1,7 @@
 # Agent 权限与隐私决策评测
 
+[RTX 5070 Laptop 上的授权分类器实验](paper/source_data/local_reviewer/本地授权模型优化实验.html) · [按评测拆分的结果](paper/source_data/local_reviewer/scores.csv) · [训练与校准方法](PERMISSION_HEADS.md)
+
 ## 本地部署与分类头训练
 
 在 Windows 上使用 llama.cpp 运行 Granite Guardian 和 AgentDecision-4B，并在冻结的 AgentDecision 表示上训练授权分类头。

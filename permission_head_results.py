@@ -367,6 +367,25 @@ def summarize(data):
             )
     write(OUT / "scores.csv", summary)
     write(OUT / "paired.csv", deltas)
+    reference_types = {
+        r["scope"] + "/" + r["id"]: r["reference"] or "unavailable"
+        for r in read_csv(ROOT / "results/full_permission/decisions.csv")
+        if r["scope"] in PRIMARY
+    }
+    breakdown = defaultdict(Counter)
+    for ds, key, _, arm, y, _, a, *_ in data:
+        if ds in PRIMARY and arm in (MAIN, "agentdecision_direct"):
+            c = breakdown[ds, reference_types[key], arm]
+            c["n"] += 1
+            c["allow"] += a
+            c["correct"] += int(y == a)
+    write(
+        OUT / "reference_classes.csv",
+        [
+            {"dataset": ds, "reference": t, "arm": a, **v}
+            for (ds, t, a), v in sorted(breakdown.items())
+        ],
+    )
     family_intervals(groups)
     contrast_pairs(groups)
     # One reference row per input. Implied severity has a different meaning in TS-Bench.

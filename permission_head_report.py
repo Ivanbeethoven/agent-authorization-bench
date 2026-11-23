@@ -85,7 +85,7 @@ def outcome(r):
     )
 
 
-def render():
+def render(public_folder=None):
     all_scores = read_csv(OUT / "scores.csv")
     s = {(r["dataset"], r["arm"]): r for r in all_scores}
     pairs = read_csv(OUT / "paired.csv")
@@ -238,6 +238,7 @@ def render():
                 for a in (external_control, MAIN)
             ],
         ),
+        f"<p>XAAB 的 {s['xaab', MAIN]['legal']} 条可放行请求中，新分类器放行 {s['xaab', MAIN]['legal_allow']} 条。仅看准确率会掩盖它在这套策略下几乎总是暂缓。SteerBench-Work 上，新分类器则保留了 {s['steerwork', MAIN]['legal_allow']}/{s['steerwork', MAIN]['legal']} 条合法放行，误放行 {s['steerwork', MAIN]['false_allow']}/{s['steerwork', MAIN]['hold']} 条。</p>",
         '<p class="note">原输出权重重放使用同一个量化模型原有的 A、B 词元权重。对四个已有授权集的实际单词元决定，与重放一致的为 '
         + f"{sum(v['agree'] for v in validation.values())}/{sum(v['n'] for v in validation.values())}，另外五组外部样本的一致数为 {sum(int(v['agree']) for v in sample_audit)}/240。{timing_note}XAAB 使用静态场景和 23 条策略摘要。</p>",
         "<h2>训练方法与消融比较</h2><ol><li>构造同一业务下的授权与越界请求，分别改变对象、接收方、数量、当前审批或授权来源。训练、校准与新编测试的完整请求及家族均无交叉。</li><li>固定 4B 主模型和原有适配器。分别询问“能否执行”及“哪项事实足以暂缓”，读取两次最后一个词元的隐藏向量。</li><li>训练线性分类器。每个家族等权，同时要求同一家族中授权请求的评分高于越界请求。用独立的 576 条应暂缓校准请求确定阈值。主方法预设允许最多 2% 校准误放行。</li></ol>",
@@ -274,6 +275,7 @@ def render():
             ],
         ),
         "<p>主方法按三项条件评估替代 Jev 的可行性。合法放行须增加，应暂缓却放行总数须不增加，逐题比较须无新增明确禁止放行。独立校准设定的 2% 是选阈值的条件，表中各评测的实际误放行率由各自的数据决定。</p>",
+        f"<p>在原三个评测上，只校准原输出权重的阈值误放行 {s['pooled', 'original_risk02']['false_allow']} 条，合法放行 {s['pooled', 'original_risk02']['legal_allow']} 条。只问一个问题的分类器答对 {s['pooled', 'single_risk02']['correct']} 条，预设的成对训练方案答对 {s['pooled', MAIN]['correct']} 条。两个问题和成对训练在这些数据上的收益主要体现为保留更多合法放行，同时也增加了误放行。</p>",
         "<details><summary>原三个评测的配对差异与不确定性</summary><p>在每个评测内按完整请求家族重采样，保留同一请求上两种方法的配对关系。下表是 5,000 次重采样得到的百分位区间，单位为百分点。</p>",
         table(
             ("新方法", "对照", "指标", "差异的 95% 区间"),
@@ -310,6 +312,20 @@ def render():
                     f"{r['negative_correct']}/{r['pairs']}",
                 )
                 for r in read_csv(OUT / "office_pairs.csv")
+            ],
+        ),
+        "</details><details><summary>按原始授权标签检查失误</summary><p>DelegationBench 的 ASK_AUTHORIZATION 表示执行前应向用户索取授权，REQUEST_INFORMATION 表示仍需补充事实。两种情形都要求暂缓。原始细分类为空的样本单列，继续计入总体。</p>",
+        table(
+            ("评测", "原始细分类", "方法", "实际放行/该类总数", "二分类正确/该类总数"),
+            [
+                (
+                    NAMES[r["dataset"]],
+                    r["reference"],
+                    METHOD[r["arm"]],
+                    f"{r['allow']}/{r['n']}",
+                    f"{r['correct']}/{r['n']}",
+                )
+                for r in read_csv(OUT / "reference_classes.csv")
             ],
         ),
         "</details><h2>运行时间与复现</h2>",
@@ -385,10 +401,20 @@ def render():
         ),
         "</details>",
         '<p class="note">逐请求耗时含本地推理和 HTTP 开销，两个请求可并发执行。组合耗时为归档的上游服务耗时加本地复核耗时。电费和硬件折旧未折算。原模型训练语料与公开评测的重合情况未知，原三个评测曾用于本项目先前探索。TS-Bench 同一轨迹可以贡献多个动作。</p>',
-        '<p><a href="model.npz">分类器权重</a> · <a href="training.json">训练参数与阈值</a> · <a href="scores.csv">各评测与方法完整结果</a> · <a href="paired.csv">逐题变化汇总</a> · <a href="../../PERMISSION_HEADS.md">复现步骤</a></p>',
+        "<p>"
+        + ('<a href="model.npz">分类器权重</a> · ' if public_folder is None else "")
+        + '<a href="training.json">训练参数与阈值</a> · <a href="scores.csv">各评测与方法完整结果</a> · <a href="paired.csv">逐题变化汇总</a> · '
+        + (
+            '<a href="../../PERMISSION_HEADS.md">复现步骤</a>'
+            if public_folder is None
+            else '<a href="../../../PERMISSION_HEADS.md">复现步骤</a>'
+        )
+        + "</p>",
         '<p><a href="https://huggingface.co/JevAgentHarness/AgentDecision-4B">AgentDecision-4B 与非商业许可</a> · <a href="https://huggingface.co/datasets/MurrayTom/TS-Bench">TS-Bench 数据</a> · <a href="https://github.com/xybern-ai/agent-authz-benchmark/tree/0249d9ccee4f48a9d49da3363d478715ff99f335">XAAB 固定版本</a></p></main></html>',
     ]
-    (OUT / "本地授权模型优化实验.html").write_text("".join(html), encoding="utf8")
+    ((public_folder or OUT) / "本地授权模型优化实验.html").write_text(
+        "".join(html), encoding="utf8"
+    )
 
 
 if __name__ == "__main__":

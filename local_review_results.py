@@ -275,9 +275,9 @@ def render():
 
 
 def write_local_page():
-    next_report = DEST.parent / "permission_heads" / "本地授权模型优化实验.html"
+    next_report = ROOT / "paper/source_data/local_reviewer/本地授权模型优化实验.html"
     link = (
-        '<nav><a href="../permission_heads/本地授权模型优化实验.html">查看 AgentDecision-4B 训练后的权限评测</a></nav>'
+        '<nav><a href="../../paper/source_data/local_reviewer/本地授权模型优化实验.html">查看 AgentDecision-4B 训练后的权限评测</a></nav>'
         if next_report.exists()
         else ""
     )

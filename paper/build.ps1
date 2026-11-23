@@ -6,11 +6,11 @@ if (-not $BuildDirectory) {
 }
 $work = (New-Item -ItemType Directory -Path $BuildDirectory -Force).FullName
 if ($work -eq $source) { throw 'Use a separate LaTeX build directory.' }
-foreach ($name in 'main.tex','expansion.tex','references.bib') {
+foreach ($name in 'main.tex','expansion.tex','local_readout.tex','references.bib') {
     Copy-Item -LiteralPath (Join-Path $source $name) -Destination $work
 }
 $graphics = (New-Item -ItemType Directory -Path (Join-Path $work 'generated') -Force).FullName
-foreach ($name in 'effect_macros.tex','effect_scores.tex','effect_paired.tex','effect_workflow.pdf','effect_outcomes.pdf','effect_expansion_outcomes.pdf','effect_expansion_scores.tex','effect_expansion_paired.tex') {
+foreach ($name in 'effect_macros.tex','effect_scores.tex','effect_paired.tex','effect_workflow.pdf','effect_outcomes.pdf','effect_expansion_outcomes.pdf','effect_expansion_scores.tex','effect_expansion_paired.tex','local_readout_findings.tex') {
     Copy-Item -LiteralPath (Join-Path (Join-Path $source 'generated') $name) -Destination $graphics
 }
 Push-Location -LiteralPath $work
