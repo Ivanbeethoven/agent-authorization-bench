@@ -1,0 +1,4 @@
+﻿dataset,passes,mean_local_us
+authgate,40,0.249
+delegation,40,0.77
+boundary,40,0.21

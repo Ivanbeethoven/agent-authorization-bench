@@ -185,7 +185,11 @@ def original_plans():
 
 
 def run(study, provider, workers):
-    if study.startswith(("branch_", "scope_confirm_")):
+    if study in ("public_transfer_direct", "public_transfer_extract"):
+        import public_transfer as design
+
+        plans, protocol = design.run_config(study, provider)
+    elif study.startswith(("branch_", "scope_confirm_")):
         import branch_permissions as design
 
         plans, protocol = design.run_config(study, provider)
@@ -371,6 +375,17 @@ def run(study, provider, workers):
             return result["answers"]
 
         def evaluate(name, item):
+            if study == "public_transfer_extract":
+                measure(
+                    name,
+                    item,
+                    "extract",
+                    protocol["questions"][name],
+                    design.prose.request_view(item["state"]),
+                    system_prompt=protocol["system"],
+                    max_tokens=protocol["max_tokens"],
+                )
+                return
             if study in ("branch_attest", "scope_confirm_attest"):
                 packet, questions = protocol["packets"][item["id"]]
                 measure(name, item, "attest", questions, packet)
@@ -404,6 +419,7 @@ def run(study, provider, workers):
                 return
             if study in (
                 "natural_direct",
+                "public_transfer_direct",
                 "natural_review",
                 "natural_matched",
                 "replica_direct",
@@ -647,6 +663,8 @@ if __name__ == "__main__":
     p.add_argument(
         "study",
         choices=[
+            "public_transfer_direct",
+            "public_transfer_extract",
             "natural_direct",
             "natural_review",
             "natural_extract",

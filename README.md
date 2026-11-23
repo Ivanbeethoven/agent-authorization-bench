@@ -1,5 +1,7 @@
 # Agent 权限与隐私决策评测
 
+固定版本 `scope-verifier-v1` 在三个公开 benchmark 上完成了 1,126 条测试。两种核对服务均未收到审批问题，534 个合法操作全部暂缓。网页同时给出了重新调用纯 Jev、纯 DeepSeek 的结果，以及每个 benchmark 的准确率、误放行、合法放行、耗时和费用。[公开数据迁移结果](results/natural_permissions/自然语言授权核验.html#public-transfer)
+
 [英文论文 PDF](paper/authorization-review.pdf) · [可离线编译的源码包](results/authorization-review-source.zip) · [LaTeX 构建说明](paper/README.md) · [三个完整测试集的 HTML 结果](results/shared_review/三项权限评测与共同错误.html#full-permission)
 
 另有 102 条新编英文授权指令、306 个候选操作，分四批验证条件提取和程序核验。最终 72 个候选操作中，DeepSeek 提取、程序核验、Jev 核对审批记录的方法答对 66 个，拦住全部 31 个越界操作，放行 33 个合法操作中的 27 个。把相同记录交给 DeepSeek 核对，最终决定逐项一致。网页提供六个领域的结果、服务替换实验和逐题错误。[自然语言授权实验](results/natural_permissions/自然语言授权核验.html)

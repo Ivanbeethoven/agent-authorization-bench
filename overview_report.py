@@ -82,6 +82,7 @@ STAGE_GROUPS = {
     "数值边界专项": ("numeric_permission", "numeric_permission_review"),
 }
 for prefix, cohort, stages in (
+    ("public_transfer", "固定方法的公开评测", ("direct", "extract")),
     ("natural", "自然语言授权", ("direct", "review", "extract", "matched")),
     ("replica", "自然语言复测", ("direct", "review", "extract", "matched")),
     ("branch", "条件分支确认", ("direct", "review", "original", "extract", "attest")),
@@ -134,6 +135,7 @@ def inputs():
         "natural_permissions/replication/provider_usage.csv",
         "natural_permissions/confirmation/provider_usage.csv",
         "natural_permissions/scope_confirmation/provider_usage.csv",
+        "public_transfer/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -374,6 +376,17 @@ def efficiency_groups(history, boards, selection):
                 for r in rows
             ],
         }
+    from public_transfer import NAMES as transfer_names
+
+    for k in PRIMARY:
+        measured = [r for r in read("public_transfer/scores.csv") if r["dataset"] == k]
+        groups["transfer_" + k] = {
+            "label": f"固定方法公开评测 · {NAMES[k]} · {measured[0]['n']} 条",
+            "points": [
+                point(transfer_names[r["method"]], r["correct"], r["n"], r["cny"])
+                for r in measured
+            ],
+        }
     fact_scores = read("material_facts/scores.csv")
     fact_scores.extend(read("material_facts/jev_scores.csv"))
     for cohort in dict.fromkeys(r["benchmark"] for r in fact_scores):
@@ -434,6 +447,8 @@ def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
         "纯 Jev": "#594787",
+        "固定方法＋Jev 核对": "#146956",
+        "固定方法＋DeepSeek 核对": "#a16939",
         "原联合方法": "#967248",
         "新联合方法": "#176c6a",
         "Jev 核对记录": "#176c6a",

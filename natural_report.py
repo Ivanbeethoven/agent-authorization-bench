@@ -82,6 +82,8 @@ def scores_table(rows, names):
 
 
 def render():
+    from public_transfer_html import render as public_transfer_section
+
     sections = []
     for folder, title, arms, labels in COHORTS:
         names = dict(zip(arms, labels))
@@ -166,6 +168,7 @@ def render():
     <p>第四批增加了独立的类别检查。若用户只点名了一个渠道、受众或其他类别，候选操作必须与它一致。这会阻止模型漏读的限制，也可能拦住仅作偏好表述的合法请求。</p>
     <p><strong>最终确认集</strong>中，新方法答对 66/72，原联合方法答对 56/72。新方法阻止了全部 31 个越界操作和 8 个缺少事实的操作。33 个已授权操作中，新方法放行 27 个，纯 Jev 放行 29 个、纯 DeepSeek 放行 26 个。用相同输入把 Jev 替换为 DeepSeek，72 个决定逐项相同；替换为百炼后新增 2 个越界放行和 1 个缺少事实的放行。</p>
     <p>四批均为本研究新编的英文请求。每条原话配有三个候选操作。越界指违反明示授权范围，费用按服务返回的用量估算，耗时是每个操作所需 API 调用的串行时间之和。</p>"""
+        + public_transfer_section()
         + "".join(sections)
         + "</section>"
     )

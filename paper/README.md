@@ -20,6 +20,7 @@ The source bundle includes the published decision tables under `results/full_per
 uv run --with numpy full_permission_analysis.py --from-tables
 uv run natural_results.py --from-tables
 uv run branch_results.py --from-tables
+uv run public_transfer_results.py --from-tables
 uv run --with numpy --with matplotlib paper_assets.py
 ./paper/build.ps1
 ```
@@ -34,6 +35,8 @@ uv run --with numpy --with matplotlib paper_assets.py
 - The four subsequent natural-language cohorts contain 108, 54, 72 and 72 decisions. Their fixed instructions, proposal variants, independent reference labels and evaluation protocols are in this paper directory. The first two evaluate extraction with whole-request fallback. The third evaluates condition-specific review. The fourth tests the additional category check. The two latter sets include matched DeepSeek and Bailian substitutions for Jev. Results and service responses are under `results/natural_permissions`. Both scoring scripts run offline with the Python standard library using the commands above.
 
 The compiled manuscript is a research draft. No authorship, institutional affiliation or conference acceptance is asserted.
+
+The final public transfer reruns the two direct services and replays both reviewer variants of `scope-verifier-v1` on all 1,126 primary records. Its protocol is `public_transfer_protocol.md`. The replay packet stores public IDs, native field names, the 34 mapped inputs, references and service responses in `results/public_transfer`. Native early returns were checked with the original records before packaging. The repository runner uses `public_transfer_direct` with each provider, followed by `public_transfer_extract` with DeepSeek. Running `public_transfer_results.py` without the offline flag reconciles the original input snapshots and ledgers.
 
 For an individual static request, `branch_permissions.authorize(state, extract, attest)` runs the final policy and returns `allow` or `block`. The extraction callback takes a request view, fields and system prompt. The attestation callback takes a record packet and typed questions, and runs only when required. Both return decoded answer objects. The host supplies the schema and observations. Only a final `allow` authorizes the proposed action.
 
