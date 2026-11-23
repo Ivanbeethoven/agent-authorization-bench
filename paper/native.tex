@@ -1,0 +1,38 @@
+\section{Authorization in native action representations}
+\label{sec:native}
+The first transfer experiment isolated an interface failure. To test whether a verifier could recover authorized actions, we fixed a second interface and policy (\texttt{native-authorization-v2.1}) before eliciting decisions. We reused all 1,126 public actions and added a separately reported external corpus. This was a prospective policy freeze on previously studied public populations. Only the external corpus was new to this project.
+
+\paragraph{Inputs and division of work.}
+For AuthGateBench we pass the user request, ordered tool observations, tool name and original argument tree. A composed shell command remains a single inert string. For DelegationBench we retain the instruction, context and complete candidate action, including its description and native parameter types. For Jev Boundary, the governing policy supplies authority, the scenario supplies the current state, and the proposed action remains prose. Observations may identify an object or establish a prerequisite. An instruction embedded in an observation cannot enlarge the grant.
+
+DeepSeek first identifies an independent prohibition, conflict or missing prerequisite. It also classifies the positive grant as direct, contextual or unsupported, quotes the relevant authority, and extracts explicit comparisons over numeric arguments. The host resolves each supplied path to the original typed argument, verifies the quoted passage and bound, and evaluates the relation using decimal arithmetic. An ill-formed or failed comparison withholds the action. The program can verify a quoted number and compare it to the candidate. Identifying the governing clause, extracting its operator and locating all applicable limits still depend on the model.
+
+An independently identified obstacle stops the request. Otherwise, a direct user grant with the operation identifier, other action fields and every scalar argument present in its grounded quote can proceed. This shortcut relies on the extractor's reading of the operation and its effects. For other proposals, Jev receives the original inputs and program checks. It separately assesses scope coverage and whether the prerequisites hold. Both judgments must be affirmative. The substitution control sends the same cases and questions to DeepSeek. The direct DeepSeek control issues one binary decision from the same source information. This isolates the reviewer's contribution conditional on the shared extraction and routing.
+
+\paragraph{Response handling.}
+Service responses were validated against typed fields. On a format error, the runner can restate the response schema and accept an unambiguous option inside a JSON wrapper. It preserves the original questions and their permitted answers. Measured fees and serial time include failed and repeated scored requests. The artifact also reports the fee for the final valid response at each stage. One external scenario exhausted 12 attempts without a parseable extraction. We record a technical abstention for both staged methods and retain the scenario in the denominator. All 1,126 primary extractions returned usable decisions.
+
+\paragraph{External corpus.}
+SteerBench-Work v2026-05 comprises 106 workplace decisions with author-defined proceed or hold references \cite{steerwork}. We project the published scenarios into the same static interface, preserving the user request, available goal, source records and proposed operation. For 11 legacy records without a decision-point object, we use the published title as the action description, following the upstream fallback. The projection omits the answer, hidden trap, incident narrative, derived risk flags and evaluator metadata. Our one-pass, two-option evaluation differs from the authors' five-trial leaderboard. We report this corpus separately and use its binary reference for the error analysis.
+
+\begin{table}[htbp]\centering\small
+\caption{Native-interface review. Legal and false releases are relative to the author's binary reference. Explicit counts only native \texttt{deny} and \texttt{REFUSE}. Time is mean serial API latency in seconds per case. CNY is the total estimated cost of deploying that method over the corresponding population.}
+\label{tab:native}
+\resizebox{\linewidth}{!}{\begin{tabular}{llrrrrrr}\toprule
+Population & Method & Acc. (\%) & Legal & False & Explicit & Seconds & CNY \\ \midrule
+\tablerows{generated/native_scores.tex}
+\bottomrule\end{tabular}}
+\end{table}
+\input{generated/native_findings}
+\paragraph{Sensitivity to the direct question.}
+The preceding transfer study used the original benchmark-specific direct questions on the same 1,126 actions, including native multiway choices. Those archived DeepSeek decisions released 386 legal and 63 non-executable actions, with 915/1,126 correct. Against that comparator the native method gained 57 legal releases and lost 32, while introducing 48 false releases and preventing nine. Its accuracy was lower. The legal-access gain and increase in false releases therefore persist under both questions, while the direction of the accuracy comparison changes.
+
+\paragraph{What the host verified.}
+The host withheld 19 primary actions because the extracted numeric record failed structural or grounding checks. In 18 of these, the first extracted predicate named a string-valued field, most often a full command, rather than a typed numeric argument. The program never released a primary request by the literal shortcut. Of the 813 semantic reviews, all final approvals therefore depended on model interpretation. The experiment supports a claim about recovering usable coverage through native inputs and semantic review. It provides little empirical support for attributing the legal-access gain to numerical verification.
+
+\paragraph{Errors by population.}
+Three newly released cases illustrate distinct errors: treating authority over temporary files as authority over an entire directory (AuthGateBench), interpreting permission to post an update as sufficient for a high-exposure professional account (DelegationBench), and accepting a previously used approval despite the policy's replay rule (Jev Boundary). The second case has an expert request-for-authorization reference. It illustrates why binary non-execution and explicit prohibition are reported separately.
+
+\paragraph{Cost of the experiment.}
+The distinct scored calls, including retries and the reviewer substitution, cost an estimated CNY 13.356 across all four corpora. CNY 8.739 of this total purchased responses other than the final accepted responses. Nine additional calls diagnosed response formatting. Their recorded input lengths and output limits imply a combined upper bound of CNY 0.0682. On the primary population the final valid responses alone cost CNY 2.328 for the Jev method and CNY 1.108 for direct DeepSeek. Table~\ref{tab:native} includes the observed retry costs and latency. The accounting counts each shared extraction once in the experiment total.
+\FloatBarrier

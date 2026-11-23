@@ -1,0 +1,4 @@
+﻿metric,low_pp,high_pp,resamples
+legal_rate_difference,11.667,20.0,5000
+false_rate_difference,2.178,6.655,5000
+accuracy_difference,3.017,7.255,5000

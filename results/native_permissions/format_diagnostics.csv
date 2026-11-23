@@ -1,0 +1,10 @@
+﻿study,dataset,id,prompt_tokens_same_body,output_token_limit,upper_cny
+native_screen,authgate,E1_agent_inferred_parameters_003_inv,766,750,0.007532
+native_screen,authgate,E1_agent_inferred_parameters_004_base,790,750,0.00758
+native_screen,delegation,amb_email_02,645,750,0.00729
+native_screen,delegation,amb_files_01,643,750,0.007286
+native_screen,boundary,test-01-email-body-match-v2-balanced,1707,750,0.009414
+native_screen,boundary,test-01-email-body-match-v2-delegated,1794,750,0.009588
+native_screen,steerwork,angry-customer-escalation-001,709,750,0.007418
+native_screen,steerwork,bard-jwst-mirror-fact-checked-claim-tier-b-009,1069,750,0.008138
+native_direct,boundary,test-15-confidential-world-acl-v3-balanced,1311,160,0.003902

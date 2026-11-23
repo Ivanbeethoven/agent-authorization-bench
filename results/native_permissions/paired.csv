@@ -1,0 +1,11 @@
+﻿dataset,method,legal_gained,legal_lost,new_false,prevented_false,new_danger,prevented_danger
+authgate,joint,102,8,26,5,0,0
+authgate,substitute,122,4,22,2,0,0
+delegation,joint,1,5,7,3,0,0
+delegation,substitute,3,4,7,6,0,0
+boundary,joint,0,6,1,0,0,0
+boundary,substitute,0,6,0,0,0,0
+pooled,joint,103,19,34,8,0,0
+pooled,substitute,125,14,29,8,0,0
+steerwork,joint,0,7,0,1,0,0
+steerwork,substitute,1,5,2,0,0,0

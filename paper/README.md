@@ -21,6 +21,8 @@ uv run --with numpy full_permission_analysis.py --from-tables
 uv run natural_results.py --from-tables
 uv run branch_results.py --from-tables
 uv run public_transfer_results.py --from-tables
+uv run native_results.py --from-tables
+uv run native_display.py
 uv run --with numpy --with matplotlib paper_assets.py
 ./paper/build.ps1
 ```
@@ -37,6 +39,8 @@ uv run --with numpy --with matplotlib paper_assets.py
 The compiled manuscript is a research draft. No authorship, institutional affiliation or conference acceptance is asserted.
 
 The final public transfer reruns the two direct services and replays both reviewer variants of `scope-verifier-v1` on all 1,126 primary records. Its protocol is `public_transfer_protocol.md`. The replay packet stores public IDs, native field names, the 34 mapped inputs, references and service responses in `results/public_transfer`. Native early returns were checked with the original records before packaging. The repository runner uses `public_transfer_direct` with each provider, followed by `public_transfer_extract` with DeepSeek. Running `public_transfer_results.py` without the offline flag reconciles the original input snapshots and ledgers.
+
+The native-interface evaluation reruns the three primary populations and separately evaluates 106 SteerBench-Work scenarios. Its frozen specification is `native_permissions.py` with the external adapter in `steer_input.py`. The source and sampling protocol are in `NATIVE_EVALUATION.md`. The derived decisions, paired changes, request receipts, provider totals and family-resampling intervals are in `results/native_permissions`. The offline commands above use the saved decisions. With the public sources and completed service logs available, running `native_results.py` without flags also verifies the original inputs, routing and reviewer outputs.
 
 For an individual static request, `branch_permissions.authorize(state, extract, attest)` runs the final policy and returns `allow` or `block`. The extraction callback takes a request view, fields and system prompt. The attestation callback takes a record packet and typed questions, and runs only when required. Both return decoded answer objects. The host supplies the schema and observations. Only a final `allow` authorizes the proposed action.
 

@@ -82,6 +82,7 @@ STAGE_GROUPS = {
     "数值边界专项": ("numeric_permission", "numeric_permission_review"),
 }
 for prefix, cohort, stages in (
+    ("native", "原始工具与授权范围", ("direct", "screen", "bind", "guard_bind")),
     ("public_transfer", "固定方法的公开评测", ("direct", "extract")),
     ("natural", "自然语言授权", ("direct", "review", "extract", "matched")),
     ("replica", "自然语言复测", ("direct", "review", "extract", "matched")),
@@ -93,6 +94,9 @@ for prefix, cohort, stages in (
     ),
 ):
     labels = {
+        "screen": "授权条件与独立限制",
+        "bind": "核对授权范围",
+        "guard_bind": "核对工具操作及授权范围",
         "direct": "直接判断",
         "review": "串行复核",
         "extract": "授权条件提取",
@@ -136,6 +140,7 @@ def inputs():
         "natural_permissions/confirmation/provider_usage.csv",
         "natural_permissions/scope_confirmation/provider_usage.csv",
         "public_transfer/provider_usage.csv",
+        "native_permissions/provider_usage.csv",
     ]
     ledgers.extend(
         f"parameter_review/{x}_usage.csv" for x in ("old", "fresh", "versions", "final")
@@ -376,7 +381,19 @@ def efficiency_groups(history, boards, selection):
                 for r in rows
             ],
         }
+    from native_results import METHODS as native_methods
+    from native_results import NAMES as native_names
     from public_transfer import NAMES as transfer_names
+
+    for k, dataset in native_names.items():
+        rows = [r for r in read("native_permissions/scores.csv") if r["dataset"] == k]
+        groups["native_" + k] = {
+            "label": f"原始工具与授权范围 · {dataset} · {rows[0]['n']} 条",
+            "points": [
+                point(native_methods[r["method"]], r["correct"], r["n"], r["cny"])
+                for r in rows
+            ],
+        }
 
     for k in PRIMARY:
         measured = [r for r in read("public_transfer/scores.csv") if r["dataset"] == k]
@@ -446,6 +463,8 @@ def efficiency_groups(history, boards, selection):
 def cost_accuracy(points):
     priced = [p for p in points if p["fee"] != ""]
     colors = {
+        "DeepSeek＋程序＋Jev": "#117563",
+        "DeepSeek＋程序＋DeepSeek": "#a45b16",
         "纯 Jev": "#594787",
         "固定方法＋Jev 核对": "#146956",
         "固定方法＋DeepSeek 核对": "#a16939",
@@ -632,6 +651,8 @@ def build(audit_dir=None):
     settings()
     if audit_dir:
         audit_dir.mkdir(parents=True, exist_ok=True)
+    from native_display import headline
+
     history, usage, boards, stages, selection = inputs()
     plots = {
         "pilot": image(heatmap(history), "pilot", audit_dir),
@@ -696,6 +717,7 @@ def build(audit_dir=None):
             "out": sum(int(r["output_tokens"]) for r in cli) + new_cli["output_tokens"],
         },
         "sources": sources,
+        "native_summary": headline(),
     }
     template = (ROOT / "scripts/overview_report.html").read_text("utf8")
     if template.count("__OVERVIEW_DATA__") != 1:

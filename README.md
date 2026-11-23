@@ -136,6 +136,8 @@ $studyPython = uv python find
 
 ## 数据来源
 
+原始工具授权核验覆盖原三个公开集，并单独评估 106 条 SteerBench-Work 工作场景。实验设置、逐题结果与交互报告分别见[研究方案](NATIVE_EVALUATION.md)、[评分表](results/native_permissions/scores.csv)和[结果网页](results/natural_permissions/自然语言授权核验.html#native-authority)。[SteerBench-Work 作者数据](https://huggingface.co/datasets/agentdock/steerbench-work-2026-05)
+
 - 授权与委托。[Jev Boundary v1.2.0](https://doi.org/10.5281/zenodo.22952538) · [AuthGateBench](https://github.com/Digital-Trust-Lab/AuthGateBench) · [DelegationBench](https://github.com/PieLord757/delegation-check)
 - 文件权限与作用范围。[AuthBench](https://github.com/evolvent-ai/Authbench) · [AuthorizationBench](https://github.com/PEACH-Research-Lab/AuthorizationBench) · [YoloFS-Ext](https://github.com/wudaoz/Caper/tree/main/yolofs_ext)
 - 工具风险与任务。[TS-Bench](https://huggingface.co/datasets/MurrayTom/TS-Bench) · [AgentDojo](https://github.com/ethz-spylab/agentdojo)
