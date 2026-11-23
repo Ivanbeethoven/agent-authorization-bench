@@ -86,6 +86,8 @@ def call(
     *,
     system_prompt=DEEPSEEK_FORMAT,
     max_tokens=160,
+    native_format=False,
+    retry_format=False,
 ):
     deep = provider == "deepseek"
     body = {"model": MODEL[provider], "state": state, "questions": questions}
@@ -111,6 +113,12 @@ def call(
     observations = []
     for attempt in range(1, 4):
         try:
+            if deep and native_format and (retry_format or attempt > 1):
+                from native_transport import format_instruction
+
+                body["messages"][0]["content"] = system_prompt + format_instruction(
+                    questions
+                )
             res = request_json(url, key, body)
             observations.append(res.get("usage", {}))
             if res.get("model") != MODEL[provider]:
@@ -120,6 +128,10 @@ def call(
                 if output["finish_reason"] != "stop":
                     raise ValueError("incomplete_json")
                 answers = json.loads(output["message"]["content"])
+                if native_format:
+                    from native_transport import unbox
+
+                    answers = unbox(answers, questions)
                 confidence = {}
                 probabilities = {}
             else:
@@ -368,6 +380,8 @@ def run(study, provider, workers):
                 key,
                 item["state"] if state is None else state,
                 questions,
+                native_format=study.startswith("native_"),
+                retry_format=bool(cache.get(k, {}).get("error")),
                 **options,
             )
             row = {"dataset": name, "id": item["id"], "stage": stage, **result}
