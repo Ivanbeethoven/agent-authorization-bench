@@ -1,5 +1,13 @@
 # Agent 权限与隐私决策评测
 
+## 本地部署与分类头训练
+
+在 Windows 上使用 llama.cpp 运行 Granite Guardian 和 AgentDecision-4B，并在冻结的 AgentDecision 表示上训练授权分类头。
+
+- [本地部署与评测](LOCAL_REVIEW.md)
+- [分类头训练与复现](PERMISSION_HEADS.md)
+
+
 固定版本 `scope-verifier-v1` 在三个公开 benchmark 上完成了 1,126 条测试。两种核对服务均未收到审批问题，534 个合法操作全部暂缓。网页同时给出了重新调用纯 Jev、纯 DeepSeek 的结果，以及每个 benchmark 的准确率、误放行、合法放行、耗时和费用。[公开数据迁移结果](results/natural_permissions/自然语言授权核验.html#public-transfer)
 
 [英文论文 PDF](paper/authorization-review.pdf) · [可离线编译的源码包](results/authorization-review-source.zip) · [LaTeX 构建说明](paper/README.md) · [三个完整测试集的 HTML 结果](results/shared_review/三项权限评测与共同错误.html#full-permission)

@@ -1,0 +1,26 @@
+# Local authorization decisions on an RTX 5070 Laptop GPU
+
+This comparison uses the three previously evaluated public corpora (1,126 requests) and the same external SteerBench-Work cohort (106). The two local models receive the archived inputs from the native-interface experiment. The scoring program joins references after inference. Requests are treated as data and no candidate tool is invoked.
+
+* **Granite Guardian 3.2 3B-A800M** uses IBM Research's Q4_K_M weights and the original custom-risk chat template. The authority and observations form the user message and the candidate forms the assistant message. For each frozen question its adverse outcomes are combined into one risk definition. A first-token No passes. Yes or an unrecognized answer withholds. [IBM model and Apache 2.0 license](https://huggingface.co/ibm-granite/granite-guardian-3.2-3b-a800m) · [IBM quantization](https://huggingface.co/ibm-research/granite-guardian-3.2-3b-a800m-GGUF)
+* **AgentDecision-4B** uses a quantized Qwen3-4B base with the published Jev-distilled adapter. We apply the authors' template with thinking disabled and choose the highest-ranked permitted letter in one generated token. Temperature calibration of the option distribution would preserve this ranking. The adapter uses CC BY-NC 4.0. [Model card and license](https://huggingface.co/JevAgentHarness/AgentDecision-4B)
+
+The direct comparison uses a single execute-or-withhold question. The substitution comparison replaces Jev on the same 883 selected requests. Scope and prerequisites must both pass. All other decisions and DeepSeek extraction fees are reused unchanged. The authors' training populations and model providers' private training corpora have not been audited for overlap with these public cases.
+
+The runner writes one response per question, resumes saved responses and fails on truncated input. It keeps labels and case identifiers out of the prompt. The per-question time includes local HTTP handling and inference with concurrent slots. GPU-board readings sample the whole GPU during inference. They exclude CPU, wall-socket losses and model loading. Local calls incur no metered API charge. End-to-end cascade estimates include the archived upstream service fees.
+
+## Reproducing the run
+
+On Windows with PowerShell 7, supply the paths to the local llama.cpp executable, GGUF weights and original model template. `--list-devices` lists the GPU names accepted by llama.cpp. The launcher binds to loopback and stops its own server when the run finishes.
+
+Once Python 3.14 and Jinja2 are cached by uv, set `$env:UV_OFFLINE='1'` to run the launcher without package-index access.
+
+```powershell
+./scripts/local-review.ps1 -Model granite -Server $llamaServer -Weights $graniteWeights -Template $graniteTokenizerConfig -Backend Vulkan -Device Vulkan1
+./scripts/local-review.ps1 -Model agentdecision -Server $llamaServer -Weights $qwenWeights -Adapter $decisionAdapter -Template $decisionChatTemplate -Backend Vulkan -Device Vulkan1
+& (uv python find) local_review_results.py
+```
+
+The decision adapter is the authors' PEFT checkpoint converted to GGUF using llama.cpp's LoRA converter. Inference requires the original archived request plans under `data/study_runs`. Offline scoring and reporting require only the two local answer tables, timing and configuration files, and the published tables under `results/native_permissions`.
+
+After scoring, the optional `-Controls` switch runs eight synthetic office-task pairs. Each pair changes one authorized parameter. AgentDecision also sees the choice order reversed. Granite additionally receives one benign request using IBM's built-in harm criterion. These checks use separate output files and do not contribute to the benchmark scores or reported benchmark timings.

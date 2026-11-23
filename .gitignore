@@ -11,3 +11,4 @@ results/aliyun/*.jsonl
 results/aliyun/*.lock
 .venv/
 .ruff_cache/
+results/permission_heads/

@@ -105,6 +105,16 @@ def fetch(name):
         yolofs()
     elif name == "privacy":
         privacy()
+    elif name == "xaab":
+        base = "https://raw.githubusercontent.com/xybern-ai/agent-authz-benchmark/0249d9ccee4f48a9d49da3363d478715ff99f335"
+        files = (
+            "destructive_ops", "privilege_escalation", "credential_access", "data_exfiltration",
+            "pii_disclosure", "prompt_injection", "unsafe_code", "velocity_abuse", "financial",
+            "social_engineering", "evasion_variants", "hard_adversarial", "hard_benign",
+            "agent_to_agent", "information_flow", "authority_attacks", "intent_drift", "pre_execution",
+        )
+        fetch_files(name, base, [f"scenarios/{i:02d}_{f}.yaml" for i, f in enumerate(files, 1)]
+                    + ["policy-pack.json", "README.md", "METHODOLOGY.md", "LICENSE"])
     elif name == "tsbench":
         base = "https://huggingface.co/datasets/MurrayTom/TS-Bench/resolve/main"
         fetch_files(

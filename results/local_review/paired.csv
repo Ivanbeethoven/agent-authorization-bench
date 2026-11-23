@@ -1,0 +1,11 @@
+﻿dataset,model,legal_gain,legal_loss,new_false,prevented_false,new_danger
+authgate,granite,0,251,0,46,0
+authgate,agentdecision,48,7,186,2,0
+delegation,granite,0,53,0,55,0
+delegation,agentdecision,8,0,14,1,1
+boundary,granite,0,107,0,1,0
+boundary,agentdecision,0,8,1,0,0
+pooled,granite,0,411,0,102,0
+pooled,agentdecision,56,15,201,3,1
+steerwork,granite,0,48,0,0,0
+steerwork,agentdecision,2,0,18,0,0
